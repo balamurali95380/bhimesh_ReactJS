@@ -20,3 +20,15 @@ body
 .justpass{
     background-color: orange;
 }
+table
+{
+    background-color: aqua;
+}
+thead{
+   color:maroon;
+   font-style: italic;
+}
+#img
+{
+    width: 50px;
+}
