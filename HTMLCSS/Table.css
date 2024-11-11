@@ -1,0 +1,22 @@
+
+body
+{
+    background-color: burlywood;
+}
+#pass
+{
+    background-color: green;
+    font-size: x-large;
+
+}
+#distinction
+{
+    background-color: blue;
+}
+#fail{
+    background-color: red;
+
+}
+.justpass{
+    background-color: orange;
+}

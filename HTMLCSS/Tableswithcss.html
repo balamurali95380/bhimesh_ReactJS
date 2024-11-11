@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Table.css">
     <title>TABLES</title>
     <style>
-        body
-        {
-            background-color: burlywood;
-        }
         table{
             background-color: aqua;
             height: 400px;
@@ -17,10 +14,20 @@
            color:maroon;
            font-style: italic;
         }
+        img{
+            width: 50px;
+        }
+        /*  
+        body
+        {
+            background-color: burlywood;
+        }
+        
         #pass
         {
             background-color: green;
-            
+            font-size: x-large;
+
         }
         #distinction
         {
@@ -32,7 +39,7 @@
         }
         .justpass{
             background-color: orange;
-        }
+        }*/
     </style>
 </head>
 <body>
@@ -55,7 +62,7 @@
                 <td>pass</td>
             </tr>
             <tr id="distinction">
-                <td>2</td>
+                <td rowspan="3">2</td>
                 <td>Madhu</td>
                 <td>75</td>
                 <td >A</td>
@@ -84,7 +91,7 @@
             </tr>
             <tr id="distinction">
                 <td>6</td>
-                <td>Bhimesh</td>
+                <td colspan="2">Bhimesh</td>
                 <td>85</td>
                 <td>A</td>
                 <td>distinction</td>
@@ -98,7 +105,7 @@
             </tr>
             <tr class="justpass">
                 <td>8</td>
-                <td>Vasu</td>
+                <td><img src="./fruit.jpg" alt="vasuimage">Vasu</td>
                 <td>35</td>
                 <td >C</td>
                 <td>justpass</td>
