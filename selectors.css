@@ -10,3 +10,26 @@ body{
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+h1,
+h2
+{
+color: blue;
+font-size: larger;
+border: 2px rgb(24, 3, 55) solid;width: 150px;
+}
+ol
+{
+    background-color: dodgerblue;
+}
+dl
+{
+    background-color: gold;
+}
+.smallletter
+{
+    font-size: xx-large;
+}
+dd
+{
+    background-color: rgb(149, 27, 76);
+}
