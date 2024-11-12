@@ -9,30 +9,50 @@
 <form>
     <input type="button">
     <input type="checkbox">
-    <input type="color">
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor">    
     <input type="datetime-local">
     <input type="image">
     <input type="date">
     <input type="email">
-    <input type="file">
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile">
     <input type="hidden">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="hidden" id="custId" name="custId" value="3487">
+    <input type="submit" value="Submit">
     <input type="image">
     <input type="month">
     <input type="number">
     <input type="password">
     <input type="radio">
     <input type="range">
+    <label for="vol">Volume (between 0 and 50):</label>
+    <input type="range" id="vol" name="vol" min="0" max="50">
     <input type="submit">
     <input type="tel">
+    <label for="phone">Enter your phone number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
     <input type="text">
     <input type="time">
     <input type="url">
+    <label for="homepage">Add your homepage:</label>
+    <input type="url" id="homepage" name="homepage">
     <input type="month">
     <input type="password">
     <input type="reset">
     <input type="search">
     <input type="submit">
     <input type="week">
+    <input type="text" name="username"/>
+    <label for="files">Select files:</label>
+    <input type="file" id="files" name="files" multiple>
+    <label for="country_code">Country code:</label>
+    <input type="text" id="country_code" name="country_code"
+    pattern="[A-Za-z]{3}" title="Three letter country code">
+    <label for="points">Points:</label>
+    <input type="number" id="points" name="points" step="3">
         <!-- Input attributes
         Disabled <input type="text" id="fname" name="fname" value="John" disabled>
         Readonly <input type="text" id="fname" name="fname" value="John" readonly> 
