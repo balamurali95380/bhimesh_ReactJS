@@ -37,13 +37,15 @@
   }
   div#footer {
     background: black;
-    height: 40px;
-    margin: 10px;
+    height: 20px;
+    margin: 2px;
     color: white;
     text-align: center;
   }
   .child2 table {
+    width: 750px;
     background: darkgray;
+    margin:2px;
 }
 .child2 h2
 {
@@ -65,6 +67,7 @@
           
         </div>
         <div id="decription">
+          <h4 style="color: rgb(96, 9, 82);font-size:larger">DESRIPTION</h4>
           <p>
             A continent is any of several large geographical regions. Continents are generally identified by convention rather than any strict criteria. A continent could be a single landmass or a part of a very large landmass, as in the case of Asia or Europe. Due to this, the number of continents varies; up to seven or as few as four geographical regions are commonly regarded as continents. Most English-speaking countries recognize seven regions as continents. In order from largest to smallest in area, these seven regions are Asia, Africa, North America, South America, Antarctica, Europe, and Australia.
        </p>
@@ -78,6 +81,7 @@
         </div>
         <div class="middleSection">
           <div class="ASIA">
+            <h3 style="color: rgb(231, 225, 226);">ASIAN COUNTRIES</h3>
             <ol type="1">
               <li>INDIA</li>
               <li>CHINA</li>
@@ -85,13 +89,15 @@
             </ol>
           </div>
           <div class="child2">
-            <h2>population Details</h2>
+            <h2>Population Details</h2>
+            <hr>
             <table border="1">
               <thead>
                 <tr>
                   <td>S.No</td>
                   <td>COUNTRY</td>
                   <td>population(in crores)</td>
+                  <td>flag</td>
                 </tr>
               </thead>
               <tbody>
@@ -99,20 +105,24 @@
                   <td>1</td>
                   <td>INDIA</td>
                   <td>125</td>
+                  <td ><img src="https://cdn.pixabay.com/photo/2018/01/21/14/36/indian-flag-3096740_640.png" alt="" style="width: 40px;"></td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>2</td>
                   <td>CHINA</td>
-                  <td>125</td>
+                  <td>175</td>
+                  <td><img src="data:image/png;base64,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" alt="" style="width: 40px;"></td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>3</td>
                   <td>JAPAN</td>
-                  <td>125</td>
+                  <td>25</td>
+                  <td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAk1BMVEX///+8AC27ACq4ABC6ACK5ABq7ACi5ABi4ABW7ACW4AA3//P24ABK5ABe5AB377/L89Pa3AAD66u/KTWLlr7i/Ezjz2d7x0dfpusK/ADPpwsfckp7uytHDMEq/EzfHQlnhoKvCJkTOYHLhp6/ScID34ObQaXrntb7ajJnOX3LVeYnemaTLU2fXgY/rvsfMWGvFNlDnvGUSAAAEsUlEQVR4nO3d2ZaaQBAG4LCvoiKIy6jgNlucyfs/XeAY4zbONNjLKfy/m+SSqkNXF0Xj/PoFAAAAAAAAAAAAAAAAAAAAAAAAAJV4mE2ek1XyPMmGseqLUS6eTLep4Ruh23Esp+OG5f/T7XTyqJnpfqzHrht5unZO9yLXHa9HXdUXKFs3GViueZmOk8SYrjVIHiktT9uo493Mx4HXiZZPqi9VjiCZGeaPCdkzjVkSqL5g8VapazNmpGK781z1JQs2St3bReRreid9Vn3ZAm0Wfp175H9W/MVQ9aWL8uL/XFi/5vkvqi9eiE3hNMxIxSlaeKvkRpNlc2T7ueoQeFv6d2Wk4i9VB8FVt4juTommRUWLGtuh3bS4nvO81hSVrFaX9h07zFQHw8eTX7dNu033W/EElIX8UlImxWjBnTK0eKakTIpDvqbEOq9acmBrxKdwwYzPjnPKK2iPD5Y8+pJL0avqsO7xbghIiaYZ76oDay4Tk5IyKWQ3nyDlXV8P7JRqSXmzBKVE06w31cE1I2zlVIiunpmolVOxZ6rDa2LlCkyJprkr1QHWF1y99ORL9+iV2XdxBXbPItekBI7Y26S8USxqN0p+z5CejZOrDrKmsejbpLxRxqqDrGcksjc5MD5Uh1nLb/4jgmveb9Vh1hH3JaRE0/qUpkvCN+I9K1cdaA1/RLb1R/ZCdaDsJC0dUotnJb452XMS1aEyW8rYdSoemdfqwVx8w7anz6n095v7z1Ww8jeqg2WUyConhArKjvX46/3MnepgGQ1klVg67X1QyCqxZddG5D1pT97SKRdPT3W4TGJ520658dDoZJ9kzE4ODBrnlkYdiTlxR6rDZSKxPSHToKzkDE/2LBqvvpCTa8jJNeTkmrSJUsWhkRPsO9c+xB6yOOfSeO8l9HzSJSLnlbpSn3dofNLTs+XNCnSdxnOx2INs58gca/uUOGf7VB0so6mIQ/Zfi6aqg2U0krcZExkVSB20Edl2SoWsImsXqkNltpY1pTbXqkNlJq2gkCknZdcmq7sPiXRsFSlH/Ah1J5VEzui+Q2NQsNcLpeSE0tKRtPMQ2nUqmYxTfn0as5P/JJwGtf+oDrImCQfuDTrNyT/CvqM9sFPVIdb2LHrrCQn+kp3gB0FCj39Hgo+hEDl4cuFTZI9iUmrrj+JI3Pxet8gMk87l4laPkasOrqmBqNVjDlSH1lhX0Lfoukd05VQmYqbV/kR1YPeYiigpBpWXOjcI+JGpiMyHTLcseNdZk9rj8LVewXc26xWkhmtf6855JsWbE95yjngmpSUpqZYPr5pitueXhoMFnyOz1oLGF0xstjyaN3+rOgy+8kZ/AeGU3c9VB8Fblt7XvUVjYm8uWATrfvNbRe9v21RKjiZp01JrjUk/9X0neAmb7MpmuGvnTbIXL5n/RtOBZyyp/ChBU8PX7/622SXdDD/J/045g82b6bBVW9sx14+QkUp3NXOjn9JiR+Fs1ZpWnsVmWjjOzUWkm06nmD7KLXIiTtapG1rm2SBb90wrdMfrhMY39yLEWb4bjH3fNyrlv+PBLs8eNx8ngngzHA43cZvbEAAAAAAAAAAAAAAAAAAAAAAAAIB6/gIwm08QBxe6TwAAAABJRU5ErkJggg==" alt="" style="width: 40px;"></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+        <div id="footer"><footer>copyrightsreserved@world.com</footer></div>
 </body>
 </html>
