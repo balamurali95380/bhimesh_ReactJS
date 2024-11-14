@@ -1,0 +1,50 @@
+.row1 {
+    background: black;
+    color: floralwhite;
+    overflow: auto;
+}
+header {
+    width: 850px;
+    margin: auto;
+    overflow: auto;
+  }
+  .basic88 {
+    width: 300px;
+    float: left;
+    margin: 20px 20px 20px 0;
+  }
+  .basic88 h2 {
+    margin: 0;
+  }
+  .basic88 p {
+    margin: 0;
+  }
+  header nav {
+    width: 450px;
+    float: right;
+    margin: 20px 0 20px 20px;
+  }
+nav ul li {
+    display: inline;
+    margin: 30px;
+}
+.row2 {
+    width: 775px;
+    height: 375px;
+    /* background: black; */
+    border: 2px solid;
+    margin: 20px 120px 20px 195px;
+}
+.row2 img{
+    width: 775px;
+    height: 375px;
+    /* background: black; */
+}
+.child {
+    margin: 5px 10px 10px 184px;
+}
+.child img {
+    width: 245px;
+    margin: 10px;
+}
+
