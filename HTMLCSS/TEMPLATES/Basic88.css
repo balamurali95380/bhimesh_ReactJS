@@ -1,5 +1,5 @@
 .row1 {
-    background: black;
+    background: rgb(119, 98, 164);
     color: floralwhite;
     overflow: auto;
 }
@@ -7,6 +7,7 @@ header {
     width: 850px;
     margin: auto;
     overflow: auto;
+    color: rgb(201, 207, 30);
   }
   .basic88 {
     width: 300px;
@@ -20,9 +21,10 @@ header {
     margin: 0;
   }
   header nav {
-    width: 450px;
+    width: 490px;
     float: right;
     margin: 20px 0 20px 20px;
+    text-decoration-line: underline;
   }
 nav ul li {
     display: inline;
@@ -40,11 +42,21 @@ nav ul li {
     height: 375px;
     /* background: black; */
 }
-.child {
-    margin: 5px 10px 10px 184px;
+.row3 {
+  width: 850px;
+  margin: auto;
 }
-.child img {
-    width: 245px;
-    margin: 10px;
+.childs {
+  width: 270px;
+  float: left;
 }
-
+figure img {
+  width: 240px;
+  padding-left: 0;
+}
+figure {
+  margin: 0px;
+}
+figcaption p {
+  margin: 2px;
+}
