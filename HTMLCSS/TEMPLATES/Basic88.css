@@ -60,3 +60,59 @@ figure {
 figcaption p {
   margin: 2px;
 }
+p#ancherPara {
+  float: right;
+  font-size: 11px;
+}
+#ancherPara a {
+  color: orange;
+}
+.row4 {
+  width: 850px;
+  overflow: auto;
+  margin: auto;
+}
+article {
+  width: 420px;
+  float: left;
+}
+aside {
+  width: 420px;
+  float: right;
+}
+aside img {
+  width: 410px;
+  border: 1px solid;
+  padding: 4px;
+  height: 240px;
+}
+article p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.parentSection {
+  background: #333333;
+  color: #989898;
+}
+.subSection {
+  width: 850px;
+  margin: auto;
+  overflow: auto;
+}
+section {
+  width: 190px;
+  float: left;
+  margin: 20px 11px 20px;
+}
+section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+section ul li {
+  font-size: 12px;
+  line-height: 2;
+  border-bottom: 1px solid;
+  color: orange;
+  cursor: pointer;
+}

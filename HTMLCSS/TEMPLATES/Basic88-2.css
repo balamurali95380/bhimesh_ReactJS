@@ -33,7 +33,7 @@ nav ul li {
   height: 375px;
   /* background: black; */
   border: 2px solid;
-  margin: 20px 120px 20px 195px;
+  margin: 30px 120px 20px 195px;
 }
 .row2 img{
   width: 775px;
@@ -41,12 +41,13 @@ nav ul li {
   /* background: black; */
 }
 .row3 {
-  width: 850px;
+  width: 859px;
   margin: auto;
 }
 .childs {
   width: 270px;
   float: left;
+  padding-top: 10px;
 }
 figure img {
   width: 240px;
@@ -55,7 +56,71 @@ figure img {
 figure {
   margin: 0px;
 }
+figcaption {
+  margin-top: 15px;
+}
 figcaption p {
-  margin: 2px;
+  font-size: 14px;
+  margin: 15px 25px 5px 0px;
+  line-height: 1.5;
+}
+p#ancherPara {
+  float: right;
+  font-size: 14px;
+  margin: 12px 25px 0px 0px;
+}
+#ancherPara a {
+  color: orange;
+  text-decoration-line: none;
+}
+.row4 {
+  width: 850px;
+  overflow: auto;
+  margin: auto;
+}
+article {
+  width: 420px;
+  float: left;
+  font-size: 14px;
+}
+aside {
+  width: 420px;
+  float: right;
+}
+aside img {
+  width: 410px;
+  border: 1px solid;
+  padding: 4px;
+  height: 240px;
+}
+article p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.parentSection {
+  background: #333333;
+  color: #989898;
+}
+.subSection {
+  width: 850px;
+  margin: auto;
+  overflow: auto;
+}
+section {
+  width: 190px;
+  float: left;
+  margin: 20px 11px 20px;
+}
+section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+section ul li {
+  font-size: 12px;
+  line-height: 2;
+  border-bottom: 1px solid;
+  color: orange;
+  cursor: pointer;
 }
 
