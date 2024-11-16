@@ -41,18 +41,18 @@
     /* background: black; */
   }
   .row3 {
-    width: 860px;
-    height: 195px;
-    margin: auto;
+    width: 796px;
+    height: 225px;
+    margin: 0px 15px 35px 192px;
     overflow: auto;
     border-bottom: 1px solid gray;
-  }
-  .childs {
-    width: 202px;
+}
+.childs {
+    width: 194px;
     float: left;
-    margin-right: 0px;
+    margin: 16px 0px 0px 0px;
     color: #989898;
-  }
+}
   .childs figure {
     margin-left: 0;
   }
@@ -74,47 +74,94 @@
     margin: 13px 0px 0px 0px;
 }
 .childs figcaption {
-  margin: 0px 18px 0px 0px;
+  margin: 0px 17px 0px 0px;
 }
   .childsPara a {
     color: orange;
     text-decoration: none;
     margin: 0px;
   }
-  .childs4 figcaption p {
-    font-size: 13px;
-  }
   .childsPara {
     float: right;
   }
-  .childsPara a {
+  .child4 {
+    width: 195px;
+    float: right;
+    margin: 16px 0px 0px 2px;
+    color: #989898;
+  }
+  .child4 figure {
+    margin-left: 0;
+  }
+  .child4 figure img {
+    width: 25px;
+    height: 25px;
+    float: left;
+    border: 1px solid;
+    padding: 2px;
+  }
+   .child4 figcaption strong{
+    font-size: 13px;
+  }
+  .child4 figcaption p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0px;
+    margin: 13px 0px 0px 0px;
+}
+.child4 figcaption {
+  margin: 0px 18px 0px 0px;
+}
+  .child4Para a {
     color: orange;
     text-decoration: none;
+    margin: 0px;
   }
+  .child4Para {
+    float: right;
+  }
+
   .row4 {
-    width: 860px;
+    width: 794px;
     margin: auto;
     overflow: auto;
-    margin-top: 30px;
+    margin: 28px 50px 31px 192px;
     border-bottom: 1px solid gray;
     padding-bottom: 12px;
 }
-  .birds {
-    width: 275px;
+.birds {
+    width: 279px;
     float: left;
-  }
-  .birds img {
-    width: 237px;
+}
+.birds img {
+    width: 225px;
     height: 180px;
     border: 1px solid;
     padding: 3px;
-  }
- .row5 {
+}
+.bird3 {
+    width: 234px;
+    float: right;
+}
+
+.bird3 img {
+    width: 225px;
+    height: 180px;
+    border: 1px solid;
+    padding: 3px;
+}
+p#child1Para {
+    float: right;
+    margin: 17px 0px 20px 0px
+   }
+   .row5 {
     width: 800px;
+    height: 420px;
     overflow: auto;
     margin-top: 15px;
     margin-left: 190px;
-  }
+}
   .row5 article {
     width: 575px;
     float: left;
@@ -160,10 +207,6 @@
   .child2 {
     margin-top:25px;
 }
-  p#child1Para {
-    float: right;
-    margin: 10px 65px 20px 20px;
-  }
   p#read {
     margin: 15px 50px 0px 0px;
     float: right;
@@ -197,29 +240,18 @@
     color:#232323;
    text-decoration-line: none;
   }
-  .row6-footer {
-    overflow: auto;
-    background-color: #232323;
-    color: #989898;
-  }
-  .copyright {
-  
-    float: left;
-    padding-left: 188px;
-    font-size: small;
-  }
-  .template {
+footer{
+    margin: 0px 5px 0px 185px;
+}
+footer p {
+    width: 400px;
     float: right;
-    padding-right: 250px;
-    margin-top: 10px;
-  }
-  .copyright h5 {
-    font-weight: lighter;
+    margin: 20px 0px 15px 0px;
     font-size: 14px;
-    
-  }
-  .template p {
-    font-weight: lighter;
-    font-size: 14px;
-  }
-  
+    font-weight: normal;
+}
+footer h5 {
+    float: left;
+    font-weight: normal;
+}
+ 
