@@ -1,0 +1,117 @@
+body{
+    background-color: chocolate;
+}
+.container {
+    width: 900px;
+    margin: auto;
+    background-color: beige;
+    overflow: auto;
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+   .Title {
+        float: right;
+        margin-right: 175px;
+}
+h1 {
+    /* padding-bottom: 0px; */
+    margin-bottom: 0px;
+}
+h2{
+    font-size: 15px;
+}
+header{
+    overflow:auto;
+    border:1px solid blue;
+    border-radius: 10px;
+    color: #1f2202;
+    background-image: url(./html-color.jpg);
+    background-size: cover;
+    width: 898px;
+    margin: auto; 
+}
+nav{
+    overflow: auto;
+    margin: 8px 15px;
+}
+.list li {
+    display: inline;
+    margin-right: 50px;
+    font-size: 15px;
+    border-right: 2px dashed darkgreen;
+  
+}
+.list a{
+    text-decoration-line: none;
+    padding-right: 10px;
+}
+ul {
+    height: 20px;
+}
+.list{
+    
+    margin: auto;
+    /* display: inline; */
+    background-color: #eb9b97;
+    border: 1px solid forestgreen;
+    color: white;
+}
+.desc {
+    overflow: auto;
+    float: left;
+    margin: 1px 18px 43px 41px;
+}
+aside {
+    float: right;
+    width: 275px;
+}
+section {
+    width: 550px;
+    overflow: auto;
+    height: 275px;
+}
+article {
+    overflow: auto;
+    width: 550px;
+    height: 200px;
+}
+.middleright {
+    float: right;
+    width: 200px;
+}
+.middleleft {
+    float: left;
+    width: 320px;
+    border-right: 1px solid darkslategrey;
+    height: 200px;
+}
+.list2 {
+    overflow: auto;
+    height: 325px;
+    margin: 0px 5px 0px 20px;
+}
+.item.desc {
+    overflow: auto;
+    margin: 0px 25px 35px 21px;
+}
+.titl2 {
+    margin-left: 10px;
+}
+.items ul {
+    height: 20px;
+    padding: 10px;
+}
+.items li {
+    padding: 4px;
+}
+footer {
+    float: right;
+    width: 854px;
+    border: 1px solid black;
+    height: 45px;
+    margin: 10px 20px 10px 0px;
+    text-align: center;
+    color: #0b0b0b;
+    background-color: rgb(215, 110, 131);
+}
