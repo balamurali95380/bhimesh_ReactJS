@@ -15,6 +15,7 @@ body {
         background-color: blueviolet;
         width: auto;
         color: wheat;
+        background-image: url(./bird.jpeg);
 }
 .title {
     margin: 0px 25px 0px 40px;
@@ -50,13 +51,24 @@ body {
     list-style-type: none;
     display: inline-block;
     padding-top: 10px;
-    margin-right: 105px;
+    margin-right: 90px;
     border-radius: 10px;
     
 }
 .row2 a{
     text-decoration-line: none;
     color: aliceblue;
+    
+
+}
+
+.row2 a:hover{
+    background-color: black;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.row2 button {
+    border-radius: 10px;
 }
 .row3 {
     overflow: auto;
@@ -101,9 +113,16 @@ body {
  
     font-size: 16px;
 }
+.middle h3
+{
+ 
+    font-size: 16px;
+    margin-left: 20px;
+    padding-left: 17px;
+}
 .list {
     font-size: 14px;
-    line-height: 27px;
+    /* line-height: 27px; */
 }
 .middle p{
     font-size: 13px;
@@ -119,10 +138,9 @@ body {
  .blog button {
             margin-left: 110px;
         }
-        .row4 {
+  .row4 {
             margin: 0px 0px 5px 25px;
             overflow: auto;
-            border-bottom: 1px solid gray;
         }
         .nat {
             width: 208px;
@@ -130,14 +148,7 @@ body {
             margin-left: 10px;
             color: rgb(206, 148, 40);
         }
-          .nat figure {
-            margin-left: 0;
-          }
-          .nat figure img {
-            float: left;
-            border: 1px solid;
-            padding: 2px;
-          }
+
           .nat figcaption p {
             font-size: 14px;
             line-height: 1.5;
@@ -161,14 +172,6 @@ body {
             float: right;
             color: rgb(206, 148, 40);
           }
-          .nat4 figure {
-            margin-left: 0;
-          }
-          .nat4 figure img {
-            float: left;
-            border: 1px solid;
-            padding: 2px;
-          }
           .nat4 figcaption p {
             font-size: 14px;
             line-height: 1.5;
@@ -184,18 +187,43 @@ body {
           }
           .row5 {
             overflow: auto;
-            background-color: darkgrey;
+            background-color: rgb(50, 47, 47);
             color: white;
+            text-align: center;
         }
 
-        .copy li {
-            display: inline;
-            border-right: 1px solid white;
+          .copy a{
+            color: yellow;
+        }
+        .copy p{
+            font-size: 14px;
 
         }
         .ftrlist li {
             display: inline;
             border-right: 1px solid white;
+            font-size: 14px;
+            padding-right: 10px;
         }
+        .list ul {
+            list-style-type: none;
+        }
+        .ftrlist li a {
+            text-decoration-line: none;
+            color:white
+        }
+        .ftrlist li a:hover{
+            color: rgb(194, 192, 56);
+           
+        }
+        .list li
+         {
+            display: inline-block;
+            height: 15px;
+            padding: 4px 0 0 18px;
+            margin: 0 0 5px 0;
+            background: url(images/templatemo_list_icon.jpg) top left no-repeat;
+       }
+
 
     
