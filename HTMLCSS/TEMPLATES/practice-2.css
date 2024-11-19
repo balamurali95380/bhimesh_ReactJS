@@ -18,7 +18,8 @@ h1 {
     /* padding-bottom: 0px; */
     margin-bottom: 0px;
 }
-h2{
+h2,
+h3{
     font-size: 15px;
 }
 header{
@@ -74,44 +75,71 @@ section {
 article {
     overflow: auto;
     width: 550px;
-    height: 200px;
+    height: 354px;
 }
 .middleright {
     float: right;
-    width: 200px;
+    width: 234px;
+    text-align: justify;
+    height: 340px;
 }
 .middleleft {
     float: left;
-    width: 320px;
+    width: 275px;
     border-right: 1px solid darkslategrey;
-    height: 200px;
+    height: 340px;
+    text-align: justify;
+    padding-right: 19px;
 }
 .list2 {
     overflow: auto;
     height: 325px;
-    margin: 0px 5px 0px 20px;
+    margin: 0px 2px 0px 15px;
+    width: 195px;
 }
 .item.desc {
     overflow: auto;
-    margin: 0px 25px 35px 21px;
+    margin: 25px 25px 35px 21px;
+    text-align: justify;
 }
 .titl2 {
-    margin-left: 10px;
+    margin-left: 35px;
 }
 .items ul {
-    height: 20px;
-    padding: 10px;
+    list-style-type: none;
+    line-height: 1px;
 }
 .items li {
-    padding: 4px;
+    display: inline-block;
+    margin-bottom: 0px;
+    height: 2px;
+    padding: 14px;
+    background: url(images/templatemo_list_icon.jpg) left no-repeat;
 }
 footer {
     float: right;
     width: 854px;
     border: 1px solid black;
-    height: 45px;
-    margin: 10px 20px 10px 0px;
+    height: 75px;
+    margin: 0px 20px 10px 0px;
     text-align: center;
     color: #0b0b0b;
     background-color: rgb(215, 110, 131);
+    font-size: 14px;
+}
+.larg p {
+    text-align: justify;
+    
+}
+footer li {
+    display: inline;
+}
+li :hover
+{
+    background-color: darkgoldenrod;
+}
+footer a {
+    text-decoration-line: none;
+    padding: 10px;
+    color: rgb(1, 17, 29);
 }
