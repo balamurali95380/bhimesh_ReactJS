@@ -94,12 +94,12 @@ article {
 .list2 {
     overflow: auto;
     height: 325px;
-    margin: 0px 2px 0px 15px;
+    margin: 3px 2px 0px 15px;
     width: 195px;
 }
 .item.desc {
     overflow: auto;
-    margin: 25px 25px 35px 21px;
+    margin: 4px 25px 31px 54px;
     text-align: justify;
 }
 .titl2 {
