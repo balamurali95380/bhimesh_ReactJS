@@ -53,6 +53,7 @@ body{
         float: left;
         border-right: 1px solid grey;
         padding-right: 5px;
+        margin-left: 10px;
     }
     .catg {
         width: 260px;
@@ -66,7 +67,7 @@ body{
         height: 210px;
     }
     .info {
-        background-color: rgb(167, 193, 38);
+        /* background-color: rgb(167, 193, 38); */
         border: 1px solid;
         width: 214px;
         height: 175px;
@@ -86,18 +87,20 @@ body{
     }
     .info p {
         
-            font-size: 13px;
+            font-size: 14px;
             margin-left: 5px;
         
     }
     .info4 p {
-        font-size: 13px;
+        font-size: 14px;
         margin-left: 3px;
     }
-    .info a ,.info4 a {
-        font-size: 13px;
+    .info a,.info4 a {
+        font-size: 14px;
         text-decoration-line: none;
         color:yellow ;
+        text-align: justify;
+
     }
     .info4 {
         border: 1px solid;
@@ -120,16 +123,19 @@ body{
     .contact {
         /* text-align: justify; */
         width: 200px;
-        padding-left: 25px;
+        padding-left: 5px;
         height: 0px;
     }
     .contact h4 {
         padding-bottom: 0px;
         margin-bottom: 0px;
     }
+    .contact p {
+        font-size: 13px;
+    }
     .ftrlst {
         float: right;       
-        margin-right: 24px;
+        margin-right: 5px;
     } 
     .ftrlst ul {
         margin-top: 0px;
@@ -159,9 +165,10 @@ body{
     
     section {
             overflow: auto;
-            margin-left: 10px;
+            margin-left: 0px;
             border-bottom: 1px solid grey;
             margin-bottom: 20px;
+            height: 370px;
     }
     .logoimage img {
         overflow: auto;
@@ -190,4 +197,13 @@ body{
        
         text-decoration-line: none; 
       
+    }
+    .info.background1{
+        background-color: rgb(58, 123, 138);
+    }
+    .info.background2{
+        background-color: rgb(161, 105, 14);
+    }
+    .info.background3{
+        background-color: rgb(222, 196, 159);
     }
