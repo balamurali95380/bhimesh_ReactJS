@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclass</title>
+    <style>
+        .heading:hover{
+            font-size: larger;
+            color: brown;
+        }
+        .heading h1:nth-child(2){
+            color: rgb(219, 233, 30);
+        }
+        .heading h1:nth-child(3){
+            color: rgb(219, 233, 30);
+        }
+        .heading h1:last-child{
+            color: rgb(230, 23, 154);
+        }
+        .paragraph p:first-child 
+        {
+              font-size: 20px;
+              font-family:Arial, Helvetica, sans-serif;
+        }
+        .paragraph p:last-child
+        {
+              font-size: 20px;
+              font-family:Arial, Helvetica, sans-serif;
+        }
+        .paragraph p:nth-child(4){
+            color: green;
+            border: 2px solid yellow;
+              }
+              .image1 img:hover
+              {
+                width:40px;
+                background-color: aqua;
+              }
+              .image1 {
+                height: 200px;
+               
+                }
+                .image2:hover{
+                 background-color: blueviolet;
+                } 
+                .image2 img:hover {
+                    width:300px;
+                    height:175px;
+                    
+
+                }
+                .lst a:hover{
+                    text-decoration-line: none;
+                    background-color: coral;
+                    font-size: 20px;
+                }
+                .lst li:hover{
+                    display: inline;
+                    background-color: darkslategray;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                a:last-child{
+                    border: 2px solid blue;
+                }
+                a:first-child{
+                    font-weight: 700;
+                }
+                button:hover{
+                    font-size: 30px;
+                    color: goldenrod;
+                }
+                             
+                      .image2 a:visited{
+                        color: red;
+                    
+                      }
+                      .image2 a:active{
+                        color: rgb(199, 37, 83);
+                    
+                      }
+                      .paragraph:hover{
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        background-color: rgb(172, 145, 145);
+                      }
+                      /* pseudo element */
+                      p::first-letter{
+                        font-size: 20px;
+                        color:deeppink;
+                        text-transform: uppercase;
+                        
+                      }
+                      p::first-line{
+                        text-shadow: 30px;
+                        text-decoration-line: line-through;
+
+                      }
+                    .paragraph p::selection{
+                     color:chartreuse;
+                     background-color: blue;
+                     
+                         }
+                         .paragraph p::after{
+                         content:"Amazon";
+                         color: darkred;
+                         }
+                         .lst2 li a:hover
+                         {
+
+                            display:inline;
+                         }
+
+    </style>
+</head>
+<body>
+<!-- comments -->
+<!-- headings -->
+ <div class="headings">
+    <div class="heading">
+        <h1>HTMLBASIC</h1>
+        <h1>css basic</h1>
+        <h1>htmlbasic</h1>
+    </div>
+     <div class="heading">
+    <h1>bhimesh</h1>
+    <h1>jag</h1>
+    </div>
+ <button>signup</button>
+</div>
+<br>
+<hr>
+<!-- paragraph -->
+ <div class="para"></div>
+ <div class="paragraph">
+<p>mndncjdhcgdcschsgdchsg</p>
+
+<p>mndncjdhcgdcschsgdchsg</p>
+<p>Amazon Web Services (AWS) is a subsidiary of Amazon that provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.</p>
+<p>mndncjdhcgdcschsgdchsg</p>
+<p>mndncjdhcgdcschsgdchsg</p>
+<p>mndncjdhcgdcschsgdchsg</p>
+<p>mndncjdhcgdcschsgdchsg</p>
+</div>
+<hr>
+<!-- image from local folder -->
+ <div class="images">
+    <div class="image1">
+        <img src="data:image/jpeg;base64,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" alt="">
+    </div>
+    <div class="image2">
+        <img src="../apple.jpg" alt="fruit">
+        <br>
+        <img src="../fruit.jpg" alt="apple">
+        <a href="https://www.amazon.in">Shoping</a>
+ </div>
+
+<hr>
+<!-- anchortag -->
+ <div class="anc">
+    <div class="lst">
+        <ul>
+            <li><a href="https://www.amazon.in">online</a></li>
+            <li><a href="https://www.amazon.in">others</a></li>
+                <a href="https://www.amazon.in">Amazon</a>
+                <a href="https://www.amazon.in">India</a>
+             </ul>
+        <a href="https://www.amazon.in">Shoping</a>
+    </div>
+    <div class="lst2">
+        <ul>
+            <li><a href="https://www.amazon.in">online</a></li>
+            <li><a href="https://www.amazon.in">others</a></li>
+            <li><a href="https://www.amazon.in">Amazon</a></li>
+            <li><a href="https://www.amazon.in">India</a></li>
+        </ul>        
+    </div>
+
+</div>
+</body>
+</html>
+
