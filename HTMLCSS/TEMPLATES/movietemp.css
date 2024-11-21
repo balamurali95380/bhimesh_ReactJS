@@ -1,9 +1,12 @@
+body {
+    background-color: beige;
+}
 .row1 {
     overflow: auto;
     background-color: rgb(157, 200, 185);
     }
 .heading {
-    margin: 0px 60px 0px 65px;
+    margin: 0px 30px 0px 35px;
     /* width: auto; */
     background-color: darkseagreen;
 }
@@ -32,18 +35,16 @@ a {
 }
 .row2 {
         overflow: auto;
-        border: 2px solid black;
-        margin: 25px 68px 0px 65px;
 }
 .select1 select {
-    width: 250px;
+    width: 300px;
     height: 40px;
     margin-right: 0px;
     background-color: rosybrown;
 }
 .select1 {
-    margin: 0px;
-    background-color: black;
+    margin: 15px 35px 0px 35px;
+    background-color: #323a33;
 }
 input[type="search"] {
     width: 873px;
@@ -54,11 +55,11 @@ input[type="search"] {
 .row3 {
     overflow: auto;
     float: right;
-    margin-top: 15px;
+    margin-top: 0px;
 }
 .social {
     background-color: #d6afd0;
-    margin: 10px 59px 15px 10px;
+    margin: 5px 25px 0px 10px;
 }
 .social p {
     float: left;
@@ -66,5 +67,55 @@ input[type="search"] {
 .social a {
     text-decoration-line: none;
     float: right;
-    padding: 10px 10px 10px 11px;
+    padding: 14px 10px 10px 11px;
+}
+.row4 {
+    overflow: auto;
+    width: 1200px;
+    margin: 15px 10px 10px 35px;
+}
+.subpic1 img {
+    width: 255px;
+    height: 200px;
+}
+.subpic2 img {
+    width: 255px;
+    height: 200px;
+}
+
+.subpic1 {
+    float: left;
+    margin-right: 52px;
+}
+
+.subpic2 {
+    float: right;
+    margin-right: 20px;
+}
+.row5 {
+    overflow: auto;
+    margin: auto;
+}
+.titl {
+    width: 750px;
+    margin-left: 60px;
+    padding-left: 40px;
+    }
+   
+
+.tail {
+    float: right;
+}
+.head {
+    float: left;
+}
+.name {
+    padding-left: 10px;
+}
+.lst ul {
+    padding-left: 0px;
+}
+.lst li {
+    display: inline;
+    margin: 5px;
 }

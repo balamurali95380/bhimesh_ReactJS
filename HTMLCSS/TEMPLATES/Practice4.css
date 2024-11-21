@@ -1,0 +1,214 @@
+body{
+    background-color: chocolate;
+}
+.container {
+  
+    background-color: beige;
+    overflow: auto;
+    border: 1px solid black;
+    border-radius: 4px;
+     }
+    header
+    {
+        overflow:auto;
+        color: #1f2202;
+        margin: auto;
+        background-color: #1f2202;
+        height: 75px;
+       
+    }
+    .logo
+    {
+        float: left;
+        margin-left: 173px;
+    }
+    .list1
+    {
+        float: right;
+        margin-right: 155px;
+        
+    }
+    .list1 li {
+        display: inline;
+        margin-right: 20px;
+        font-size: 14px;
+        border-right: 2px dashed wheat;
+        padding: 10px;
+    }
+    .list1 a {
+        color: darkorange;    
+        text-decoration-line: none; 
+      
+    }
+    nav{
+        width: 900px;
+        margin: auto;
+        overflow: auto;
+       
+    }
+   
+    /* section */
+    .larg {
+        width: 600px;
+        height: 300px;
+        float: left;
+        border-right: 1px solid grey;
+        padding-right: 5px;
+        margin-left: 10px;
+    }
+    .catg {
+        width: 260px;
+        float: right;
+        margin-right: 0px;
+        background-color: rgb(19, 124, 92);
+    }
+    /* box info */
+    .services {
+        width: 900px;
+        margin: auto;
+        height: 210px;
+    }
+    .info {
+        /* background-color: rgb(167, 193, 38); */
+        border: 1px solid;
+        width: 215px;
+        height: 175px;
+        float: left;
+        margin-left: 8px;
+        
+    }
+    .info h3 {
+        font-size: 14px;
+        /* padding: 0px; */
+        margin: 5px;
+    }
+    .info4 h3 {
+        font-size: 14px;
+        /* padding: 0px; */
+        margin: 3px;
+    }
+    .info p {
+        
+            font-size: 14px;
+            margin-left: 5px;
+        
+    }
+    .info4 p {
+        font-size: 14px;
+        margin-left: 3px;
+    }
+    .info a,.info4 a {
+        font-size: 14px;
+        text-decoration-line: none;
+        color:yellow ;
+        text-align: justify;
+
+    }
+    .info4 {
+        border: 1px solid;
+        width: 215px;
+        height: 175px;
+        float: right;
+        background-color: rgb(113, 113, 194);
+        margin-top: 0px;
+    }
+    /* footer */
+    footer {
+        overflow: auto;
+        margin: auto;
+        background-color: grey;
+        font-size: 14px;
+        height: 112px;
+        margin-top: 0px;
+    }
+    
+    .contact {
+        /* text-align: justify; */
+        width: 200px;
+        padding-left: 85px;
+        margin-left: 94px;
+        height: 0px;
+    }
+    .contact h4 {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .contact p {
+        font-size: 13px;
+    }
+    .ftrlst {
+        float: right;       
+        margin-right: 110px;
+        padding-right: 62px;
+    } 
+    .ftrlst ul {
+        margin-top: 0px;
+        /* color: white; */
+    }
+    .ftrlst li {
+        display: inline;
+        border-right-style: inset;
+        color: deepskyblue;
+    }
+    .ftrlst a {
+        text-decoration-line: none;
+        padding-right: 10px;
+        color: initial;
+    }
+    .ftrlist li a:hover{
+        color: rgb(194, 192, 56);
+       
+    }
+    .ftrlst p {
+        /* height: 20px; */
+        margin-left: 92px;
+        margin-top: 35px;
+        padding-top: 10px;
+    }
+    /* footer ends */
+    
+    section {
+            overflow: auto;
+            width: 900px;
+            margin: auto;
+            border-bottom: 1px solid grey;
+            margin-bottom: 30px;
+            
+    }
+    .logoimage img {
+        overflow: auto;
+        width: 900px;
+
+    }
+    .larg p{
+        font-size: 14px;
+    }
+    .larg h3 {
+        font-size: 25px;
+    }
+    .catg h3 {
+        font-size: 25px;
+        background-color: black;
+        color: white;
+       
+    }
+    .list li {
+        border-bottom: 2px dashed black;
+        list-style-type: disclosure-closed;
+        line-height: 1.5;
+        /* font-size: 16px; */
+    }
+    .list a {
+       
+        text-decoration-line: none; 
+      
+    }
+    .info.background1{
+        background-color: rgb(58, 123, 138);
+    }
+    .info.background2{
+        background-color: rgb(161, 105, 14);
+    }
+    .info.background3{
+        background-color: rgb(222, 196, 159);
+    }
