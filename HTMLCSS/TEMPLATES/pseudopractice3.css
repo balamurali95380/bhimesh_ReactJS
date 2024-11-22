@@ -261,9 +261,17 @@ body{
     .info.background1 p ::after
     {
       
-    }    .info.background1 p ::before
+    } 
+       .info.background1 p::before
     {
-       content: url(./ava1.jpg);
+       content:"aws"url(./ava1.jpg);
     }
-
+    .info.background2 p::after
+    {
+       content:"aws"url(./ava1.jpg);
+    }
+    .info.background3 p::before
+    {
+       content:"aws"url(./ava1.jpg);
+    }
 
