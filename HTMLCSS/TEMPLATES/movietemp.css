@@ -98,8 +98,8 @@ input[type="search"] {
 }
 .titl {
     width: 750px;
-    margin-left: 60px;
-    padding-left: 40px;
+    margin-left: 25px;
+
     }
    
 
@@ -118,4 +118,45 @@ input[type="search"] {
 .lst li {
     display: inline;
     margin: 5px;
+}
+.pic2supic1{
+    float: left;
+    padding-right: 3px;
+}
+.pic2supic2{
+    float: right;
+}
+/* row6 */
+.row6 {
+    overflow: auto;
+    margin: auto;
+}
+.titl1{
+    width: 750px;
+    margin-left: 25px;
+
+    }
+
+.tail1 {
+    float: right;
+}
+.head1 {
+    float: left;
+}
+.name1 {
+    padding-left: 10px;
+}
+.lst1 ul {
+    padding-left: 0px;
+}
+.lst1 li {
+    display: inline;
+    margin: 5px;
+}
+.pic3supic1{
+    float: left;
+    padding-right: 3px;
+}
+.pic3supic2{
+    float: right;
 }
