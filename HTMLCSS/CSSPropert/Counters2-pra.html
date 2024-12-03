@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        counter-reset: section;
+      }
+      .telugu{
+        border: 2px solid blue;      
+        background-color: aqua;
+      }
+      h2 {
+        counter-reset: subsection;
+      }
+      h3{        
+        counter-reset: supersub;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: 15px;
+        font-size: 16px;
+      }
+      h4{
+        margin-left: 50px;
+      }
+      h2::before {
+        counter-increment: section;
+        content: " STATE - " counter(section) " : ";
+      }
+      h3::before {
+        counter-increment: subsection;
+        content: " Districts " counter(section) " . " counter(subsection) " . ";
+      
+      }
+      h4::before{
+        counter-increment: supersub;
+        content:"popular city:" counter(section)"_" counter(subsection)"_" counter(supersub)".";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="telugu">
+    <h1>TELUGU STATES:</h1>
+    <br>
+    <h2>andhrapradesh</h2>
+    
+
+    <h3>CHITTOOR</h3>
+    <h4>tirupathi</h4>
+    <h4>chittoor</h4>
+    <h3>KADAPA</h3>
+    <h3>KURNOOL</h3>
+    <h3>ANANTAPUR</h3>
+    <h3>VIZAG</h3>
+    <h3>GUNTUR</h3>
+
+    <h2>telangana</h2>
+  
+
+    <h3>HYDERABAD</h3>
+    <h4>secunderabad</h4>
+    <h4>gachibowli</h4>
+    <h3>SANGAREDDY</h3>
+    <h3>SIDDIPET</h3>
+    <h3>KHAMMAM</h3>
+    <h3>WARANGAL</h3>
+   </div>
+  </body>
+</html>

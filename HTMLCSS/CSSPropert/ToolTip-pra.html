@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip</title>
+    <style>
+      .web{
+        /* position: relative; */
+        display: inline-block;
+        border-bottom: 1px dotted rgb(174, 100, 100);
+      }
+
+      .develop {
+        visibility: hidden;
+        width: 160px;
+        background-color: rgb(63, 45, 58);
+        color: white;
+        text-align: center;
+        border-radius: 17px;
+        padding: 5px;
+        /* position: absolute; */
+        }
+      .web:hover .develop {
+        visibility: visible;
+        color:blue
+      }
+      .envabr {
+        visibility: hidden;
+      }
+      .env:hover .envabr {
+        visibility: visible;
+        border: 2px solid blueviolet;
+      }
+    </style>
+  </head>
+  <body> 
+
+    <div class="web">
+      <h2>web</h2>
+       <span class="develop"> website developmwnt info </span>
+    </div>
+    <div class="env">
+      <p>env</p>
+      <span class="envabr">ENVIRONMENT</span>
+    </div>
+  </body>
+</html>

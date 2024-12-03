@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* p{
+            display: block;
+        } */
+      #disInline .a {
+        display: inline;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      #disBlock .b {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(23, 155, 16);
+      }
+      #disInlinBlock .c {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(92, 4, 50);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="disInline">
+      Lorem ipsum is a dummy or placeholder text commonly used in graphic
+      design, publishing, and web development to fill empty spaces in a layout
+      that do not yet have contentLorem ipsum is a dummy or placeholder text
+      commonly used in graphic design, publishing, and web development to fill
+      empty spaces in a layout that do not yet have contentLorem ipsum is a
+      dummy or placeholder <span class="a">text</span>ncjsc
+      <span class="a">commonly</span> <span class="a">used</span> in graphic
+      design, publishing, and web development to fill empty spaces in a layout
+      that do not yet have contentLorem
+      <br>
+      <br><br>
+      <span class="a">used</span>
+    </p>
+    <br />
+    <p id="disBlock">
+      Lorem ipsum is a dummy or placeholder text commonly used in graphic
+      design, <span class="b">publishing</span><span class="b">and web</span>
+      <span class="b">development</span> to fill empty spaces in a layout that
+      do not yet have contentLorem ipsum is a dummy or placeholder text commonly
+      used in graphic design, publishing, and  <span class="b">web development</span>web development to fill empty
+      spaces in a layout that do not yet have ff<span class="b">content</span>dd
+    </p>
+    <br />
+    <p id="disInlinBlock">
+      Lorem ipsum is a dummy or placeholder text commonly used in graphic
+      design, publishing,
+      <span class="c">have</span>
+      <span class="c">contentLorem</span> iejdieid<span class="c">ipsum</span> is a
+      dummy or placeholder text commonly used in graphic design, publishing, and
+      web development to fill empty spaces in a layout that do not yet have
+      content
+    </p>
+  </body>
+</html>

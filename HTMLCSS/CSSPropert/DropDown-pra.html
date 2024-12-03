@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dropdown-content {
+        display: none;
+      }
+      #dropDown:hover .dropdown-content {
+        display: block;
+      }
+      #image:hover .image-content{
+        display: block;
+        width:500px; 
+        height:500px;       
+      }
+    .image-content:hover img{
+        display: block;
+        width:500px; 
+        height:500px;       
+      }
+
+      .image-content{
+      display: none;
+      }
+
+      
+      
+
+    </style>
+  </head>
+  <body>
+    <div id="dropDown">
+      <span>Mouse Hover On Me</span>
+      <div class="dropdown-content">
+        <p>Hello World</p>
+        <button>Submit</button>
+      </div>
+
+    </div>
+    <div id="image">
+      <img src="../fruit.jpg" alt="">
+      <div class="image-content">
+        <img src="../fruit.jpg" alt="">
+      </div>
+      
+    </div>
+  </body>
+</html>

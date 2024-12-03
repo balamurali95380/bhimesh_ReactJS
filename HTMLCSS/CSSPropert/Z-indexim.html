@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.frame {
+    position: relative;
+    width: 300px;
+    height: 354px;
+    border: 2px solid;
+}
+
+.name {
+    position: relative;
+    z-index: 0;
+    background-color: blue;
+    height: 354px;
+    color: aliceblue;
+}
+.model {
+    position: absolute;
+    z-index: 1;
+    background: pink;
+    top: 14px;
+}
+img {
+    height: 300px;
+    width: 300px;
+}
+
+.Price {
+    position: absolute;
+    z-index: 2;
+    background: cyan;
+    width: 70%;
+    left: 88px;
+    top: 245px;
+}
+</style>
+</head>
+<body>
+
+<h1>The z-index Property</h1>
+
+<div class="frame">
+  <div class="name">
+   ONEPLUS NORD
+</div>
+  <div class="model">
+    <img src="../LAYOUTS/oneplus.png" alt="">
+</div>
+  <div class="Price">
+    PRICE:13000RS/-
+  </div>
+</div>
+
+</body>
+</html>

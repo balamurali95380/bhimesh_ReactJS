@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combinators</title>
+    <style>
+      /* 1.descendent Selector ( space ) */
+       div h1 {
+        color: red;
+      }
+      /* 2.Child Selector (>) */
+      div > p {
+        color: blue;
+      }
+      /* 3. Adjacent Selector ( + ) */
+      div + p {
+        background-color: red;
+      }
+      /* 4. General Sibling Selector( ~ ) */
+      div ~ h1{
+        border: 2px solid;
+        color: chartreuse;
+      }
+      div ~ P{
+        border: 2px solid;
+        color: rgb(14, 83, 122);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Four Different Combinators
+     1.descendent Selector ( space )
+     2.Child Selector (>)
+     3. Adjacent Selector ( + )
+     4. General Sibling Selector( ~ ) -->
+
+    <div>
+     <h1>Andhrapradesh</h1>
+      <p>Telangana</p>
+    </div>
+    <p>Karnataka</p>
+    <h1>kerala</h1>
+  </body>
+</html>

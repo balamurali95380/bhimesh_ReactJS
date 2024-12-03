@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div img {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(102, 0, 255);
+        border: 2px solid;
+        transition: width 2s, height 2s,tranform 2s;
+      }
+      div {
+        transition-timing-function: ease-in-out;
+      }
+      div img:hover {        
+        width: 300px;
+        height: 200px;
+        border-radius:30%;
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hover on below element</h2>
+    <div><img src="../LAYOUTS/Tirumala_090615.jpg" alt=""></div>
+  </body>
+</html>
