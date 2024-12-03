@@ -1,0 +1,62 @@
+*{
+    margin:2px;
+}
+.container{
+    overflow: auto;
+    border: 2px solid;
+    display: flex;
+    flex-direction:column;
+    margin:auto;
+    text-align: center;
+
+}
+header{
+    background: blue;
+    flex: 1 2 3rem;
+    font-size: 30px;
+}
+nav{
+    background: rgb(22, 105, 55);
+    flex: 1 2 3rem;
+    justify-content: space-between;
+
+}
+nav ul li{
+    display:inline;
+    margin: 100px;
+    font-size: larger;
+    color: red;
+}
+main{
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+}
+.sec{
+    display:flex;
+    flex-direction:column;
+   
+}
+section{
+    background: rebeccapurple;
+    padding:2 rem;
+    height: 150px;
+}
+article{
+    background: hotpink;
+    height: 153px;
+    text-align: center;
+}
+
+aside{
+    background:orangered;
+    margin-left: 0px;
+     
+}
+aside img{
+    height:300px;
+    width:300px;      
+}
+footer{
+    background:grey
+}
