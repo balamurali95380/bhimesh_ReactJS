@@ -37,7 +37,7 @@ a {
         overflow: auto;
 }
 .select1 select {
-    width: 300px;
+    width: 278px;
     height: 40px;
     margin-right: 0px;
     background-color: rosybrown;
@@ -160,3 +160,36 @@ input[type="search"] {
 .pic3supic2{
     float: right;
 }
+.advinfoarti {
+    float: right;
+}
+.infmovies {
+    float: left;
+}
+.celebimg1,
+.celebimg2,
+.celebimg3,
+.celebimg4
+ {
+    float: left;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 15px;
+}
+    h1 {
+        margin: 24px;
+        font-size: 25px;
+    }
+    .player img {
+        width: 725px;
+        height: 375px;
+    }
+    .selctplay {
+        float: right;
+    }
+    .player {
+        float: left;
+    }
+    
