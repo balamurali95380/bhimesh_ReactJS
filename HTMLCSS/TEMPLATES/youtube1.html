@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyTube</div>
+    <input type="text" class="search-bar" placeholder="Search...">
+    <button class="search-button">Search</button>
+  </header>
+
+  <main class="main-content">
+    <section class="video-section">
+      <div class="video-player">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h1>Video Title</h1>
+        <p>Video description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="comments">
+        <h2>Comments</h2>
+        <p>User1: Great video!</p>
+        <p>User2: Thanks for sharing!</p>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Recommended Videos</h2>
+      <div class="recommended-video">
+        <img src="https://via.placeholder.com/120x90" alt="Thumbnail">
+        <p>Recommended Video 1</p>
+      </div>
+      <div class="recommended-video">
+        <img src="https://via.placeholder.com/120x90" alt="Thumbnail">
+        <p>Recommended Video 2</p>
+      </div>
+      <div class="recommended-video">
+        <img src="https://via.placeholder.com/120x90" alt="Thumbnail">
+        <p>Recommended Video 3</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

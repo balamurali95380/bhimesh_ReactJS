@@ -1,0 +1,219 @@
+*{
+    background: scroll;
+    margin:2px;
+    
+}
+.container{
+    background: bisque;
+    display: flex;
+    flex-direction:column;
+}
+header{
+    display: flex;
+    border:2px solid; 
+    box-shadow: 2px 2px;
+    color:chartreuse;
+    background:url(./TEMPLATES/bea.jpeg)  no-repeat;
+    position:sticky;
+    top:10px;
+    
+
+}
+.title{
+    text-align: left;
+   
+    position:static;
+    width: 275px;
+
+}
+a {
+    text-decoration-line: none;
+    border: 2px solid;
+    border-radius: 10%;
+    background-color: greenyellow;
+    font-size: 14px;
+}
+a:hover{
+    color: brown;
+    width:40px;
+    
+}
+input[type="search"] 
+{
+    height: 25px;
+    width: 325px;
+      background: crimson;
+
+}
+.sear {
+    margin-top: 25px;
+}
+nav{
+  
+    display: flex;
+    border:2px solid;
+    background-color: aqua;
+    flex-direction: row;
+    /* position:sticky; */
+    top:10px;
+  
+
+}
+nav .select{
+
+    border: 1px solid;
+}
+.links ul li{
+    display:inline;
+    
+      
+    
+}
+nav .select ol{
+    border:2px solid;
+    counter-reset: section;
+   
+    
+}
+.select ol{
+    list-style-type: square;
+}
+main{
+    display:flex;
+    flex-direction: row;
+}
+section{
+    border:2px solid;
+    color: blue;
+
+}
+section p::first-line{
+    font-size: smaller;
+    color: fuchsia;
+ 
+}
+span{
+    color: blue;
+}
+article{
+    border:2px solid;  
+    height: 370px;
+
+}
+aside{
+    border:2px solid;
+    display:flex;
+    flex-direction: column;
+    margin: 4px;
+ 
+}
+
+aside img:hover{
+        width: 300px;
+        height: 200px;
+        border-radius:30%;
+        transform: rotate(180deg);
+      }
+
+      #opa {
+        opacity: 0.5;
+        width: 345px;
+        height: 200px;
+    }
+
+     footer {
+        border: 2px solid;
+        text-align: center;
+        font-size: 20px;
+        background: grey;
+    }
+    .links ul {
+        margin-top: 25px;
+    }
+    
+       #topic1 li::before {
+        counter-increment: section;
+        content: " topic " counter(section) " : ";
+      }
+      #topic2 li::before {
+        counter-increment: section;
+        content: " topic " counter(section) " : ";
+      }
+       #content li::before {
+        counter-increment: subsection1;
+        content: " content " counter(subsection1) " :";
+      } 
+      .select #topic1 {       
+        counter-reset: section1;
+      }
+      .select #topic2{
+      counter-reset: section2;
+      }
+      .select #content{
+        counter-reset: subsection1;
+      }
+      #table li::before{
+        counter-increment: section1;
+        content: " topic " counter(section) " . "counter(section1);
+      }
+      
+      #form li::before{
+        counter-increment: section2;
+        content: " topic" counter(section1) " . "counter(section2);
+
+      }
+       .index {
+        position: relative;
+        width: 280px;
+        height: 250px;
+        /* border: 2px solid; */
+    } 
+    
+    .heading {
+        position: absolute;
+        z-index: 1;     
+        height: 10px;
+        color: aliceblue;
+    }
+    .img img {
+        position: absolute;
+        z-index: 0;
+        background: pink;
+        width: 344px;
+    }
+    #border {
+        width: 323px;
+        height: 200px;
+        border:15px solid;
+        border-image: url(./CSSPropert/row-trees-with-words-spring-bottom_1147637-753.avif) 30% round;
+        transition: width 2s, height 2s,tranform 2s;
+    
+    }
+    .anima{
+        border: 2px solid blue;
+        height: 100px;
+        /* width:250px; */
+        animation-name: anim;
+        animation-duration: 14s;
+        position: relative;
+        transition-timing-function: ease-in-out;
+      }
+      @keyframes anim {
+        10% {
+          background-color: red;
+          left: 70px;
+          top:100px;
+          border-radius: 50%;
+          background-image: url(../LAYOUTS/Tirumala_090615.jpg);
+        }
+        20% {
+          background-color: blue;
+          left: 100px;
+          top: 0px;
+          border-radius: 30%;
+        }
+      }
+ 
+    
+      
+
