@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX-PRACTICE1</title>
+    <style>
+        *{
+            background-color: rgb(148, 153, 126);
+            margin:12px;
+        }
+        .flex_proper1{
+                justify-content: flex-start;
+            flex-direction: row;
+            
+
+        }
+        .flex_proper2{
+           
+            justify-content:flex-end;
+        }
+        .flex_proper3{
+          
+            justify-content: center;
+        }
+        .flex_proper4{
+          
+            justify-content: space-around;
+        }
+        .flex_proper5{
+           
+            justify-content: space-between;
+        }
+        .flex_proper6{
+     
+            justify-content:space-evenly;
+        }
+        .flex_proper7{
+          
+            flex-wrap:wrap;
+        }
+        .flex_proper8{
+            
+            flex-wrap:wrap-reverse;
+        }
+        .flex_proper1,
+        .flex_proper2,
+        .flex_proper3,
+        .flex_proper4,
+        .flex_proper5,
+        .flex_proper6,
+        .flex_proper7,
+        .flex_proper8{
+            border: 2px solid rgb(32, 8, 113);
+            display: flex;
+        }
+        
+
+        .flex1,
+        .flex2,
+        .flex3,
+        .flex4,
+        .flex5,
+        .flex6,
+        .flex7,
+        .flex8,
+        .flex9,
+        .flex10,
+        .flex11,
+        .flex12,.flex13,.flex14,.flex15,.flex16,.flex17{
+           text-align: center; 
+           padding: 10px;
+           border: 2px solid blue;
+           color: rgb(34, 4, 91);
+           font-size: 14px;
+        }
+        h1{        
+            font-size: 20px;
+            background-color: #d21c6d;   
+            padding: 6px;
+            }
+            .flex17{
+                flex-grow: 2;
+            }
+            .flex16{
+                flex-grow: 4;
+            }
+    </style>
+</head>
+<body>
+    <h1>justify-content: flex-start</h1>
+    <div class="flex_proper1"> 
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
+    <h1>justify-content:flex-end</h1>
+    <div class="flex_proper2">       
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
+    <h1>justify-content: center</h1>
+    <div class="flex_proper3">      
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
+    <h1>justify-content: space-around</h1>
+    <div class="flex_proper4">       
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
+    <h1>justify-content: space-between</h1>
+    <div class="flex_proper5">        
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div> 
+    <h1>justify-content:space-evenly</h1>
+    <div class="flex_proper6">    
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div> 
+    <h1>flex-wrap: wrap</h1> 
+    <div class="flex_proper7">
+       <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>  
+        <div class="flex5">flex5</div>
+        <div class="flex6">flex6</div>
+        <div class="flex7">flex7</div>
+        <div class="flex8">flex8</div>  
+        <div class="flex9">flex9</div>
+        <div class="flex10">flex10</div>
+        <div class="flex11">flex11</div>
+        <div class="flex12">flex12</div>
+        <div class="flex13">flex13</div>  
+        <div class="flex14">flex14</div>
+        <div class="flex15">flex15</div>
+        <div class="flex16">flex16</div>
+        <div class="flex17">flex17</div>        
+    </div> 
+    <h1>flex-wrap:wrap-reverse</h1> 
+    <div class="flex_proper8">
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>  
+        <div class="flex5">flex5</div>
+        <div class="flex6">flex6</div>
+        <div class="flex7">flex7</div>
+        <div class="flex8">flex8</div>  
+        <div class="flex9">flex9</div>
+        <div class="flex10">flex10</div>
+        <div class="flex11">flex11</div>
+        <div class="flex12">flex12</div> 
+        <div class="flex13">flex13</div>  
+        <div class="flex14">flex14</div>
+        <div class="flex15">flex15</div>
+        <div class="flex16">flex16</div>
+        <div class="flex17">flex17</div>     
+    </div>  
+
+</body>
+</html>
