@@ -16,12 +16,12 @@ header{
     background:url(./TEMPLATES/bea.jpeg)  no-repeat;
     position:sticky;
     top:10px;
-    
-
+    flex-direction: row;
+    justify-content: space-evenly;
+   
 }
 .title{
-    text-align: left;
-   
+    text-align: left;   
     position:static;
     width: 275px;
 
@@ -47,6 +47,7 @@ input[type="search"]
 }
 .sear {
     margin-top: 25px;
+    padding-left: 20px;
 }
 nav{
   
@@ -192,7 +193,7 @@ aside img:hover{
     .anima{
         border: 2px solid blue;
         height: 100px;
-        /* width:250px; */
+         width:250px;
         animation-name: anim;
         animation-duration: 14s;
         position: relative;
@@ -213,6 +214,7 @@ aside img:hover{
           border-radius: 30%;
         }
       }
+     
  
     
       
