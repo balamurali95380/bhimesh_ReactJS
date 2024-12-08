@@ -55,11 +55,11 @@ code {
 }
 
 .fl_left {
-    float: left;
+    /* float: left; */
 }
 
 .fl_right {
-    float: right;
+    /* float: right; */
 }
 
 img {
@@ -79,13 +79,13 @@ img {
 }
 
 .imgl {
-    float: left;
+    /* float: left; */
     margin: 0 15px 15px 0;
     clear: left;
 }
 
 .imgr {
-    float: right;
+    /* float: right; */
     margin: 0 0 15px 15px;
     clear: right;
 }
@@ -101,6 +101,7 @@ footer,
 header,
 nav,
 section {
+    display:flex;
     display: block;
     margin: 0;
     padding: 0;
@@ -250,7 +251,7 @@ select {
 .three_quarter,
 .four_quarter {
     display: block;
-    float: left;
+    /* float: left; */
     margin: 0 20px 0 0;
 }
 
@@ -277,7 +278,7 @@ select {
 .two_third,
 .three_third {
     display: block;
-    float: left;
+    /* float: left; */
     margin: 0 30px 0 0;
 }
 
@@ -343,10 +344,10 @@ select {
     display: flex;
 }
 
-#header nav li {
-    /* display: inline; */
-    margin-right: 25px;
-    text-transform: uppercase;
+    #header nav li {
+        /* display: inline; */
+        margin-right: 91px;
+        text-transform: uppercase;
 }
 
 #header nav li.last {
@@ -374,6 +375,7 @@ select {
     width: 100%;
     margin: 0 0 30px 0;
     padding: 0;
+   
 }
 
 #container .last {
@@ -396,7 +398,11 @@ select {
     line-height: 1.8em;
 }
 
-#container #homepage #services {}
+#container #homepage #services {
+   
+        display: flex;
+    }
+
 
 #container #homepage #services article {}
 
@@ -421,17 +427,20 @@ select {
 
 #container #homepage #intro article {}
 
-#container #homepage #intro article figure {}
+#container #homepage #intro article figure {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 #container #homepage #intro article figure img {
-    float: right;
+    /* float: right; */
     margin: 0 0 10px 0;
     padding: 4px;
     border: 1px solid #D6D6D6;
 }
 
 #container #homepage #intro article figure figcaption {
-    float: left;
+    /* float: left; */
     width: 460px;
 }
 
@@ -445,6 +454,7 @@ select {
     padding: 30px 0;
     font-size: 12px;
     line-height: 1.4em;
+    display: flex;
 }
 
 #footer section h2.title {
@@ -471,6 +481,8 @@ select {
 
 #copyright {
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 #copyright p {

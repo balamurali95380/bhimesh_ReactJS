@@ -55,11 +55,11 @@ code {
 }
 
 .fl_left {
-    float: left;
+    /* float: left; */
 }
 
 .fl_right {
-    float: right;
+    /* float: right; */
 }
 
 img {
@@ -79,13 +79,13 @@ img {
 }
 
 .imgl {
-    float: left;
+    /* float: left; */
     margin: 0 15px 15px 0;
     clear: left;
 }
 
 .imgr {
-    float: right;
+    /* float: right; */
     margin: 0 0 15px 15px;
     clear: right;
 }
@@ -239,7 +239,7 @@ select {
 .three_quarter,
 .four_quarter {
     display: block;
-    float: left;
+    /* float: left; */
     margin: 0 20px 0 0;
 }
 
@@ -293,10 +293,16 @@ select {
 
 #header {
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.headerflex {
+    display: flex;
+    justify-content: space-between;
 }
 
 #header #hgroup {
-    float: left;
+    /* float: left; */
     margin: 0 0 20px 0;
 }
 
@@ -318,7 +324,7 @@ select {
 #header form {
     display: block;
     width: 290px;
-    float: right;
+    /* float: right; */
     margin: 20px 0;
     padding: 0;
 }
@@ -407,17 +413,20 @@ select {
     width: 100%;
 }
 
-#container #slider figure {}
+#container #slider figure {
+    display: flex;
+        flex-direction: row-reverse;
+}
 
 #container #slider figure img {
-    float: right;
+    /* float: right; */
     width: 630px;
     height: 300px;
 }
 
 #container #slider figure figcaption {
     display: block;
-    float: left;
+    /* float: left; */
     width: 290px;
     height: 260px;
     padding: 20px;
@@ -452,6 +461,7 @@ select {
 
 #container #intro section {
     width: 100%;
+    display: flex;
 }
 
 #container #intro section article {}
@@ -468,11 +478,20 @@ select {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+}
+.imgcnt {
+    display: flex;
+}
+.imgcnt p {
+    /* margin: -31px; */
+    text-align: justify;
+    margin-top: 0px;
 }
 
 #container #intro section article figure ul li {
-    display: inline-block;
-    float: left;
+    /* display: inline-block; */
+    /* float: left; */
     margin: 0 25px 0 0;
 }
 
@@ -502,6 +521,7 @@ select {
     display: block;
     width: 100%;
     line-height: 1.6em;
+    display:flex;
 }
 
 #container #homepage section {
@@ -558,9 +578,12 @@ select {
 
 #footer {
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 #footer p {
     margin: 0;
     padding: 0;
+   
 }
