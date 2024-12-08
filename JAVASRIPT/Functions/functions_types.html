@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funmul</title>
+    </head>
+<body>
+    normal addition function <br>
+    <script>
+        
+        function multflynumbers(num1,num2,num3)
+        {
+            return(num1*num2*num3);
+            
+        }
+        var total=multflynumbers(2,5,6);
+        document.write("total:",total);
+        
+        
+    
+        function multflynumbers2(num1,num2,num3)
+        {
+            var total=num1*num2*num3;
+            document.write("total:",total);
+            
+        }
+        multflynumbers2(2,5,6);
+
+        function subnumbers(num1,num2,num3)
+        {
+            return(num1-num2-num3);
+            
+        }
+        var total=subnumbers(10,5,6);
+        document.write("total:",total);
+    
+        function subnumbers2(num1,num2,num3)
+        {
+            var total=num1-num2-num3;
+            document.write("total:",total);
+            
+        }
+        subnumbers2(2,5,6);
+
+    
+
+        function avgnumbers(num1,num2,num3)
+        {
+            return((num1+num2+num3)/3);
+            
+        }
+        var total=avgnumbers(10,5,6);
+        document.write("total:",total);
+    
+        function avgnumbers2(num1,num2,num3)
+        {
+            var total=(num1+num2+num3)/3;
+            document.write("total:",total);            
+            
+        }
+        avgnumbers2(2,5,6); 
+    </script>
+    <hr>
+    <h1>addition</h1>
+    <hr>
+    variable dec
+    <br>
+    <script>
+                var add=function(num1,num2){
+                    return(num1+num2);
+                }
+                var total=add(2,3);
+                document.write("total",total); 
+                
+                var addition=function(num1,num2){
+                    var sum=num1+num2;
+                    document.write("total",sum);
+                }
+                addition(2,3);       
+    </script>
+    <hr>
+    arrow function <br>
+    <script>
+               var add=(num1,num2)=>{
+                    return(num1+num2);
+                }
+                var total=add(2,3);
+                document.write("total",total); 
+                
+                var addition=(num1,num2)=>{
+                    var sum=num1+num2;
+                    document.write("total",sum);
+                }
+                addition(2,3);
+    </script>
+    <hr>
+    selfinvokedfunction <br>
+    <script>
+        (function addition3(num1,num2) {
+            return(num1+num2);
+            
+        })
+        var sum2=(2,5);
+        document.write("sum2",sum2);      
+
+        (function addition1(num1,num2) {
+            var sum=num1+num2;
+            document.write ("sum",sum )     
+            
+        })(10,20,30);
+        
+    </script> 
+    <hr>
+    <h1> substraction functions</h1>
+   
+    <hr>
+    variable dec
+    <br>
+    <script>
+                var sub1=function(num1,num2){
+                    return(num1-num2);
+                }
+                var total=sub1(2,3);
+                document.write("total",total); 
+                
+                var sub2=function(num1,num2){
+                    var substraction=num1-num2;
+                    document.write("total",substraction);
+                }
+                sub2(2,3);       
+    </script>
+    <hr>
+    arrow function <br>
+    <script>
+               var sub3=(num1,num2)=>{
+                    return(num1-num2);
+                }
+                var total=sub3(2,3);
+                document.write("total",total); 
+                
+                var sub4=(num1,num2)=>{
+                    var substraction2=num1-num2;
+                    document.write("total",substraction2);
+                }
+                sub4(2,3);
+    </script>
+    <hr>
+    selfinvokedfunction <br>
+    <script>
+        (function sub5(num1,num2) {
+            return(num1-num2);
+            
+        })
+        var substr1=(2,5);
+        document.write("sub5",substr1);      
+
+        (function sub6(num1,num2) {
+            var substr2=num1-num2;
+            document.write ("sub6",substr2 )     
+            
+        })(10,20);
+        
+    </script> 
+    <!-- multifly -->
+     <hr>
+     <h1>multifly function types</h1>
+     <hr>
+     vardec
+     <br>
+     <script>
+        var mul1=function(num1,num2){
+            return(num1*num2);
+        }
+        var total=mul1(2,3);
+        document.write("mul1",total); 
+        
+        var mul2=function(num1,num2){
+            var total=num1*num2;
+            document.write("mul2",total);
+        }
+        mul2(2,3);       
+</script>
+<hr>
+arrow function <br>
+<script>
+       var mul3=(num1,num2)=>{
+            return(num1*num2);
+        }
+        var total=mul3(2,3);
+        document.write("mul3",total); 
+        
+        var mul4=(num1,num2)=>{
+            var total=num1*num2;
+            document.write("mul4",total);
+        }
+        mul4(2,3);
+</script>
+<hr>
+selfinvokedfunction <br>
+<script>
+(function mul5(num1,num2) {
+    return(num1*num2);
+    
+})
+var substr1=(2,5);
+document.write("mul5",substr1);      
+
+(function mul6(num1,num2) {
+    var total=num1*num2;
+    document.write ("mul6",total )     
+    
+})(10,20);
+
+</script> 
+<!-- multifly -->
+<hr>
+<h1>division function types</h1>
+<hr>
+vardec fun <br>
+<script>
+   var div1=function(num1,num2){
+       return(num1/num2);
+   }
+   var total=div1(2,3);
+   document.write("div1",total); 
+   
+   var div2=function(num1,num2){
+       var total=num1/num2;
+       document.write("div2",total);
+   }
+   div2(2,3);       
+</script>
+<hr>
+arrow function <br>
+<script>
+  var div3=(num1,num2)=>{
+    return(num1/num2);
+   }
+   var total=div3(2,3);
+   document.write("div3",total); 
+   
+   var div4=(num1,num2)=>{
+       var total=num1/num2;
+       document.write("div4",total);
+   }
+   div4(2,3);
+</script>
+<hr>
+selfinvokedfunction <br>
+<script>
+(function div5(num1,num2) {
+    return(num1/num2);
+
+})
+var substr1=(2,5);
+document.write("div5",substr1);      
+
+(function div6(num1,num2) {
+var total=num1/num2;
+document.write ("div6",total )     
+
+})(10,20);
+
+</script> 
+
+  
+    
+</body>
+</html>
