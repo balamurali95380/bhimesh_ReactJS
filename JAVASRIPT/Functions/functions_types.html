@@ -108,7 +108,7 @@
             var sum=num1+num2;
             document.write ("sum",sum )     
             
-        })(10,20,30);
+        })(10,20);
         
     </script> 
     <hr>
@@ -263,8 +263,58 @@ document.write ("div6",total )
 })(10,20);
 
 </script> 
+<hr>
+<h1>avg numbers</h1>
+<hr>
+normal function
+<br>
+<script>
+    function avgnum1(num1,num2,num3,num4) {
+        return((num1+num2+num3+num4)/4);        
+    }
+    var total=avgnum1(12,23,34,45);
+    document.write("avg1",total);
 
-  
+    function avgnum2(num1,num2,num3,num4) {
+        var total=(num1+num2+num3+num4)/4; 
+        document.write("avg2",total);       
+    }
+    avgnum2(12,23,34,45);
+    
+    </script>
+    <hr>
+    variable expression
+    <br>
+<script>
+    var avgnum3=function(num1,num2,num3,num4) {
+        return((num1+num2+num3+num4)/4);        
+    }
+    var total=avgnum3(12,23,34,45);
+    document.write("avg3",total);
+
+     var avgnum4=function(num1,num2,num3,num4) {
+        var total=(num1+num2+num3+num4)/4; 
+        document.write("avg4",total);       
+    }
+    avgnum4(12,23,34,45);
+    
+    </script>
+     <hr>
+     arrow function
+     <br>
+ <script>
+     var avgnum5=(num1,num2,num3,num4)=> {
+         return((num1+num2+num3+num4)/4);        
+     }
+     var total=avgnum5(12,23,34,45);
+     document.write("avg5",total);
+ 
+      var avgnum6=(num1,num2,num3,num4)=> {
+         var total=(num1+num2+num3+num4)/4; 
+         document.write("avg6",total);       
+     }
+     avgnum6(12,23,34,45);
+     </script> 
     
 </body>
 </html>
