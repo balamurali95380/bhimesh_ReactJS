@@ -97,14 +97,14 @@
     <hr>
     selfinvokedfunction <br>
     <script>
-        (function addition3(num1,num2) {
+        var sum2=(function (num1,num2) {
             return(num1+num2);
             
         })
-        var sum2=(2,5);
+        (2,5);
         document.write("sum2",sum2);      
 
-        (function addition1(num1,num2) {
+        (function (num1,num2) {
             var sum=num1+num2;
             document.write ("sum",sum )     
             
@@ -148,14 +148,14 @@
     <hr>
     selfinvokedfunction <br>
     <script>
-        (function sub5(num1,num2) {
+        var substr1= (function (num1,num2) {
             return(num1-num2);
             
         })
-        var substr1=(2,5);
+        (2,5);
         document.write("sub5",substr1);      
 
-        (function sub6(num1,num2) {
+        (function (num1,num2) {
             var substr2=num1-num2;
             document.write ("sub6",substr2 )     
             
@@ -199,14 +199,14 @@ arrow function <br>
 <hr>
 selfinvokedfunction <br>
 <script>
-(function mul5(num1,num2) {
+var substr1= (function (num1,num2) {
     return(num1*num2);
     
 })
-var substr1=(2,5);
+(2,5);
 document.write("mul5",substr1);      
 
-(function mul6(num1,num2) {
+(function (num1,num2) {
     var total=num1*num2;
     document.write ("mul6",total )     
     
@@ -249,14 +249,13 @@ arrow function <br>
 <hr>
 selfinvokedfunction <br>
 <script>
-(function div5(num1,num2) {
+ var total=(function (num1,num2) {
     return(num1/num2);
 
-})
-var substr1=(2,5);
-document.write("div5",substr1);      
+})(2,5);
+document.write("div5",total);      
 
-(function div6(num1,num2) {
+(function (num1,num2) {
 var total=num1/num2;
 document.write ("div6",total )     
 
@@ -315,6 +314,26 @@ normal function
      }
      avgnum6(12,23,34,45);
      </script> 
+      <hr>
+      self
+      <br>
+  <script>
+     var total= (function(n1,n2,n3) {
+        return((n1+n2+n3)/3);        
+      })
+      (2,3,5);
+      document.write("avg7",total);
+
+
+      (function(n1,n2,n3) {
+        var total=(n1+n2+n3)/3; 
+        document.write("avg8",total);       
+      })
+      (2,3,5);  
+
+      </script> 
+      
+
     
 </body>
 </html>
