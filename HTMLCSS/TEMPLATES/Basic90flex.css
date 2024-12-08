@@ -1,0 +1,150 @@
+
+.container{
+
+    /* background-color: cornflowerblue; */
+    /* margin: auto; */
+}
+.tit,section,article,aside,footer{
+    border: 1px solid blue;
+    background-color: darkkhaki;
+    margin:auto;   
+}
+.tit{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2px;
+
+}
+header{
+    display:flex;
+   justify-content:space-around;
+}
+nav ul{
+    display: flex;
+    background-color: black;
+    padding: 8px;
+    justify-content: space-around;
+    
+}
+nav ul li{
+    
+       
+        list-style-type: none; 
+}
+nav ul li a{
+    text-decoration-line: none;
+}
+
+section {
+    display: flex;
+    width:960px;
+    margin-bottom: 2px;
+   
+}
+article{
+    display: flex;
+    width:960px;
+    margin-bottom: 2px;
+}
+
+.img2 {
+    display: flex;
+}
+aside {
+    display: flex;
+    width: 960px;
+    margin-bottom: 2px;
+}
+.about {
+    display: flex;
+}
+.basic {
+    margin-right: 65px;
+    padding-right: 75px;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.basic p{
+    margin-top: 0px;
+}
+.basic h1 {  
+    margin-bottom: 0px;
+}
+a {
+    color: yellow;
+    text-decoration-line: none;
+}
+.img {
+    margin: 2px;
+}
+p {
+    font-size: 14px;
+    text-align: justify;
+}
+.img2 a{
+    margin:3px;
+}
+.lin1 {
+    text-align: center;
+}
+nav {
+    width: 960px;
+    /* text-align: center; */
+    margin: auto;
+}
+.quick {
+    width: 618px; */
+    padding-right: 100px;
+    margin-right: 6px;
+    /* /* position: fixed;
+    top: 10px; */
+    /* right: -4px; */
+    /* background-color: ghostwhite; */ */
+}
+.about {
+    display: flex;
+    flex-direction: column;
+}
+.imgcon2 {
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+}
+li {
+    line-height: 2.0;
+}
+.cont3 {
+    text-align: justify;
+    padding: 0px 10px;
+}
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+    }
+    footer p {
+        
+    }
+    footer a {
+        margin-top: 10px;
+        /* padiing-top: 20px; */
+        padding-left: 30px;
+    }
+    .content {
+        padding: 15px;
+    }
+    .content2 {
+        padding: 10px;
+    }
+    .blog {
+        padding: 0px 10px 10px 10px;
+    }
+    h3 {
+        font-size: 14px;
+        font-weight: 100;
+        margin-left: 145px;
+        padding-left: 65px;
+    }

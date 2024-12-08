@@ -12,24 +12,31 @@
         .flex_proper1{
                 justify-content: flex-start;
             flex-direction: row;
-            
+            /* position:sticky;
+            top:10px;  */
 
         }
         .flex_proper2{
            
             justify-content:flex-end;
+            position:relative;
         }
         .flex_proper3{
           
             justify-content: center;
+            /* position:absolute;
+            top:10px;*/
         }
         .flex_proper4{
           
             justify-content: space-around;
+            /* position:fixed;
+            bottom:10px; */
         }
         .flex_proper5{
            
             justify-content: space-between;
+          
         }
         .flex_proper6{
      
@@ -43,6 +50,14 @@
             
             flex-wrap:wrap-reverse;
         }
+        .flex_proper9{
+            
+            flex-direction: row-reverse;
+        }
+        .flex_proper10{
+            
+            flex-direction: column-reverse;
+        }
         .flex_proper1,
         .flex_proper2,
         .flex_proper3,
@@ -50,7 +65,10 @@
         .flex_proper5,
         .flex_proper6,
         .flex_proper7,
-        .flex_proper8{
+        .flex_proper8,
+        .flex_proper9,
+        .flex_proper10
+        {
             border: 2px solid rgb(32, 8, 113);
             display: flex;
         }
@@ -169,7 +187,21 @@
         <div class="flex15">flex15</div>
         <div class="flex16">flex16</div>
         <div class="flex17">flex17</div>     
-    </div>  
+    </div> 
+    <h1> flex-direction: row-reverse</h1> 
+    <div class="flex_proper9">       
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
+    <h1>flex-direction: column-reverse</h1>
+    <div class="flex_proper10">       
+        <div class="flex1">flex1</div>
+        <div class="flex2">flex2</div>
+        <div class="flex3">flex3</div>
+        <div class="flex4">flex4</div>      
+    </div>
 
 </body>
 </html>
