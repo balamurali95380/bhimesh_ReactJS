@@ -14,7 +14,7 @@
             
         }
         var total=multflynumbers(2,5,6);
-        document.write("total:",total);
+        document.write("total:",total+"<br>");
 
         
         
@@ -22,7 +22,7 @@
         function multflynumbers2(num1,num2,num3)
         {
             var total=num1*num2*num3;
-            document.write("total:",total);
+            document.write("total:",total+"<br>");
             
         }
         multflynumbers2(2,5,6);
@@ -33,12 +33,12 @@
             
         }
         var total=subnumbers(10,5,6);
-        document.write("total:",total);
+        document.write("total:",total+"<br>");
     
         function subnumbers2(num1,num2,num3)
         {
             var total=num1-num2-num3;
-            document.write("total:",total);
+            document.write("total:",total+"<br>");
             
         }
         subnumbers2(2,5,6);
@@ -55,15 +55,23 @@
             
         }
         var total=avgnumbers(10,5,6);
-        document.write("total:",total);
+        document.write("total:",total+"<br>");
     
         function avgnumbers2(num1,num2,num3)
         {
             var total=(num1+num2+num3)/3;
-            document.write("total:",total);            
+            document.write("total:",total+"<br>");            
             
         }
-        avgnumbers2(2,5,6);        
+        avgnumbers2(2,5,6); 
+        
+        var a =function add(n1,n2,n3){
+            var total=n1+n2;
+            document.write("addition",total+"<br>");
+             return(n1+n2+n3);
+        }; a (1,2,3); 
+        var b=a(1,2,3);       
+         document.write("total",b);
 
 
         
