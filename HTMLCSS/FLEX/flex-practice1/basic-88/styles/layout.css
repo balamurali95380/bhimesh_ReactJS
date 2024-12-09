@@ -479,13 +479,11 @@ select {
 
 /*----------------------------------------------Copyright-------------------------------------*/
 
-#copyright {
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-}
 
-#copyright p {
-    margin: 0;
-    padding: 0;
+.foot {
+    display: flex;
+    padding: 20px 0px;
+    width: 960px;
+    margin: auto;
+    justify-content: space-between;
 }
