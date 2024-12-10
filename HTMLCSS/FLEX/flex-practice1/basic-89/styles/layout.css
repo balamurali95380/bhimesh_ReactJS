@@ -258,7 +258,7 @@ select {
 
 .four_quarter {
     width: 960px;
-    float: none;
+    /* float: none; */
     margin-right: 0;
     clear: both;
 }
@@ -281,7 +281,7 @@ select {
 
 .three_third {
     width: 960px;
-    float: none;
+    /* float: none; */
     margin-right: 0;
     clear: both;
 }
@@ -329,6 +329,9 @@ select {
 #header nav ul {
     padding: 0 20px;
     display: flex;
+}
+.lorum{
+    display:flex;
 }
 
 #header nav li {
@@ -395,7 +398,7 @@ select {
 #container #homepage #services article {}
 
 #container #homepage #services figure {
-    display: inline;
+    /* display: inline; */
     /* float: left; */
 }
 

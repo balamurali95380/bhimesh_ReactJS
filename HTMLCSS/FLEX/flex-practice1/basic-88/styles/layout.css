@@ -269,7 +269,7 @@ select {
 
 .four_quarter {
     width: 960px;
-    float: none;
+    /* float: none; */
     margin-right: 0;
     clear: both;
 }
@@ -292,7 +292,7 @@ select {
 
 .three_third {
     width: 960px;
-    float: none;
+    /* float: none; */
     margin-right: 0;
     clear: both;
 }
