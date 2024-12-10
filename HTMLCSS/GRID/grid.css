@@ -1,0 +1,12 @@
+.gridbox,.gridrow,.gridcoloumn{
+    background-color: darkgrey;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, auto);
+}
+.gridb1{
+    border:2px solid rgb(92, 4, 52);
+    text-align: center;
+    padding:15px;
+    font-size: 12px;
+}
