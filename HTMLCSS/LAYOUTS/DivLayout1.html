@@ -1,74 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIV ELEMENT</title>
     <style>
-        #container
-         {
+        #container {
             border: 2px solid;
             width: 750px;
-         }
-        #heading h1
-         {
+        }
+
+        #heading h1 {
             border: 2px solid;
             padding: 20px;
             margin: 0.5px;
             text-align: center;
             background-color: black;
             color: white;
-         }
-        .BODY
-         {
-                border: 2px solid;
-                margin: 0.5px;
-                height: 150px;
-           
-         }
-         .Part1 
-         {   
+        }
+
+        .BODY {
+            border: 2px solid;
+            margin: 0.5px;
+            height: 150px;
+
+        }
+
+        .Part1 {
             margin: 0.5px;
             float: left;
             width: 125px;
             background: cadetblue;
             height: 148px;
-         }
-        .Part1 ul 
-        {
+        }
+
+        .Part1 ul {
             list-style-type: none;
         }
-        .part2{
-        margin-left: 126px;
-    }
-    .part2 p
-       {
+
+        .part2 {
+            margin-left: 126px;
+        }
+
+        .part2 p {
             width: auto;
             text-align: justify;
             padding-right: 10px;
         }
-        footer
-        {
+
+        footer {
             color: white;
         }
-        div#footer
-        {
+
+        div#footer {
             border: 1px solid;
             margin: 1.5px;
             background-color: black;
             text-align-last: center;
         }
-      h2 
-       {
+
+        h2 {
             margin: 5px;
-       }
+        }
+
+        @media screen and (max-width:600px) {
+            #container {
+                border: 2px solid;
+                width: auto;
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+                background-color: cyan;
+
+            }
+
+            #heading h1 {
+                border: 2px solid;
+                padding: 10px;
+                margin: 0;
+                text-align: center;
+                background-color: black;
+                color: rgb(158, 220, 224);
+            }
+
+            .BODY {
+                border: 2px solid;
+                margin: 0px;
+                display: flex;
+                height: auto;
+                gap: 2px;
+
+            }
+
+            .Part1 {
+
+                margin: 0.5px;
+                background: cadetblue;
+                height: 230px;
+                   }
+
+            .Part1 ul {
+
+                list-style-type: none;
+                line-height: 1.8rem;
+
+            }
+
+            .part2 {
+                flex: 3;
+                margin: 0px;
+                padding: 0px;
+                overflow: auto;
+
+            }
+
+            .part2 p {
+                width: auto;
+                text-align: justify;
+            }
+
+            footer {
+                color: rgb(26, 101, 151);
+            }
+
+            div#footer {
+                border: 1px solid;
+                margin: 0px;
+                background-color: black;
+                text-align: center;
+            }
+
+        }
+        @media screen and (min-width:970px) {
+            #container {
+                border: 2px solid;
+                width: auto;
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+                background-color: cyan;
+
+            }
+
+            #heading h1 {
+                border: 2px solid;
+                padding: 10px;
+                margin: 0;
+                text-align: center;
+                background-color: rgb(125, 40, 85);
+                color: rgb(154, 167, 168);
+            }
+
+            .BODY {
+                border: 2px solid;
+                margin: 0px;
+                display: flex;
+                height: auto;
+                gap: 2px;
+
+            }
+
+            .Part1 {
+
+                margin: 0.5px;
+                background: cadetblue;
+                height: 230px;
+                   }
+
+            .Part1 ul {
+
+                list-style-type: none;
+                line-height: 1.8rem;
+
+            }
+
+            .part2 {
+                flex: 3;
+                margin: 0px;
+                padding: 0px;
+                overflow: auto;
+
+            }
+
+            .part2 p {
+                width: auto;
+                text-align: justify;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id="heading">
             <h1>INDIA</h1>
-        </div>        
+        </div>
         <div class="BODY">
             <div class="Part1">
                 <ul>
@@ -77,14 +204,21 @@
                     <li>GOA</li>
                     <li>Pune</li>
                 </ul>
-            </div> 
+            </div>
             <div class="part2">
                 <h2>About INDIA</h2>
-                <p>India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country.
-                   India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country.India, officially the Republic of India, is a country in South Asia. It is the seventh-largest country in the world by area and the most populous country.</p>
-            </div>          
+                <p>India, officially the Republic of India, is a country in South Asia. It is the seventh-largest
+                    country in the world by area and the most populous country.
+                    India, officially the Republic of India, is a country in South Asia. It is the seventh-largest
+                    country in the world by area and the most populous country.India, officially the Republic of India,
+                    is a country in South Asia. It is the seventh-largest country in the world by area and the most
+                    populous country.</p>
+            </div>
         </div>
-        <div id="footer"><footer>copyrightsreserved@india.com</footer></div>
+        <div id="footer">
+            <footer>copyrightsreserved@india.com</footer>
+        </div>
     </div>
 </body>
+
 </html>

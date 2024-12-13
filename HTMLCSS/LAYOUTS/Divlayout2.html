@@ -8,8 +8,11 @@
 .container 
   {
     border: 2px solid;
-    width: 800px;
-    margin: 10px;
+    /* width: 800px; */
+    margin: 0px;
+    box-sizing: border-box;
+    padding:0px;
+
   }
   div#heading {
     background: orange;
@@ -42,8 +45,12 @@
     color: white;
     text-align: center;
   }
+  .child2{
+    display:flex;
+    flex-direction: column;
+  }
   .child2 table {
-    width: 750px;
+    width: auto;
     background: darkgray;
     margin:2px;
 }
@@ -58,6 +65,73 @@
     background: cadetblue;
     margin: 2px;
 }
+@media screen and (max-width:500px) {
+            #container {
+                border: 2px solid;
+                /* width:auto; */
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;               
+                background-color: cyan;
+
+            }
+            div#heading {
+    background: rgb(192, 174, 183);
+    margin: 2px;
+    padding: 0px;
+    font-size: x-small;  
+  }
+  .child2{
+  display:flex;
+  flex-direction: column;
+}
+  .child2 table {
+  width:auto;
+  
+    background: darkgray;
+    margin:2px;
+}
+#footer{
+  font-size: 12px;
+}
+
+}
+@media screen and (min-width:900px) {
+ 
+ #container 
+ {
+    border: 2px solid;    
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px; 
+                    
+     background-color: rgb(53, 153, 7);
+     }
+   div#heading {              
+    background: rgb(233, 222, 16);
+    margin: 0px;
+    padding: 0px;  
+  }
+  .sidesection {
+    background: rgb(214, 210, 146);
+    margin: 1px;
+    overflow: auto;
+    /* list-style-type:none; */
+}
+.child2{
+  display:flex;
+  flex-direction: column;
+}
+.child2 table {
+  width:auto;
+  
+    background: darkgray;
+    margin:2px;
+}
+
+
+}
+</style>
 </style>
 </head>
 <body>
