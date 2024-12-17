@@ -212,3 +212,158 @@ body{
     .info.background3{
         background-color: rgb(222, 196, 159);
     }
+
+    @media screen and (max-width: 500px)
+     {        
+       body{
+            background-color: chocolate;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;            
+        }
+       
+
+        header {
+            display: flex;
+            flex-direction: column; 
+            height:fit-content;
+            /* width: 500px;;        */
+           
+        }
+    .list1 ul {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+        /* margin: 20px; */
+        gap: 10px;
+        
+    }
+    
+    section {
+        overflow: auto;
+        /* width: 900px; */
+        /* margin: auto; */
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid grey;
+        margin-bottom: 30px;
+        gap: 35px;
+        
+}
+    .larg {
+        /* width: fit-content; */
+        height: 320px;
+    
+        border-right: 1px solid grey;
+        /* /* padding-right: 5px; */
+      margin:10px;
+     
+
+    }
+    .larg p{
+        font-size: 14px;
+        text-align: justify;
+        line-height: 1.4;
+        width: 450px;
+
+    }
+    .larg h3 {
+        font-size: 14px;
+    }
+    .catg {
+        /* width: 260px; */
+     
+        /* margin-right: 0px; */
+        background-color: rgb(19, 124, 92);
+        width: 460px;
+        margin: 10px;
+        
+    }
+    /* box info */
+    .services {
+        /* width: 500px; */
+        /* margin: auto; */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    } 
+    .info, .info4{
+       width: 460px;
+       height:auto;      
+    }
+    .info4{
+        margin-left:8px;
+        margin-bottom:10px;
+             
+     }
+     footer {
+        /* overflow: auto;
+        margin: auto; */
+        background-color: grey;
+        font-size: 14px;
+        height:auto;
+        display: flex;
+        margin-left:8px;  
+        flex-direction: row;
+    text-align: justify;
+        width:auto;
+       
+  
+    }    
+    .contact {
+        display: flex;
+        flex-direction: column;
+        /* text-align: left; */
+        margin:0px;
+        padding:2px;
+        /* justify-content: space-around; */
+    }
+    .contact h4 {
+        padding-bottom: 0px;
+        margin-bottom: 0px; 
+    }
+    .contact p {
+        font-size: 13px;
+    }
+    .ftrlst {
+        display: flex;
+        /* float: right;       
+        margin-right: 110px;
+        padding-right: 62px; */
+        flex-direction: column;
+        text-align: justify;
+    } 
+    .ftrlst ul {
+        display: flex;
+        margin-top: 10px;
+        /* color: white; */
+        gap:10px;
+        /* flex-direction: row;
+        justify-content: space-between; */
+    }
+    .ftrlst li {
+        /* display: inline; */
+        /* border-right-style: inset; */
+        color: deepskyblue;
+        /* margin:20px; */
+    }
+    .ftrlst a {
+        text-decoration-line: none;
+        /* padding-right: 10px; */
+        color: initial;
+    }
+    .ftrlst li a:hover{
+        color: rgb(194, 192, 56);
+       
+    }
+    .ftrlst p {
+        /* height: 20px; */
+        /* /* margin-left: 92px; */
+        /* margin:0px; */
+        padding: 0px;
+        }
+    
+   
+}
+
