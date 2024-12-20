@@ -1,5 +1,10 @@
 
-
+*{
+        
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 @media  screen and (max-width:500px) {
    
     body{
@@ -234,16 +239,11 @@
     
 }
 @media  screen and (min-width:501px) and (max-width:800px) {
-    *{
-        
-        box-sizing: content-box;
-        margin: 0;
-        padding: 0;
-    }
+    
         
     
     body{
-        width: 800px;  
+        /* width: 800px;   */
         margin: 0;
       
     }
@@ -288,7 +288,7 @@
     #header form #sf_submit {
         display: block;
         /* float: right; */
-        width: 46px;
+        width: 56px;
         font-size: 10px;
     }
     #header nav {
@@ -429,7 +429,14 @@
                                 margin-bottom: 30px;
                                 padding-bottom: 10px;
                                 /* border-bottom: 1px solid #D6D6D6; */
-                            }     
+                            } 
+                            div.wrapper {
+                                display: block;
+                                width: 100%;
+                                margin: 0;
+                                padding: 0;
+                                text-align: left;
+                            }    
 
 /* #header ,
 #footer {
