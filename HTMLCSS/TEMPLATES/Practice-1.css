@@ -224,6 +224,188 @@ body {
             margin: 0 0 5px 0;
             background: url(images/templatemo_list_icon.jpg) top left no-repeat;
        }
+       @media screen and (max-width:500px){
+        .container {
+            width: 100%;
+            /* overflow: auto; */
+            /* margin: auto; */
+            background-color: #109f9f;
+        }
+        .row1 {
+            overflow: auto;
+            background-color: #e22b4d;
+            width: auto;
+            color: #22b079;
+            background-image: url(./bird.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .keyword {
+            text-align: center;
+        }
+        .row2 {
+            width: 100%;
+            height:170px;
+            background-color: #3c3fc2;
+        }
+        .row2 ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: large;
+            /* margin-top: 0px; */
+            /* margin-left: 0px; */
+        }
+        .row3{
+            width:100%;
+                 margin-bottom: 0px;
+        }
+        .middle p {
+            font-size: 16px;
+        }
+        .blog {
+            /* float: left; */
+            width: 465px;
+            margin-top: 10px;
+            border-right: none;
+        }
+        
+       .middle,.middlepart1 {
+        width: 100%;
+        
+            display: flex;
+            flex-direction: column;
+            gap:135px;
+            align-items: center;
+           
+        }
+        .middlepart1,.middlepart2{
+            width: 100%;
+            margin-left: 0px;
 
+        }
+        .pic img{
+            width:460px;
+            margin-left:1px;
+        }
+     
+        .middlepart2{
+            margin-top:20px;
+            margin-right: 0px;
+            padding-right: 0px;
+           
+            /* align-items: center; */
+            font-size: 16px;         
+        }
+        .blog button {
+            margin-left: 5px;
+            width: 100px;
+        }
+        .middle h3 {
+            font-size: 25px;
+        }
+        .middle h2 {
+            font-size: 25px;
+        }
+        .pic {
+            /* float: right; */
+            width: 100%;
+            margin-top: 0px;
+            margin-right: 0px;
+            border-right: none;
+            /* height: 312px; */
+        }
+        .list ul {
+            width: 200px;
+            list-style-type: none;
+            display: flex;        ;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .catgr {
+            width:465px;
+            margin-top: 35px;
+        }
+        .list {
+            font-size: 18px;
+            /* line-height: 27px; */
+        }
+        .row4 {
+            margin: 0px;
+            /* overflow: auto; */
+            display: flex;        ;
+            flex-direction: column;
+            align-items: center;
+            gap:15px;
+            background-color: rgb(123, 0, 139);
+            
+           
+        }
+        .nat figcaption p {
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: justify;
+            color:antiquewhite;
+        }
+        .nat4 figcaption p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom:10px;
+            color: antiquewhite;
+        }
+        .nat, .nat4{
+            margin-top: 10px;
+            width:450px;
+            text-align: justify;
+          
+        }
+        .nat img,.nat4 img{
+            width:450px;
+        }
+        a {
+            color: orange;
+        }
+        .nat4 figcaption {
+             margin: 0px ;
+        }
+        .ftrlist ul {
+            display: flex      ;
+            flex-direction: column;
+            width: 100px;
+        }
+        .row5 {
+            /* overflow: auto; */
+            background-color: rgb(50, 47, 47);
+            color: white;
+            text-align: center;
+            display: flex;
+        }
+        .ftrlist li {
+            /* display: inline; */
+            border-right: none;
+            font-size: 16px;
+            /* padding-right: 10px; */
+        }
+        .w3img {
+            /* width: 100px; */
+            margin: 20px;
+        }
+        .copy p {
+            font-size: 16px;
+        }
+        .middle p {
+            font-size: 17px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    }
+    
+    
+    
+       
+@media screen and (min-width:500px) and (max-width:700px){
+    
+}
 
     
