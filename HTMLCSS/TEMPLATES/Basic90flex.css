@@ -281,7 +281,7 @@ li {
             margin: auto;
         }
         .quick {
-            margin-left: 10px;
+            margin-left: 0px;
           width: 475px;
           
         }
@@ -298,6 +298,7 @@ li {
         }
     
             li {
+                font-size: 18px;
                 list-style-type: none;
                 line-height: 2.0;
             }
