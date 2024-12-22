@@ -342,6 +342,7 @@ select {
 #header nav ul {
     padding: 0 20px;
     display: flex;
+    
 }
 
     #header nav li {

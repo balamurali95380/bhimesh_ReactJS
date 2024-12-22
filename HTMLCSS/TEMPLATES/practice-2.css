@@ -177,6 +177,21 @@ article {
 .middleleft, .middleright { 
     
     width: 95%;
+   
+}
+.middleleft{
+    border-right: none;
+     /* float:none; */
+     padding-right: 0px;
+    /* height: 240px; */ 
+
+} 
+.middleright{
+    /* height: 240px;
+    float: none; */
+    /* margin-left: 14px; */
+    width: 100%;
+
 }
 .desc {
   
@@ -188,9 +203,49 @@ article {
    
 }
 p{
-    width:100%;
-    margin-left:0px;
-    margin-right:0px;
+
+    width: 94%;
+    margin-left: 21px;
+}
+footer{
+    margin-right: 2px;
+    height:170px;
+   
+}
+#foot  {
+    display: flex;
+    flex-direction: row;
+    height:80px;
+    gap:10px;
+    border: none;
+    text-align: center;
+  }
+aside{
+    float: none;
+    margin-left: 14px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  height:170px;
+  gap:10px;
+  border: none;
+  text-align: center;
+}
+.list{
+    
+    /* margin: auto; */
+    /* display: inline; */
+    background-color: #eb9b97;
+    border: 1px solid forestgreen;
+    color: white;
+}
+.list li {
+    /* display: inline; */
+    margin-right: 50px;
+    font-size: 15px;
+border-right: none;
+  
 }
 
 }
