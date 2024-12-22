@@ -143,3 +143,59 @@ footer a {
     padding: 10px;
     color: rgb(1, 17, 29);
 }
+@media screen and  (max-width:550px){
+    
+.container 
+{
+    width: 100%;
+   
+}
+header,footer{
+    width: 99%;
+/* margin: auto; */
+
+}
+nav {
+    width: 96%;
+    overflow: auto;
+    margin:auto;
+    margin-top:10px;
+}
+.desc {
+    width:100%;
+
+}
+section,article,aside {
+    width: 95%;
+}
+article {
+    overflow: auto;
+ 
+    height: 700px;
+}
+
+.middleleft, .middleright { 
+    
+    width: 95%;
+}
+.desc {
+  
+    margin: auto;
+}
+.item.desc {
+
+    margin: auto;
+   
+}
+p{
+    width:100%;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+}
+
+
+
+
+
