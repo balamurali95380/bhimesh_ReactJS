@@ -10,21 +10,25 @@
         color: red;
       }
       /* 2.Child Selector (>) */
-      div > p {
+      .contain > p {
         color: blue;
       }
       /* 3. Adjacent Selector ( + ) */
-      div + p {
+      .con12 + p {
         background-color: red;
+        border:4px solid green;
       }
       /* 4. General Sibling Selector( ~ ) */
       div ~ h1{
-        border: 2px solid;
-        color: chartreuse;
+        border: 2px solid blue;
+        color: rgb(255, 0, 238);
       }
       div ~ P{
         border: 2px solid;
         color: rgb(14, 83, 122);
+      }
+      .con12 ~a{
+        background-color: aqua;
       }
     </style>
   </head>
@@ -35,11 +39,25 @@
      3. Adjacent Selector ( + )
      4. General Sibling Selector( ~ ) -->
 
-    <div>
+    <!-- <div class="h">
      <h1>Andhrapradesh</h1>
       <p>Telangana</p>
     </div>
     <p>Karnataka</p>
-    <h1>kerala</h1>
+    <h1>kerala</h1> -->
+    <div class="contain">
+      <h1>head</h1>
+      <p>paragraph</p>  
+      <div class="con12">
+        <p>par12</p>
+        <h3>head3</h3>
+      </div> 
+      <p>paraadj</p> 
+      <a href="">anchor</a>  
+    </div>
+    <div class="c1">
+    <p>par1</p>
+    <h2>head2</h2>
+  </div>
   </body>
 </html>

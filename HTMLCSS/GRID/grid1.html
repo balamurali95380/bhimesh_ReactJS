@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c{
+          border: 1px solid navy;
+
+            height:800px;
+        }
+        .grid{
+            display: grid;
+            border: 1px solid blueviolet;
+            /* grid-template-columns: repeat(5,auto); */
+            /* grid-template-rows:repeat(4,auto); */
+         
+            margin: auto;
+            height:400px;
+           
+        }
+        .b1{
+                 
+            border:1px solid green;
+            gap:10px;
+        }
+        .grid1,.grid5{
+         grid-area: 1/1/1/span 6;
+
+
+
+        }
+        .grid2{
+            grid-area: 2/1/2/span 6;
+           
+            
+
+        }
+        .grid3{
+            grid-area: 3/1/span 2/span 3;
+          
+            
+
+        }
+        .grid4{
+            grid-area: 5/1/5/span 3;
+
+        }
+        .grid5{
+            grid-area: 3/4/span 3/span 3;
+
+        }
+        .grid6{
+            grid-area: 6/1/6/span 6;
+
+        }
+
+       
+
+
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div class="grid">
+            <div class="b1 grid1"></div>
+            <div class="b1 grid2"></div>
+            <div class="b1 grid3"></div>
+            <div class="b1 grid4"></div>
+            <div class="b1 grid5"></div>
+            <div class="b1 grid6"></div>
+        </div>
+    </div>
+</body>
+</html>
