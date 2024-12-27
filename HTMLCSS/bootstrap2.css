@@ -1,11 +1,15 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
+html{
+    font-size: 80%;
+}
 
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
+
   }
   
   
@@ -50,6 +54,17 @@ body {
     flex-direction: row;
     
 }
+.nav-link
+{
+    font-size: 1.4rem;
+    color: blue;
+
+}
+.navbar-brand{
+font-size: 2rem;
+color: hotpink;
+}
+
   
   /* MARKETING CONTENT
   -------------------------------------------------- */
@@ -80,6 +95,16 @@ body {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -.05rem;
+  }
+ .form-inline{
+    display: flex;
+    gap:3px;
+    align-items: center;
+
+  }
+ 
+  .carousel-caption {
+    bottom: 0rem;
   }
   
   
