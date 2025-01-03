@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child</title>
+    <style>
+        /*Selects an element based on its position among all siblings (regardless of the element's type).
+        It counts all elements (of any type) within the same parent. 
+        Use :nth-child() when you want to style elements based on their general order among siblings, regardless of their type.*/
+        /* p:nth-child(2)
+        {
+            color:rgb(227, 18, 53);
+            font-style: italic;
+            border:1px solid blue;
+        } */
+        /* p:first-child
+        {
+            color: darkgoldenrod;
+            border:1px solid rgb(5, 160, 7);
+        }        select nth element of specific element type only  in the parent   */
+
+         /*2. nth-of-type()
+         Selects an element based on its position among siblings of the same type (ignoring other element types).
+             It counts only elements of the same tag type. 
+             Use :nth-of-type() when you want to style elements based specifically on their order among elements of the same type. */
+             
+        p:nth-of-type(3)
+        {
+           color: rgb(7, 43, 5);
+           font-style: oblique;
+           border:1px solid rgb(5, 65, 3);
+        } 
+        /* body will take divs as childs and select accordingly */
+
+    </style>
+</head>
+<body style="background-color: rgb(236, 190, 10);">
+  
+    <div style="border:1px solid; background-color: antiquewhite;"  class="nthtype">
+        <h1>heading1</h1>
+        <h1>heading2</h1>
+        <p>para1 of div1</p>
+        <p>para2 of div1</p>
+        <!-- <p>para3 of div1</p>
+        <p>para4 of div1</p>
+        <p>para5 of div1</p> -->
+        <div style="border:1px solid; background-color: aqua;" class="nthtype1">
+            <h1>heading1</h1>
+            <p>para1 of div1</p>
+            <p>para1 of div2</p>
+            <p>para2 of div2</p>
+            <p>para3 of div2</p>
+            <p>para4 of div2</p> 
+            <p>para5 of div2</p>     
+        </div>    
+    </div>
+    <div class="cont2">
+        <p>para1 of div3</p>
+        <p>para2 of div3</p>
+        <p>para3 of div3</p>
+        <p>para4 of div3</p>
+        <p>para5 of div3</p>
+    </div>
+    <div>
+        <p>Paragraph 1</p>
+        <p>Span 1</p>
+        <p>Paragraph 2</p>
+        <span>Span 2</span>
+        <p>Paragraph 3</p>
+      </div>
+    <p>para1 of body</p>
+    <p>par2 of body</p>
+    <p>para3 of body</p>
+    <p>par4 of body</p>
+    <p>par5 of body</p>      
+</body>
+</html>

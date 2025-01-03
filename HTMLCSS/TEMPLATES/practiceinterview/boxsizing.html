@@ -1,0 +1,84 @@
+<!-- The box-sizing property in CSS controls how the total width and height of an element are calculated. It determines whether padding and border are included in the element's total dimensions.
+
+The Two Main Box-Sizing Values
+content-box (default)
+
+How it works: The width and height of an element apply only to the content box (the area inside the padding, border, and margin). Padding and border are added to the width and height.
+Calculation:
+Total width = width + left padding + right padding + left border + right border
+Total height = height + top padding + bottom padding + top border + bottom border
+border-box
+
+How it works: The width and height of the element include the padding and border. This means the total width and height are not affected by padding or border.
+Calculation:
+Total width = width
+Total height = height
+Padding and borders are included within the given width and height values, so the content area is reduced accordingly. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .box-content-box {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid black;
+      box-sizing: content-box; /* Default */
+    }
+  </style>
+</head>
+<body>
+  <div class="box-content-box"></div>
+</body>
+</html>
+<!-- Calculation:
+
+Width: 200px (content width) + 20px (left padding) + 20px (right padding) + 5px (left border) + 5px (right border) = 250px
+Height: 100px (content height) + 20px (top padding) + 20px (bottom padding) + 5px (top border) + 5px (bottom border) = 150px
+Result: The total box size will be 250px by 150px. -->
+
+Example of border-box
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .box-border-box {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid black;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="box-border-box"></div>
+</body>
+</html>
+<!-- Calculation:
+
+Width: 200px (includes content, padding, and border)
+Height: 100px (includes content, padding, and border)
+Result: The total box size will remain 200px by 100px, and the content area will be reduced to accommodate the padding and borders.
+
+When to Use border-box
+The border-box model is typically preferred when:
+
+You want to set a fixed width or height for an element, and you don't want padding and borders to increase the total size.
+It simplifies layout calculations, especially for elements like buttons, cards, or containers with borders and padding.
+You are working with responsive designs or want consistent box sizes.
+Setting box-sizing: border-box Globally
+To avoid inconsistencies across elements, many developers set box-sizing: border-box globally using the * selector: -->
+
+* {
+  box-sizing: border-box;
+}
+This ensures that all elements, including pseudo-elements, use the border-box model by default, which often simplifies layout management.
+
+<!-- Summary
+Property	Content Box (Default)	Border Box
+Width/Height	Applies only to content area (padding and border are added).	Includes content, padding, and border in the total width/height.
+Calculation	total width = content width + padding + border	total width = content width (padding and border are inside this value).
+Using border-box generally simplifies layout management, while content-box gives you more flexibility if you need to separate the content from padding and border sizes. -->

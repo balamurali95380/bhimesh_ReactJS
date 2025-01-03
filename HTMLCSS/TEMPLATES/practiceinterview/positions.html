@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positions</title>
+</head>
+<style>
+    .container{
+        width:800px;
+        height:600px;
+    }
+    .box{
+    
+        border:1px solid blue;
+    }
+    .box1{
+        position:static;
+        height:30px;
+        width:200px;
+
+    }
+    .box2{
+        position:relative;
+        top:20px;
+        left:20px;
+        height:50px;
+        width:330px;
+    }
+    .box3{
+        position:absolute;
+        top:40px;
+        left:50px;
+        width:150px;
+        background-color: rgb(130, 18, 98);
+    }
+    .box4{
+        position:fixed;
+        top:25px;
+        bottom:20px;
+        background-color: rgb(168, 203, 41);
+    }
+    .box5{
+        position:sticky;
+      /* height:10px; */
+        top:90px;
+        left:30px;
+        background-color: blue;
+        height:50px;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box1 box">static</div>
+        <div class="box2 box">relative</div>
+        <div class="box3 box">absolut</div>
+        <div class="box4 box">fixed</div>
+        <div class="box5 box">sticky</div>
+
+    </div>
+    
+</body>
+</html>

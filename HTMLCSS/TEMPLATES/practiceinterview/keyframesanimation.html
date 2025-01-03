@@ -1,0 +1,163 @@
+<!-- CSS, animations are created using the @keyframes rule, which allows you to define the stages of an animation, specifying
+how the element should appear at various points during its lifecycle. These keyframes describe the intermediate steps of
+an animation and can be used to create smooth transitions between different styles.
+
+Creating Animations Using @keyframes
+Basic Syntax
+css
+Copy code
+@keyframes animation-name {
+from {
+/* Starting styles */
+}
+to {
+/* Ending styles */
+}
+}
+@keyframes: Defines the animation and its keyframes.
+animation-name: A name for the animation, which you can refer to when applying the animation to elements.
+from and to: Represent the start (0%) and end (100%) points of the animation. These can also be written as percentages
+(0% for the start and 100% for the end).
+
+
+
+@keyframes moveRight: Defines an animation called moveRight.
+from: The element starts at left: 0.
+to: The element moves to left: 100px.
+animation: The .box element uses the moveRight animation, which lasts 2 seconds, runs in a linear timing function, and
+loops infinitely (infinite).
+Using Percentages for More Control
+You can specify multiple stages of the animation using percentages (e.g., 0%, 25%, 50%, 75%, 100%), allowing for more
+complex animations with intermediate steps.
+
+
+
+0%: The element starts at its normal position (transform: translateY(0)).
+25%: The element moves up by 30px.
+50%: It returns to the original position.
+75%: The element moves up again but by a smaller amount (15px).
+100%: The element returns to its original position.
+Animation Properties
+Once you define the animation with @keyframes, you use the following properties to control the behavior of the
+animation:
+
+animation-name: Specifies the name of the @keyframes animation.
+animation-duration: Specifies how long the animation takes to complete one cycle (e.g., 2s for 2 seconds).
+animation-timing-function: Defines the speed curve of the animation (e.g., linear, ease, ease-in, ease-out,
+cubic-bezier()).
+animation-delay: Delays the start of the animation by a specified time (e.g., 1s).
+animation-iteration-count: Specifies how many times the animation should run (e.g., infinite for continuous looping or 3
+for three iterations).
+animation-direction: Defines whether the animation should reverse after each iteration (normal, reverse, alternate,
+alternate-reverse).
+animation-fill-mode: Defines what styles should be applied to the element before and after the animation is played
+(e.g., forwards, backwards).
+animation-play-state: Controls whether the animation is running or paused (running, paused).
+Example 3: Full Animation Syntax
+css
+Copy code
+
+
+
+In this example:
+
+fadeIn: The animation starts with opacity: 0 and gradually becomes fully visible (opacity: 1).
+animation: fadeIn 3s ease-in-out 1s forwards;:
+3s: The animation duration is 3 seconds.
+ease-in-out: The timing function makes the animation slow at both the beginning and the end.
+1s: A delay of 1 second before the animation starts.
+forwards: The element will retain the final state (opacity: 1) after the animation finishes.
+Shorthand Syntax for Animation
+You can combine all animation properties into one shorthand property:
+
+animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state]; -->
+
+
+
+<!-- Summary of Key Animation Properties:
+Property Description
+animation-name The name of the keyframes animation.
+animation-duration Duration of the animation (e.g., 2s, 500ms).
+animation-timing-function Defines the speed curve (e.g., linear, ease-in, ease-out).
+animation-delay Time before the animation starts (e.g., 1s).
+animation-iteration-count Number of times the animation should run (e.g., infinite, 3).
+animation-direction Defines the direction of the animation (e.g., normal, reverse, alternate).
+animation-fill-mode Defines what happens before/after the animation plays (e.g., forwards).
+animation-play-state Controls whether the animation is running or paused (e.g., paused).
+Conclusion:
+CSS animations with @keyframes provide powerful tools to create dynamic effects on elements. By defining keyframes at
+different stages (such as 0% and 100%, or any other percentage), and using various properties for timing, duration, and
+repetition, you can create smooth, engaging animations on your web pages. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+
+@keyframes moveRight {
+from {
+left: 0;
+}
+to {
+left: 100px;
+}
+
+}
+.box1 {
+position: relative;
+width: 100px;
+height: 100px;
+background-color: red;
+animation: moveRight 2s linear infinite;
+}
+.element {
+width: 200px;
+height: 200px;
+background-color: blue;
+animation: fadeIn 3s ease-in-out 1s forwards ;
+}
+
+@keyframes fadeIn {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+        @keyframes bounce {
+0% {
+transform: translateY(0);
+}
+25% {
+transform: translateY(-30px);
+}
+50% {
+transform: translateY(0);
+}
+75% {
+transform: translateY(-15px);
+}
+100% {
+transform: translateY(0);
+}
+}
+
+.box {
+width: 100px;
+height: 100px;
+background-color: green;
+animation: bounce 1s ease infinite;
+}
+    </style>
+</head>
+<body>
+    <div class="box">bounce</div>
+    <div class="element">fading</div>
+    <div class="box1">moving</div>
+    
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!-- based on its type, position, or attributes. -->
+
+<!-- 1. Element Selector
+Targets all instances of a specific HTML tag.
+Example:
+css
+Copy code
+
+This will apply the style to all <p> elements.
+2. Descendant Selector
+Targets an element nested inside a specific parent element.
+Example:
+css
+Copy code
+div p {
+  color: red;
+}
+This applies styles to all <p> elements inside <div> elements.
+3. Child Selector (>)
+Targets only the direct children of an element.
+Example:
+css
+Copy code
+div > p {
+  color: green;
+}
+This applies styles to <p> elements that are direct children of <div>.
+4. Adjacent Sibling Selector (+)
+Targets an element that is immediately preceded by a specific sibling.
+Example:
+css
+Copy code
+h1 + p {
+  color: orange;
+}
+This applies styles to a <p> that directly follows an <h1>.
+5. General Sibling Selector (~)
+Targets all siblings of a specific element.
+Example:
+css
+Copy code
+h1 ~ p {
+  color: purple;
+}
+This applies styles to all <p> elements that are siblings of an <h1>.
+6. Attribute Selector
+Targets elements with specific attributes.
+Example:
+css
+Copy code
+input[type="text"] {
+  border: 1px solid black;
+}
+This applies styles to <input> elements of type text.
+7. First or Last Child Selector
+Targets the first or last child of a parent.
+Example:
+css
+Copy code
+div:first-child {
+  background-color: yellow;
+}
+
+div:last-child {
+  background-color: lightgray;
+}
+8. Nth-Child Selector
+Targets a specific child element based on its position in the parent.
+Example:
+css
+Copy code
+li:nth-child(2) {
+  font-weight: bold;
+}
+This applies styles to the second <li> element.
+9. Pseudo-Elements
+Targets specific parts of an element.
+Example:
+css
+Copy code
+p::first-line {
+  font-size: 20px;
+}
+This applies styles to the first line of all <p> elements.
+10. Universal Selector (*)
+Targets all elements or all children of a specific element.
+Example:
+css
+Copy code
+* {
+  margin: 0;
+  padding: 0;
+}
+This resets margin and padding for all elements.
+Practical Use Case
+If you want to style a very specific element without id or class:
+
+Combine multiple selectors:
+
+css
+Copy code
+div > ul > li:first-child {
+  color: teal;
+}
+This styles the first <li> inside a <ul> that is a direct child of a <div>.
+
+Use attribute selectors for dynamic elements:
+
+css
+Copy code
+
+This styles all <button> elements with the disabled attribute. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>stylewithou</title>
+        <style>
+            body p {
+                    color: red;
+                }
+            .cont2 > p {
+                    color: green;
+                }
+            .nthtype h1 + p {
+                    color: rgb(217, 149, 39);
+                }
+            h1 ~ p {
+                    color: purple;
+                }
+
+            p {
+            color: rgb(228, 224, 8);
+            }
+            div > ul > li:first-child {
+            color: rgb(215, 199, 15);
+            }
+            * {
+            margin: 0;
+            padding: 0;
+            }
+            li:nth-child(2) {
+            font-weight: bold;
+            }
+            p::first-line {
+            font-size: 20px;
+            }
+            div p:first-child {
+            background-color: yellow;
+            }
+
+            div p:last-child {
+            background-color: rgb(195, 33, 33);
+            }
+            input[type="text"] {
+            border: 1px solid black;
+            }
+
+        </style>
+    </head>
+    <body>       
+        <div style="border:1px solid; background-color: antiquewhite;"  class="nthtype">
+        <h1>heading1</h1>
+        <h1>heading2</h1>
+        <p>para1 of div1</p>
+        <p>para2 of div1</p>
+        <label for="">name</label>
+        <input type="text">
+        <div style="border:1px solid; background-color: aqua;" class="nthtype1">
+            <h1>heading1</h1>
+            <p>para1 of div1</p>
+            <p>para1 of div2</p>
+            <p>para2 of div2</p>  
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+                <li>four</li>
+            </ul>         
+        </div>    
+    </div>
+    <h1>Adjacent</h1>
+    <p>adjacentpara</p>
+    <div class="cont2">
+        <p>para1 of div3</p>
+        <p>para2 of div3</p>
+        <p>para3 of div3</p>     
+    </div>
+    <div>
+        <p>Paragraph 1</p>
+        <p>Span 1</p>
+        <p>Paragraph 2</p>
+        <span>Span 2</span>
+        <p>Paragraph 3</p>
+      </div>
+    <p>para1 of body</p>
+    <p>par2 of body</p>       
+    </body>   
+    </html>
+

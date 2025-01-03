@@ -1,0 +1,177 @@
+<!-- 1. Pseudo-Classes
+Definition: A pseudo-class defines a special state of an element.
+Purpose: Targets elements based on conditions, user interactions, or structural states that are not directly available through normal classes or selectors.
+Syntax: A colon (:) followed by the pseudo-class name (e.g., :hover).
+Examples of Pseudo-Classes
+User Interaction States:
+
+:hover: Applies styles when the user hovers over an element. -->
+
+button:hover {
+background-color: lightblue;
+}
+<!-- :focus: Applies styles when an element (e.g., input) is focused. -->
+input:focus {
+border-color: green;
+}
+<!-- :active: Applies styles when an element is being clicked. -->
+
+a:active {
+color: red;
+}
+<!-- Structural States:
+
+:first-child: Targets the first child of its parent. -->
+
+li:first-child {
+font-weight: bold;
+}
+<!-- :last-child: Targets the last child of its parent. -->
+
+li:last-child {
+color: blue;
+}
+<!-- :nth-child(n): Targets the nth child of its parent (e.g., every 2nd child). -->
+
+tr:nth-child(2n) {
+background-color: lightgray;
+}
+<!-- Input-Related:
+
+:checked: Targets checkboxes or radio buttons that are checked. -->
+input[type="checkbox"]:checked {
+border-color: red;
+}
+<!-- :disabled: Targets disabled form elements. -->
+
+button:disabled {
+opacity: 0.5;
+}
+<!-- Miscellaneous:
+
+:not(selector): Targets elements that do not match the selector. -->
+
+div:not(.highlight) {
+background-color: gray;
+}
+<!-- 2. Pseudo-Elements
+Definition: A pseudo-element allows you to style specific parts of an element, such as the first line of text or content inserted before/after the element.
+Purpose: Targets portions of an element, even if those portions are not explicitly defined in the HTML.
+Syntax: Two colons (::) followed by the pseudo-element name (e.g., ::before). (Single colon : is also valid for older browsers.)
+Examples of Pseudo-Elements
+Content Insertion:
+
+::before: Inserts content before the element's content. -->
+
+
+h1::before {
+content: "🔥 ";
+}
+<!-- Output: A fire emoji appears before all <h1> elements.
+
+::after: Inserts content after the element's content. -->
+
+
+h1::after {
+content: " ⚡";
+}
+<!-- Output: A lightning emoji appears after all <h1> elements.
+
+Text Styling:
+
+::first-line: Styles the first line of an element. -->
+
+
+p::first-line {
+font-weight: bold;
+color: red;
+}
+<!-- ::first-letter: Styles the first letter of an element. -->
+
+
+p::first-letter {
+font-size: 2em;
+color: blue;
+}
+<!-- Highlighting:
+
+::selection: Styles the part of an element selected by the user. -->
+
+p::selection {
+background-color: yellow;
+color: black;
+}
+<!-- Key Differences Between Pseudo-Classes and Pseudo-Elements
+Aspect	Pseudo-Class	Pseudo-Element
+Purpose	Targets states or conditions of an element	Targets specific parts of an element
+Syntax	Single colon :	Double colon :: (modern)
+Examples	:hover, :nth-child, :focus	::before, ::after, ::first-letter
+State vs. Content	Applies styles based on interaction or state	Applies styles to content or subparts of an element
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Pseudo-class */
+        a:hover {
+            color: red;
+        }
+        button:disabled
+         {
+            opacity: 0.5;
+            }
+            button:hover {
+            background-color: lightblue;
+            }
+
+        /* Pseudo-element */
+        p::first-line {
+            font-weight: bold;
+            color: blue;
+        }
+
+        p::before {
+            content: "Note: ";
+            font-style: italic;
+            color: gray;
+        }
+        p::selection {
+            background-color: yellow;
+            color: black;
+            }
+            p::first-letter {
+            font-size: 2em;
+            color: blue;
+            }
+            h1::after {
+            content: " ⚡";
+            }
+            h1::before {
+            content: "🔥 ";
+            }
+    </style>
+</head>
+
+<body>
+    <h1>heading</h1>
+    <a href="#">Hover over me</a>
+    <p>This is an example of a pseudo-class and a pseudo-element.</p>
+    <p>This is an example of a pseudo-class and a pseudo-element.<br>
+        This is an example of a pseudo-class and a pseudo-element.
+        This is an example of a pseudo-class and a pseudo-element.
+        This is an example of a pseudo-class and a pseudo-element.
+    </p>
+    <button>submit</button>
+</body>
+
+</html>
+<!-- Output:
+Hovering over the link will change its color to red (:hover pseudo-class).
+The first line of the paragraph will appear bold and blue (::first-line pseudo-element).
+The word "Note: " will be inserted before the paragraph content (::before pseudo-element). -->

@@ -1,0 +1,85 @@
+<!-- 1. Inline Elements
+Definition: Inline elements do not start on a new line and only take up as much width as necessary. They flow within the content, alongside other inline elements or text.
+
+Characteristics:
+
+Does not break to a new line (remains "in-line" with text or other inline elements).
+Width and height properties cannot be applied (but padding and margin can affect spacing horizontally).
+Only occupies the space defined by its content.
+Examples of Inline Elements:
+
+<a>, <span>, <strong>, <em>, <b>, <i>, <img> -->
+
+
+
+<!-- 2. Block Elements
+Definition: Block elements always start on a new line and take up the full width of their container by default.
+
+Characteristics:
+
+Starts on a new line.
+Takes up the entire width of its parent container, even if the content inside is smaller.
+Width, height, margin, and padding properties can be applied.
+Can contain other block-level or inline elements.
+Examples of Block Elements:
+
+<div>, <p>, <h1> to <h6>, <ul>, <ol>, <li> -->
+
+
+<!-- Each element starts on a new line and stretches across the container. -->
+<!-- 
+3. Inline-Block Elements
+Definition: Inline-block elements combine features of both inline and block elements. They flow inline with other elements, but you can set their width, height, margin, and padding.
+
+Characteristics:
+
+Does not start on a new line (remains inline like inline elements).
+Width and height properties can be applied (unlike pure inline elements).
+Respects box-model properties like margin and padding.
+Examples of Inline-Block Elements:
+
+There are no default inline-block elements, but you can set any element to display: inline-block;. -->
+
+<!-- The inline-block element appears inline with the second <span>, but you can set its dimensions.
+
+Key Differences
+Property	                         Inline	                                   Block	            Inline-Block
+Starts on new line?	                    No	                                     Yes	                No
+Occupies full width?	                No	                                     Yes	                No
+Width/Height?	                    Cannot set	                                Can set	               Can set
+Box Model	                Affects horizontal spacing only	 Affects both vertical and horizontal	Affects both vertical and horizontal
+Flow	                        Flows inline with text	              Creates a new block flow	  Flows inline with text -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inlblck</title>
+</head>
+<body>
+    <div style="background: lightblue; display: inline;">Inline</div>
+    <div style="background: lightcoral;">Block</div>
+    <div style="background: lightgreen; display: inline-block; width: 100px; height: 50px;">
+      Inline-Block
+    </div>
+    <div style="background: lightyellow;">Another Block</div>
+    <span style="display: inline-block; width: 100px; height: 50px; background: lightgreen;">
+        Inline-block element
+      </span>
+      <span>Another inline element</span>
+      <div style="background: lightblue;">This is a block element.</div>
+    <p>This is another block element.</p>
+    <p>This is <span style="color: red;">an inline</span> element.</p> 
+</body>
+</html>
+
+
+<!-- Output:
+The first <div> (inline) flows inline with text or other inline elements.
+The second <div> (block) starts on a new line and spans the entire width of its container.
+The third <div> (inline-block) flows inline but allows for width and height to be defined.
+When to Use
+Inline: For styling parts of text or inline elements (e.g., <span> or <a>).
+Block: For structuring content into sections or paragraphs (e.g., <div> or <p>).
+Inline-Block: For creating inline elements with dimensions, such as buttons or layout components. -->

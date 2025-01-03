@@ -1,0 +1,132 @@
+<!-- he overflow property in CSS controls what happens when content overflows the boundaries of its container. It is
+particularly useful for managing content that is too large to fit within the container's specified dimensions, such as
+long text or large images. There are several values for the overflow property, each affecting the behavior of
+overflowing content differently.
+
+Overflow Property Values
+visible (Default)
+
+Description: The overflowed content is visible and is rendered outside the bounds of the container. It does not cause
+any clipping or hiding of content.
+Use Case: Useful when you want to ensure that the content is fully visible, even if it exceeds the container's size.
+However, this might cause layout issues if content overlaps with other elements. -->
+
+<!-- Example: If a box contains a paragraph of text that exceeds the container's width, the content will spill out and remain
+visible beyond the container's boundaries.
+
+hidden
+
+Description: The overflowed content is hidden and does not display outside the container. Any content that exceeds the
+bounds of the container is clipped and inaccessible.
+Use Case: This is useful when you want to restrict the container's size and prevent content from overflowing visually,
+such as in fixed-size containers or for creating scrollable areas. -->
+
+
+<!-- Example: If a container has a fixed height and a paragraph inside it is too long, the content that exceeds the
+container's boundaries will not be displayed. -->
+
+<!-- scroll
+
+Description: The container will always show scrollbars (either horizontal, vertical, or both), regardless of whether the
+content exceeds the container's size. The scrollbars are visible even if the content fits within the container (i.e., no
+overflow).
+Use Case: This is useful when you want to ensure that scrollbars are always available for the user to scroll through the
+content, even if the content does not overflow. -->
+
+<!-- Example: If the content is smaller than the container, a scrollbar will still be visible, and the user can use it to
+scroll the content.
+
+auto
+
+Description: The browser will automatically add scrollbars only if the content overflows the container. If the content
+fits within the container, no scrollbars will be shown.
+Use Case: This is the most commonly used value for controlling overflow. It gives a dynamic behavior where scrollbars
+appear only when necessary. -->
+
+<!-- Example: If a container has a fixed height and the content is too long, scrollbars will appear automatically, allowing
+the user to scroll through the content. If the content fits within the container, no scrollbar will be shown.
+
+overflow-x and overflow-y: Controlling Horizontal and Vertical Overflow
+You can also control the overflow behavior separately for the horizontal and vertical axes using overflow-x and
+overflow-y. This allows for more fine-grained control over how overflow is handled in either direction.
+
+overflow-x: Controls the horizontal overflow (left-to-right).
+overflow-y: Controls the vertical overflow (top-to-bottom).
+Example: Controlling Overflow Separately -->
+
+
+<!-- overflow-x: hidden; overflow-y: auto;: Horizontal overflow is hidden, but vertical overflow will show scrollbars if the
+content exceeds the container's height.
+overflow-x: auto; overflow-y: scroll;: Vertical scrollbars are always visible, and horizontal scrollbars appear when
+needed.
+Summary of overflow Values
+Value Description Use Case
+visible Content is visible and can overflow beyond the container's bounds. When you want all content visible, even if it
+overflows.
+hidden Overflowing content is clipped and not displayed. When you want to hide overflowed content.
+scroll Scrollbars are always visible, regardless of whether content overflows. When you always want scrollbars, even for
+content that fits.
+auto Scrollbars appear only when content overflows. Most commonly used for responsive and flexible layouts.
+overflow-x Controls horizontal overflow. To specify how to handle overflow on the horizontal axis.
+overflow-y Controls vertical overflow. To specify how to handle overflow on the vertical axis.
+When to Use Each Value:
+Use visible when you want to allow the content to overflow without restriction, and it's acceptable for the content to
+spill outside the container.
+Use hidden when you want to hide overflowed content, particularly when the content shouldn't exceed the container's
+dimensions.
+Use scroll when you want scrollbars to be always visible, ensuring users can scroll through the content even if it's not
+overflowing.
+Use auto when you want to allow scrollbars to appear only if necessary, giving a clean interface without unnecessary
+scrollbars.
+Use overflow-x and overflow-y when you need to control overflow behavior in specific directions (horizontal or
+vertical). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflowproperties</title>
+    <style>
+        /* .container{
+            width:200px;
+            height:200px;         
+
+        } */
+        .con5 {
+overflow-x: scroll; /* Horizontal overflow will show scrollbars if needed */
+overflow-y: hidden; /* Vertical overflow will be hidden */
+}
+.con1 {
+overflow: auto;
+}
+.con2 {
+overflow: scroll;
+}
+.con3 {
+overflow: hidden;
+}
+.con4{
+overflow: visible;
+}
+.con{
+    border:1px solid blue;
+    margin:5px;
+    width:175px;
+    height:205px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="con1 con">   <img src="../articlpic.jpg" alt="">overflow: auto</div>
+        <div class="con2 con">   <img src="../articlpic.jpg" alt="">overflow: scroll</div>
+        <div class="con3 con">   <img src="../articlpic.jpg" alt="">overflow: hidden</div>
+        <div class="con4 con">   <img src="../articlpic.jpg" alt="">overflow: visible</div>
+        <div class="con5 con">
+            <img src="../articlpic.jpg" alt="">overflow-x: scroll
+        </div>
+    </div>
+    
+</body>
+</html>

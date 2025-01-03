@@ -1,0 +1,71 @@
+<!-- Definition: The z-index specifies the stack order of an element. Elements with a higher z-index value appear in front of those with a lower value.
+
+Values:
+Auto (default): The element's stack order is the same as its parent.
+
+Number: Positive or negative integers can be used (e.g., z-index: 1;, z-index: -1;).
+
+Inheritance: z-index does not inherit its value by default.
+
+How Does Stacking Context Work?
+A stacking context is a "layer" in which elements are stacked and managed independently of other stacking contexts. Understanding stacking contexts is key to using z-index effectively.
+
+How Stacking Contexts Are Created
+A new stacking context is formed when an element meets certain criteria, including:
+
+The root element (<html>) always creates the root stacking context.
+Any element with a position other than static (relative, absolute, fixed, sticky) and a z-index value other than auto.
+Elements with the following properties also create stacking contexts, even if z-index is not specified:
+CSS properties like opacity < 1, transform, filter, perspective, clip-path, or mask.
+CSS property will-change with a value affecting stacking.
+
+
+Rules of Stacking Context
+Local Context: The z-index of child elements is relative only to their stacking context's parent.
+
+Independent Layers: Each stacking context is independent of others. Child elements cannot "escape" their stacking context, even with a high z-index.
+
+Rendering Order: Within a stacking context, elements are rendered in the following order (from back to front):
+Background/border of the element forming the stacking context.
+
+Descendant elements without position or z-index defined.
+Positioned elements with a z-index of auto.
+Positioned elements with a positive or negative z-index. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+</head>
+<body>
+    <div style="width:400px ;height:80px;border:1px solid blue;background: aqua;">karthi(no z-index)
+    <div style="position: relative; z-index: 2; background: lightblue;width:500px ;height:300px">
+        Parent (z-index: 1)
+        <div style="position: absolute; z-index: 0; background: pink;width:600px ;height:70px">
+          Child (z-index: 2)
+        </div>
+        <div style="position: absolute; z-index: 1; background: yellow;width:780px ;height:60px">
+          Child (z-index: -1)
+        </div>
+      </div>
+      <div style="position: relative; z-index: 3; background: lightgreen;width:100px ;height:160px; left:470px;">
+        Sibling (z-index: 3)
+      </div>
+    </div>
+</body>
+</html>
+
+
+<!-- Stacking Contexts:
+The first <div> creates a stacking context because of position: relative; z-index: 1.
+Within this context:
+The pink child appears in front (higher z-index).
+The yellow child appears behind the parent (lower z-index).
+The second <div> (light green) is in a different stacking context and appears behind the light blue parent because its z-index: 0.
+Key Points to Remember
+Default Behavior: Without z-index, elements are stacked according to the document's source order.
+Isolated Contexts: Changes to a child's z-index are confined within its parent stacking context.
+Debugging Stacking Issues:
+Ensure the correct stacking context is being created. -->

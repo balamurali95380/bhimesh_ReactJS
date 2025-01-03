@@ -1,0 +1,146 @@
+<!-- Media queries are a feature in CSS that allow you to apply different styles based on the characteristics of the device
+(such as its screen size, resolution, or orientation). They are key to creating responsive designs, which adjust the
+layout and appearance of a website depending on the device or viewport size.
+
+In simple terms, media queries let you change the style of a webpage depending on the conditions of the display, such
+as:
+
+The width or height of the screen.
+The orientation of the device (portrait vs. landscape).
+The resolution of the display (e.g., high vs. standard resolution).
+The device type (e.g., screen, print).
+Basic Syntax of a Media Query
+A media query consists of a media type (such as screen or print), followed by one or more media features (such as width,
+height, orientation, etc.). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+    <style>
+
+    /* @media media-type and (media-feature) {
+        /* CSS rules go here */
+        
+        
+        
+        @media screen and (max-width: 600px) {
+        /* CSS rules for screens smaller than 600px */
+        body {
+        background-color: lightblue;
+        }
+        /* Default styles (applied to all devices) */
+body {
+font-size: 16px;
+}
+        }
+
+/* Media query for devices with a maximum width of 768px (e.g., tablets or mobile devices) */
+@media screen and (max-width: 768px) {
+body {
+font-size: 14px;
+}
+}
+
+/* Media query for devices with a minimum width of 769px (e.g., desktops) */
+@media screen and (min-width: 769px) {
+body {
+font-size: 18px;
+}
+
+/* Default styles for small screens (mobile-first) */
+.container {
+display: flex;
+flex-direction: column;
+padding: 10px;
+}
+}
+
+/* For tablets and larger screens (min-width: 768px) */
+@media screen and (min-width: 768px) {
+.container {
+flex-direction: row;
+}
+}
+
+/* For large screens (min-width: 1200px) */
+@media screen and (min-width: 1200px) {
+
+.container {
+padding: 20px;
+}
+}
+/* .container {
+    width: 100%; Fluid width
+    max-width: 1200px; Max width for larger screens
+} */
+   
+</style>
+
+</head>
+<body>
+<div class="container">
+    <h1>heading</h1>
+    <img src="../articlpic.jpg" alt="">
+</div>
+</body>
+</html>
+
+/* 
+<!-- Common Media Query Features
+width / height:
+
+max-width: Styles are applied if the viewport width is less than or equal to the specified value.
+min-width: Styles are applied if the viewport width is greater than or equal to the specified value.
+max-height: Styles applied based on the height.
+min-height: Styles applied based on a minimum height.
+orientation:
+
+portrait: For vertical layouts (height > width).
+landscape: For horizontal layouts (width > height).
+resolution:
+
+Used for targeting high-resolution devices like Retina displays (min-resolution, max-resolution).
+Example: Basic Media Queries -->
+
+
+
+
+<!-- Default styles are applied for all devices.
+For screens smaller than or equal to 768px, the font size is set to 14px.
+For screens larger than 768px, the font size is set to 18px.
+Using Media Queries for Responsive Design
+The goal of responsive design is to make websites work across a wide range of devices, from mobile phones to large
+desktop monitors. Media queries help achieve this by applying different styles for different screen sizes.
+
+Responsive Design Strategy
+Mobile-First Design: Start with the base styles for mobile devices and then use min-width queries to adjust for larger
+screens.
+Desktop-First Design: Start with desktop styles and use max-width to adjust for smaller devices. -->
+
+
+
+<!-- Explanation:
+
+Mobile view (default): The .container is displayed with a column layout and small padding.
+Tablet view (≥768px): The .container changes to a row layout (side-by-side elements).
+Desktop view (≥1200px): Padding is increased to 20px for larger screens.
+Examples of Devices and Common Breakpoints
+Here are some common breakpoints used in responsive design, based on popular devices:
+
+Device Type Width Range Common Breakpoints
+Mobile 320px to 767px @media (max-width: 767px)
+Tablet 768px to 1024px @media (min-width: 768px)
+Desktop 1025px to 1200px @media (min-width: 1025px)
+Large Desktop 1201px and above @media (min-width: 1200px)
+Responsive Design with Fluid Layouts
+A responsive design doesn't always need media queries to work. You can use fluid layouts with percentages and relative
+units (like em, rem, vw, vh) for flexible sizing that adapts to different screen sizes.
+ -->
+
+
+<!-- Conclusion
+Media queries are essential for creating responsive designs that adapt to different screen sizes and devices.
+By using features like max-width, min-width, and orientation, you can tailor the user experience based on the device.
+Start with a mobile-first approach, and then apply media queries for larger devices as needed-->

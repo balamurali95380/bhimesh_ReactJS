@@ -1,0 +1,79 @@
+<!-- The difference between position: sticky and position: fixed in CSS primarily lies in how elements are positioned relative to the viewport and their containers as the page is scrolled.
+
+position: sticky
+Behavior: An element with position: sticky behaves like a relative element until it reaches a specified threshold (usually through the top, right, bottom, or left properties). Once that threshold is crossed (e.g., the user scrolls down past it), the element "sticks" to the viewport and behaves like a fixed element.
+Context: The element remains within the flow of its containing block (e.g., a parent container), so it can still interact with other elements in the layout.
+When It Sticks: The element will only "stick" when the user scrolls past its normal position within the container. The element will stop sticking when the containing block is out of view or it reaches its container’s boundary.
+Example of position: sticky:
+css
+Copy code
+.sticky-element {
+  position: sticky;
+  top: 0;  /* Sticks to the top when you scroll down */
+  background-color: yellow;
+}
+Use Case: Sticky headers or sidebars that remain visible when scrolling within their container.
+position: fixed
+Behavior: An element with position: fixed is removed from the normal document flow and is positioned relative to the viewport, not the containing element. This means that it will stay in the same position even when the page is scrolled.
+Context: The element does not move with the rest of the page content and will remain fixed in place regardless of how much the page is scrolled.
+When It Sticks: It always remains fixed to the viewport, and will not move relative to its container or other elements.
+Example of position: fixed:
+css
+Copy code
+.fixed-element {
+  position: fixed;
+  top: 0;  /* Stays fixed to the top of the viewport */
+  left: 0; /* Stays fixed to the left side of the viewport */
+  background-color: blue;
+}
+Use Case: Navigation bars, floating buttons, or elements that need to stay in place no matter how the user scrolls.
+Key Differences
+Property	position: sticky	position: fixed
+Positioning Context	Relative to its nearest scrollable ancestor or container	Fixed relative to the viewport (browser window)
+Scrolling Behavior	Sticks in place only after scrolling past a certain point	Always stays fixed in the viewport, unaffected by scrolling
+Element Flow	Still participates in the document flow (e.g., takes up space in the layout)	Removed from the document flow (e.g., no space is reserved in the layout)
+Use Cases	Sticky headers, table headers, sticky sidebars inside containers	Fixed navigation bars, floating buttons, fixed footers
+When to Use Each:
+Use position: sticky when you want an element (like a header or sidebar) to stay within its container and become fixed at a certain point while scrolling. It’s great for elements that should remain in view but still be part of the document flow.
+
+Use position: fixed when you want an element to stay in the same position on the screen, regardless of scrolling, and it should not be affected by its container. This is perfect for elements like fixed navigation bars or floating action buttons that need to remain visible all the time. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stickyfixed</title>
+    <style>
+        .box{
+            border:1px solid blue;
+            width:200px;
+            height:100px;
+        
+        }
+        .container{
+            /* overflow:scroll; */
+            height:700px;
+            border:2px solid blue;
+        }
+       .fixed-element {
+  position: fixed;
+  top: 300px;  /* Stays fixed to the top of the viewport */
+  left: 10px; /* Stays fixed to the left side of the viewport */
+  background-color: blue;
+} 
+.sticky-element {
+  position: sticky;
+  top: 0px;  /* Sticks to the top when you scroll down */
+  background-color: yellow;
+  left:20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sticky-element box"></div>
+        <div class="fixed-element box"></div>
+    </div>
+    
+</body>
+</html>

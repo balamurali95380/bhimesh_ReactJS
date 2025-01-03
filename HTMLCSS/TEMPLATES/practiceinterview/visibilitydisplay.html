@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vhdn</title>
+    <style>
+        /* 1. visibility: hidden
+Behavior:
+
+The element remains in the document flow and takes up space, but it is not visible to the user.
+All dimensions (width, height, padding, margin) are preserved, and the layout remains unaffected.
+The element can still be interacted with programmatically (e.g., via JavaScript).
+Use Case:
+
+When you want to hide an element visually but keep its space in the layout. 
+Use **visibility: hidden** when you need to hide an element temporarily but want to preserve its space in the layout (e.g., tooltips or status messages that will reappear).
+
+*/
+        /* p:hover{
+            visibility: hidden;
+        } */
+
+        /* 2. display: none
+
+The element is completely removed from the document flow.
+It does not take up any space in the layout (as if it doesn’t exist).
+The element and its children are not accessible (e.g., via keyboard or screen readers).
+Use Case:
+
+When you want to completely hide an element and remove it from the layout. 
+Use **display: none** when you want to completely hide an element and remove it from the layout (e.g., dropdown menus, modal windows, or conditional rendering).*/
+        p:hover{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="contain" style="border:1px solid">
+        <h1>heading</h1>
+        <p>chducfy hsxsdd sxhxh paragraph1</p>
+        <div class="con2" style="border:2px solid">
+            <p>dfyyvdfvdfh dsgycgfdycgfd dsgcydgcuy</p>
+            <img src="../alarm.svg" alt="">
+            <ul>
+                <li>dfygfd</li>
+                <li>dfygfd</li>
+                <li>dfygfd</li>
+                <li>dfygfd</li>            
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

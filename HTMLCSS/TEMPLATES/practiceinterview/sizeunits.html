@@ -1,0 +1,139 @@
+<!-- 1. Pixels (px)
+Definition: px is an absolute unit that defines a fixed size relative to the screen resolution.
+Behavior:
+Does not scale with the user's browser settings or the parent element.
+Provides precise, unchanging sizes.
+Use Case:
+When you need exact, fixed dimensions (e.g., icons, borders). -->
+
+
+
+<!-- 2. Relative to Parent (em)
+Definition: em is a relative unit that scales based on the font size of the parent element.
+
+Behavior:
+
+1em equals the font size of the parent element.
+Values stack when used in nested elements (e.g., child elements inherit and multiply their em value based on the parent's computed size).
+Use Case:
+
+When you want to scale an element's size relative to its parent (e.g., nested text or elements). -->
+
+<!-- 3. Relative to Root (rem)
+Definition: rem is a relative unit that scales based on the font size of the root element (<html>).
+Behavior:
+1rem equals the font size of the root element, which is usually set by the browser (typically 16px).
+It does not stack like em but remains consistent regardless of nesting.
+Use Case:
+When you want consistent scaling throughout the page based on the root font size. -->
+
+
+<!-- 4. Percentage (%)
+Definition: % is a relative unit that scales based on the parent element's size (or sometimes the containing block's size for properties like width).
+
+Behavior:
+
+For font-size, % is relative to the parent's font size.
+For properties like width or height, % is relative to the parent's dimensions.
+Use Case:
+
+When you want relative sizing for flexibility and responsiveness. -->
+
+
+<!-- Comparison Table
+Unit	                    Relative to	Scales?	    Common Use Case
+px	Fixed screen resolution	    No	                Precise dimensions, borders, or fixed font sizes.
+em	Parent's font size	        Yes (cascades)	    Nested scalable font sizes or spacing.
+rem	Root (<html>) font size	    Yes (consistent)	Consistent global scaling of font sizes.
+%	Parent element (varies)	    Yes	                Responsive layouts or relative dimensions.
+Key Differences
+px: Absolute, does not scale.
+em: Relative to parent, can stack/cascade.
+rem: Relative to root, consistent and predictable.
+%: Relative to parent's dimensions, useful for responsive design. -->
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sizeunits</title>
+        <style>
+           
+            body {
+  font-size: 16px;
+            }
+body p {
+  font-size: 1.5em; /* 1.5 × 16px = 24px */
+}
+/* The paragraph will have a font size of 24px if its parent (div) has a font size of 16px. */
+
+div {
+  font-size: 16px;
+}
+div p {
+  font-size: 1.5em; /* 24px */
+}
+div span {
+  font-size: 1.5em; /* 1.5 × 24px = 36px */
+}
+
+html {
+  font-size: 16px;
+}
+.cont2 {
+  font-size: 1rem; /* 16px */
+  width: 50%; /* 50% of the parent element's width */
+}
+.cont2 p {
+  font-size: 1.5em; /* 1.5 × parent font size = 24px */
+}
+/* If the parent of <div> has a width of 800px, then:
+
+The div will have a width of 400px (50% of 800px).
+The <p> inside the div will have a font size of 24px (1.5 × 16px). */
+    .nthtype{
+        font-size: 16px;
+        width: 400px;
+      }
+      .nthtype p {
+        font-size: 150%; /* 150% × 16px = 24px */
+        width: 50%; /* 50% of 400px = 200px */
+      }
+      /* The paragraph's font size is 24px if the parent (div) has a font size of 16px. */
+      
+
+        </style>
+    </head>
+        <body style="background-color: rgb(236, 190, 10);">
+  
+            <div style="border:1px solid; background-color: antiquewhite;"  class="nthtype">
+                <h1>heading1</h1>
+                <h1>heading2</h1>
+                <p>para1 of div1</p>
+                <p>para2 of div1</p>
+                    <div style="border:1px solid; background-color: aqua;" class="nthtype1">
+                    <h1>heading1</h1>
+                    <p>para1 of div1</p>
+                    <p>para1 of div2</p>   
+                </div>    
+            </div>
+            <div class="cont2">
+                <h1>heading</h1>
+                <p>para1 of div3</p>
+                <p>para2 of div3</p>
+            </div>
+            <div>
+                <span>Span 2</span>
+                <p>Paragraph 3</p>
+              </div>
+            <p>para1 of body</p>
+            <p>par2 of body</p>     
+        </body>
+        </html>
+        
+    </body>
+    </html>
