@@ -8,11 +8,20 @@
         /*Selects an element based on its position among all siblings (regardless of the element's type).
         It counts all elements (of any type) within the same parent. 
         Use :nth-child() when you want to style elements based on their general order among siblings, regardless of their type.*/
-        p:nth-last-child(4)
+        p:nth-child(3)
         {
             color:rgb(227, 18, 53);
             font-style: italic;
             border:1px solid blue;
+        }
+        /* li:last-child{
+            color: brown;
+        } */
+        /* li:nth-of-type(3){
+            color: brown;
+        } */
+        li:nth-child(3){
+            background-color: cyan;
         }
         /* p:first-child
         {
@@ -42,6 +51,10 @@
         <h1>heading2</h1>
         <p>para1 of div1</p>
         <p>para2 of div1</p>
+        <ul>
+            <li>hi</li>
+            <li>hi</li>
+        </ul>
         <!-- <p>para3 of div1</p>
         <p>para4 of div1</p>
         <p>para5 of div1</p> -->
@@ -52,7 +65,11 @@
             <p>para2 of div2</p>
             <p>para3 of div2</p>
             <p>para4 of div2</p> 
-            <p>para5 of div2</p>     
+            <p>para5 of div2</p>  
+            <ul>
+                <li>hi</li>
+                <li>hi</li>
+            </ul>
         </div>    
     </div>
     <div class="cont2">
@@ -61,6 +78,11 @@
         <p>para3 of div3</p>
         <p>para4 of div3</p>
         <p>para5 of div3</p>
+        <ul>
+            <li>hi</li>
+            <li>hi</li>
+            <li>hi</li>
+        </ul>
     </div>
     <div>
         <p>Paragraph 1</p>

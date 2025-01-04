@@ -1,4 +1,4 @@
-SS transitions and animations are both used to create visual effects that change an element's appearance over time, but
+<!-- SS transitions and animations are both used to create visual effects that change an element's appearance over time, but
 they differ in their behavior, flexibility, and use cases. Here's a breakdown of the key differences between them:
 
 1. Definition and Purpose
@@ -22,19 +22,86 @@ Single State Change: Transitions generally occur between two states (initial sta
 intermediate steps between them.
 No Keyframes: You don’t define stages between start and end states. You simply specify how the property should change
 (e.g., color, width) and how long the change takes.
-Example:
+Example: -->
+<!-- transition: <property> <duration> <timing-function> <delay>; -->
 
-css
-Copy code
-.box {
-transition: all 0.3s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition animation</title>
+    <style>
+            .box1 {
+            transition: margin-left 10s; 
+              
+                border:1px solid;
+                height:50px; 
+                width:200px;
+             
+                }
 
-.box:hover {
-background-color: blue;
-width: 200px;
-}
-CSS Animations:
+                .box1:hover {
+                    margin-left:30px;
+                background-color: blue;
+            
+            
+                
+                }
+                @keyframes move {
+                        0% {
+                        left: 0;
+                        }
+                        50% {
+                        left: 100px;
+                        }
+                        100% {
+                        left: 0;
+                        }
+                        }
+
+                .box {
+                    height:100px;
+                    width:200px;
+                        position: relative;
+                        animation: move 2s infinite;
+                        border:2px solid blueviolet;
+                    }
+
+                    .button {
+                        
+                        background-color: red;
+                        transition: background-color 0.3s ease;
+                        }
+
+                        .button:hover {
+                        background-color: blue;
+                        transition: background-color 3s ease;
+                        }
+                        @keyframes rotate {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                        }
+
+                        /* .spinner {
+                            border:1px solid pink;
+                            background-color: brown;
+                            /* height:100px;
+                            width:300px; */
+                        /* animation: rotate 1s linear infinite; */
+                        /* } */
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box"></div>
+    <div class="spinner">spinner</div>
+    <div class="button"><button>submit</button></div>
+</body>
+</html>
+
+<!-- CSS Animations:
 
 Triggering: Animations can run automatically or be triggered by specific events like page load, hover, etc.
 Keyframes: Animations are defined using @keyframes, which specify multiple stages of an animation. These stages can
@@ -117,16 +184,16 @@ Copy code
 animation: rotate 1s linear infinite;
 }
 6. Summary Comparison
-Feature CSS Transitions CSS Animations
-Trigger User-triggered (e.g., hover, focus, class change) Can be automatic or user-triggered
-Keyframes Not used (one start and one end state) Uses keyframes for multiple intermediate stages
-Complexity Simple, limited to two states Complex, can define multiple steps and loops
-Duration Duration and timing function for smooth transitions Duration, timing functions, and control over iteration
-Repetition Happens once (or with hover in/out) Can loop infinitely or run a set number of times
-Use Case Simple effects like hover, focus, class changes Continuous effects, animations with multiple stages, complex
+Feature         CSS Transitions                                     CSS Animations
+Trigger      User-triggered (e.g., hover, focus, class change)      Can be automatic or user-triggered
+Keyframes    Not used (one start and one end state)                 Uses keyframes for multiple intermediate stages
+Complexity   Simple, limited to two states                          Complex, can define multiple steps and loops
+Duration     Duration and timing function for smooth transitions    Duration, timing functions, and control over iteration
+Repetition   Happens once (or with hover in/out) Can loop           infinitely or run a set number of times
+Use Case     Simple effects like hover, focus, class changes        Continuous effects, animations with multiple stages, complex
 interactions
 When to Use Transitions vs. Animations
 Use CSS Transitions when you need a simple, quick effect that changes an element between two states (e.g., hover effects
 or changes in styles when a class is toggled).
 Use CSS Animations when you need more control, multiple steps, or continuous looping animations (e.g., spinning icons,
-page loading animations, or complex background effects).
+page loading animations, or complex background effects). -->

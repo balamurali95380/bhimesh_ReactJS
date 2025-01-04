@@ -34,12 +34,34 @@ HTML:
 html
 Copy code
 <div class="container">
-  <div class="grid-item">Item 1</div>
-  <div class="grid-item">Item 2</div>
-  <div class="grid-item">Item 3</div>
-  <div class="grid-item">Item 4</div>
-  <div class="grid-item">Item 5</div>
-  <div class="grid-item">Item 6</div>
+  <div class="grid-item">Item 1
+    <h1>heading</h1>
+  </div>
+  <div class="grid-item">Item 2
+    <img src="../articlpic.jpg" alt="">
+  </div>
+  <div class="grid-item">Item 3
+    <a href="#">nhat</a>
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)):
+This defines how the columns behave.
+auto-fill automatically adjusts the number of columns to fit the container's width.
+minmax(200px, 1fr) ensures each column will be at least 200px wide, but can expand to take up equal space (1 fraction of the available width).
+grid-gap: Defines the spacing between grid items.
+  </div>
+  <div class="grid-item">Item 4
+    <h1>heading</h1>
+  </div>
+  <div class="grid-item">Item 5
+    <img src="../articlpic.jpg" alt="">
+  </div>
+  <div class="grid-item">Item 6
+    <a href="#">nhat</a>
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)):
+This defines how the columns behave.
+auto-fill automatically adjusts the number of columns to fit the container's width.
+minmax(200px, 1fr) ensures each column will be at least 200px wide, but can expand to take up equal space (1 fraction of the available width).
+grid-gap: Defines the spacing between grid items.
+  </div>
 </div>
 2. Using Media Queries for Enhanced Responsiveness
 To ensure the grid layout is fully responsive and adjusts for different screen sizes, we can combine CSS Grid with media queries.

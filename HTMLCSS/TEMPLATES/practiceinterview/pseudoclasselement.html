@@ -122,6 +122,12 @@ State vs. Content	Applies styles based on interaction or state	Applies styles to
         a:hover {
             color: red;
         }
+        a:active{
+            color: aqua;
+        }
+        /* a:visited{
+            color: purple;
+        } */
         button:disabled
          {
             opacity: 0.5;
@@ -155,18 +161,25 @@ State vs. Content	Applies styles based on interaction or state	Applies styles to
             h1::before {
             content: "🔥 ";
             }
+            input:focus {
+background-color: rgb(210, 223, 29);
+
+}
     </style>
 </head>
 
 <body>
     <h1>heading</h1>
     <a href="#">Hover over me</a>
+    <a href="www.amazon.com">new</a>
     <p>This is an example of a pseudo-class and a pseudo-element.</p>
     <p>This is an example of a pseudo-class and a pseudo-element.<br>
         This is an example of a pseudo-class and a pseudo-element.
         This is an example of a pseudo-class and a pseudo-element.
         This is an example of a pseudo-class and a pseudo-element.
     </p>
+    <input type="email" name="" id="">email
+    <input type="datetime" name="" id="">
     <button>submit</button>
 </body>
 
