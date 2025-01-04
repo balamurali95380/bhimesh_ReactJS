@@ -34,27 +34,30 @@ Positioned elements with a positive or negative z-index. -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>z-index</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index</title>
 </head>
+
 <body>
-    <div style="width:400px ;height:80px;border:1px solid blue;background: aqua;">karthi(no z-index)
+  <div style="width:400px ;height:80px;border:1px solid blue;background: aqua;">karthi(no z-index)
     <div style="position: relative; z-index: 2; background: lightblue;width:500px ;height:300px">
-        Parent (z-index: 1)
-        <div style="position: absolute; z-index: 0; background: pink;width:600px ;height:70px">
-          Child (z-index: 2)
-        </div>
-        <div style="position: absolute; z-index: 1; background: yellow;width:780px ;height:60px">
-          Child (z-index: -1)
-        </div>
+      Parent (z-index: 1)
+      <div style="position: absolute; z-index: 0; background: pink;width:600px ;height:70px">
+        Child (z-index: 2)
       </div>
-      <div style="position: relative; z-index: 3; background: lightgreen;width:100px ;height:160px; left:470px;">
-        Sibling (z-index: 3)
+      <div style="position: absolute; z-index: 1; background: yellow;width:780px ;height:60px">
+        Child (z-index: -1)
       </div>
     </div>
+    <div style="position: relative; z-index: 3; background: lightgreen;width:100px ;height:160px; left:470px;">
+      Sibling (z-index: 3)
+    </div>
+  </div>
 </body>
+
 </html>
 
 

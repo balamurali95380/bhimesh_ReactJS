@@ -86,14 +86,55 @@ This ensures that the grid is responsive and adapts to various screen sizes with
 HTML:
 html
 Copy code
-<div class="container">
-  <div class="grid-item">Item 1</div>
-  <div class="grid-item">Item 2</div>
-  <div class="grid-item">Item 3</div>
-  <div class="grid-item">Item 4</div>
-  <div class="grid-item">Item 5</div>
-  <div class="grid-item">Item 6</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+/* For medium screens (Tablets) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  }
+}
+
+/* For small screens (Mobile) */
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+/* Individual grid items */
+.grid-item {
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+    <div class="grid-item">Item 5</div>
+    <div class="grid-item">Item 6</div>
+  </div>
+</body>
+</html>
+
 3. Explanation of Key Concepts:
 grid-template-columns: Defines the columns in the grid. You can use units like px, em, %, or fr (fractional units) to create flexible layouts.
 minmax(): This function defines a range of values for grid items. For example, minmax(200px, 1fr) means the column should be at least 200px wide but can stretch to take up the remaining available space.
