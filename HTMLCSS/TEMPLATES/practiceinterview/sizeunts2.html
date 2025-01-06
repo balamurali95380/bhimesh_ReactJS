@@ -7,66 +7,86 @@
     <title>Document</title>
     <style>
         html {
-            font-size: 12px;
+            font-size: 16px;
             width: 800px;
-            height: 800px;
+            /* height: 800px; */
             border: 1px solid blue;
         }
-
-        /* .em{
-            font-size: 16px;
-            width:200px;
-            height:100px;
-            border:1px solid;
-        }
-        .em h1{
-            font-size:1.5em;
-            height:.75em;
+        /* p{
+            width:50%;
         } */
+        .cont{
+            font-size: 20px;
+            
+        }
+            
+
+        
+        .sizeunits{
+            /* width:100%; */
+            /* height:600px; */
+            border:2px solid green;
+            display:flex;
+            flex-direction: column;
+            gap:10px;
+         justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width:400px;
+            height:200px;
+            border:1px solid blue;
+        }
+
+        .em{
+            font-size: 15px;
+      
+        }
+        .em p{
+            font-size:1.5em;
+        
+        }
         .rem {
-            width: .5rem;
-            height: .5rem;
-            border: 1px solid;
+           
+       font-size: 1rem;
         }
 
         .rem p {
-            font-size: 2rem;
-            width: 1rem;
+            font-size: 1.5rem;
+          
         }
 
-        /* .percent{
-            font-size: 16px;
-            width:200px;
-            height:100px;
-            border:1px solid;
+        .percent {
+            font-size: 200%;    
 
         }
-        .percent h1{
+        .percent p{
             font-size:50%;
-            height:50%;
-        } */
+         
+        }
     </style>
 </head>
 
 <body>
-    <div class="cont">
-        <h1>heading</h1>
+    <div class="sizeunits">
+    <div class="cont box">
+        heading 20px as cont class font
         <p>e paragraph will have a font size of 24px if its parent (div) has a font size of 16px. */ </p>
         </div>
-        <div class="em">
-            <h1>heading</h1>
-            <p>e paragraph will have a font size of 24px if its parent (div) has a font size of 16px. */ </p>
+        <div class="em box">
+            heading 15px as em font
+            <p>e paragraph will have a font size of 1.5em=22.5px if its parent (div) has a font size of em=15px. */ </p>
         </div>
-        <div class="rem">
-            <h1>heading</h1>
-            <p>e paragraph will have a font size of 24px if its parent (div) has a font size of 16px. */ </p>
+        <div class="rem box">
+            heading 16px as html rem
+            <p>e paragraph will have a font size of 1.5rem= 24px if its parent (div) has a font size of 1rem=16px. */ </p>
         </div>
-        <div class="percent">
-            <h1>heading</h1>
-            <p>e paragraph will have a font size of 24px if its parent (div) has a font size of 16px. */ </p>
+        <div class="percent box">
+            heading as 32px as 200% of parent html which has 16px
+            <!-- <h1>heading</h1> -->
+            <p>e paragraph will have a font size of 16px if its parent (div) has a font size of 16px. */ </p>
 
         </div>
-
     </div>
 
 </body>

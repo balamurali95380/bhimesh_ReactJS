@@ -43,16 +43,16 @@ Positioned elements with a positive or negative z-index. -->
 
 <body>
   <div style="width:400px ;height:80px;border:1px solid blue;background: aqua;">karthi(no z-index)
-    <div style="position: relative; z-index: 2; background: lightblue;width:500px ;height:300px">
-      Parent (z-index: 1)
-      <div style="position: absolute; z-index: 0; background: pink;width:600px ;height:70px">
-        Child (z-index: 2)
+    <div style="position: relative; z-index: 2; background: lightblue;width:500px ;height:200px">
+      Parent (z-index: 2)
+      <div style="position: absolute; z-index: 4; background: pink;width:600px ;height:100px">
+        Child (z-index: 4)
       </div>
       <div style="position: absolute; z-index: 1; background: yellow;width:780px ;height:60px">
-        Child (z-index: -1)
+        Child (z-index: 1)
       </div>
     </div>
-    <div style="position: relative; z-index: 3; background: lightgreen;width:100px ;height:160px; left:470px;">
+    <div style="position: absolute; z-index: 3; background: lightgreen;width:100px ;height:160px; left:470px;top:20px;">
       Sibling (z-index: 3)
     </div>
   </div>

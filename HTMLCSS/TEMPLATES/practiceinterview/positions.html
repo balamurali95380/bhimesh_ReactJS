@@ -8,7 +8,7 @@
 <style>
     .container{
         width:800px;
-        height:600px;
+        height:800px;
         border:1px solid green;
     }
     .box{
@@ -21,43 +21,96 @@
         /* width:200px; */
 
     }
-    .box2{
-        position:relative;
-        top:160px;
-        left:20px;
-        height:50px;
-        /* width:330px; */
-    }
-    .box3{
+    .box5{
         position:absolute;
         top:40px;
-        left:20px;
+        left:50px;
         width:150px;
         height:30px;
         background-color: rgb(130, 18, 98);
     }
+    .box3{
+        position:absolute;
+        top:140px;
+        left:20px;
+        width:150px;
+        height:20px;
+        background-color: rgb(29, 212, 222);
+    }
+    .box2{
+        position:relative;
+        top:50px;
+        left:20px;
+        height:50px;
+        width:330px; 
+       
+    }
     .box4{
         position:fixed;
         /* top:25px; */
-        bottom:20px;
+        bottom:50px;
         background-color: rgb(168, 203, 41);
+        width:300px;
+        height:200px;
     }
-    .box5{
+    .box6{
         position:sticky;
-        top:0px;
-        /* left:130px; */
+        top:6px;
+        left:130px;
         background-color: blue;
-        /* height:30px; */
+        height:30px;
 
     }
+    .relative{
+        width:200px;
+        height:300px;
+        border:1px solid blue;
+        position:relative;
+        top:10px;
+       
+
+    }
+    .item1{
+        position:absolute;
+        height:30px;
+        bottom:10px; 
+        background-color: rgb(43, 226, 52);
+    }
+    .item2{
+        position:relative;
+        height:30px;
+        top:40px;
+        background-color: blueviolet;
+    }
+   
 </style>
 <body>
     <div class="container">
-        <div class="box1 box">static</div>
-        <div class="box2 box">relative</div>
-        <div class="box3 box">absolut</div>
-        <div class="box4 box">fixed</div>
-        <div class="box5 box">sticky</div>
+        <!-- <div class="box1 box">static
+            <div class="box5 box">absolut static</div>
+        </div>
+        
+        <div class="box2 box">relative
+            <div class="box5 box">absolut relative</div>
+        </div> -->
+        <!-- <div class="box3 box">absolut
+            <div class="box5 box">absolut</div>
+        </div>
+        </div>
+        <div class="box4 box">fixed
+            <div class="box5 box">absolut</div>
+        </div> -->
+        <!-- <div class="box6 box">sticky
+            <div class="box5 box">absolut</div>
+        </div> -->
+        
+            <div class="item1">
+                fixed
+            </div>
+            <div class="item2">
+                relative
+            </div>
+        
 
     </div>
     
