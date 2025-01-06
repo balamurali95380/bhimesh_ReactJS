@@ -74,22 +74,24 @@ Example: -->
                         transition: background-color 0.3s ease;
                         }
 
-                        .button:hover {
+                        .button button:hover {
                         background-color: blue;
-                        transition: background-color 3s ease;
+                        width:70%;
+                 
                         }
                         @keyframes rotate {
                         0% { transform: rotate(0deg); }
+                        90%{transform:rotate(90deg);}
                         100% { transform: rotate(360deg); }
                         }
 
-                        /* .spinner {
+                        .spinner {
                             border:1px solid pink;
                             background-color: brown;
-                            /* height:100px;
-                            width:300px; */
-                        /* animation: rotate 1s linear infinite; */
-                        /* } */
+                            height:100px;
+                            width:300px;
+                        animation: rotate 1s linear infinite; 
+                         }
 
     </style>
 </head>

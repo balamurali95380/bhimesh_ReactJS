@@ -57,6 +57,25 @@ Flow	                        Flows inline with text	              Creates a new 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>inlblck</title>
+  <style>
+    p:nth-of-type(2){
+      text-shadow: 1px 2px 3px blueviolet;/*hor/vert/blur-radius/color;*/
+    }
+    div:nth-child(3){
+      margin:10px;
+      border:2px solid brown;
+      box-shadow: 2px 2px 2px 5px greenyellow;/*hor/ver/blur/spread:size of the shadow/color*/
+    }
+    div:nth-child(4){
+      margin:10px;
+      border:2px solid brown;
+      box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+    }
+    img
+    {
+   -webkit-box-reflect: right;
+    }
+  </style>
 </head>
 
 <body>
@@ -65,7 +84,7 @@ Flow	                        Flows inline with text	              Creates a new 
   <div style="background: lightgreen; display: inline-block; width: 100px; height: 50px;">
     Inline-Block
   </div>
-  <div style="background: lightyellow;">Another Block</div>
+  <div>Another Block</div>
   <span style="display: inline-block; width: 100px; height: 50px; background: lightgreen;">
     Inline-block element
   </span>
@@ -79,6 +98,7 @@ Flow	                        Flows inline with text	              Creates a new 
     Explain how animations are created in CSS using @keyframes.
     What is the difference <span style="display: inline-block;width: 100px; height: 50px; background: lightgreen;">between </span>position: sticky and position: fixed?
     How does clip-path work, and where can it be useful?</p>
+    <img src="../alarm.svg" alt="">
 </body>
 
 </html>

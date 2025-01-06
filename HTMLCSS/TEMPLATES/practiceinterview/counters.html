@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            counter-reset:list;
+        } */
+        /* h1::before{
+            counter-increment: h1;
+            content:"state"counter(h1)".";
+        } */
+        nav ul {
+            counter-reset: list;
+        }
+
+        nav li::before {
+            counter-increment: list;
+            /* content:"distict"counter(h1)"."counter(list)"."; */
+            content: counters(list, ".") " ";
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <h1>andhra pradesh</h1>    -->
+        <nav>
+            <ul>
+                <li>chittor</li>
+                <li>guntur</li>
+                <li>kadapa
+                    <ul>
+                        <li>chittor
+                            <ul>
+                                <li>chittor</li>
+                                <li>guntur</li>
+                            </ul>
+                        </li>
+                        <li>guntur</li>
+                    </ul>
+                </li>
+                <li>kurnool</li>
+                <li>nellore</li>
+                <li>kadapa
+                    <ul>
+                        <li>chittor
+                            <ul>
+                                <li>chittor</li>
+                                <li>guntur</li>
+                            </ul>
+                        </li>
+                        <li>guntur</li>
+                    </ul>
+                </li>
+                <li>prakasam</li>
+                <li>kadapa
+                    <ul>
+                        <li>chittor
+                            <ul>
+                                <li>chittor</li>
+                                <li>guntur</li>
+                            </ul>
+                        </li>
+                        <li>guntur</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- <h1>karnataka</h1> -->
+        <!-- <nav>
+            <ul>
+                <li>chittor</li>
+                <li>guntur</li>
+                <li>kadapa</li>
+                <li>kurnool</li>
+                <li>nellore</li>
+                <li>prakasam</li>
+            </ul>
+        </nav>         -->
+    </div>
+</body>
+
+</html>
