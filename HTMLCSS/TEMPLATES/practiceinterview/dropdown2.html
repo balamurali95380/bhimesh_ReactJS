@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdownnav</title>
+    <style>
+        container{
+            width:100%;
+
+        }
+        nav{
+            width:100%;
+            height:auto;
+            background-color: rgb(194, 185, 203);
+            border: 1px solid green;
+             }
+             ul{
+                display:flex;
+                justify-content: space-evenly;    
+                list-style-type: none;   
+                         }
+             a{
+                text-decoration-line: none;
+             background-color:  rgb(178, 167, 194);
+                color: rgb(7, 11, 14);
+             }
+             .drop ul{
+                display: block;
+                background-color: rgb(178, 167, 194);
+                padding-left:0px;
+                text-align: center;    
+             }
+             .drop li{
+              /* text-align: left; */
+              padding-bottom: 15px;
+             
+              /* background-color: blanchedalmond; */
+             }
+             .drop{
+                display:none;
+                position:absolute;
+                top:42px;
+                width:100px;
+                background-color: rgb(155, 20, 196);
+            }
+            
+             .drop li:hover{
+                background-color: rgb(197, 32, 32);
+             }
+            
+
+             .button:hover .drop{
+                display:block;       
+             }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#" class="button">home
+                    <div class="drop">
+                        <ul><li>link1</li>
+                        <li>link2</li>
+                        <li>link3</li>
+                        <li>link4</li></ul>
+                    </div>
+                </li>
+                <li><a href="#" class="button">home
+                    <div class="drop">
+                        <ul><li>link1</li>
+                        <li>link2</li>
+                        <li>link3</li>
+                        <li>link4</li></ul>
+                    </div>
+                </li>
+                <li><a href="#" class="button">home
+                    <div class="drop">
+                        <ul><li>link1</li>
+                        <li>link2</li>
+                        <li>link3</li>
+                        <li>link4</li></ul>
+                    </div>
+                </li>
+                <li><a href="#" class="button">home
+                    <div class="drop">
+                        <ul><li>link1</li>
+                        <li>link2</li>
+                        <li>link3</li>
+                        <li>link4</li></ul>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    
+</body>
+</html>

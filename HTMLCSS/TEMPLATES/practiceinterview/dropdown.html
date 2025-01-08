@@ -5,77 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <style>
-        nav {
+    <style>
+        nav 
+        {
             width: 500px;
             height: 400px;
             background-color: rgb(205, 131, 131);
             border: 1px solid;
         }
-
-        ul {
-            display: block;
+        ul 
+        {
             list-style-type: none;
-            margin: 10px;
-            text-align: center;
-
+            display:flex;
+            flex-direction: row;
         }
 
-        li:hover {
+        li:hover 
+        {
             background-color: rgb(112, 99, 210);
         }
-
-        li {
+        li 
+        {
             color: rgb(53, 154, 38);
             padding: 10px;
-            float: left;
-
+            /* float: left; */
+            
         }
-
-        .drop li {
-            display: inline block;
-            height: 200px;
-            width: 200px;
-
-
-        }
-
-        .dropbutton:hover {
+        .dropbutton:hover
+         {
             background-color: brown;
-
         }
-
         .dropdowncontent {
             display: none;
             position: absolute;
-            top: 2px;
+            top: 65px;
+            width: 145px;
             background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(226, 231, 232, 0.2);
-            z-index: 1;
         }
-
+        .dropdowncontent ul{
+            display:block;
+            padding:5px;
+        }
         .dropdowncontent li {
             color: rgb(194, 188, 188);
-            padding: 12px 16px;
+            /* padding: 12px 10px; */
             text-decoration: none;
             display: block;
-            text-align: left;
             color: chartreuse
         }
-
-        .dropdowncontent li:hover {
+        .dropdowncontent li:hover 
+        {
             background-color: #f1f1f1;
-        }
 
-        .dropbutton:hover .dropdowncontent {
+        }
+        .dropbutton:hover .dropdowncontent 
+        {
             display: block;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Navbar</a>
@@ -129,21 +120,28 @@
     <li><a class="dropdown-item" href="#">Menu item</a></li>
     <li><a class="dropdown-item" href="#">Menu item</a></li>
     <li><a class="dropdown-item" href="#">Menu item</a></li>
-  </ul>
-</div>
-                <li class="drop">
-                <li class="dropbutton">dropdown 
-                    <select name="" id="">
-                    <option value=""><a href="">drop1</a></option>
-                    <option value=""><a href="">drop1</a></option>
-                    <option value=""><a href="">drop1</a></option>
-                </select>
-                <!-- <div class="dropdowncontent">
+  </ul> -->
+    <!-- </div> -->
+    <div class="c">
+        <nav>
+            <ul>
+                <li>home</li>
+                <li>home</li>
 
-                    <li>link1</li>
-                    <li>link2</li>
-                    <li>link3</li>
-                </div> -->
+                <li class="dropbutton">dropdown
+                    <!-- <select name="" id="">
+                    <option value=""><a href="">drop1</a></option>
+                    <option value=""><a href="">drop1</a></option>
+                    <option value=""><a href="">drop1</a></option>
+                </select> -->
+                    <div class="dropdowncontent">
+                        <ul>
+                            <li>link1</li>
+                            <li>link2</li>
+                            <li>link3</li>
+                        </ul>
+
+                    </div>
                 </li>
             </ul>
         </nav>
