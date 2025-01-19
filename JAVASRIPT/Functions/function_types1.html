@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+
+<body>
+    <script>
+        //normal function
+        function add(n1, n2) {
+
+            return (n1 + n2);
+        }
+        var sum = add(2, 3);
+        document.write("sum:", sum + "<br>")
+        function add1(n1, n2) {
+            var sum1 = n1 + n2;
+            document.write("sum:", sum1 + "<br>");
+        } add1(9, 7);
+
+
+        //variable function
+        var add2 = function (n1, n2) {
+            return (n1 + n2);
+        }
+        var sum3 = add2(8, 6);
+        document.write("sum:", sum3 + "<br>")
+
+        var sub1 = function (a1, a2) {
+            var sub = a1 - a2;
+            document.write("sub1:", sub);
+        }
+        sub1(8, 6);
+
+        var total = function (b1, b2) {
+            return (b1 - b2);
+        }
+        var sub = total(8, 6);
+        document.write("sub:", sub + "<br>");
+
+        // arrow function
+        var total1 = (n1, n2) => {
+            return (n1 - n2);
+        }
+        var sub4 = total(7, 5);
+        document.write("sub4:", sub4 + "<br>");
+
+        //selfinvoked
+        (function (n1, n2) {
+            var sum = n1 + n2;
+            document.write(sum);
+        })(7, 8);
+        var total=(function (b1, b2) {
+            return (b1 + b2);
+        })(4, 5);
+        document.write("suminvoke:",total)
+    </script>
+</body>
+
+</html>

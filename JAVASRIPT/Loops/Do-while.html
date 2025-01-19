@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoWhile</title>
 </head>
+
 <body>
     <script>
-        let i=20;
+        //runs the code atleast once before checking the condition.
+        let i = 20;
         do {
-            document.write(i+"<br>")
+            document.write(i + "<br>")
             i++;
-            
-        } while (i<=25);
+
+        } while (i <= 25);
+
+
+        i = 50;
+        do {
+            document.write("value is greater than35:", i + "<br>");
+            i--;
+        } while (i > 35);
+
     </script>
-    
+
 </body>
+
 </html>
