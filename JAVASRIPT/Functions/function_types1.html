@@ -48,15 +48,28 @@
         var sub4 = total(7, 5);
         document.write("sub4:", sub4 + "<br>");
 
+        var total23=(b1,b2)=>{
+            return(b1-b2);
+        }
+        var sub34=total23(7,4);
+        document.write("subarrowfun:",sub34+"<br>");
+
         //selfinvoked
         (function (n1, n2) {
             var sum = n1 + n2;
-            document.write(sum);
+            document.write("invoke sum:",sum);
         })(7, 8);
         var total=(function (b1, b2) {
             return (b1 + b2);
         })(4, 5);
-        document.write("suminvoke:",total)
+        document.write("suminvoke:",total);
+
+        //function function name(arg1,arg2){}
+        //var identifer=function(arg1,arg2){}
+        //var identifier=(arg1,arg2)=>{}
+        //(function(arg1,arg2){})
+           
+        
     </script>
 </body>
 
