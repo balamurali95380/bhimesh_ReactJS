@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+        var mobile={
+            name:"redmi",
+            price:30000,
+            color:"green"  ,
+            memory:{ram:12,rom:3},
+            mobile:function display(){
+                console.log("mobile display");
+            }
+         
+        };
+        mobile.memory={ram:12,rom:3};
+        mobile["chip"]= ["exynos","amd","intel"];
+        mobile.display = function display(){
+            console.log("mobile display");
+        }
+       
+        console.log(mobile);
+    </script>
+    
+</body>
+</html>
