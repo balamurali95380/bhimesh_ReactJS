@@ -20,18 +20,86 @@
     // }grade(78,76,78);
 
 
-    // 2.factorial
+    // // 2.factorial
+    // var n = prompt("enter number");
    
-    function factorial(n){  
-        var n = prompt("enter number");
-        fact=1;
-        for (i=2;i<n;i++)
-        {
-            fact=fact*i;          
-        }     
+    // function factorial(n){      
+    //     fact=1;
+    //     for (i=2;i<n;i++)
+    //     {
+    //         fact=fact*i;          
+    //     }     
+    // }factorial(5);
+    // document.write(fact);
+// // 1.grade
+//     function grade(){
+//     var marks1=Number(prompt("enter the marks1"));
+//     var marks2=Number(prompt("enter the marks2"));
+//     var marks3=Number(prompt("enter the marks3"));
+//     var avg = (marks1+marks2+marks3)/3;
+//     document.write("average:",avg+"<br>");
+//     if(avg>=75){
+//         document.write("GRADE A",+"<br>");
+//     }
+//     else if(avg>=50 && avg<75){
+//         document.write("GRADE B",+"<br>");
+
+//     }
+//     else{
+//         document.write("GRADE C",+"<br>");
+//     }
+//     }
+//    grade();
+
+// // 2.factorial
+// function factorial(){
+//     var num =prompt("enter the number");
+//     fact=1;
+//     for(i=1;i<=num;i++){
+//         fact=fact*i;
+//     }
+//     document.write("factorial:",fact+"<br>");
+// }
+// factorial();
+
+// 4.primececk
+
+// function prime(){
+//     var n =Number(prompt("enter the number"));
+//     if (n==2||n==3){
+//         document.write("its a prime number");
+//     }
+//     for(i=3;i<=n;i++){
+//         if(n%i==0 || n%2==0 || n%3==0){
+//             alert("not a prime number");
+//             break;
+//         }
+//         else{
+//             alert("its a prime number"); 
+//             break;
+//         }
+//     }
+    
+// }
+// prime();
+
+// 5.greeting
+function greeting(){
+
+    var name =prompt("enter the name ");
+    var time=prompt("enter the time of the day ");
+    if(time=="morning"){
+        document.write("good morning,",name);
     }
-    document.write(factorial(n));
-   
+    else if(time=="afternoon"){
+        document.write("good afternoon,",name);
+    }
+    else{
+        document.write("good evening,",name+"!!!!!!!");
+    }
+}
+
+greeting();
  </script>
     
 </body>
