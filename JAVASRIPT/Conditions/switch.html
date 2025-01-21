@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <script>
+         var n1 = Number(prompt("number1"));
+        var n2 = Number(prompt("number2"));
+        var operator = prompt("operator");
+        switch(operator){
+            case "+": 
+            total=n1+n2;
+            document.write("total",total+"<br>")
+                break;
+            case "-":
+                total=n1-n2;
+            document.write("total",total+"<br>")
+                break;
+
+            default: 
+            total= n1*n2;
+            document.write("total",total+"<br>")
+                break;
+
+        }
+        // if (operator == "+") {
+        //     var total = n1 + n2;
+        //     alert(total);
+        // }
+        // else if (operator == "-") {
+        //     var total = n1 - n2;
+        //     alert(total);
+        // }
+        // else if (operator == "*") {
+        //     var total = n1 * n2;
+        //     alert(total);
+        // }
+        // else (operator == "/")
+        // {
+        //     var total = n1 / n2;
+        //     alert(total);
+        // }
+    </script>
+    
+</body>
+</html>

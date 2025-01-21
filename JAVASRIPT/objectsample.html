@@ -7,22 +7,24 @@
 </head>
 <body>
     <script>
+        //object creation:decribes  or displays the properties of a single entity.
+        // the object properties are assigned by "." , "[""]", can assign array, function,object .
         var mobile={
-            name:"redmi",
+            name:"redmi",//property:value-->(key):value seperated by commas and value of stings should bin double quotes.
             price:30000,
-            color:"green"  ,
+            color:"green",
             memory:{ram:12,rom:3},
             mobile:function display(){
                 console.log("mobile display");
             }
          
         };
-        mobile.memory={ram:12,rom:3};
+        mobile.memory={ram:12,rom:3}; 
         mobile["chip"]= ["exynos","amd","intel"];
-        mobile.display = function display(){
+        mobile.display = function display(){ 
             console.log("mobile display");
         }
-       
+       delete mobile.memory
         console.log(mobile);
     </script>
     
