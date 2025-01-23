@@ -598,6 +598,10 @@
             addtrainer: function addtrainer() {
                 document.write(institute["courses"].length);
                 this.trainer = 4;
+                institute.courses.forEach(function(value){
+                    document.write(value);
+                })
+
             }
         }
         institute.addstudent();
@@ -605,6 +609,26 @@
         institute.addtrainer();
 
         console.log(institute);
+
+
+        var studentsclass=["first","second","third","fourth"];
+        studentsclass.forEach(function(value){
+            document.write(value+studentsclass.length+"<br>");
+
+        })
+
+        var classic =[
+        "gt",
+        {},
+        ["wether"],
+        "fun(){}",
+        "123"
+         ];
+
+         classic.forEach(function(value){
+            document.write(value+"<br>");
+         }
+        )
 
     </script>
 </body>
