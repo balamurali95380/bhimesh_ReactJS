@@ -10,39 +10,580 @@
 <body>
     <script>
 
-        // var student = {
+        var student = {
 
-        //     studentID: 123456,
-        //     name: "bhms",
-        //     age: 23,
-        //     gender: "male",
-        //     coursesEnrolled: ["java", "html", "css"],
-        //     enrollmentDate: "12/23/2024"
-        // }
-        // console.log(student);
+            studentID: 123456,
+            name: "bhms",
+            age: 23,
+            gender: "male",
+            coursesEnrolled: ["java", "html", "css"],
+            enrollmentDate: "12/23/2024",
+            addStudent() {
+                // - Adds a new student.
+            },
+            removeStudent() {
+                // - Removes a student.
+            },
+            updateCourses() {
+                // - Updates the courses a student is enrolled in.
+            }
+        }
+        student.addStudent();
+        student.removeStudent();
+        student.updateCourses();
+        console.log(student);
 
         var musicplayer = {
             currentSong: "malli",
             playlist: "soulful",
             volume: 12,
             isPlaying: "mp3",
-            repeatMode: "no"
+            repeatMode: "no",
+            play() {
+                // - Plays the current song.
+            },
+            pause() {
+                // - Pauses the song.
+            },
+            skip() {
+                // - Skips to the next song.
+            },
+            shuffle() {
+                // - Shuffles the playlist.
+            }
 
-        }
+        };
+        musicplayer.play();
+        musicplayer.pause();
+        musicplayer.skip();
+        musicplayer.shuffle();
         console.log(musicplayer);
 
         var RecipeBook
             = {
             recipeName: "aloo",
-            ingredients: ["aloo", "salt", "hotwater"],
+            ingredients1: ["aloo", "salt", "hotwater"],
+            ingredients: { one: "aloo", two: "salt", three: "hotwater" },
             instructions: "put aloo and salt in hotwater and stir",
             prepTime: "10min",
-            servings: 50
+            servings: 50,
+            addRecipe() {
+                // - Adds a new recipe.
+            },
+            removeRecipe() {
+                // - Removes a recipe.
+            },
+            searchRecipe() {
+                // - Finds recipes by ingredients.
+            }
         }
+        RecipeBook["difficultyLevel"] = "easy";
+        RecipeBook.addRecipe();
+        RecipeBook.removeRecipe();
+        RecipeBook.searchRecipe();
         console.log(RecipeBook);
+        delete RecipeBook.servings;
+        for (R in RecipeBook) {
+            document.write(R + ":" + RecipeBook[R] + "<br>");
+        }
 
+
+        var moviedatabase = {
+            movieTitle: "bhat",
+            director: "rtat",
+            releaseYear: 2012,
+            addmovie() {
+                // - Adds a new movie.
+            },
+            removeMovie() {
+                // - Removes a movie.
+            },
+            searchByDirector() {
+                // - Finds movies by a specific director.
+            }
+        };
+        moviedatabase.addmovie();
+        moviedatabase.removeMovie();
+        moviedatabase.searchByDirector();
+
+        console.log(moviedatabase);
+        // function addmovie(){
+
+        // }addmovie()
+        // function removeMovie(){
+        //     delete moviedatabase.movietitle;
+        // }
+        // function searchByDirector(){
+        //     if(Moviedatabase.director== "rtat"){
+        //         document.write(moviedatabase.movietitle);
+        //     }
+        // }
+
+        var Chat = {
+            sender: "x",
+            receiver: "y",
+            message: "hi",
+            sendMessage() {
+                // - Sends a message.
+            },
+            deleteMessage() {
+                // - Deletes a message.
+            },
+            searchMessage() {
+                // - Searches messages by keyword.
+            }
+        };
+        Chat.sendMessage();
+        Chat.deleteMessage();
+        Chat.searchMessage();
+
+        console.log(Chat);
+
+        var ims = {
+            // ● Description: Develop an object to manage product inventory.
+            // ● Properties:
+            productName: "laptop",
+            quantityAvailable: 23,
+            price: 10000,
+            addProduct() {
+                // - Adds a new product.
+            },
+            updateQuantity() {
+                // - Updates the product quantity.
+            },
+            removeProduct() {
+                // - Removes a product.
+            }
+        };
+        ims.addProduct();
+        ims.updateQuantity();
+        ims.removeProduct();
+        console.log(ims);
+
+        var appointment = {
+            // ● Description: Create an object to manage appointments.
+            // ● Properties:
+            eventName:"marriage",
+                date:"12/24",
+            time:"5am",
+                location:"hyderabad",
+                addAppointment(){
+                    // - Adds a new appointment.
+                },
+            updateAppointment(){
+                // - Updates an appointment.
+            },
+                deleteAppointment(){
+                    // - Deletes an appointment.
+                }
+               }
+
+               appointment.addAppointment();
+               appointment.updateAppointment();
+               appointment.deleteAppointment();
+               console.log(appointment);
+               
+        var gameCharacter ={
+        // ● Description: Design an object to represent a game character.
+        // ● Properties:
+        name:"thor",
+        level:3,
+        healthPoints:234,
+        attack(){
+            // - Attacks an enemy.
+        },
+        defend(){
+            // - Defends against an attack.
+        },
+        levelUp(){
+            //  - Increases the character's level.
+        }
+    };
+    gameCharacter.attack();
+    gameCharacter.defend();
+    gameCharacter.levelUp();
+    console.log(gameCharacter);
+
+        var eCart={
+        // ● Description: Build an object to manage a shopping cart.
+        // ● Properties:
+        items:["mobile","watch","laptop"],
+        quantity:3,
+        price:10000,
+        
+        addItem(){
+            // - Adds an item to the cart.
+        },
+        removeItem(){
+            // - Removes an item from the cart.
+        },
+        updateQuantity(){
+            // - Updates the quantity of an item.
+        },
+        calculateTotal(){
+            // - Calculates the total price.
+        }
+    }
+
+    eCart.addItem();
+    eCart.removeItem();
+    eCart.updateQuantity();
+    eCart.calculateTotal();
+    console.log(eCart);
+        var launlearnapp={
+        // ● Description: Develop an object to manage language learning activities.
+        // ● Properties:
+        vocabularyWords:["add","art","about"],
+        definitions:["adding","drawing a pic","describe a thing"],
+        exampleSentences:["1.add a table to list of items",
+            "2.art enhances the nature",
+           "3.eggs are good for health"],
+           
+        addWord(){
+            // - Adds a new word.
+        },
+        removeWord(){
+            // - Removes a word.
+        },
+        testKnowledge(){
+            // - Tests vocabulary knowledge.
+        }        
+    };
+
+    launlearnapp.addWord();
+    launlearnapp.removeWord();
+    launlearnapp.testKnowledge();
+    console.log(launlearnapp);
+
+        var taskTracker={
+        // ● Description: Create an object to track tasks.
+        // ● Properties:
+         taskName:"build a traingle pattern",
+        dueDate:"12/24",
+        priority:"high",
+        addTask(){
+            // - Adds a new task.
+        },
+        markComplete(){
+            // - Marks a task as complete.
+        },
+        filterByPriority(){
+            // - Filters tasks by priority.
+        }
+        };
+
+        taskTracker.addTask();
+        taskTracker.markComplete();
+        taskTracker.filterByPriority();
+        console.log(taskTracker);
+
+        var weather={
+        // ● Description: Design an object to fetch and display weather information.
+        // ● Properties:
+         temperature:"23degcelsius",
+        humidity:"1.2",
+        windSpeed:"12km/h",
+        updateWeather(){
+            // - Updates weather data.
+        }
+        };
+        weather.updateWeather();
+        console.log(weather);
+        
+        var hotelreser={
+        // ● Description: Build an object to manage hotel reservations.
+        // ● Properties:
+        roomNumber:123,
+        guestName:"ram",
+        checkInDate:"10/24",
+        checkOutDate:"11/24",
+        addReservation(){
+            // - Adds a reservation.
+        }, 
+        cancelReservation(){
+            // - Cancels a reservation.
+        },
+        checkAvailability(){
+            // - Checks room availability.
+        }
+        };
+        hotelreser.addReservation();
+        hotelreser.cancelReservation();
+        hotelreser.checkAvailability();
+
+        console.log(hotelreser);
+
+      
+        var timetrack={
+        // ● Description: Develop an object to track employee work hours.
+        // ● Properties:
+        employeeName:"ram",
+        date:"12/24",
+        startTime:"10.00am",
+        endTime:"5.00pm",
+        clockIn(){
+            // - Starts tracking work hours.
+        },
+        clockOut(){
+            // - Stops tracking work hours.
+        }, 
+        calculateHours(){
+            // - Calculates total hours worked.
+        } 
+    };
+
+    timetrack.clockIn();
+    timetrack.clockOut();
+    timetrack.calculateHours();
+    console.log(timetrack);
+
+        var recipegen={
+        // ● Description: Create an object to generate random recipes.
+        // ● Properties:
+        ingredients:["salt","chilli","aloo"],
+         instructions:"boil aloo in hot water.add salt and chilli.mix well.serve hot",
+         generateRecipe(){
+            // - Creates a new recipe.
+         } 
+        };
+        recipegen.generateRecipe();
+        console.log(recipegen);
+        
+        var flightbook={
+        // ● Description: Design an object to manage flight bookings.
+        // ● Properties:
+        flightNumber:12345,
+        departureCity:"narway",
+        arrivalCity:"italy",
+        departureTime:"12.30pm",
+        bookFlight(){
+            // - Books a flight.
+        }, 
+        cancelFlight(){
+            // - Cancels a flight.
+        },
+        checkAvailability(){
+            // - Checks flight availability.
+        }
+    };
+
+    flightbook.bookFlight();
+    flightbook.cancelFlight();
+    flightbook.checkAvailability();
+    console.log(flightbook);
+
+        var musicmgr = {
+            // ● Description: Build an object to manage a music band.
+            // ● Properties:
+            bandMembers:23,
+                upcomingGigs:"jazz",
+            setlist:"party",
+                addMember(){
+                    // - Adds a new band member.
+                }, 
+                    scheduleGig(){
+                        // - Schedules a gig.
+                    },
+                        updateSetlist(){
+                            // - Updates the setlist.
+                        } 
+    };
+    musicmgr.addMember();
+    musicmgr.scheduleGig();
+    musicmgr.updateSetlist();
+    console.log(musicmgr);
+
+        var blogmgr = {
+            // ● Description: Develop an object to manage blog posts.
+            // ● Properties:
+            postTitle:"agriculture",
+        author:"ram",
+        content:"various methods to improve productivity",
+         tags:"field,agriculture",
+         createPost(){
+            // - Creates a new blog post.
+         },
+            editPost(){
+                // - Edits an existing post.
+            },
+                deletePost(){
+                    // - Deletes a post.
+                }
+        };
+
+        blogmgr.createPost();
+        blogmgr.editPost();
+        blogmgr.deletePost();
+        console.log(blogmgr);
+        var fitctr = {
+            // ● Description: Create an object to track fitness challenges.
+            // ● Properties:
+            challengeName: "100mtrrun",
+            participants: 5,
+            startDate: "12/24",
+            endDate: "1/25",
+            joinChallenge() {
+                // - Joins a challenge.
+            },
+            trackProgress() {
+                // - Tracks progress.
+            },
+            declareWinner() {
+                // - Declares a winner.
+            }
+        };
+
+        fitctr.joinChallenge();
+        fitctr.trackProgress();
+        fitctr.declareWinner();
+
+        console.log(fitctr);
+
+        var Reestlist = {
+            // ● Description: Design an object to manage real estate listings.
+            // ● Properties:
+            propertyType: "villa",
+            price: 760000,
+            location: "hyd",
+            addListing() {
+                // - Adds a new listing.
+
+            },
+            removeListing() {
+                // - Removes a listing.
+            },
+            searchByCriteria() {
+                // - Searches for listings by criteria.
+            }
+
+        };
+        Reestlist.addListing();
+        Reestlist.removeListing();
+        Reestlist.searchByCriteria();
+
+        console.log(Reestlist);
+
+        var Prjmgtool = {
+            // ● Description: Build an object to manage projects.
+            // ● Properties:
+            projectName: "abs",
+            description: "safteysystem",
+            teamMembers: 4,
+            deadlines: "12/24",
+            createProject() {
+                // - Creates a new project.
+            },
+            assignTask() {
+                // - Assigns tasks to team members.
+            },
+            trackProgress() {
+                // - Tracks project progress.
+            }
+
+        }
+        Prjmgtool.createProject();
+        Prjmgtool.assignTask();
+        Prjmgtool.trackProgress();
+
+        console.log(Prjmgtool);
+        var subscription = {       // ● Description: Develop an object to manage subscriptions.
+            // ● Properties:
+            subscriptionName: "basic",
+            price: 420,
+            renewalDate: "12/24",
+            subscribe: function subscribe() {
+                // - Starts a new subscription.
+            },
+            unsubscribe: function unsubscribe() {
+                // - Cancels a subscription.
+            },
+            viewDetails: function viewDetails() {
+                // - Views subscription details.
+            }
+        };
+        subscription.subscribe();
+        subscription.unsubscribe();
+        subscription.viewDetails();
+
+        console.log(subscription);
+
+        var petadtctr = {
+            // ● Description: Create an object to manage pet adoptions.
+            // ● Properties:
+            petName: "puppy",
+            breed: "shephard",
+            age: "3yrs",
+            adoptionStatus: "yes",
+
+            addPet: function addPet() {
+                // - Adds a new pet.
+            },
+            adoptPet: function adoptPet() {
+                // - Marks a pet as adopted.
+            },
+            searchAvailablePets: function searchAvailablePets() {
+                // - Searches for available pets.
+            }
+        };
+
+        petadtctr.addPet();
+        petadtctr.adoptPet();
+        petadtctr.searchAvailablePets();
+
+        console.log(petadtctr);
+
+
+
+        var wishlstmgr = {
+            // ● Description: Design an object to manage wishlists.
+            // ● Properties:
+            itemName: "mobile",
+            priorityLevel: "high",
+            price: 10000,
+            addItem: function addItem() {
+                // - Adds a new item to the wishlist.
+            },
+            removeItem: function removeItem() {
+                // - Removes an item from the wishlist.
+            },
+            updatePriority: function updatePriority() {
+                // - Updates the priority of an item.
+            }
+        };
+        wishlstmgr.addItem();
+        wishlstmgr.removeItem();
+        wishlstmgr.updatePriority();
+
+        console.log(wishlstmgr);
+
+        for (R in wishlstmgr) {
+            // document.write(R + ":" +wishlstmgr[R] + "<br>");
+        }
+
+        var translation = {
+            sourceLanguage: "telugu",
+            targetLanguage: "english",
+            textToTranslate: "ayyo",
+            translate: function translate() {
+                // - Translates the text.
+
+            },
+            saveTranslation: function saveTranslation() {
+                // - Saves the translation to history.
+            },
+            viewHistory: function viewHistory() {
+                // - Views saved translations.
+            }
+
+        }
+        translation.translate();
+        translation.saveTranslation();
+        translation.viewHistory();
+        console.log(translation);
+        for (R in translation) {
+            document.write(R + ":" + translation[R] + "<br>");
+        }
     </script>
-
 </body>
 
 </html>
