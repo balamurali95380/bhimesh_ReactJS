@@ -64,42 +64,44 @@
 
 // 4.primececk
 
-// function prime(){
-//     var n =Number(prompt("enter the number"));
-//     if (n==2||n==3){
-//         document.write("its a prime number");
-//     }
-//     for(i=3;i<=n;i++){
-//         if(n%i==0 || n%2==0 || n%3==0){
-//             alert("not a prime number");
-//             break;
-//         }
-//         else{
-//             alert("its a prime number"); 
-//             break;
-//         }
-//     }
+function prime(){
+    var n =Number(prompt("enter the number"));
+    if (n==2||n==3){
+        document.write("its a prime number");
+    }
+    for(i=4;i<=n;i++){
+        if(n%i==0 || n%2==0 || n%3==0){
+            alert("not a prime number");
+           
+            break;
+        }
+        else{
+            alert("its a prime number"); 
+        
+            break;
+        }
+    }
     
-// }
-// prime();
-
-// 5.greeting
-function greeting(){
-
-    var name =prompt("enter the name ");
-    var time=prompt("enter the time of the day ");
-    if(time=="morning"){
-        document.write("good morning,",name);
-    }
-    else if(time=="afternoon"){
-        document.write("good afternoon,",name);
-    }
-    else{
-        document.write("good evening,",name+"!!!!!!!");
-    }
 }
+prime();
 
-greeting();
+// // 5.greeting
+// function greeting(){
+
+//     var name =prompt("enter the name ");
+//     var time=prompt("enter the time of the day ");
+//     if(time=="morning"){
+//         document.write("good morning,",name);
+//     }
+//     else if(time=="afternoon"){
+//         document.write("good afternoon,",name);
+//     }
+//     else{
+//         document.write("good evening,",name+"!!!!!!!");
+//     }
+// }
+
+// greeting();
 
 
  </script>
