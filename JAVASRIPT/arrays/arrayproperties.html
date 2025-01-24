@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+    var student=["name","gender","rollno","class","section"];
+
+    //normal display of array
+    document.write(student+"<br>");
+
+    //using normal for loop
+
+    for (i=0;i<student.length;i++){
+        document.write(i+student[i]+"<br>");
+    }
+
+     // for removing array element at the start of array
+    student.shift();
+    document.write(student+"<br>");
+
+    // for removing array element at the end of array
+    // student.pop();
+    // document.write(student+"<br>");
+
+    //   // for adding array element at the start of array
+    // student.unshift("var");
+    // document.write(student+"<br>");
+
+    //   // for adding array element at the end of array
+    // student.push("bhim");
+    // document.write(student+"<br>");
+
+    // for adding or removing centre elements
+    // student.splice(3,0,"bhimesh");
+    // document.write(student+"<br>");
+
+    student.splice(2,1,"bhimesh","ravi","mng");
+    document.write(student+"<br>");
+
+    student.sort();
+    document.write(student+"<br>");
+    student.reverse();
+    document.write(student+"<br>");
+
+
+
+
+    // student.splice(2,1);
+    // document.write(student+"<br>");
+    // student.splice(0,1);
+    // document.write(student+"<br>");
+    // student.splice(1,2);
+    // document.write(student+"<br>");
+    // student.splice(2,2);
+    // document.write(student+"<br>");
+
+    student.forEach(function(val,pos,arra)
+    {
+        document.write("student details:"+student+"<br>"+val+"<br>"+pos+"<br>"+arra+"<br>");
+    })
+
+
+    
+
+
+</script>
+    
+</body>
+</html>
