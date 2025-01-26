@@ -62,8 +62,46 @@
     {
         document.write("student details:"+student+"<br>"+val+"<br>"+pos+"<br>"+arra+"<br>");
     })
+    var result = student.map(function(value){
+        return value+"-vmr";
+    })
+    console.log(result)
+
+    var result=student.find(function(val){
+        return val=="ravi"
+    })
+    console.log(result)
+
+    var result=student.filter(function(val){
+        return val=="ravi"
+    })
+    console.log(result)
+
+    var result=student.some(function(val){
+        return val=="ravi"
+    })
+    console.log(result)
+
+
+ var result=student.findIndex(function(val){
+        return val=="ravi"
+    })
+    console.log(result)
+
+    var marks=[12,34,45,32]
+    var result=marks.reduce(function(a,b){
+        return a+b
+    })
+    console.log(result)
+    var result=student.every(function(val){
+        return val=="ravi"
+    })
+    console.log(result)
+   
+
 
     
+
 
 
     
