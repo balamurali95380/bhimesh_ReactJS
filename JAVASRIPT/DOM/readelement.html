@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>createelement</title>
 </head>
+
 <body>
+    <a href=""></a>
+    <ul id="list"></ul>
+    <!-- <img src="" alt=""> -->
+    <div id="imgcreat"></div>
+    <script>
+        var div = document.getElementById("imgcreat")
+        var myimg = document.createElement("img")
+        myimg.setAttribute("src", "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+        myimg.setAttribute("width", "150px")
+        div.appendChild(myimg)
 
-<script>
-    
 
-</script>
+        // HTMLHeadingElement
 
-    
+        var head1 = document.createElement("h1")
+        head1.textContent = "bhumika";
+        div.appendChild(head1)
+
+        // HTMLParagraphElement
+
+        var paragraph1 = document.createElement("p")
+        paragraph1.textContent = "bhumika";
+        div.appendChild(paragraph1)
+
+
+        // HTMLanchorElement
+
+        var anchor = document.createElement("a")
+        anchor.setAttribute("href", "www.examp.com")
+        anchor.textContent = "llink example"
+        div.appendChild(anchor)
+
+        // htmlist create
+
+        var divli = document.getElementById("list")
+        var student = ["val", "bhim", "net"];
+        for (i = 0; i < 3; i++) {
+            var myli = document.createElement("li")
+            myli.innerHTML = student[i]
+            // myli.innerHTML=["val","bhim","net"];
+            divli.appendChild(myli)
+        }
+    </script>
+
+
 </body>
+
 </html>
