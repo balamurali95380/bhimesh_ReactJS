@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Membership Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Gym Membership</h1>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="membership">Membership Type</label>
+      <select id="membership" name="membership" required>
+        <option value="monthly">Monthly</option>
+        <option value="quarterly">Quarterly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+
+      <button type="button" class="submit-btn" onclick="registeruser()">Register</button>
+
+    </form>
+  </div>
+  <table border="1">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</body>
+<script>
+    var allUsers = [
+         
+         ]
+ 
+         function displayUsers() {
+             document.querySelector("tbody").innerHTML = ""
+             allUsers.forEach(function (user){
+                 var myTr = document.createElement("tr");
+                 for(a in user){
+                     var myTd = document.createElement("td");
+                     myTd.innerHTML = user[a]
+                     myTr.appendChild(myTd)
+                 }
+                 document.querySelector("tbody").appendChild(myTr)
+             })
+             document.getElementById("name").value=""
+             document.getElementById("email").value=""
+             document.getElementById("age").value=""
+             document.getElementById("membership").value=""
+         }
+ 
+         function registeruser() {
+ 
+             var name = document.getElementById("name").value
+             var email = document.getElementById("email").value
+             var age = document.getElementById("age").value
+             var membership = document.getElementById("membership").value
+ 
+             var user = {
+                 fullName: name,
+                 mail: email,
+                 age: age,
+                 membershiptype:membership
+             }
+ 
+             allUsers.push(user)
+             displayUsers()
+         }
+</script>
+</html>

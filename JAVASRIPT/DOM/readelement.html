@@ -26,6 +26,28 @@
         head1.textContent = "bhumika";
         div.appendChild(head1)
 
+
+        // var ns=Number(prompt("no of headings"))
+       
+        var names = ["val", "bhim", "net","87654345678"];
+        console.log(names[1])
+        // for(i=0;i<=ns;i++){
+        //     var head1 = document.createElement("h1")
+        //     head1.textContent = "bhum";
+        //     div.appendChild(head1)
+        // }
+
+        // name.forEach(function(val) {
+
+            for(i=0;i<=names.length;i++){
+            var head1 = document.createElement("h1")
+            div.appendChild(head1)
+            head1.textContent = names[i];
+            // div.appendChild(head1) 
+            }    
+                  
+        // });
+
         // HTMLParagraphElement
 
         var paragraph1 = document.createElement("p")
@@ -50,6 +72,35 @@
             // myli.innerHTML=["val","bhim","net"];
             divli.appendChild(myli)
         }
+
+        //htmltable
+
+
+        var table = document.createElement("table")
+        table.setAttribute("border", "1")
+        var thead1 = document.createElement("thead")
+        var tbody1 = document.createElement("tbody")  
+        var mytr=document.createElement("tr")
+        tbody1.appendChild(mytr)      
+
+       for(i=0;i<=3;i++){             
+        var myth=document.createElement("th")
+        myth.innerHTML="hea1"+i;       
+        thead1.appendChild(myth)
+        
+        var mytd=document.createElement("td")
+        mytd.innerHTML="heading1"+i;       
+        mytr.appendChild(mytd)
+    }
+        table.appendChild(thead1)
+        table.appendChild(tbody1)
+        document.body.appendChild(table)
+
+
+        
+
+
+
     </script>
 
 
