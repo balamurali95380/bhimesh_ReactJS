@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Form Column -->
+    <div class="column">
+      <h1>Job Application</h1>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <!-- <label>Job Type</label>
+        <div>
+          <label><input type="radio" name="job-type" value="full-time" required> Full-Time</label><br>
+          <label><input type="radio" name="job-type" value="part-time" required> Part-Time</label><br>
+          <label><input type="radio" name="job-type" value="internship" required> Internship</label>
+        </div> -->
+
+        <!-- <label>Skills</label>
+        <div>
+          <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label><br>
+          <label><input type="checkbox" name="skills" value="python"> Python</label><br>
+          <label><input type="checkbox" name="skills" value="react"> React</label>
+        </div> -->
+
+        <button type="button" onclick="create()"  id="crtbtn">Apply</button>
+        <!-- <button type="button" onclick="updateUser()" id="updbtn"  style="display:none">Update</button> -->
+      </form>
+    </div>
+
+    <!-- Table Column -->
+    <div class="column">
+      <h1>Applicants</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <!-- <th>Job Type</th>
+            <th>Skills</th> -->
+            <!-- <th>Delete</th>
+            <th>Edit</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>John Doe</td>
+            <td>Full-Time</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Internship</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    var all = []
+
+    function create() {
+      var fullName = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var mobile = document.getElementById("phone").value;
+      // var JobType=document.getElementsByName("job-type")[i].value;
+      
+
+      user = {
+        fullName,
+        email,
+        mobile
+      }
+      all.push(user)
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      read();
+    }
+
+    function read() {
+      document.querySelector("tbody").innerHTML = ""
+      all.forEach(function (user, index) {
+        var tr = document.createElement("tr")
+        for (a in user) {
+          var td = document.createElement("td")
+          td.innerHTML = user[a]
+          tr.appendChild(td)
+        }
+
+        deltd = document.createElement("td")
+        delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
+        deltd.appendChild(delbtn)
+        tr.appendChild(deltd)
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick", "edit(" + index + ")")
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+
+        document.querySelector("tbody").appendChild(tr);
+      })
+    }
+    read();
+
+    function del(i){
+      all.splice(i,1);
+      read();
+    }
+var indx;
+    function edit(i) { 
+      indx=i;
+      document.getElementById("name").value = all[i].fullName;
+      document.getElementById("email").value =all[i].email;
+      document.getElementById("phone").value = all[i].mobile;
+
+      document.getElementById("crtbtn").style.display="none"
+      document.getElementById("updbtn").style.display="block"
+
+      
+    }
+
+    function updateUser(){
+      var fullName = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var mobile = document.getElementById("phone").value;
+
+      user = {
+        fullName,
+        email,
+        mobile
+      }
+      all[indx]=user;
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      read(); 
+      document.getElementById("crtbtn").style.display="block"
+      document.getElementById("updbtn").style.display="none"
+
+
+    }
+
+  </script>
+</body>
+
+</html>

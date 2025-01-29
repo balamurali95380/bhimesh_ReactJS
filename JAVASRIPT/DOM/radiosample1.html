@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radiojs</title>
+</head>
+<body>
+     <label>Job Type</label>
+        <div>
+          <label><input type="radio" name="job-type" value="full-time" required> Full-Time</label><br>
+          <label><input type="radio" name="job-type" value="part-time" required> Part-Time</label><br>
+          <label><input type="radio" name="job-type" value="internship" required> Internship</label>
+        </div>
+<script>
+   var all= document.getElementsByName("job-type");
+   for(i=0;i<=3;i++){
+   if(all[i].value == "part-time"){
+    console.log(all)
+   }
+}
+</script>
+
+    
+</body>
+</html>

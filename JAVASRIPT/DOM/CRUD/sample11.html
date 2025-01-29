@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Membership</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Form Column -->
+    <div class="column">
+      <h1>Library Membership</h1>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input style="overflow: hidden;" type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="membership-type">Membership Type</label>
+        <select id="membership-type" name="membership-type" required>
+          <option value="regular">Regular</option>
+          <option value="premium">Premium</option>
+        </select>
+
+        <!-- <label>Reading Preferences</label>
+        <div>
+          <label><input type="checkbox" name="preferences" value="fiction"> Fiction</label><br>
+          <label><input type="checkbox" name="preferences" value="non-fiction"> Non-Fiction</label><br>
+          <label><input type="checkbox" name="preferences" value="science"> Science</label>
+        </div> -->
+
+        <button type="button" onclick="registeruser()" id="registerbtn">Register</button>
+        <button type="button" onclick="updateuser()" id="updatebtn" style="display: none;">update</button>
+      </form>
+    </div>
+
+    <!-- Table Column -->
+    <div class="column">
+      <h1>Members List</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Membership Type</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>John Doe</td>
+            <td>Regular</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Premium</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+
+    // var allusers = [];
+    var allUsers = [
+      // {
+      //     fullName: "Kumar ",
+      //   email: "kumar@gmail.com",
+      //   membershiptype:"pass"
+      // },
+      // {
+      //     fullName: "Kiran ",
+      //   email: "kumar@gmail.com",
+
+      //   membershiptype:"pass"
+      // },
+      // {
+      //     fullName: "Kumhyar ",
+      //   email: "kumar@gmail.com",
+      //   membershiptype:"pass"
+      // }
+
+    ]
+    function registeruser() {
+      var fullName = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var membershiptype = document.getElementById("membership-type").value;
+
+      var user = {
+        fullName,
+        email,
+        membershiptype
+      }
+      allUsers.push(user);
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("membership-type").value = "";
+      displayinTble();
+    }
+
+    function displayinTble() {
+      document.querySelector("tbody").innerHTML = "";
+      allUsers.forEach(function (user,index) {
+        
+        var myTr = document.createElement("tr");
+        for (a in user) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = user[a];
+          myTr.appendChild(myTd)
+
+        }
+
+        var deltd = document.createElement("td")
+        var delbtn = document.createElement("button")
+        delbtn.innerHTML = "Delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick","deleteuser("+index+")")
+        deltd.appendChild(delbtn);
+        myTr.appendChild(deltd);
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick","edituser("+index+")")
+        edttd.appendChild(edtbtn);
+        myTr.appendChild(edttd);
+
+        document.querySelector("tbody").appendChild(myTr)
+
+      })
+    }
+    displayinTble();
+
+    function deleteuser(i)
+    {
+      allUsers.splice(i,1);
+      displayinTble();
+    }
+
+    var sindex;
+    function edituser(i)
+    {
+      sindex=i;
+      document.getElementById("name").value = allUsers[i]. fullName;
+      document.getElementById("email").value = allUsers[i].email;
+      document.getElementById("membership-type").value = allUsers[i].membershiptype;
+
+      document.getElementById("registerbtn").style.display="none";
+      document.getElementById("updatebtn").style.display="block";    
+
+    }
+
+    function updateuser(){
+      var fullName = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var membershiptype = document.getElementById("membership-type").value;
+
+      var user = {
+        fullName,
+        email,
+        membershiptype
+      }
+      allUsers[sindex]=user;
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("membership-type").value = "";
+      displayinTble();
+      
+      document.getElementById("registerbtn").style.display="block";
+      document.getElementById("updatebtn").style.display="none";    
+    }
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Subscription</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Form Column -->
+    <div class="column">
+      <h1>Subscribe to Newsletter</h1>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- <label for="frequency">Subscription Frequency</label>
+        <div>
+          <label><input type="radio" name="frequency" value="daily" required> Daily</label><br>
+          <label><input type="radio" name="frequency" value="weekly" required> Weekly</label><br>
+          <label><input type="radio" name="frequency" value="monthly" required> Monthly</label>
+        </div>
+
+        <label>Preferred Topics</label>
+        <div>
+          <label><input type="checkbox" name="topics" value="tech"> Technology</label><br>
+          <label><input type="checkbox" name="topics" value="business"> Business</label><br>
+          <label><input type="checkbox" name="topics" value="entertainment"> Entertainment</label>
+        </div> -->
+
+        <button type="button" onclick="create()" id="crtbtn">Subscribe</button>
+        <button type="button" onclick="update()" id="updbtn" style="display: none;" >Update</button>
+      </form>
+    </div>
+
+    <!-- Table Column -->
+    <div class="column">
+      <h1>Subscribers</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Delete</th>
+            <th>Edit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>John Doe</td>
+            <td>Weekly</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Daily</td>
+            <td>
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    var all=[]
+    function create(){
+      var fullname=document.getElementById("name").value
+      var email=document.getElementById("email").value
+
+      user={
+        fullname,
+        email
+      }
+      all.push(user)
+      document.getElementById("name").value=""
+      document.getElementById("email").value=""
+      read();
+    }
+
+    function read(){
+      document.querySelector("tbody").innerHTML=""
+      all.forEach(function(user,index){
+        var tr=document.createElement("tr")
+        for(a in user){
+          var td=document.createElement("td")
+          td.innerHTML=user[a]
+          tr.appendChild(td)
+        }
+
+        
+        deltd = document.createElement("td")
+        delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick", "del(" + index+  ")")
+        deltd.appendChild(delbtn)
+        tr.appendChild(deltd)
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick", "edit(" + index + ")")
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+
+        document.querySelector("tbody").appendChild(tr);
+      })
+    }
+    read();
+
+    function del(i){
+      all.splice(i,1);
+      read();
+    }
+var indx;
+    function edit(i) { 
+      indx=i;
+       document.getElementById("name").value=all[i].fullname
+       console.log(i)
+      document.getElementById("email").value=all[i].email
+
+      document.getElementById("crtbtn").style.display="none"
+      document.getElementById("updbtn").style.display="block"
+          
+      }
+      function update(){
+
+      var fullname=document.getElementById("name").value
+      var email=document.getElementById("email").value
+
+      user={
+        fullname,
+        email
+      }
+      all[indx]=user
+
+      
+      
+      read();
+      document.getElementById("name").value=""
+      document.getElementById("email").value=""
+
+      document.getElementById("updbtn").style.display="none"
+      document.getElementById("crtbtn").style.display="block"
+      }
+    
+  </script>
+</body>
+</html>
