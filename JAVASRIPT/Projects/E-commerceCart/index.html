@@ -159,16 +159,16 @@
 
                     <label>Category:</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="electronics" value="Electronics">
+                        <input type="checkbox" id="electronics" value="Electronics" name="category">
                         <label for="electronics">Electronics</label>
 
-                        <input type="checkbox" id="clothing" value="Clothing">
+                        <input type="checkbox" id="clothing" value="Clothing" name="category">
                         <label for="clothing">Clothing</label>
 
-                        <input type="checkbox" id="home" value="Home Appliances">
+                        <input type="checkbox" id="home" value="Home Appliances" name="category">
                         <label for="home">Home Appliances</label>
 
-                        <input type="checkbox" id="books" value="Books">
+                        <input type="checkbox" id="books" value="Books" name="category">
                         <label for="books">Books</label>
                     </div>
 
@@ -193,7 +193,8 @@
                         <label for="discount30">30% Off</label>
                     </div>
 
-                    <button type="submit">Add to Cart</button>
+                    <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
                 </form>
             </div>
 
@@ -208,12 +209,14 @@
                             <th>Quantity</th>
                             <th>Price (₹)</th>
                             <th>Discount</th>
-                            <th>Total Price (₹)</th>
-                            <th>Actions</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                            <!-- <th>Total Price (₹)</th>
+                            <th>Actions</th> -->
                         </tr>
                     </thead>
                     <tbody id="cart-list">
-                        <tr>
+                        <!-- <tr>
                             <td>Smartphone</td>
                             <td>Electronics</td>
                             <td>1</td>
@@ -245,19 +248,162 @@
                             <td>
                                 <button class="remove">Remove</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
 
-                <h3>Cart Summary</h3>
+                <!-- <h3>Cart Summary</h3>
                 <p>Total Items: <strong>4</strong></p>
                 <p>Subtotal: <strong>₹25,400</strong></p>
                 <p>Taxes (10%): <strong>₹2,540</strong></p>
-                <p><strong>Total Price: ₹27,940</strong></p>
+                <p><strong>Total Price: ₹27,940</strong></p> -->
             </div>
         </div>
 
     </div>
+<script>
+    var allUsers = []
+function registeruser() {
+    var productName = document.getElementById("productName").value
+    var quantity = document.getElementById("quantity").value
+    var price = document.getElementById("price").value
+    var user = {
+        productName,
+        category: [],
+        quantity,
+        price,
+        discount: []
+    }
+    //radiobuttons
+    var radio = document.getElementsByName("discount")
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked == true) {
+            user.discount.push(radio[i].value)
+        }
+        radio[i].checked = false;
+    }
+    //checkboxes
+    var checkbox = document.getElementsByName("category")
+    for (i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked == true) {
+            user.category.push(checkbox[i].value)
+        }
+        checkbox[i].checked = false
+    }
+    allUsers.push(user)
+    displayUsers()
+    document.getElementById("productName").value = ""
+    document.getElementById("quantity").value = ""
+    document.getElementById("price").value = ""
 
+}
+
+function displayUsers() {
+    document.querySelector("tbody").innerHTML = ""
+    allUsers.forEach(function (user, index) {
+        var tr = document.createElement("tr");
+        for (a in user) {
+            var td = document.createElement("td");
+            td.innerHTML = user[a]
+            tr.appendChild(td)
+        }
+
+        deltd = document.createElement("td")
+        delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
+        deltd.appendChild(delbtn)
+        tr.appendChild(deltd)
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick", "edit(" + index + ")")
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+        document.querySelector("tbody").appendChild(tr)
+    })
+
+
+
+}
+
+
+function del(i) {
+    allUsers.splice(i, 1);
+    displayUsers();
+}
+var indx;
+function edit(i) {
+    indx = i;
+    document.getElementById("productName").value = allUsers[i].productName
+    document.getElementById("quantity").value = allUsers[i].quantity
+    document.getElementById("price").value = allUsers[i].price
+
+    //radiobutton selection
+    var radio = document.getElementsByName("discount")
+
+    for (j = 0; j < radio.length; j++) {
+
+        radio[j].checked = allUsers[i].discount.includes(radio[j].value);
+    }
+
+    //checkbox selection
+    var checkbox = document.getElementsByName("category")
+    for (var k = 0; k < checkbox.length; k++) {
+        checkbox[k].checked = allUsers[i].category.includes(checkbox[k].value);
+    }
+
+    document.getElementById("crtbtn").style.display = "none"
+    document.getElementById("updbtn").style.display = "block"
+
+}
+function update() {
+    var productName = document.getElementById("productName").value
+    var quantity = document.getElementById("quantity").value
+    var price = document.getElementById("price").value
+
+   
+   
+    var user = {
+        productName,
+        category: [],
+        quantity,
+        price,
+        discount: []
+
+    }
+    //radiobuttons
+    var radio = document.getElementsByName("discount")
+
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked == true) {
+            user.discount.push(radio[i].value)
+        }
+        radio[i].checked = false;
+    }
+    //checkboxes
+    var checkbox = document.getElementsByName("category")
+    for (i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked == true) {
+            user.category.push(checkbox[i].value)
+        }
+        checkbox[i].checked = false
+    }
+
+    allUsers[indx] = user
+
+    displayUsers();
+    document.getElementById("productName").value = ""
+    document.getElementById("quantity").value = ""
+    document.getElementById("price").value = ""
+
+
+    document.getElementById("updbtn").style.display = "none"
+    document.getElementById("crtbtn").style.display = "block"
+}
+</script>
 </body>
 </html>
