@@ -8,7 +8,7 @@
 <body>
     <table border="3" width="300px" height="300px" style="border-collapse: collapse;">
         <thead>
-            <tr>
+            <!-- <tr>
                 <td>heder</td>
                 <td>nav</td>
                 <td>heder</td>
@@ -40,8 +40,22 @@
                 <td>art</td>
                 <td>art</td>
             </tr>
-        </tbody>
+        </tbody> -->
     </table>
+
+    <script>
+        var Mytable=document.createElement("table")
+        Mytable.setAttribute("border","1")
+        var TableHead=document.createElement("thead")
+        var Tablebody=document.createElement("tbody")
+
+        var Tablerow=document.createElement("tr")
+
+        Tablebody.appendChild(Tablerow)
+        Mytable.appendChild(TableHead)
+        Mytable.appendChild( Tablebody)
+
+    </script>
     
 </body>
 </html>

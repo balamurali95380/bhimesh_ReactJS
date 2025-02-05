@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Form Column -->
+    <div class="column">
+      <h1>Social Media Signup</h1>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label>Gender</label>
+        <div>
+          <label><input type="radio" name="gender" value="male" required> Male</label><br>
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+        </div>
+
+        <label>Interests</label>
+        <div>
+          <label><input type="checkbox" name="interests" value="tech"> Technology</label><br>
+          <label><input type="checkbox" name="interests" value="sports"> Sports</label><br>
+          <label><input type="checkbox" name="interests" value="music"> Music</label>
+        </div>
+
+        <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+        <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
+      </form>
+    </div>
+
+    <!-- Table Column -->
+    <div class="column">
+      <h1>Registered Users</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Gender</th> 
+            <th>Interests</th>    
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    var allUsers = [];
+
+    function registeruser() {
+      var name = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+
+      var user = {
+        fullName: name,
+        mail: email,
+        gender: [],
+        intr: []
+      };
+
+      // Get selected radio button value
+      var allRadio = document.getElementsByName("gender");
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked) {
+          user.gender.push(allRadio[i].value);
+        }
+        // Clear radio button selection
+        allRadio[i].checked = false;
+      }
+
+      // Get selected checkboxes
+      var allCheckBoxes = document.getElementsByName("interests");
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked) {
+          user.intr.push(allCheckBoxes[i].value);
+        }
+        // Clear checkbox selection
+        allCheckBoxes[i].checked = false;
+      }
+
+      allUsers.push(user);
+      displayUsers();
+
+      // Clear input fields
+      document.getElementById("username").value = "";
+      document.getElementById("email").value = "";
+    }
+
+    function displayUsers() {
+      document.querySelector("tbody").innerHTML = "";
+      allUsers.forEach(function (user, index) {
+        var tr = document.createElement("tr");
+        for (a in user) {
+          var td = document.createElement("td");
+          td.innerHTML = Array.isArray(user[a]) ? user[a].join(", ") : user[a];
+          tr.appendChild(td);
+        }
+
+        var deltd = document.createElement("td");
+        var delbtn = document.createElement("button");
+        delbtn.innerHTML = "Delete";
+        delbtn.setAttribute("class", "delete-btn");
+        delbtn.setAttribute("onclick", "del(" + index + ")");
+        deltd.appendChild(delbtn);
+        tr.appendChild(deltd);
+
+        var edttd = document.createElement("td");
+        var edtbtn = document.createElement("button");
+        edtbtn.innerHTML = "Edit";
+        edtbtn.setAttribute("class", "edit-btn");
+        edtbtn.setAttribute("onclick", "edit(" + index + ")");
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+
+        document.querySelector("tbody").appendChild(tr);
+      });
+    }
+
+    displayUsers();
+
+    function del(i) {
+      allUsers.splice(i, 1);
+      displayUsers();
+    }
+
+    var indx;
+    function edit(i) {
+      indx = i;
+      document.getElementById("username").value = allUsers[i].fullName;
+      document.getElementById("email").value = allUsers[i].mail;
+
+      // Set radio buttons
+      var allRadio = document.getElementsByName("gender");
+      for (var j = 0; j < allRadio.length; j++) {
+        allRadio[j].checked = allUsers[i].gender.includes(allRadio[j].value);
+      }
+
+      // Set checkboxes
+      var allCheckBoxes = document.getElementsByName("interests");
+      for (var k = 0; k < allCheckBoxes.length; k++) {
+        allCheckBoxes[k].checked = allUsers[i].intr.includes(allCheckBoxes[k].value);
+      }
+
+      document.getElementById("crtbtn").style.display = "none";
+      document.getElementById("updbtn").style.display = "block";
+    }
+
+    function update() {
+      var name = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+
+      var user = {
+        fullName: name,
+        mail: email,
+        gender: [],
+        intr: []
+      };
+
+      // Get selected radio button value
+      var allRadio = document.getElementsByName("gender");
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked) {
+          user.gender.push(allRadio[i].value);
+        }
+        allRadio[i].checked = false; // Clear radio button selection
+      }
+
+      // Get selected checkboxes
+      var allCheckBoxes = document.getElementsByName("interests");
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked) {
+          user.intr.push(allCheckBoxes[i].value);
+        }
+        allCheckBoxes[i].checked = false; // Clear checkbox selection
+      }
+
+      allUsers[indx] = user;
+
+      displayUsers();
+
+      // Clear input fields
+      document.getElementById("username").value = "";
+      document.getElementById("email").value = "";
+
+      document.getElementById("updbtn").style.display = "none";
+      document.getElementById("crtbtn").style.display = "block";
+    }
+  </script>
+</body>
+</html>

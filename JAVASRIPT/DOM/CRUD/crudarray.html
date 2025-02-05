@@ -7,16 +7,30 @@
 </head>
 <body>
     <script>
-    var arr=["1,2,3,4"]
+    var arr=["1,2",3,4]
     console.log(arr.length)
     arr.push(0);
     arr[0]=6;
     document.write(arr)
 
-    var arr=[1,2,3,4]
+    var arr=[1,2,3,4,4,5]
     arr.push(5);
     arr[3]=6;
     document.write(arr)
+
+
+    var result=arr.filter(function(val){   
+        return val==4;
+    })
+
+    // var result=student.filter(function(val){
+    //     return val=="ravi"
+    // })
+
+    console.log(result)
+
+
+    
     
     </script>
   

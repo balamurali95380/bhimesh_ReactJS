@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadioCreate</title>
+</head>
+
+<body>
+   <!-- <form > -->
+    <!-- <div id="frequency"> -->
+      <label>Subscription Frequency</label><br>
+      <input type="radio" name="frequency" value="daily" onclick="displayButton()"> Daily<br>
+      <input type="radio" name="frequency" value="weekly" onclick="displayButton()"> Weekly<br>
+      <input type="radio" name="frequency" value="monthly" onclick="displayButton()" > Monthly
+      <!-- <button onclick="displayButton()">Cick</button> -->
+    <!-- </div> -->
+<!-- </form> -->
+
+    <script>
+ function displayButton(){
+        var radioBtn=document.getElementsByName("frequency")
+        for(i=0;i<radioBtn.length;i++){
+       
+
+            if(radioBtn[i].checked === true)
+            {
+                console.log(radioBtn[i].value)
+
+            }
+        }
+
+    }
+       
+     displayButton()
+
+    </script>
+
+</body>
+
+</html>

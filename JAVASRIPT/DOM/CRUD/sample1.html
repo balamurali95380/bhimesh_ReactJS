@@ -20,12 +20,12 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <!-- <label>Preferences</label>
+        <label>Preferences</label>
         <div>
           <label><input type="checkbox" name="preference" value="workshop"> Workshop</label><br>
           <label><input type="checkbox" name="preference" value="seminar"> Seminar</label><br>
           <label><input type="checkbox" name="preference" value="networking"> Networking Event</label>
-        </div> -->
+        </div>
 
         <button type="button" onclick="registerUser()" id="registerBtn">Register</button>
         <button type="button" onclick="updateUser()" id="updateBtn">Update</button>
@@ -40,6 +40,7 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Preferences</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -70,30 +71,48 @@
     var allUsers = [
       {
         fullName: "Ram ",
-        email: "ram@gmail.com"
+        email: "ram@gmail.com",
+        prefr:"workshop"
       },
       {
         fullName: "kiran ",
-        email: "kiran@gmail.com"
+        email: "kiran@gmail.com",
+        prefr:"seminar"
       },
       {
         fullName: "Kumar ",
-        email: "kumar@gmail.com"
+        email: "kumar@gmail.com",
+        prefr:"networking"
       }
     ]
     function registerUser() {
       var fullName = document.getElementById("fullName").value;
       var email = document.getElementById("email").value;
+
       // If Key & Values are same in An Object , We can mention Single Word Only 
       var user = {
         fullName,
-        email
+        email,
+        prefr: []
       }
+     
+      //checkbox
+      var allCheckBoxes = document.getElementsByName("preference")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+      }
+
       allUsers.push(user)
 
       document.getElementById("fullName").value = "";
-      document.getElementById("email").value = ""
+      document.getElementById("email").value = "";
+      document.getElementsByName("preference").value="";
+
+
       displayUsersInTable()
+      console.log(allUsers)
     }
 
 
@@ -140,6 +159,8 @@
       gIndex = i;
       document.getElementById("fullName").value = allUsers[i].fullName;//to display again in input fields the data which needs to be edit/update.
       document.getElementById("email").value = allUsers[i].email
+      document.getElementsByName("preference").value=allUsers[i].prefr
+
 
       document.getElementById("updateBtn").style.display = "block"
       document.getElementById("registerBtn").style.display = "none"
@@ -151,13 +172,21 @@
       var email = document.getElementById("email").value;
       var user = {
         fullName,
-        email
+        email,
+        prefr: []
+      }
+      var allCheckBoxes = document.getElementsByName("preference")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
       }
 
       allUsers[gIndex] = user;
       displayUsersInTable();
       document.getElementById("fullName").value = "";
-      document.getElementById("email").value = ""
+      document.getElementById("email").value = "";
+      document.getElementsByName("preference").value="";
 
       document.getElementById("updateBtn").style.display = "none"
       document.getElementById("registerBtn").style.display = "block"

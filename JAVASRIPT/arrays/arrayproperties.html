@@ -58,45 +58,49 @@
     // student.splice(2,2);
     // document.write(student+"<br>");
 
-    student.forEach(function(val,pos,arra)
-    {
-        document.write("student details:"+student+"<br>"+val+"<br>"+pos+"<br>"+arra+"<br>");
-    })
-    var result = student.map(function(value){
-        return value+"-vmr";
+    // student.forEach(function(val,pos,arra)
+    // {
+    //     document.write("student details:"+student+"<br>"+val+"<br>"+pos+"<br>"+arra+"<br>");
+    // })
+    var result = student.map(function(value,index,array){
+        // return value+"-vmr";
+        // return index+"bnh";
+        return "[3]"+array+"[1]"
     })
     console.log(result)
+    console.log(student)
 
-    var result=student.find(function(val){
-        return val=="ravi"
-    })
-    console.log(result)
+    // var result=student.find(function(val){
+    //     return val=="ravi"
+    // })
+    // console.log(result)
 
-    var result=student.filter(function(val){
-        return val=="ravi"
-    })
-    console.log(result)
+    // var result=student.filter(function(val,index){
+    //     return val=="ravi"
+    //     return index==1
+    // })
+    // console.log(result)
 
-    var result=student.some(function(val){
-        return val=="ravi"
-    })
-    console.log(result)
+    // var result=student.some(function(val){
+    //     return val=="ravi"
+    // })
+    // console.log(result)
 
 
- var result=student.findIndex(function(val){
-        return val=="ravi"
-    })
-    console.log(result)
+//  var result=student.findIndex(function(val){
+//         return val=="ravi"
+//     })
+//     console.log(result)
 
-    var marks=[12,34,45,32]
-    var result=marks.reduce(function(a,b){
-        return a+b
-    })
-    console.log(result)
-    var result=student.every(function(val){
-        return val=="ravi"
-    })
-    console.log(result)
+//     var marks=[12,34,45,32]
+//     var result=marks.reduce(function(a,b){
+//         return a+b
+//     })
+//     console.log(result)
+//     var result=student.every(function(val){
+//         return val=="ravi"
+//     })
+//     console.log(result)
    
 
 

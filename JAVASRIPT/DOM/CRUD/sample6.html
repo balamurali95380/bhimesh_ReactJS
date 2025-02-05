@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel Booking</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Form Column -->
@@ -31,14 +33,15 @@
           <option value="suite">Suite</option>
         </select>
 
-        <label>Additional Amenities</label>
+        <!-- <label>Additional Amenities</label>
         <div>
           <label><input type="checkbox" name="amenities" value="wifi"> WiFi</label><br>
           <label><input type="checkbox" name="amenities" value="breakfast"> Breakfast</label><br>
           <label><input type="checkbox" name="amenities" value="parking"> Parking</label>
-        </div>
+        </div>  -->
 
-        <button type="submit">Book Now</button>
+        <button type="button" onclick="registeruser()" id="crtbtn">Register</button>
+        <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
       </form>
     </div>
 
@@ -48,13 +51,17 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Check-in Date</th>
+            <th>Check-out Date</th>
             <th>Room Type</th>
-            <th>Action</th>
+            <th>Delete</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- <tr>
             <td>John Doe</td>
             <td>Double</td>
             <td>
@@ -69,10 +76,118 @@
               <button class="edit-btn">Edit</button>
               <button class="delete-btn">Delete</button>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
   </div>
+  <script>
+    var allUsers = [
+
+    ]
+
+    function registeruser() {
+
+      var name = document.getElementById("name").value
+      var email = document.getElementById("email").value
+      var checkin = document.getElementById("checkin").value
+      var checkout = document.getElementById("checkout").value
+      var room = document.getElementById("room").value
+
+      var user = {
+        fullName: name,
+        mail: email,
+        checkin: checkin,
+        checkout: checkout,
+        room
+      }
+
+      allUsers.push(user)
+      displayUsers()
+    }
+
+    function displayUsers() {
+      document.querySelector("tbody").innerHTML = ""
+      allUsers.forEach(function (user, index) {
+        var tr = document.createElement("tr");
+        for (a in user) {
+          var td = document.createElement("td");
+          td.innerHTML = user[a]
+          tr.appendChild(td)
+        }
+
+        deltd = document.createElement("td")
+        delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
+        deltd.appendChild(delbtn)
+        tr.appendChild(deltd)
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick", "edit(" + index + ")")
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+        document.querySelector("tbody").appendChild(tr)
+      })
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("checkin").value = ""
+      document.getElementById("checkout").value = ""
+      document.getElementById("room").value = ""
+
+    }
+
+
+    function del(i) {
+      allUsers.splice(i, 1);
+      displayUsers();
+    }
+    var indx;
+    function edit(i) {
+      indx = i;
+      document.getElementById("name").value = allUsers[i].fullName
+      document.getElementById("email").value = allUsers[i].mail
+      document.getElementById("checkin").value = allUsers[i].checkin
+      document.getElementById("checkout").value = allUsers[i].checkout
+      document.getElementById("room").value = allUsers[i].room
+
+      document.getElementById("crtbtn").style.display = "none"
+      document.getElementById("updbtn").style.display = "block"
+
+    }
+    function update() {
+
+      var name = document.getElementById("name").value
+      var email = document.getElementById("email").value
+      var checkin = document.getElementById("checkin").value
+      var checkout = document.getElementById("checkout").value
+      var room = document.getElementById("room").value
+
+
+      var user = {
+        fullName: name,
+        mail: email,
+        checkin: checkin,
+        checkout: checkout,
+        room
+      }
+      allUsers[indx] = user
+
+      displayUsers();
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("checkin").value = ""
+      document.getElementById("checkout").value = ""
+      document.getElementById("room").value = ""
+
+      document.getElementById("updbtn").style.display = "none"
+      document.getElementById("crtbtn").style.display = "block"
+    }
+  </script>
 </body>
+
 </html>

@@ -20,8 +20,8 @@
 
         <label>Gender</label>
         <div>
-          <label><input type="radio" name="gender" value="male" required> Male</label><br>
-          <label><input type="radio" name="gender" value="female" required> Female</label>
+          <label><input type="radio" name="gender" value="male" required  > Male</label><br>
+          <label><input type="radio" name="gender" value="female" required > Female</label>
         </div>
 
         <label for="membership">Membership Type</label>
@@ -30,8 +30,8 @@
           <option value="quarterly">Quarterly</option>
           <option value="yearly">Yearly</option>
         </select>
-
-        <button type="submit">Join Now</button>
+        <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+        <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
       </form>
     </div>
 
@@ -41,13 +41,16 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Full Name</th>
             <th>Email</th>
-            <th>Action</th>
+            <th>Gender</th>
+            <th>Membership Type</th>
+            <th>Delete</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- <tr>
             <td>John Doe</td>
             <td>john@example.com</td>
             <td>
@@ -62,10 +65,126 @@
               <button class="edit-btn">Edit</button>
               <button class="delete-btn">Delete</button>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>
   </div>
+  <script>
+     var allUsers = []
+
+function registeruser() {
+
+  var name = document.getElementById("name").value
+  var email = document.getElementById("email").value
+  var membership = document.getElementById("membership").value
+
+  var user = {
+    fullName: name,
+    mail: email,
+    gender:[],
+    membership
+    
+    } 
+     //radio button
+     var allRadio = document.getElementsByName("gender")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.gender.push(allRadio[i].value);
+        }
+      }
+
+  allUsers.push(user)
+  displayUsers()
+  document.getElementById("name").value = ""
+  document.getElementById("email").value = ""
+  document.getElementsByName("gender").value=""
+  document.getElementById("membership").value = ""
+}
+
+function displayUsers() {
+  document.querySelector("tbody").innerHTML = ""
+  allUsers.forEach(function (user, index) {
+    var tr = document.createElement("tr");
+    for (a in user) {
+      var td = document.createElement("td");
+      td.innerHTML = user[a]
+      tr.appendChild(td)
+    }
+
+    deltd = document.createElement("td")
+    delbtn = document.createElement("button")
+    delbtn.innerHTML = "delete"
+    delbtn.setAttribute("class", "delete-btn")
+    delbtn.setAttribute("onclick", "del(" + index + ")")
+    deltd.appendChild(delbtn)
+    tr.appendChild(deltd)
+
+    var edttd = document.createElement("td")
+    var edtbtn = document.createElement("button")
+    edtbtn.innerHTML = "Edit"
+    edtbtn.setAttribute("class", "edit-btn")
+    edtbtn.setAttribute("onclick", "edit(" + index + ")")
+    edttd.appendChild(edtbtn);
+    tr.appendChild(edttd);
+    document.querySelector("tbody").appendChild(tr)
+  })
+
+ 
+
+}
+displayUsers()
+
+function del(i) {
+  allUsers.splice(i, 1);
+  displayUsers();
+}
+var indx;
+function edit(i) {
+  indx = i;
+  document.getElementById("name").value = allUsers[i].fullName
+  document.getElementById("email").value = allUsers[i].mail
+  document.getElementsByName("gender").value=allUsers[i].gender
+  document.getElementById("membership").value = allUsers[i].membership
+  
+
+  document.getElementById("crtbtn").style.display = "none"
+  document.getElementById("updbtn").style.display = "block"
+
+}
+function update() {
+
+  var name = document.getElementById("name").value
+  var email = document.getElementById("email").value
+  var membership = document.getElementById("membership").value
+ 
+
+
+  var user = {
+    fullName: name,
+    mail: email,
+    gender:[],
+    membership
+   
+  }
+  var allRadio = document.getElementsByName("gender")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.gender.push(allRadio[i].value);
+        }
+      }
+  allUsers[indx] = user
+
+  displayUsers();
+  document.getElementById("name").value = ""
+  document.getElementById("email").value = ""
+  document.getElementsByName("gender").value=""
+  document.getElementById("membership").value = ""
+ 
+
+  document.getElementById("updbtn").style.display = "none"
+  document.getElementById("crtbtn").style.display = "block"
+}
+</script>
 </body>
 </html>
