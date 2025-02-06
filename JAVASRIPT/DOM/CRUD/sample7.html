@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Registration</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Form Column -->
@@ -24,15 +26,15 @@
         <label for="travel-date">Travel Date</label>
         <input type="date" id="travel-date" name="travel-date" required>
 
-        <!-- <label>Travel Preferences</label>
+        <label>Travel Preferences</label>
         <div>
           <label><input type="checkbox" name="preferences" value="window-seat"> Window Seat</label><br>
           <label><input type="checkbox" name="preferences" value="aisle-seat"> Aisle Seat</label><br>
           <label><input type="checkbox" name="preferences" value="meal-included"> Meal Included</label>
-        </div> -->
+        </div>
 
         <button type="button" onclick="create()" id="crtbtn">Register</button>
-        <button type="button" onclick="update()" id="updbtn"  style="display:none">Update</button>
+        <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
       </form>
     </div>
 
@@ -46,6 +48,7 @@
             <th>Email</th>
             <th>Destination</th>
             <th>Travel Date</th>
+            <th>Travel Preferences</th>
             <th>Delete</th>
             <th>Edit</th>
           </tr>
@@ -72,43 +75,53 @@
     </div>
   </div>
   <script>
-    var all=[]
-    function create(){
-      var fullname=document.getElementById("name").value
-      var email=document.getElementById("email").value
-      var destination=document.getElementById("destination").value
-      var traveldate=document.getElementById("travel-date").value
+    var all = []
+    function create() {
+      var fullname = document.getElementById("name").value
+      var email = document.getElementById("email").value
+      var destination = document.getElementById("destination").value
+      var traveldate = document.getElementById("travel-date").value
 
-      user={
+      user = {
         fullname,
         email,
         destination,
-        traveldate
+        traveldate,
+        prefr: []
+
       }
+      var allCheckBoxes = document.getElementsByName("preferences")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
+      }
+
       all.push(user)
-      document.getElementById("name").value=""
-      document.getElementById("email").value=""
-      document.getElementById("destination").value=""
-      document.getElementById("travel-date").value=""
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("destination").value = ""
+      document.getElementById("travel-date").value = ""
       read();
     }
 
-    function read(){
-      document.querySelector("tbody").innerHTML=""
-      all.forEach(function(user,index){
-        var tr=document.createElement("tr")
-        for(a in user){
-          var td=document.createElement("td")
-          td.innerHTML=user[a]
+    function read() {
+      document.querySelector("tbody").innerHTML = ""
+      all.forEach(function (user, index) {
+        var tr = document.createElement("tr")
+        for (a in user) {
+          var td = document.createElement("td")
+          td.innerHTML = user[a]
           tr.appendChild(td)
         }
 
-        
+
         deltd = document.createElement("td")
         delbtn = document.createElement("button")
         delbtn.innerHTML = "delete"
         delbtn.setAttribute("class", "delete-btn")
-        delbtn.setAttribute("onclick", "del(" + index+  ")")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
         deltd.appendChild(delbtn)
         tr.appendChild(deltd)
 
@@ -125,50 +138,65 @@
     }
     read();
 
-    function del(i){
-      all.splice(i,1);
+    function del(i) {
+      all.splice(i, 1);
       read();
     }
-var indx;
-    function edit(i) { 
-      indx=i;
-       document.getElementById("name").value=all[i].fullname
-       console.log(i)
-      document.getElementById("email").value=all[i].email
-      document.getElementById("destination").value=all[i].destination
-      document.getElementById("travel-date").value=all[i].traveldate
+    var indx;
+    function edit(i) {
+      indx = i;
+      document.getElementById("name").value = all[i].fullname
+      console.log(i)
+      document.getElementById("email").value = all[i].email
+      document.getElementById("destination").value = all[i].destination
+      document.getElementById("travel-date").value = all[i].traveldate
 
-      document.getElementById("crtbtn").style.display="none"
-      document.getElementById("updbtn").style.display="block"
-          
+      var pref = document.getElementsByName("preferences")
+      for (j = 0; j < pref.length; j++) {
+        pref[j].checked = all[i].prefr.includes(pref[j].value)
       }
-      function update(){
 
-      var fullname=document.getElementById("name").value
-      var email=document.getElementById("email").value
-      var destination=document.getElementById("destination").value
-      var traveldate=document.getElementById("travel-date").value
-      
 
-      user={
+      document.getElementById("crtbtn").style.display = "none"
+      document.getElementById("updbtn").style.display = "block"
+
+    }
+    function update() {
+
+      var fullname = document.getElementById("name").value
+      var email = document.getElementById("email").value
+      var destination = document.getElementById("destination").value
+      var traveldate = document.getElementById("travel-date").value
+
+
+      user = {
         fullname,
-        email,  
+        email,
         destination,
-        traveldate
+        traveldate,
+        prefr: []
 
       }
-      all[indx]=user
-      
+      var allCheckBoxes = document.getElementsByName("preferences")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
+      }
+      all[indx] = user
+
       read();
-      document.getElementById("name").value=""
-      document.getElementById("email").value=""
-      document.getElementById("destination").value=""
-      document.getElementById("travel-date").value=""
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("destination").value = ""
+      document.getElementById("travel-date").value = ""
 
-      document.getElementById("updbtn").style.display="none"
-      document.getElementById("crtbtn").style.display="block"
-      }
-    
+      document.getElementById("updbtn").style.display = "none"
+      document.getElementById("crtbtn").style.display = "block"
+    }
+
   </script>
 </body>
+
 </html>

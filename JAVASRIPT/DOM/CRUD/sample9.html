@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Newsletter Subscription</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Form Column -->
@@ -18,7 +20,7 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <!-- <label for="frequency">Subscription Frequency</label>
+        <label for="frequency">Subscription Frequency</label>
         <div>
           <label><input type="radio" name="frequency" value="daily" required> Daily</label><br>
           <label><input type="radio" name="frequency" value="weekly" required> Weekly</label><br>
@@ -30,10 +32,10 @@
           <label><input type="checkbox" name="topics" value="tech"> Technology</label><br>
           <label><input type="checkbox" name="topics" value="business"> Business</label><br>
           <label><input type="checkbox" name="topics" value="entertainment"> Entertainment</label>
-        </div> -->
+        </div>
 
         <button type="button" onclick="create()" id="crtbtn">Subscribe</button>
-        <button type="button" onclick="update()" id="updbtn" style="display: none;" >Update</button>
+        <button type="button" onclick="update()" id="updbtn" style="display: none;">Update</button>
       </form>
     </div>
 
@@ -45,6 +47,8 @@
           <tr>
             <th>Full Name</th>
             <th>Email</th>
+            <th>Subscription Frequency</th>
+            <th>Preferred Topics</th>
             <th>Delete</th>
             <th>Edit</th>
 
@@ -72,37 +76,54 @@
     </div>
   </div>
   <script>
-    var all=[]
-    function create(){
-      var fullname=document.getElementById("name").value
-      var email=document.getElementById("email").value
+    var all = []
+    function create() {
+      var fullname = document.getElementById("name").value
+      var email = document.getElementById("email").value
 
-      user={
+      user = {
         fullname,
-        email
+        email,
+        sub: [],
+        prefr: []
+      }
+      var allRadio = document.getElementsByName("frequency")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.sub.push(allRadio[i].value);
+        }
+        allRadio[i].checked = false;
+      }
+      //checkbox
+      var allCheckBoxes = document.getElementsByName("topics")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
       }
       all.push(user)
-      document.getElementById("name").value=""
-      document.getElementById("email").value=""
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
       read();
     }
 
-    function read(){
-      document.querySelector("tbody").innerHTML=""
-      all.forEach(function(user,index){
-        var tr=document.createElement("tr")
-        for(a in user){
-          var td=document.createElement("td")
-          td.innerHTML=user[a]
+    function read() {
+      document.querySelector("tbody").innerHTML = ""
+      all.forEach(function (user, index) {
+        var tr = document.createElement("tr")
+        for (a in user) {
+          var td = document.createElement("td")
+          td.innerHTML = user[a]
           tr.appendChild(td)
         }
 
-        
+
         deltd = document.createElement("td")
         delbtn = document.createElement("button")
         delbtn.innerHTML = "delete"
         delbtn.setAttribute("class", "delete-btn")
-        delbtn.setAttribute("onclick", "del(" + index+  ")")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
         deltd.appendChild(delbtn)
         tr.appendChild(deltd)
 
@@ -119,42 +140,67 @@
     }
     read();
 
-    function del(i){
-      all.splice(i,1);
+    function del(i) {
+      all.splice(i, 1);
       read();
     }
-var indx;
-    function edit(i) { 
-      indx=i;
-       document.getElementById("name").value=all[i].fullname
-       console.log(i)
-      document.getElementById("email").value=all[i].email
-
-      document.getElementById("crtbtn").style.display="none"
-      document.getElementById("updbtn").style.display="block"
-          
+    var indx;
+    function edit(i) {
+      indx = i;
+      document.getElementById("name").value = all[i].fullname
+      document.getElementById("email").value = all[i].email
+      // Set radio buttons
+      var allRadio = document.getElementsByName("frequency");
+      for (var j = 0; j < allRadio.length; j++) {
+        allRadio[j].checked = all[i].sub.includes(allRadio[j].value);
       }
-      function update(){
 
-      var fullname=document.getElementById("name").value
-      var email=document.getElementById("email").value
+      // Set checkboxes
+      var allCheckBoxes = document.getElementsByName("topics");
+      for (var k = 0; k < allCheckBoxes.length; k++) {
+        allCheckBoxes[k].checked = all[i].prefr.includes(allCheckBoxes[k].value);
+      }
 
-      user={
+
+      document.getElementById("crtbtn").style.display = "none"
+      document.getElementById("updbtn").style.display = "block"
+
+    }
+    function update() {
+
+      var fullname = document.getElementById("name").value
+      var email = document.getElementById("email").value
+
+      user = {
         fullname,
-        email
+        email,
+        sub: [],
+        prefr: []
       }
-      all[indx]=user
-
-      
-      
+      var allRadio = document.getElementsByName("frequency")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.sub.push(allRadio[i].value);
+        }
+        allRadio[i].checked = false;
+      }
+      //checkbox
+      var allCheckBoxes = document.getElementsByName("topics")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
+      }
+      all[indx] = user
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
       read();
-      document.getElementById("name").value=""
-      document.getElementById("email").value=""
+      document.getElementById("updbtn").style.display = "none"
+      document.getElementById("crtbtn").style.display = "block"
+    }
 
-      document.getElementById("updbtn").style.display="none"
-      document.getElementById("crtbtn").style.display="block"
-      }
-    
   </script>
 </body>
+
 </html>

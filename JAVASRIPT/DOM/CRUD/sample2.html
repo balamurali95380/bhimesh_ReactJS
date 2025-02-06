@@ -92,14 +92,15 @@ function registeruser() {
         if (allRadio[i].checked == true) {
           user.gender.push(allRadio[i].value);
         }
+        allRadio[i].checked = false;
       }
 
   allUsers.push(user)
-  displayUsers()
   document.getElementById("name").value = ""
   document.getElementById("email").value = ""
-  document.getElementsByName("gender").value=""
   document.getElementById("membership").value = ""
+  displayUsers()
+  
 }
 
 function displayUsers() {
@@ -129,9 +130,6 @@ function displayUsers() {
     tr.appendChild(edttd);
     document.querySelector("tbody").appendChild(tr)
   })
-
- 
-
 }
 displayUsers()
 
@@ -144,22 +142,21 @@ function edit(i) {
   indx = i;
   document.getElementById("name").value = allUsers[i].fullName
   document.getElementById("email").value = allUsers[i].mail
-  document.getElementsByName("gender").value=allUsers[i].gender
   document.getElementById("membership").value = allUsers[i].membership
-  
+
+  var g=document.getElementsByName("gender")
+  for(k=0;k<g.length;k++){
+    g[k].checked=allUsers[i].gender.includes(g[k].value)
+  } 
 
   document.getElementById("crtbtn").style.display = "none"
   document.getElementById("updbtn").style.display = "block"
 
 }
 function update() {
-
   var name = document.getElementById("name").value
   var email = document.getElementById("email").value
   var membership = document.getElementById("membership").value
- 
-
-
   var user = {
     fullName: name,
     mail: email,
@@ -172,13 +169,13 @@ function update() {
         if (allRadio[i].checked == true) {
           user.gender.push(allRadio[i].value);
         }
+        allRadio[i].checked = false;
       }
   allUsers[indx] = user
 
   displayUsers();
   document.getElementById("name").value = ""
   document.getElementById("email").value = ""
-  document.getElementsByName("gender").value=""
   document.getElementById("membership").value = ""
  
 

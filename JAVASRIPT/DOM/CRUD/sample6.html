@@ -33,12 +33,12 @@
           <option value="suite">Suite</option>
         </select>
 
-        <!-- <label>Additional Amenities</label>
+        <label>Additional Amenities</label>
         <div>
           <label><input type="checkbox" name="amenities" value="wifi"> WiFi</label><br>
           <label><input type="checkbox" name="amenities" value="breakfast"> Breakfast</label><br>
           <label><input type="checkbox" name="amenities" value="parking"> Parking</label>
-        </div>  -->
+        </div> 
 
         <button type="button" onclick="registeruser()" id="crtbtn">Register</button>
         <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
@@ -56,6 +56,7 @@
             <th>Check-in Date</th>
             <th>Check-out Date</th>
             <th>Room Type</th>
+            <th>Additional Amenities</th>
             <th>Delete</th>
             <th>Edit</th>
           </tr>
@@ -99,10 +100,23 @@
         mail: email,
         checkin: checkin,
         checkout: checkout,
-        room
+        room,
+        amenities:[]
       }
+       var radio=document.getElementsByName("amenities")
+       for(i=0;i<radio.length;i++){
+        if(radio[i].checked == true){
+          user.amenities.push(radio[i].value)
+        }
+        radio[i].checked = false
+       }
 
       allUsers.push(user)
+      document.getElementById("name").value = ""
+      document.getElementById("email").value = ""
+      document.getElementById("checkin").value = ""
+      document.getElementById("checkout").value = ""
+      document.getElementById("room").value = ""
       displayUsers()
     }
 
@@ -133,11 +147,6 @@
         tr.appendChild(edttd);
         document.querySelector("tbody").appendChild(tr)
       })
-      document.getElementById("name").value = ""
-      document.getElementById("email").value = ""
-      document.getElementById("checkin").value = ""
-      document.getElementById("checkout").value = ""
-      document.getElementById("room").value = ""
 
     }
 
@@ -155,6 +164,11 @@
       document.getElementById("checkout").value = allUsers[i].checkout
       document.getElementById("room").value = allUsers[i].room
 
+      var a=document.getElementsByName("amenities")
+      for(j=0;j<a.length;j++){
+        a[j].checked=allUsers[i].amenities.includes(a[j].value)
+      }
+
       document.getElementById("crtbtn").style.display = "none"
       document.getElementById("updbtn").style.display = "block"
 
@@ -167,22 +181,30 @@
       var checkout = document.getElementById("checkout").value
       var room = document.getElementById("room").value
 
-
       var user = {
         fullName: name,
         mail: email,
         checkin: checkin,
         checkout: checkout,
-        room
+        room,
+        amenities:[]
       }
-      allUsers[indx] = user
+       var radio=document.getElementsByName("amenities")
+       for(i=0;i<radio.length;i++){
+        if(radio[i].checked == true){
+          user.amenities.push(radio[i].value)
+        }
+        radio[i].checked = false
+       }
 
-      displayUsers();
+      allUsers[indx] = user
       document.getElementById("name").value = ""
       document.getElementById("email").value = ""
       document.getElementById("checkin").value = ""
       document.getElementById("checkout").value = ""
       document.getElementById("room").value = ""
+      displayUsers();
+     
 
       document.getElementById("updbtn").style.display = "none"
       document.getElementById("crtbtn").style.display = "block"

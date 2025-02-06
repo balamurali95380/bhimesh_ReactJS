@@ -25,11 +25,11 @@
           <option value="ui-ux-design">UI/UX Design</option>
         </select>
 
-        <!-- <label>Learning Mode</label>
+        <label>Learning Mode</label>
         <div>
           <label><input type="radio" name="mode" value="online" required> Online</label><br>
           <label><input type="radio" name="mode" value="offline" required> Offline</label>
-        </div> -->        
+        </div>        
         <button type="button" onclick="registeruser()" id="crtbtn">Enroll Now</button>
         <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
       </form>
@@ -44,6 +44,7 @@
             <th>Full Name</th>
             <th>Email</th>
             <th>Course Selection</th>
+            <th>Learning Mode</th>
             <th>Delete</th>
             <th>Edit</th>
 
@@ -82,11 +83,21 @@ function registeruser() {
   var user = {
     fullName: name,
     mail: email,
-   course
-    
+   course,
+   learn:[]    
+  }
+  var radio=document.getElementsByName("mode")
+  for(i=0;i<radio.length;i++){
+    if(radio[i].checked == true){
+      user.learn.push(radio[i].value)
+    }
+    radio[i].checked=false;
   }
 
   allUsers.push(user)
+  document.getElementById("name").value=""
+  document.getElementById("email").value=""
+  document.getElementById("course").value=""
   displayUsers()
 }
 
@@ -117,10 +128,6 @@ function displayUsers() {
     tr.appendChild(edttd);
     document.querySelector("tbody").appendChild(tr)
   })
-  document.getElementById("name").value = ""
-  document.getElementById("email").value = ""
-  document.getElementById("course").value = ""
- 
 
 }
 
@@ -135,6 +142,10 @@ function edit(i) {
   document.getElementById("name").value = allUsers[i].fullName
   document.getElementById("email").value = allUsers[i].mail
   document.getElementById("course").value = allUsers[i].course
+var l=document.getElementsByName("mode")
+for(j=0;j<l.length;j++){
+  l[j].checked=allUsers[i].learn.includes(l[j].value)
+}
   
 
   document.getElementById("crtbtn").style.display = "none"
@@ -146,15 +157,21 @@ function update() {
   var name = document.getElementById("name").value
   var email = document.getElementById("email").value
   var course = document.getElementById("course").value
- 
-
 
   var user = {
     fullName: name,
     mail: email,
-    course
-   
+   course,
+   learn:[]    
   }
+  var radio=document.getElementsByName("mode")
+  for(i=0;i<radio.length;i++){
+    if(radio[i].checked == true){
+      user.learn.push(radio[i].value)
+    }
+    radio[i].checked=false;
+  }
+
   allUsers[indx] = user
 
   displayUsers();
