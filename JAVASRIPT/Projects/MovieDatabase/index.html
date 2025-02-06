@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,18 +68,22 @@
             font-weight: bold;
         }
 
-        input, select, button {
+        input,
+        select,
+        button {
             padding: 8px;
             font-size: 16px;
         }
 
-        .radio-group, .checkbox-group {
+        .radio-group,
+        .checkbox-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .radio-group input, .checkbox-group input {
+        .radio-group input,
+        .checkbox-group input {
             margin-right: 5px;
         }
 
@@ -106,7 +111,8 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
@@ -147,12 +153,15 @@
             .content {
                 flex-direction: column;
             }
-            .form-container, .movie-container {
+
+            .form-container,
+            .movie-container {
                 flex: 100%;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -216,23 +225,24 @@
 
                     <label>Actors:</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="leo" value="Leonardo DiCaprio">
+                        <input type="checkbox" id="leo" value="Leonardo DiCaprio" name="actor">
                         <label for="leo">Leonardo DiCaprio</label>
 
-                        <input type="checkbox" id="robert" value="Robert Downey Jr.">
+                        <input type="checkbox" id="robert" value="Robert Downey Jr." name="actor">
                         <label for="robert">Robert Downey Jr.</label>
 
-                        <input type="checkbox" id="scarlett" value="Scarlett Johansson">
+                        <input type="checkbox" id="scarlett" value="Scarlett Johansson" name="actor">
                         <label for="scarlett">Scarlett Johansson</label>
 
-                        <input type="checkbox" id="margot" value="Margot Robbie">
+                        <input type="checkbox" id="margot" value="Margot Robbie" name="actor">
                         <label for="margot">Margot Robbie</label>
 
-                        <input type="checkbox" id="tom" value="Tom Hanks">
+                        <input type="checkbox" id="tom" value="Tom Hanks" name="actor">
                         <label for="tom">Tom Hanks</label>
                     </div>
 
-                    <button type="submit">Add Movie</button>
+                    <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
                 </form>
             </div>
 
@@ -248,11 +258,13 @@
                             <th>Genre</th>
                             <th>Rating</th>
                             <th>Actors</th>
-                            <th>Actions</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+
                         </tr>
                     </thead>
                     <tbody id="movie-list">
-                        <tr>
+                        <!-- <tr>
                             <td>Inception</td>
                             <td>Christopher Nolan</td>
                             <td>2010</td>
@@ -263,13 +275,162 @@
                                 <button class="view">View</button>
                                 <button class="delete">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
+    <script>
+        var allUsers = []
+        function registeruser() {
+            var title = document.getElementById("title").value
+            var director = document.getElementById("director").value
+            var releaseYear = document.getElementById("releaseYear").value
+            var genre = document.getElementById("genre").value
+
+            var user = {
+                title,
+                director,
+                releaseYear,
+                genre,
+                rating: [],
+                actor: []
+            }
+            //radiobuttons
+            var radio = document.getElementsByName("rating")
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.rating.push(radio[i].value)
+                }
+                radio[i].checked = false;
+            }
+            //checkboxes
+            var checkbox = document.getElementsByName("actor")
+            // console.log(checkbox);
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    user.actor.push(checkbox[i].value)
+                }
+                checkbox[i].checked = false
+            }
+            allUsers.push(user)
+            displayUsers()
+            document.getElementById("title").value = ""
+            document.getElementById("director").value = ""
+            document.getElementById("releaseYear").value = ""
+            document.getElementById("genre").value = ""
+
+        }
+
+        function displayUsers() {
+            document.querySelector("tbody").innerHTML = ""
+            allUsers.forEach(function (user, index) {
+                var tr = document.createElement("tr");
+                for (a in user) {
+                    var td = document.createElement("td");
+                    td.innerHTML = user[a]
+                    tr.appendChild(td)
+                }
+
+                deltd = document.createElement("td")
+                delbtn = document.createElement("button")
+                delbtn.innerHTML = "delete"
+                delbtn.setAttribute("class", "delete-btn")
+                delbtn.setAttribute("onclick", "del(" + index + ")")
+                deltd.appendChild(delbtn)
+                tr.appendChild(deltd)
+
+                var edttd = document.createElement("td")
+                var edtbtn = document.createElement("button")
+                edtbtn.innerHTML = "Edit"
+                edtbtn.setAttribute("class", "edit-btn")
+                edtbtn.setAttribute("onclick", "edit(" + index + ")")
+                edttd.appendChild(edtbtn);
+                tr.appendChild(edttd);
+                document.querySelector("tbody").appendChild(tr)
+            })
+        }
+        displayUsers()
+
+        function del(i) {
+            allUsers.splice(i, 1);
+            displayUsers();
+        }
+        var indx;
+        function edit(i) {
+            indx = i;
+            document.getElementById("title").value =allUsers[i].title
+            document.getElementById("director").value = allUsers[i].director
+            document.getElementById("releaseYear").value = allUsers[i].releaseYear
+            document.getElementById("genre").value = allUsers[i].genre
+
+            //radiobutton selection
+            var radio = document.getElementsByName("rating")
+
+            for (j = 0; j < radio.length; j++) {
+
+                radio[j].checked = allUsers[i].rating.includes(radio[j].value);
+            }
+
+            //checkbox selection
+            var checkbox = document.getElementsByName("actor")
+            for (var k = 0; k < checkbox.length; k++) {
+                checkbox[k].checked = allUsers[i].actor.includes(checkbox[k].value);
+            }
+
+            document.getElementById("crtbtn").style.display = "none"
+            document.getElementById("updbtn").style.display = "block"
+
+        }
+        function update() {
+            var title = document.getElementById("title").value
+            var director = document.getElementById("director").value
+            var releaseYear = document.getElementById("releaseYear").value
+            var genre = document.getElementById("genre").value
+
+            var user = {
+                title,
+                director,
+                releaseYear,
+                genre,
+                rating: [],
+                actor: []
+            }
+            //radiobuttons
+            var radio = document.getElementsByName("rating")
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.rating.push(radio[i].value)
+                }
+                radio[i].checked = false;
+            }
+            //checkboxes
+            var checkbox = document.getElementsByName("actor")
+            // console.log(checkbox);
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    user.actor.push(checkbox[i].value)
+                }
+                checkbox[i].checked = false
+            }
+            allUsers[indx] = user
+
+            displayUsers();
+            document.getElementById("title").value = ""
+            document.getElementById("director").value = ""
+            document.getElementById("releaseYear").value = ""
+            document.getElementById("genre").value = ""
+
+
+            document.getElementById("updbtn").style.display = "none"
+            document.getElementById("crtbtn").style.display = "block"
+        }
+    </script>
+
+    </script>
 
 </body>
+
 </html>

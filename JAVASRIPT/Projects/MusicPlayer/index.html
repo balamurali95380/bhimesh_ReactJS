@@ -210,11 +210,15 @@
                             <th>Artist</th>
                             <th>Album</th>
                             <th>Duration</th>
-                            <th>Actions</th>
+                            <th>Volume</th>
+                            <th>Repeat Mode</th>
+                            <th>Shuffle Mode</th>
+                            <th>Delete</th>
+                            <th>Play</th>
                         </tr>
                     </thead>
                     <tbody id="playlist">
-                        <tr>
+                        <!-- <tr>
                             <td>Shape of You</td>
                             <td>Ed Sheeran</td>
                             <td>Divide</td>
@@ -243,13 +247,159 @@
                                 <button class="play">Play</button>
                                 <button class="delete">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
+    <script>
+       var allUsers = []
+        function registeruser() {
+            var title = document.getElementById("title").value
+            var director = document.getElementById("director").value
+            var releaseYear = document.getElementById("releaseYear").value
+            var genre = document.getElementById("genre").value
+
+            var user = {
+                title,
+                director,
+                releaseYear,
+                genre,
+                rating: [],
+                actor: []
+            }
+            //radiobuttons
+            var radio = document.getElementsByName("rating")
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.rating.push(radio[i].value)
+                }
+                radio[i].checked = false;
+            }
+            //checkboxes
+            var checkbox = document.getElementsByName("actor")
+            // console.log(checkbox);
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    user.actor.push(checkbox[i].value)
+                }
+                checkbox[i].checked = false
+            }
+            allUsers.push(user)
+            displayUsers()
+            document.getElementById("title").value = ""
+            document.getElementById("director").value = ""
+            document.getElementById("releaseYear").value = ""
+            document.getElementById("genre").value = ""
+
+        }
+
+        function displayUsers() {
+            document.querySelector("tbody").innerHTML = ""
+            allUsers.forEach(function (user, index) {
+                var tr = document.createElement("tr");
+                for (a in user) {
+                    var td = document.createElement("td");
+                    td.innerHTML = user[a]
+                    tr.appendChild(td)
+                }
+
+                deltd = document.createElement("td")
+                delbtn = document.createElement("button")
+                delbtn.innerHTML = "delete"
+                delbtn.setAttribute("class", "delete-btn")
+                delbtn.setAttribute("onclick", "del(" + index + ")")
+                deltd.appendChild(delbtn)
+                tr.appendChild(deltd)
+
+                var edttd = document.createElement("td")
+                var edtbtn = document.createElement("button")
+                edtbtn.innerHTML = "Edit"
+                edtbtn.setAttribute("class", "edit-btn")
+                edtbtn.setAttribute("onclick", "edit(" + index + ")")
+                edttd.appendChild(edtbtn);
+                tr.appendChild(edttd);
+                document.querySelector("tbody").appendChild(tr)
+            })
+        }
+        displayUsers()
+
+        function del(i) {
+            allUsers.splice(i, 1);
+            displayUsers();
+        }
+        var indx;
+        function edit(i) {
+            indx = i;
+            document.getElementById("title").value =allUsers[i].title
+            document.getElementById("director").value = allUsers[i].director
+            document.getElementById("releaseYear").value = allUsers[i].releaseYear
+            document.getElementById("genre").value = allUsers[i].genre
+
+            //radiobutton selection
+            var radio = document.getElementsByName("rating")
+
+            for (j = 0; j < radio.length; j++) {
+
+                radio[j].checked = allUsers[i].rating.includes(radio[j].value);
+            }
+
+            //checkbox selection
+            var checkbox = document.getElementsByName("actor")
+            for (var k = 0; k < checkbox.length; k++) {
+                checkbox[k].checked = allUsers[i].actor.includes(checkbox[k].value);
+            }
+
+            document.getElementById("crtbtn").style.display = "none"
+            document.getElementById("updbtn").style.display = "block"
+
+        }
+        function update() {
+            var title = document.getElementById("title").value
+            var director = document.getElementById("director").value
+            var releaseYear = document.getElementById("releaseYear").value
+            var genre = document.getElementById("genre").value
+
+            var user = {
+                title,
+                director,
+                releaseYear,
+                genre,
+                rating: [],
+                actor: []
+            }
+            //radiobuttons
+            var radio = document.getElementsByName("rating")
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.rating.push(radio[i].value)
+                }
+                radio[i].checked = false;
+            }
+            //checkboxes
+            var checkbox = document.getElementsByName("actor")
+            // console.log(checkbox);
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked == true) {
+                    user.actor.push(checkbox[i].value)
+                }
+                checkbox[i].checked = false
+            }
+            allUsers[indx] = user
+
+            displayUsers();
+            document.getElementById("title").value = ""
+            document.getElementById("director").value = ""
+            document.getElementById("releaseYear").value = ""
+            document.getElementById("genre").value = ""
+
+
+            document.getElementById("updbtn").style.display = "none"
+            document.getElementById("crtbtn").style.display = "block"
+        } 
+    </script>
 
 </body>
 </html>

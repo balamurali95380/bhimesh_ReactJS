@@ -168,16 +168,16 @@
 
                     <label>Category:</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="electronics" value="Electronics">
+                        <input type="checkbox" id="electronics" value="Electronics" name="category">
                         <label for="electronics">Electronics</label>
 
-                        <input type="checkbox" id="furniture" value="Furniture">
+                        <input type="checkbox" id="furniture" value="Furniture" name="category">
                         <label for="furniture">Furniture</label>
 
-                        <input type="checkbox" id="clothing" value="Clothing">
+                        <input type="checkbox" id="clothing" value="Clothing" name="category">
                         <label for="clothing">Clothing</label>
 
-                        <input type="checkbox" id="groceries" value="Groceries">
+                        <input type="checkbox" id="groceries" value="Groceries" name="category">
                         <label for="groceries">Groceries</label>
                     </div>
 
@@ -202,7 +202,8 @@
                     <label for="reorderLevel">Reorder Level:</label>
                     <input type="number" id="reorderLevel" required>
 
-                    <button type="submit">Add Product</button>
+                    <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
                 </form>
             </div>
 
@@ -212,18 +213,19 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Category</th>
                             <th>Quantity</th>
                             <th>Price (₹)</th>
                             <th>Supplier</th>
                             <th>Reorder Level</th>
-                            <th>Actions</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+
                         </tr>
                     </thead>
                     <tbody id="product-list">
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>Smartphone</td>
                             <td>Electronics</td>
@@ -261,13 +263,164 @@
                                 <button class="edit">Edit</button>
                                 <button class="delete">Delete</button>
                             </td>
-                        </tr>
+                        </tr> --> 
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
+    <script>
+         var allUsers = []
+function registeruser() {
+    var productName = document.getElementById("name").value
+    var quantity = document.getElementById("quantity").value
+    var price = document.getElementById("price").value
+    var reclvl=document.getElementById("reorderLevel").value
+    var user = {
+        productName,
+        category: [],
+        quantity,
+        price,
+        supplier: [],
+        reclvl
+    }
+    //radiobuttons
+    var radio = document.getElementsByName("supplier")
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked == true) {
+            user.supplier.push(radio[i].value)
+        }
+        radio[i].checked = false;
+    }
+    //checkboxes
+    var checkbox = document.getElementsByName("category")
+    for (i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked == true) {
+            user.category.push(checkbox[i].value)
+            console.log(user)
+        }
+
+        checkbox[i].checked = false
+    }
+    allUsers.push(user)
+    displayUsers()
+    document.getElementById("name").value = ""
+    document.getElementById("quantity").value = ""
+    document.getElementById("price").value = ""
+    document.getElementById("reorderLevel").value=""
+
+}
+
+function displayUsers() {
+    document.querySelector("tbody").innerHTML = ""
+    allUsers.forEach(function (user, index) {
+        var tr = document.createElement("tr");
+        for (a in user) {
+            var td = document.createElement("td");
+            td.innerHTML = user[a]
+            tr.appendChild(td)
+        }
+
+        deltd = document.createElement("td")
+        delbtn = document.createElement("button")
+        delbtn.innerHTML = "delete"
+        delbtn.setAttribute("class", "delete-btn")
+        delbtn.setAttribute("onclick", "del(" + index + ")")
+        deltd.appendChild(delbtn)
+        tr.appendChild(deltd)
+
+        var edttd = document.createElement("td")
+        var edtbtn = document.createElement("button")
+        edtbtn.innerHTML = "Edit"
+        edtbtn.setAttribute("class", "edit-btn")
+        edtbtn.setAttribute("onclick", "edit(" + index + ")")
+        edttd.appendChild(edtbtn);
+        tr.appendChild(edttd);
+        document.querySelector("tbody").appendChild(tr)
+    })
+
+
+
+}
+
+
+function del(i) {
+    allUsers.splice(i, 1);
+    displayUsers();
+}
+var indx;
+function edit(i) {
+    indx = i;
+    document.getElementById("name").value = allUsers[i].productName
+    document.getElementById("quantity").value = allUsers[i].quantity
+    document.getElementById("price").value = allUsers[i].price
+    document.getElementById("reorderLevel").value = allUsers[i].reclvl
+
+
+    //radiobutton selection
+    var radio = document.getElementsByName("supplier")
+
+    for (j = 0; j < radio.length; j++) {
+
+        radio[j].checked = allUsers[i].supplier.includes(radio[j].value);
+    }
+
+    //checkbox selection
+    var checkbox = document.getElementsByName("category")
+    for (var k = 0; k < checkbox.length; k++) {
+        checkbox[k].checked = allUsers[i].category.includes(checkbox[k].value);
+    }
+
+    document.getElementById("crtbtn").style.display = "none"
+    document.getElementById("updbtn").style.display = "block"
+
+}
+function update() {
+    var productName = document.getElementById("name").value
+    var quantity = document.getElementById("quantity").value
+    var price = document.getElementById("price").value
+    var reclvl=document.getElementById("reorderLevel").value
+    var user = {
+        productName,
+        category: [],
+        quantity,
+        price,
+        supplier: [],
+        reclvl
+    }
+    //radiobuttons
+    var radio = document.getElementsByName("supplier")
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked == true) {
+            user.supplier.push(radio[i].value)
+        }
+        radio[i].checked = false;
+    }
+    //checkboxes
+    var checkbox = document.getElementsByName("category")
+    for (i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked == true) {
+            user.category.push(checkbox[i].value)
+        }
+        checkbox[i].checked = false
+    }
+
+    allUsers[indx] = user
+
+    displayUsers();
+    document.getElementById("name").value = ""
+    document.getElementById("quantity").value = ""
+    document.getElementById("price").value = ""
+    document.getElementById("reorderLevel").value=""
+
+
+
+    document.getElementById("updbtn").style.display = "none"
+    document.getElementById("crtbtn").style.display = "block"
+}
+
+    </script>
 
 </body>
 </html>
