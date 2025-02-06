@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,18 +68,22 @@
             font-weight: bold;
         }
 
-        input, select, button {
+        input,
+        select,
+        button {
             padding: 8px;
             font-size: 16px;
         }
 
-        .radio-group, .checkbox-group {
+        .radio-group,
+        .checkbox-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .radio-group input, .checkbox-group input {
+        .radio-group input,
+        .checkbox-group input {
             margin-right: 5px;
         }
 
@@ -106,7 +111,8 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
@@ -147,12 +153,15 @@
             .content {
                 flex-direction: column;
             }
-            .controls-container, .playlist-container {
+
+            .controls-container,
+            .playlist-container {
                 flex: 100%;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -175,8 +184,8 @@
                     <label for="duration">Duration (min:sec):</label>
                     <input type="text" id="duration" required>
 
-                    <label for="volume">Volume:</label>
-                    <input type="range" id="volume" min="0" max="100" value="50">
+                    <!-- <label for="volume">Volume:</label>
+                    <input type="range" id="volume" min="0" max="100" value="50"> -->
 
                     <label>Repeat Mode:</label>
                     <div class="radio-group">
@@ -192,11 +201,12 @@
 
                     <label>Shuffle Mode:</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="shuffle" value="Shuffle">
+                        <input type="checkbox" id="shuffle" name="shf" value="Shuffle">
                         <label for="shuffle">Enable Shuffle</label>
+                        
                     </div>
-
-                    <button type="submit">Add to Playlist</button>
+                    <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
                 </form>
             </div>
 
@@ -210,7 +220,7 @@
                             <th>Artist</th>
                             <th>Album</th>
                             <th>Duration</th>
-                            <th>Volume</th>
+                            <!-- <th>Volume</th> -->
                             <th>Repeat Mode</th>
                             <th>Shuffle Mode</th>
                             <th>Delete</th>
@@ -255,44 +265,47 @@
 
     </div>
     <script>
-       var allUsers = []
+        var allUsers = []
         function registeruser() {
             var title = document.getElementById("title").value
-            var director = document.getElementById("director").value
-            var releaseYear = document.getElementById("releaseYear").value
-            var genre = document.getElementById("genre").value
-
+            var artist = document.getElementById("artist").value
+            var album = document.getElementById("album").value
+            var duration = document.getElementById("duration").value
+            // var volume = document.getElementById("volume").value
             var user = {
                 title,
-                director,
-                releaseYear,
-                genre,
-                rating: [],
-                actor: []
+                artist,
+                album,
+                duration,
+                // volume,
+                repeat: [],
+                shuffle: []
             }
             //radiobuttons
-            var radio = document.getElementsByName("rating")
+            var radio = document.getElementsByName("repeat")
             for (i = 0; i < radio.length; i++) {
                 if (radio[i].checked == true) {
-                    user.rating.push(radio[i].value)
+                    user.repeat.push(radio[i].value)
                 }
                 radio[i].checked = false;
             }
             //checkboxes
-            var checkbox = document.getElementsByName("actor")
+            var checkbox = document.getElementsByName("shf")
             // console.log(checkbox);
             for (i = 0; i < checkbox.length; i++) {
                 if (checkbox[i].checked == true) {
-                    user.actor.push(checkbox[i].value)
+                    user.shuffle.push(checkbox[i].value)
                 }
                 checkbox[i].checked = false
             }
             allUsers.push(user)
             displayUsers()
             document.getElementById("title").value = ""
-            document.getElementById("director").value = ""
-            document.getElementById("releaseYear").value = ""
-            document.getElementById("genre").value = ""
+            document.getElementById("artist").value = ""
+            document.getElementById("album").value = ""
+            document.getElementById("duration").value = ""
+            // document.getElementById("volume").value = ""
+
 
         }
 
@@ -316,7 +329,7 @@
 
                 var edttd = document.createElement("td")
                 var edtbtn = document.createElement("button")
-                edtbtn.innerHTML = "Edit"
+                edtbtn.innerHTML = "play"
                 edtbtn.setAttribute("class", "edit-btn")
                 edtbtn.setAttribute("onclick", "edit(" + index + ")")
                 edttd.appendChild(edtbtn);
@@ -333,23 +346,24 @@
         var indx;
         function edit(i) {
             indx = i;
-            document.getElementById("title").value =allUsers[i].title
-            document.getElementById("director").value = allUsers[i].director
-            document.getElementById("releaseYear").value = allUsers[i].releaseYear
-            document.getElementById("genre").value = allUsers[i].genre
+            document.getElementById("title").value = allUsers[i].title
+            document.getElementById("artist").value = allUsers[i].artist
+            document.getElementById("album").value = allUsers[i].album
+            document.getElementById("duration").value = allUsers[i].duration
+            // document.getElementById("volume").value = allUsers[i].volume
 
             //radiobutton selection
-            var radio = document.getElementsByName("rating")
+            var radio = document.getElementsByName("repeat")
 
             for (j = 0; j < radio.length; j++) {
 
-                radio[j].checked = allUsers[i].rating.includes(radio[j].value);
+                radio[j].checked = allUsers[i].repeat.includes(radio[j].value);
             }
 
             //checkbox selection
-            var checkbox = document.getElementsByName("actor")
+            var checkbox = document.getElementsByName("shf")
             for (var k = 0; k < checkbox.length; k++) {
-                checkbox[k].checked = allUsers[i].actor.includes(checkbox[k].value);
+                checkbox[k].checked = allUsers[i].shuffle.includes(checkbox[k].value);
             }
 
             document.getElementById("crtbtn").style.display = "none"
@@ -358,32 +372,33 @@
         }
         function update() {
             var title = document.getElementById("title").value
-            var director = document.getElementById("director").value
-            var releaseYear = document.getElementById("releaseYear").value
-            var genre = document.getElementById("genre").value
-
+            var artist = document.getElementById("artist").value
+            var album = document.getElementById("album").value
+            var duration = document.getElementById("duration").value
+            // var volume = document.getElementById("volume").value
             var user = {
                 title,
-                director,
-                releaseYear,
-                genre,
-                rating: [],
-                actor: []
+                artist,
+                album,
+                duration,
+                // volume,
+                repeat: [],
+                shuffle: []
             }
             //radiobuttons
-            var radio = document.getElementsByName("rating")
+            var radio = document.getElementsByName("repeat")
             for (i = 0; i < radio.length; i++) {
                 if (radio[i].checked == true) {
-                    user.rating.push(radio[i].value)
+                    user.repeat.push(radio[i].value)
                 }
                 radio[i].checked = false;
             }
             //checkboxes
-            var checkbox = document.getElementsByName("actor")
+            var checkbox = document.getElementsByName("shf")
             // console.log(checkbox);
             for (i = 0; i < checkbox.length; i++) {
                 if (checkbox[i].checked == true) {
-                    user.actor.push(checkbox[i].value)
+                    user.shuffle.push(checkbox[i].value)
                 }
                 checkbox[i].checked = false
             }
@@ -391,9 +406,10 @@
 
             displayUsers();
             document.getElementById("title").value = ""
-            document.getElementById("director").value = ""
-            document.getElementById("releaseYear").value = ""
-            document.getElementById("genre").value = ""
+            document.getElementById("artist").value = ""
+            document.getElementById("album").value = ""
+            document.getElementById("duration").value = ""
+            // document.getElementById("volume").value = ""
 
 
             document.getElementById("updbtn").style.display = "none"
@@ -402,4 +418,5 @@
     </script>
 
 </body>
+
 </html>

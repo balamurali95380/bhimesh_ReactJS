@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,18 +68,22 @@
             font-weight: bold;
         }
 
-        input, select, button {
+        input,
+        select,
+        button {
             padding: 8px;
             font-size: 16px;
         }
 
-        .radio-group, .checkbox-group {
+        .radio-group,
+        .checkbox-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .radio-group input, .checkbox-group input {
+        .radio-group input,
+        .checkbox-group input {
             margin-right: 5px;
         }
 
@@ -106,7 +111,8 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
@@ -147,12 +153,15 @@
             .content {
                 flex-direction: column;
             }
-            .form-container, .table-container {
+
+            .form-container,
+            .table-container {
                 flex: 100%;
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -183,26 +192,28 @@
 
                     <label>Courses Enrolled:</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="math" value="Mathematics">
+                        <input type="checkbox" id="math" value="Mathematics" name="course">
                         <label for="math">Mathematics</label>
 
-                        <input type="checkbox" id="science" value="Science">
+                        <input type="checkbox" id="science" value="Science" name="course">
                         <label for="science">Science</label>
 
-                        <input type="checkbox" id="history" value="History">
+                        <input type="checkbox" id="history" value="History" name="course">
                         <label for="history">History</label>
 
-                        <input type="checkbox" id="english" value="English">
+                        <input type="checkbox" id="english" value="English" name="course">
                         <label for="english">English</label>
 
-                        <input type="checkbox" id="computer" value="Computer Science">
+                        <input type="checkbox" id="computer" value="Computer Science" name="course">
                         <label for="computer">Computer Science</label>
                     </div>
 
                     <label for="enrollmentDate">Enrollment Date:</label>
                     <input type="date" id="enrollmentDate" required>
 
-                    <button type="submit">Add Student</button>
+
+                    <button type="button" onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
                 </form>
             </div>
 
@@ -212,17 +223,17 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <th>Age</th>
                             <th>Gender</th>
                             <th>Courses</th>
                             <th>Enrollment Date</th>
-                            <th>Actions</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody id="student-list">
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>John Doe</td>
                             <td>20</td>
@@ -257,13 +268,150 @@
                                 <button class="edit">Edit</button>
                                 <button class="delete">Delete</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
 
     </div>
+    <script>
+        var allUsers = []
+        function registeruser() {
+            var name = document.getElementById("name").value
+            var age = document.getElementById("age").value
+            var enrollmentDate = document.getElementById("enrollmentDate").value
+            var user = {
+                name,
+                age,
+                gender: [],
+                course: [],
+                enrollmentDate
+            }
+            var radio = document.getElementsByName("gender")
 
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.gender.push(radio[i].value)
+                }
+                radio[i].checked = false
+            }
+
+            var check = document.getElementsByName("course")
+
+            for (i = 0; i < check.length; i++) {
+                if (check[i].checked == true) {
+                    user.course.push(check[i].value)
+                }
+                check[i].checked = false
+            }
+
+            allUsers.push(user)
+            document.getElementById("name").value = ""
+            document.getElementById("age").value = ""
+            document.getElementById("enrollmentDate").value = ""
+            displayUsers()
+        }
+
+        function displayUsers() {
+            document.querySelector("tbody").innerHTML = ""
+            allUsers.forEach(function (user, index) {
+                var tr = document.createElement("tr");
+                for (a in user) {
+                    var td = document.createElement("td");
+                    td.innerHTML = user[a]
+                    tr.appendChild(td)
+                }
+
+                deltd = document.createElement("td")
+                delbtn = document.createElement("button")
+                delbtn.innerHTML = "delete"
+                delbtn.setAttribute("class", "delete")
+                delbtn.setAttribute("onclick", "del(" + index + ")")
+                deltd.appendChild(delbtn)
+                tr.appendChild(deltd)
+
+                var edttd = document.createElement("td")
+                var edtbtn = document.createElement("button")
+                edtbtn.innerHTML = "Edit"
+                edtbtn.setAttribute("class", "edit")
+                edtbtn.setAttribute("onclick", "edit(" + index + ")")
+                edttd.appendChild(edtbtn);
+                tr.appendChild(edttd);
+                document.querySelector("tbody").appendChild(tr)
+            })
+        }
+        displayUsers()
+
+        function del(i) {
+            allUsers.splice(i, 1);
+            displayUsers();
+        }
+        var indx;
+        function edit(i) {
+            indx = i;
+            document.getElementById("name").value = allUsers[i].name
+            document.getElementById("age").value = allUsers[i].age
+            document.getElementById("enrollmentDate").value = allUsers[i].enrollmentDate
+
+            var radio = document.getElementsByName("gender")
+
+            for (j = 0; j < radio.length; j++) {
+                radio[j].checked = allUsers[i].gender.includes(radio[j].value);
+            }
+
+            //checkbox selection
+            var checkbox = document.getElementsByName("course")
+            for (var k = 0; k < checkbox.length; k++) {
+                checkbox[k].checked = allUsers[i].course.includes(checkbox[k].value);
+            }
+
+            document.getElementById("crtbtn").style.display = "none"
+            document.getElementById("updbtn").style.display = "block"
+
+        }
+        function update() {
+            var name = document.getElementById("name").value
+            var age = document.getElementById("age").value
+            var enrollmentDate = document.getElementById("enrollmentDate").value
+            var user = {
+                name,
+                age,
+                gender: [],
+                course: [],
+                enrollmentDate
+            }
+            var radio = document.getElementsByName("gender")
+
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked == true) {
+                    user.gender.push(radio[i].value)
+                }
+                radio[i].checked = false
+            }
+
+            var check = document.getElementsByName("course")
+
+            for (i = 0; i < check.length; i++) {
+                if (check[i].checked == true) {
+                    user.course.push(check[i].value)
+                }
+                check[i].checked = false
+            }
+
+            allUsers[indx] = user
+
+            displayUsers();
+            document.getElementById("name").value = ""
+            document.getElementById("age").value = ""
+            document.getElementById("enrollmentDate").value = ""
+
+
+
+            document.getElementById("updbtn").style.display = "none"
+            document.getElementById("crtbtn").style.display = "block"
+        }
+    </script>
 </body>
+
 </html>

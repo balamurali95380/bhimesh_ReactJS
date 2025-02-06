@@ -102,13 +102,13 @@
         if (allCheckBoxes[i].checked == true) {
           user.prefr.push(allCheckBoxes[i].value)
         }
+        allCheckBoxes[i].checked = false
       }
 
       allUsers.push(user)
 
       document.getElementById("fullName").value = "";
-      document.getElementById("email").value = "";
-      document.getElementsByName("preference").value="";
+      document.getElementById("email").value = ""; 
 
 
       displayUsersInTable()
@@ -159,9 +159,11 @@
       gIndex = i;
       document.getElementById("fullName").value = allUsers[i].fullName;//to display again in input fields the data which needs to be edit/update.
       document.getElementById("email").value = allUsers[i].email
-      document.getElementsByName("preference").value=allUsers[i].prefr
 
-
+      var pref=document.getElementsByName("preference")
+      for(j=0;j<pref.length;j++){
+        pref[j].checked= allUsers[i].prefr.includes(pref[j].value)
+      }
       document.getElementById("updateBtn").style.display = "block"
       document.getElementById("registerBtn").style.display = "none"
     }
@@ -180,13 +182,16 @@
         if (allCheckBoxes[i].checked == true) {
           user.prefr.push(allCheckBoxes[i].value)
         }
+        allCheckBoxes[i].checked = false
       }
 
+
       allUsers[gIndex] = user;
-      displayUsersInTable();
       document.getElementById("fullName").value = "";
       document.getElementById("email").value = "";
-      document.getElementsByName("preference").value="";
+      displayUsersInTable();
+     
+    
 
       document.getElementById("updateBtn").style.display = "none"
       document.getElementById("registerBtn").style.display = "block"
