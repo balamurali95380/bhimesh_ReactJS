@@ -26,12 +26,12 @@
           <option value="premium">Premium</option>
         </select>
 
-        <!-- <label>Reading Preferences</label>
+        <label>Reading Preferences</label>
         <div>
           <label><input type="checkbox" name="preferences" value="fiction"> Fiction</label><br>
           <label><input type="checkbox" name="preferences" value="non-fiction"> Non-Fiction</label><br>
           <label><input type="checkbox" name="preferences" value="science"> Science</label>
-        </div> -->
+        </div>
 
         <button type="button" onclick="registeruser()" id="registerbtn">Register</button>
         <button type="button" onclick="updateuser()" id="updatebtn" style="display: none;">update</button>
@@ -47,6 +47,7 @@
             <th>Full Name</th>
             <th>Email</th>
             <th>Membership Type</th>
+            <th>Reading Preferences</th>
             <th>Delete</th>
             <th>Edit</th>
           </tr>
@@ -102,7 +103,16 @@
       var user = {
         fullName,
         email,
-        membershiptype
+        membershiptype,
+        prefr: []
+      }
+
+      var allCheckBoxes = document.getElementsByName("preferences")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
       }
       allUsers.push(user);
       document.getElementById("name").value = "";
@@ -113,8 +123,8 @@
 
     function displayinTble() {
       document.querySelector("tbody").innerHTML = "";
-      allUsers.forEach(function (user,index) {
-        
+      allUsers.forEach(function (user, index) {
+
         var myTr = document.createElement("tr");
         for (a in user) {
           var myTd = document.createElement("td");
@@ -127,7 +137,7 @@
         var delbtn = document.createElement("button")
         delbtn.innerHTML = "Delete"
         delbtn.setAttribute("class", "delete-btn")
-        delbtn.setAttribute("onclick","deleteuser("+index+")")
+        delbtn.setAttribute("onclick", "deleteuser(" + index + ")")
         deltd.appendChild(delbtn);
         myTr.appendChild(deltd);
 
@@ -135,7 +145,7 @@
         var edtbtn = document.createElement("button")
         edtbtn.innerHTML = "Edit"
         edtbtn.setAttribute("class", "edit-btn")
-        edtbtn.setAttribute("onclick","edituser("+index+")")
+        edtbtn.setAttribute("onclick", "edituser(" + index + ")")
         edttd.appendChild(edtbtn);
         myTr.appendChild(edttd);
 
@@ -145,26 +155,27 @@
     }
     displayinTble();
 
-    function deleteuser(i)
-    {
-      allUsers.splice(i,1);
+    function deleteuser(i) {
+      allUsers.splice(i, 1);
       displayinTble();
     }
 
     var sindex;
-    function edituser(i)
-    {
-      sindex=i;
-      document.getElementById("name").value = allUsers[i]. fullName;
+    function edituser(i) {
+      sindex = i;
+      document.getElementById("name").value = allUsers[i].fullName;
       document.getElementById("email").value = allUsers[i].email;
       document.getElementById("membership-type").value = allUsers[i].membershiptype;
-
-      document.getElementById("registerbtn").style.display="none";
-      document.getElementById("updatebtn").style.display="block";    
+      var allCheckBoxes = document.getElementsByName("preferences");
+      for (var k = 0; k < allCheckBoxes.length; k++) {
+        allCheckBoxes[k].checked = allUsers[i].prefr.includes(allCheckBoxes[k].value);
+      }
+      document.getElementById("registerbtn").style.display = "none";
+      document.getElementById("updatebtn").style.display = "block";
 
     }
 
-    function updateuser(){
+    function updateuser() {
       var fullName = document.getElementById("name").value;
       var email = document.getElementById("email").value;
       var membershiptype = document.getElementById("membership-type").value;
@@ -172,16 +183,25 @@
       var user = {
         fullName,
         email,
-        membershiptype
+        membershiptype,
+        prefr: []
       }
-      allUsers[sindex]=user;
+
+      var allCheckBoxes = document.getElementsByName("preferences")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.prefr.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
+      }
+      allUsers[sindex] = user;
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
       document.getElementById("membership-type").value = "";
       displayinTble();
-      
-      document.getElementById("registerbtn").style.display="block";
-      document.getElementById("updatebtn").style.display="none";    
+
+      document.getElementById("registerbtn").style.display = "block";
+      document.getElementById("updatebtn").style.display = "none";
     }
 
 

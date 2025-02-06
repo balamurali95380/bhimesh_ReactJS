@@ -28,7 +28,7 @@
           <label><input type="radio" name="job-type" value="full-time" required> Full-Time</label><br>
           <label><input type="radio" name="job-type" value="part-time" required> Part-Time</label><br>
           <label><input type="radio" name="job-type" value="internship" required> Internship</label>
-        </div> 
+        </div>
 
         <label>Skills</label>
         <div>
@@ -37,8 +37,8 @@
           <label><input type="checkbox" name="skills" value="react"> React</label>
         </div>
 
-        <button type="button" onclick="create()"  id="crtbtn">Apply</button>
-        <button type="button" onclick="updateUser()" id="updbtn"  style="display:none">Update</button>
+        <button type="button" onclick="create()" id="crtbtn">Apply</button>
+        <button type="button" onclick="updateUser()" id="updbtn" style="display:none">Update</button>
       </form>
     </div>
 
@@ -85,13 +85,27 @@
       var fullName = document.getElementById("name").value;
       var email = document.getElementById("email").value;
       var mobile = document.getElementById("phone").value;
-      // var JobType=document.getElementsByName("job-type")[i].value;
-      
-
       user = {
         fullName,
         email,
-        mobile
+        mobile,
+        jobtype: [],
+        skills: []
+      }
+      var allRadio = document.getElementsByName("job-type")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.jobtype.push(allRadio[i].value);
+        }
+        allRadio[i].checked = false;
+      }
+      //checkbox
+      var allCheckBoxes = document.getElementsByName("skills")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.skills.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
       }
       all.push(user)
       document.getElementById("name").value = "";
@@ -131,24 +145,34 @@
     }
     read();
 
-    function del(i){
-      all.splice(i,1);
+    function del(i) {
+      all.splice(i, 1);
       read();
     }
-var indx;
-    function edit(i) { 
-      indx=i;
+    var indx;
+    function edit(i) {
+      indx = i;
       document.getElementById("name").value = all[i].fullName;
-      document.getElementById("email").value =all[i].email;
+      document.getElementById("email").value = all[i].email;
       document.getElementById("phone").value = all[i].mobile;
+      var allRadio = document.getElementsByName("job-type");
+      for (var j = 0; j < allRadio.length; j++) {
+        allRadio[j].checked = all[i].jobtype.includes(allRadio[j].value);
+      }
 
-      document.getElementById("crtbtn").style.display="none"
-      document.getElementById("updbtn").style.display="block"
+      // Set checkboxes
+      var allCheckBoxes = document.getElementsByName("skills");
+      for (var k = 0; k < allCheckBoxes.length; k++) {
+        allCheckBoxes[k].checked = all[i].skills.includes(allCheckBoxes[k].value);
+      }
 
-      
+      document.getElementById("crtbtn").style.display = "none"
+      document.getElementById("updbtn").style.display = "block"
+
+
     }
 
-    function updateUser(){
+    function updateUser() {
       var fullName = document.getElementById("name").value;
       var email = document.getElementById("email").value;
       var mobile = document.getElementById("phone").value;
@@ -156,15 +180,32 @@ var indx;
       user = {
         fullName,
         email,
-        mobile
+        mobile,
+        jobtype: [],
+        skills: []
       }
-      all[indx]=user;
+      var allRadio = document.getElementsByName("job-type")
+      for (i = 0; i < allRadio.length; i++) {
+        if (allRadio[i].checked == true) {
+          user.jobtype.push(allRadio[i].value);
+        }
+        allRadio[i].checked = false;
+      }
+      //checkbox
+      var allCheckBoxes = document.getElementsByName("skills")
+      for (i = 0; i < allCheckBoxes.length; i++) {
+        if (allCheckBoxes[i].checked == true) {
+          user.skills.push(allCheckBoxes[i].value)
+        }
+        allCheckBoxes[i].checked = false
+      }
+      all[indx] = user;
       document.getElementById("name").value = "";
       document.getElementById("email").value = "";
       document.getElementById("phone").value = "";
-      read(); 
-      document.getElementById("crtbtn").style.display="block"
-      document.getElementById("updbtn").style.display="none"
+      read();
+      document.getElementById("crtbtn").style.display = "block"
+      document.getElementById("updbtn").style.display = "none"
 
 
     }
