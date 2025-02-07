@@ -108,7 +108,12 @@
         <label for="confirm-password">Confirm Password</label>
         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
       </div> -->
-            <button type="button" class="submit-btn" onclick="registerUser()"> Register</button>
+      <!-- checkbox -->
+       <label for="">shuffle</label>
+       <input type="checkbox" name="shuffle" id="shuffleon" value="shuffleon">enable shuffle
+       <input type="checkbox" name="shuffle" id="shuffleoff" value="shuffleoff">disable shuffle
+            
+       <button type="button" class="submit-btn" onclick="registerUser()"> Register</button>
 
         </form>
     </div>
@@ -131,6 +136,14 @@
 
             var fullName = document.querySelectorAll("input")[0].value;
             console.log(fullName)
+
+            // var shuffle=document.getElementById("shuffleon").value
+            // console.log(shuffle)
+            var shuffle=document.getElementsByName("shuffle")[1].value
+            console.log(shuffle)
+
+            var shuffle=document.getElementsByName("shuffle")[1].value
+
 
         }
     </script>

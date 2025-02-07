@@ -184,8 +184,8 @@
                     <label for="duration">Duration (min:sec):</label>
                     <input type="text" id="duration" required>
 
-                    <!-- <label for="volume">Volume:</label>
-                    <input type="range" id="volume" min="0" max="100" value="50"> -->
+                    <label for="volume">Volume:</label>
+                    <input type="range" id="volume" min="0" max="100" value="50">
 
                     <label>Repeat Mode:</label>
                     <div class="radio-group">
@@ -220,7 +220,7 @@
                             <th>Artist</th>
                             <th>Album</th>
                             <th>Duration</th>
-                            <!-- <th>Volume</th> -->
+                            <th>Volume</th>
                             <th>Repeat Mode</th>
                             <th>Shuffle Mode</th>
                             <th>Delete</th>
@@ -271,13 +271,13 @@
             var artist = document.getElementById("artist").value
             var album = document.getElementById("album").value
             var duration = document.getElementById("duration").value
-            // var volume = document.getElementById("volume").value
+            var volume = document.getElementById("volume").value
             var user = {
                 title,
                 artist,
                 album,
                 duration,
-                // volume,
+                volume,
                 repeat: [],
                 shuffle: []
             }
@@ -304,7 +304,7 @@
             document.getElementById("artist").value = ""
             document.getElementById("album").value = ""
             document.getElementById("duration").value = ""
-            // document.getElementById("volume").value = ""
+            document.getElementById("volume").value = ""
 
 
         }
@@ -350,7 +350,7 @@
             document.getElementById("artist").value = allUsers[i].artist
             document.getElementById("album").value = allUsers[i].album
             document.getElementById("duration").value = allUsers[i].duration
-            // document.getElementById("volume").value = allUsers[i].volume
+            document.getElementById("volume").value = allUsers[i].volume
 
             //radiobutton selection
             var radio = document.getElementsByName("repeat")
@@ -375,13 +375,13 @@
             var artist = document.getElementById("artist").value
             var album = document.getElementById("album").value
             var duration = document.getElementById("duration").value
-            // var volume = document.getElementById("volume").value
+            var volume = document.getElementById("volume").value
             var user = {
                 title,
                 artist,
                 album,
                 duration,
-                // volume,
+                volume,
                 repeat: [],
                 shuffle: []
             }
@@ -409,7 +409,7 @@
             document.getElementById("artist").value = ""
             document.getElementById("album").value = ""
             document.getElementById("duration").value = ""
-            // document.getElementById("volume").value = ""
+            document.getElementById("volume").value = ""
 
 
             document.getElementById("updbtn").style.display = "none"
