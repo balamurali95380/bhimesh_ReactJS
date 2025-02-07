@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Word Form</h1>
+<form id="wordForm">
+    <label for="word">Word</label>
+    <input type="text" id="word" name="word" placeholder="Enter the word" required onkeyup="validateForm()">
+
+    <label for="definition">Definition</label>
+    <textarea id="definition" name="definition" rows="3" placeholder="Enter the definition" required onkeyup="validateForm()"></textarea>
+
+    <label for="exampleSentence">Example Sentence</label>
+    <textarea id="exampleSentence" name="exampleSentence" rows="3" placeholder="Enter an example sentence" required onkeyup="validateForm()"></textarea>
+
+    <label for="synonyms">Synonyms</label>
+    <input type="text" id="synonyms" name="synonyms" placeholder="Enter synonyms, separated by commas" onkeyup="validateForm()">
+
+    <label for="antonyms">Antonyms</label>
+    <input type="text" id="antonyms" name="antonyms" placeholder="Enter antonyms, separated by commas" onkeyup="validateForm()">
+
+    <button type="button" disabled>Submit</button>
+</form>
+<script>
+    function validateForm() {
+        var learn={
+            word:document.getElementById("word").value,
+            definition:document.getElementById("definition").value,
+            exampleSentence:document.getElementById("exampleSentence").value,
+            synonyms:document.getElementById("synonyms").value,
+            antonyms:document.getElementById("antonyms").value
+        }
+
+        console.log(learn)
+
+        var isInvalid = false;
+        for(a in learn){
+            if(learn[a] == ""){
+                isInvalid = true;
+            }
+        }
+
+        if(isInvalid === true){
+            document.querySelector("button").setAttribute("disabled",true)
+        }else{
+            document.querySelector("button").removeAttribute("disabled",true)
+        }
+    }
+</script>
+
+</body>
+</html>

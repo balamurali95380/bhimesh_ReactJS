@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Inventory Form</h1>
+<form id="inventoryForm">
+    <label for="id">Product ID</label>
+    <input type="text" id="id" name="id" placeholder="Enter product ID" required onkeyup="validateForm()">
+
+    <label for="name">Product Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter product name" required onkeyup="validateForm()">
+
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" placeholder="Enter category" required onkeyup="validateForm()">
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="0" required onchange="validateForm()">
+
+    <label for="price">Price</label>
+    <input type="number" id="price" name="price" placeholder="Enter price" step="0.01" required onchange="validateForm()">
+
+    <label for="supplier">Supplier</label>
+    <input type="text" id="supplier" name="supplier" placeholder="Enter supplier name" required onkeyup="validateForm()">
+
+    <label for="reorderLevel">Reorder Level</label>
+    <input type="number" id="reorderLevel" name="reorderLevel" placeholder="Enter reorder level" min="0" required onchange="validateForm()">
+
+    <button type="button" disabled>Submit</button>
+</form>
+<script>
+    function validateForm() {
+        var invent={
+            id:document.getElementById("id").value,
+            name:document.getElementById("name").value,
+            category:document.getElementById("category").value,
+            quantity:document.getElementById("quantity").value,
+            price:document.getElementById("price").value,
+            supplier:document.getElementById("supplier").value,
+            reorderLevel:document.getElementById("reorderLevel").value
+        }
+
+        console.log(invent)
+
+        var isInvalid = false;
+        for(a in invent){
+            if(invent[a] == ""){
+                isInvalid = true;
+            }
+        }
+
+        if(isInvalid === true){
+            document.querySelector("button").setAttribute("disabled",true)
+        }else{
+            document.querySelector("button").removeAttribute("disabled",true)
+        }
+    }
+</script>
+</body>
+</html>

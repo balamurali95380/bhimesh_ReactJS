@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Message Form</h1>
+<form id="messageForm">
+    <label for="sender">Sender</label>
+    <input type="text" id="sender" name="sender" placeholder="Enter sender's name" required onkeyup="validateForm()" >
+
+    <label for="receiver">Receiver</label>
+    <input type="text" id="receiver" name="receiver" placeholder="Enter receiver's name" required onkeyup="validateForm()">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required onkeyup="validateForm()"></textarea>
+
+    <label for="timestamp">Timestamp</label>
+    <input type="datetime-local" id="timestamp" name="timestamp" required onchange="validateForm()">
+
+    <label for="status">Status</label>
+    <select id="status" name="status" required onchange ="validateForm()">
+        <option value="">Select status</option>
+        <option value="Sent">Sent</option>
+        <option value="Delivered">Delivered</option>
+        <option value="Read">Read</option>
+    </select>
+
+    <button type="button" disabled>Submit</button>
+</form>
+<script>
+    function validateForm() {
+        var chat={
+            sender:document.getElementById("sender").value,
+            receiver:document.getElementById("receiver").value,
+            message:document.getElementById("message").value,
+            timestamp:document.getElementById("timestamp").value,
+            status:document.getElementById("status").value,
+     
+        }
+
+        console.log(chat)
+
+        var isInvalid = false;
+        for(a in chat){
+            if(chat[a] == ""){
+                isInvalid = true;
+            }
+        }
+
+        if(isInvalid === true){
+            document.querySelector("button").setAttribute("disabled",true)
+        }else{
+            document.querySelector("button").removeAttribute("disabled",true)
+        }
+    }
+</script>
+</body>
+</html>

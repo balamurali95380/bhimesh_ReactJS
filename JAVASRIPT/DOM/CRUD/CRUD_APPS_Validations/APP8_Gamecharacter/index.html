@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Character Form</h1>
+<form id="characterForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter character name" required onkeyup="validateForm()">
+
+    <label for="level">Level</label>
+    <input type="number" id="level" name="level" placeholder="Enter level" min="1" required onchange="validateForm()">
+
+    <label for="healthPoints">Health Points</label>
+    <input type="number" id="healthPoints" name="healthPoints" placeholder="Enter health points" min="0" required onchange="validateForm()">
+
+    <label for="manaPoints">Mana Points</label>
+    <input type="number" id="manaPoints" name="manaPoints" placeholder="Enter mana points" min="0" required onchange="validateForm()">
+
+    <label for="strength">Strength</label>
+    <input type="number" id="strength" name="strength" placeholder="Enter strength" min="0" required onchange="validateForm()">
+
+    <label for="agility">Agility</label>
+    <input type="number" id="agility" name="agility" placeholder="Enter agility" min="0" required onchange="validateForm()">
+
+    <label for="abilities">Abilities</label>
+    <textarea id="abilities" name="abilities" rows="5" placeholder="Enter abilities as JSON array (e.g., [{\"name\": \"Fireball\", \"damage\": 50, \"cooldown\": 5}])" required onkeyup="validateForm()"></textarea>
+
+    <label for="inventory">Inventory</label>
+    <textarea id="inventory" name="inventory" rows="4" placeholder="Enter inventory items, separated by commas" required onkeyup="validateForm()"></textarea>
+
+    <button type="button" disabled>Submit</button>
+</form>
+<script>
+    function validateForm() {
+        var Game={
+            name:document.getElementById("name").value,
+            level:document.getElementById("level").value,
+            healthPoints:document.getElementById("healthPoints").value,
+            manaPoints:document.getElementById("manaPoints").value,
+            strength:document.getElementById("strength").value,
+            agility:document.getElementById("agility").value,
+            abilities:document.getElementById("abilities").value,
+            inventory:document.getElementById("inventory").value
+        }
+
+        console.log(Game)
+
+        var isInvalid = false;
+        for(a in Game){
+            if(Game[a] == ""){
+                isInvalid = true;
+            }
+        }
+
+        if(isInvalid === true){
+            document.querySelector("button").setAttribute("disabled",true)
+        }else{
+            document.querySelector("button").removeAttribute("disabled",true)
+        }
+    }
+</script>
+</body>
+</html>

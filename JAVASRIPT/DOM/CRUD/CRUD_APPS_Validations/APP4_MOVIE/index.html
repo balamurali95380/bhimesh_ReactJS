@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: rgb(235, 241, 243);
+            border: none;
+            cursor: pointer;
+            
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Movie Information Form</h1>
+<form id="movieForm">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Enter movie title" required onkeyup="validateForm()">
+
+    <label for="director">Director</label>
+    <input type="text" id="director" name="director" placeholder="Enter director's name" required onkeyup="validateForm()">
+
+    <label for="releaseYear">Release Year</label>
+    <input type="number" id="releaseYear" name="releaseYear" placeholder="Enter release year" required onkeyup="validateForm()">
+
+    <label for="genre">Genre</label>
+    <select id="genre" name="genre" required onchange ="validateForm()">
+        <option value="">Select genre</option>
+        <option value="Action">Action</option>
+        <option value="Drama">Drama</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+    </select>
+
+    <label for="rating">Rating</label>
+    <input type="number" id="rating" name="rating" placeholder="Enter movie rating (1-10)" min="1" max="10" step="0.1" required onkeyup="validateForm()">
+
+    <label for="actors">Actors</label>
+    <textarea id="actors" name="actors" rows="4" placeholder="Enter actors, separated by commas" required onkeyup="validateForm()"></textarea>
+
+    <button type="button" disabled>Submit</button>
+</form>
+<script>
+    function validateForm() {
+        var movie={
+            title:document.getElementById("title").value,
+            director:document.getElementById("director").value,
+            releaseYear:document.getElementById("releaseYear").value,
+            genre:document.getElementById("genre").value,
+            rating:document.getElementById("rating").value,
+             actors:document.getElementById("actors").value
+        }
+
+        console.log(movie)
+
+        var isInvalid = false;
+        for(a in movie){
+            if(movie[a] == ""){
+                isInvalid = true;
+            }
+        }
+
+        if(isInvalid === true){
+            document.querySelector("button").setAttribute("disabled",true)
+        }else{
+            document.querySelector("button").removeAttribute("disabled",true)
+        }
+    }
+</script>
+</body>
+</html>
