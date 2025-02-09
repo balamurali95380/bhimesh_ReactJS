@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    h2>Music Track Form</h2>
+    <form id="musicForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required >
+
+        <label for="artist">Artist:</label>
+        <input type="text" id="artist" name="artist" required>
+
+        <label for="duration">Duration (mm:ss):</label>
+        <input type="text" id="duration" name="duration" placeholder="e.g., 03:45" >
+
+        <label for="album">Album:</label>
+        <input type="text" id="album" name="album" required>
+
+        <input type="password" name="password" id="password" required>
+
+        <button type="button"  onclick="submitdata()">Submit</button>
+<script>
+    function submitdata(){
+      var music={
+                title:document.getElementById("title").value,
+                artist:document.getElementById("artist").value,
+                duration:document.getElementById("duration").value,
+                album:document.getElementById("album").value,
+                password:document.getElementById("password").value
+            }  
+            console.log(music)   
+        } 
+</script>
+    
+</body>
+</html>

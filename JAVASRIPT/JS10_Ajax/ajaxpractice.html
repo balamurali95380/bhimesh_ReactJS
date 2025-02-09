@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+<button type="button" onclick="srvrdata()">serverdata</button>
+    <script>
+    function srvrdata(){
+
+        var serverdata=new XMLHttpRequest();
+        serverdata.onreadystatechange=function(){
+        if(serverdata.readyState==4 && serverdata.status==200){
+            var albumdata=JSON.parse(serverdata.response)
+          var typ=  typeof(serverdata.response)
+          console.log(typ)
+            console.log(albumdata)
+        }
+        }
+        serverdata.open("GET","https://jsonplaceholder.typicode.com/albums")
+        serverdata.send()
+}
+    </script>
+</body>
+</html>

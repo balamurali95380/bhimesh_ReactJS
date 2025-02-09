@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create Task</h1>
+    <form id="taskForm">
+        <label for="taskId">ID</label>
+        <input type="text" id="taskId" name="id" placeholder="Enter task ID" required onkeyup="validtask()">
+
+        <label for="taskName">Name</label>
+        <input type="text" id="taskName" name="name" placeholder="Enter task name" required onkeyup="validtask()">
+
+        <label for="taskDescription">Description</label>
+        <textarea id="taskDescription" name="description" placeholder="Enter task description" rows="4" required
+            onkeyup="validtask()"></textarea>
+
+        <label for="taskDueDate">Due Date</label>
+        <input type="date" id="taskDueDate" name="dueDate" required onchange="validtask()">
+
+        <label for="taskPriority">Priority</label>
+        <select id="taskPriority" name="priority" required onchange="validtask()">
+            <option value="">Select priority</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label for="taskStatus">Status</label>
+        <select id="taskStatus" name="status" required onchange="validtask()">
+            <option value="">Select status</option>
+            <option value="not-started">Not Started</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+
+        <label for="taskCategory">Category</label>
+        <input type="text" id="taskCategory" name="category" placeholder="Enter task category" required
+            onkeyup="validtask()">
+
+        <button type="button" disabled>Submit</button>
+    </form>
+
+    <script>
+
+        function validtask() {
+            var learn = {
+                taskId: document.getElementById("taskId").value,
+                taskName: document.getElementById("taskName").value,
+                taskDescription: document.getElementById("taskDescription").value,
+                taskDueDate: document.getElementById("taskDueDate").value,
+                taskPriority: document.getElementById("taskPriority").value,
+                taskStatus: document.getElementById("taskStatus").value,
+                taskCategory: document.getElementById("taskCategory").value
+            }
+        
+        console.log(learn);
+        var datainvalid = false;
+        for (a in learn) {
+            if (learn[a] == "") {
+                datainvalid = true;
+            }
+        }
+        if (datainvalid == true) {
+            document.querySelector("button").setAttribute("disabled", true)
+        }
+        else {
+            document.querySelector("button").removeAttribute("disabled", true)
+        }
+    }
+    </script>
+</body>
+</html>

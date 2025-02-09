@@ -49,6 +49,26 @@
 </head>
 
 <body>
+    
+    <div class="column">
+        <h3>Enrolled Students</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Courses</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
 
     <h2>Student Enrollment Form</h2>
     <form id="enrollmentForm">
@@ -77,33 +97,93 @@
 
         <button type="button" disabled>Submit</button>
     </form>
-
     <script>
-        function validateForm() {
-            var student={
-                id:document.getElementById("id").value,
-                name:document.getElementById("name").value,
-                age:document.getElementById("age").value,
-                gender:document.getElementById("gender").value,
-                coursesEnrolled:document.getElementById("coursesEnrolled").value,
-                enrollmentDate:document.getElementById("enrollmentDate").value
-            }
+        // function validateForm() {
+        //     var student={
+        //         id:document.getElementById("id").value,
+        //         name:document.getElementById("name").value,
+        //         age:document.getElementById("age").value,
+        //         gender:document.getElementById("gender").value,
+        //         coursesEnrolled:document.getElementById("coursesEnrolled").value,
+        //         enrollmentDate:document.getElementById("enrollmentDate").value
+        //     }
 
-            console.log(student)
+        //     console.log(student)
 
-            var isInvalid = false;
-            for(a in student){
-                if(student[a] == ""){
-                    isInvalid = true;
-                }
-            }
+        //     var isInvalid = false;
+        //     for(a in student){
+        //         if(student[a] == ""){
+        //             isInvalid = true;
+        //         }
+        //     }
 
-            if(isInvalid === true){
-                document.querySelector("button").setAttribute("disabled",true)
-            }else{
-                document.querySelector("button").removeAttribute("disabled",true)
-            }
+        //     if(isInvalid === true){
+        //         document.querySelector("button").setAttribute("disabled",true)
+        //     }else{
+        //         document.querySelector("button").removeAttribute("disabled",true)
+        //     }
+        // }
+        
+        var allStudents = JSON.parse(localStorage.getItem("allStudents")) || [];
+
+        function displayStudents() {
+            let tableBody = document.getElementById("studentTableBody");
+            tableBody.innerHTML = "";
+            allStudents.forEach((std, index) => {
+                let row = tableBody.insertRow();
+                Object.values(std).forEach((val) => {
+                    var cell = row.insertCell();
+                    cell.textContent = val;
+                });
+
+                let actionsCell = row.insertCell();
+                actionsCell.innerHTML = `<button onclick="editStudent(${index})">Edit</button> <button onclick="deleteStudent(${index})">Delete</button>`;
+            });
         }
+
+        function validateForm() {
+            let fields = ["id", "name", "age", "gender", "coursesEnrolled", "enrollmentDate"];
+            let isValid = fields.every(field => document.getElementById(field).value.trim() !== "");
+            document.querySelector("button").disabled = !isValid;
+        }
+
+        function addStudent() {
+            let student = {
+                id: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                gender: document.getElementById("gender").value,
+                courses: document.getElementById("coursesEnrolled").value,
+                date: document.getElementById("enrollmentDate").value,
+            };
+
+            allStudents.push(student);
+            localStorage.setItem("allStudents", JSON.stringify(allStudents));
+            displayStudents();
+            document.getElementById("enrollmentForm").reset();
+            document.querySelector("button").disabled = true;
+        }
+
+        function editStudent(index) {
+            let student = allStudents[index];
+            document.getElementById("id").value = student.id;
+            document.getElementById("name").value = student.name;
+            document.getElementById("age").value = student.age;
+            document.getElementById("gender").value = student.gender;
+            document.getElementById("coursesEnrolled").value = student.courses;
+            document.getElementById("enrollmentDate").value = student.date;
+            allStudents.splice(index, 1);
+            localStorage.setItem("allStudents", JSON.stringify(allStudents));
+            displayStudents();
+        }
+
+        function deleteStudent(index) {
+            allStudents.splice(index, 1);
+            localStorage.setItem("allStudents", JSON.stringify(allStudents));
+            displayStudents();
+        }
+
+        displayStudents();
     </script>
 
 </body>
