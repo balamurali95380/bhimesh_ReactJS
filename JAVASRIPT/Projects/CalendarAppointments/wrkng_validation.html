@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Appointments</title>
+    <style>
+        /* Your styles remain unchanged */
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Calendar Appointments</h1>
+
+        <div class="content">
+            <!-- Left Column: Appointment Entry Form -->
+            <div class="form-container">
+                <h2>Add Appointment</h2>
+                <form id="appointment-form">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" required onkeyup="validateForm()">
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" required onchange="validateForm()">
+
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" required onchange="validateForm()">
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" required onkeyup="validateForm()">
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="3" required onkeyup="validateForm()"></textarea>
+
+                    <label>Event Category:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="meeting" name="category" value="Meeting">
+                        <label for="meeting">Meeting</label>
+
+                        <input type="radio" id="conference" name="category" value="Conference">
+                        <label for="conference">Conference</label>
+
+                        <input type="radio" id="webinar" name="category" value="Webinar">
+                        <label for="webinar">Webinar</label>
+
+                        <input type="radio" id="personal" name="category" value="Personal">
+                        <label for="personal">Personal</label>
+                    </div>
+
+                    <label>Participants:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="alice" name="participants" value="Alice">
+                        <label for="alice">Alice</label>
+
+                        <input type="checkbox" id="bob" value="Bob" name="participants">
+                        <label for="bob">Bob</label>
+
+                        <input type="checkbox" id="charlie" value="Charlie" name="participants">
+                        <label for="charlie">Charlie</label>
+
+                        <input type="checkbox" id="david" value="David" name="participants">
+                        <label for="david">David</label>
+
+                        <input type="checkbox" id="emma" value="Emma" name="participants">
+                        <label for="emma">Emma</label>
+                    </div>
+
+                    <button type="button" disabled onclick="registeruser()" id="crtbtn">Join Now</button>
+                    <button type="button" onclick="update()" id="updbtn" style="display:none">Update</button>
+                </form>
+            </div>
+
+            <!-- Right Column: Appointment List -->
+            <div class="appointment-container">
+                <h2>Upcoming Appointments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Description</th>
+                            <th>Event Category</th>
+                            <th>Participants</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointment-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allUsers = JSON.parse(localStorage.getItem("allusersdata")) || [];
+        let indx = null;
+
+        function validateForm() {
+            const fields = ["eventName", "date", "time", "location", "description"];
+            const isValidFields = fields.every(field => document.getElementById(field).value.trim() !== "");
+
+            const isRadioValid = Array.from(document.getElementsByName("category")).some(radio => radio.checked);
+            const isCheckboxValid = Array.from(document.getElementsByName("participants")).some(checkbox => checkbox.checked);
+
+            document.getElementById("crtbtn").disabled = !(isValidFields && isRadioValid && isCheckboxValid && indx === null);
+            document.getElementById("updbtn").disabled = !(isValidFields && isRadioValid && isCheckboxValid && indx !== null);
+        }
+
+        function registeruser() {
+            const user = {
+                eventName: document.getElementById("eventName").value,
+                date: document.getElementById("date").value,
+                time: document.getElementById("time").value,
+                location: document.getElementById("location").value,
+                description: document.getElementById("description").value,
+                category: Array.from(document.getElementsByName("category")).filter(radio => radio.checked).map(radio => radio.value),
+                participants: Array.from(document.getElementsByName("participants")).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value)
+            };
+
+            allUsers.push(user);
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers));
+            clearForm();
+            displayUsers();
+        }
+
+        function clearForm() {
+            document.getElementById("appointment-form").reset();
+            indx = null;
+            document.getElementById("crtbtn").style.display = "block";
+            document.getElementById("updbtn").style.display = "none";
+            validateForm();
+        }
+
+        function displayUsers() {
+            const tbody = document.getElementById("appointment-list");
+            tbody.innerHTML = "";
+            allUsers.forEach((user, index) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${user.eventName}</td>
+                    <td>${user.date}</td>
+                    <td>${user.time}</td>
+                    <td>${user.location}</td>
+                    <td>${user.description}</td>
+                    <td>${user.category.join(", ")}</td>
+                    <td>${user.participants.join(", ")}</td>
+                    <td><button class="delete" onclick="del(${index})">Delete</button></td>
+                    <td><button class="edit" onclick="edit(${index})">Edit</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function del(index) {
+            allUsers.splice(index, 1);
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers));
+            displayUsers();
+        }
+
+        function edit(index) {
+            indx = index;
+            const user = allUsers[index];
+
+            document.getElementById("eventName").value = user.eventName;
+            document.getElementById("date").value = user.date;
+            document.getElementById("time").value = user.time;
+            document.getElementById("location").value = user.location;
+            document.getElementById("description").value = user.description;
+
+            Array.from(document.getElementsByName("category")).forEach(radio => {
+                radio.checked = user.category.includes(radio.value);
+            });
+
+            Array.from(document.getElementsByName("participants")).forEach(checkbox => {
+                checkbox.checked = user.participants.includes(checkbox.value);
+            });
+
+            document.getElementById("crtbtn").style.display = "none";
+            document.getElementById("updbtn").style.display = "block";
+        }
+
+        function update() {
+            const user = {
+                eventName: document.getElementById("eventName").value,
+                date: document.getElementById("date").value,
+                time: document.getElementById("time").value,
+                location: document.getElementById("location").value,
+                description: document.getElementById("description").value,
+                category: Array.from(document.getElementsByName("category")).filter(radio => radio.checked).map(radio => radio.value),
+                participants: Array.from(document.getElementsByName("participants")).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value)
+            };
+
+            allUsers[indx] = user;
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers));
+            clearForm();
+            displayUsers();
+        }
+
+        // Initialize the user list on page load
+        displayUsers();
+    </script>
+</body>
+
+</html>

@@ -22,7 +22,7 @@
 
         <input type="password" name="password" id="password" required>
 
-        <button type="button"  onclick="submitdata()">Submit</button>
+        <button type="button"  onclick="submitdata()" id="button" disabled>Submit</button>
 <script>
     function submitdata(){
       var music={
@@ -33,7 +33,12 @@
                 password:document.getElementById("password").value
             }  
             console.log(music)   
-        } 
+     
+
+        if(music.title.length>=5){
+            document.getElementById("button").removeAttribute("disabled",true)
+        }
+    } 
 </script>
     
 </body>

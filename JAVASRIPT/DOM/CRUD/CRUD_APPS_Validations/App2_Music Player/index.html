@@ -72,27 +72,32 @@
             console.log(music)      
 
             var isInvalid = false;
-            for(a in music){
-                if(music[a] == ""){
-                    isInvalid = true;
-                }
-            }
+            // for(a in music){
+            //     if(music[a] == ""){
+            //         isInvalid = true;
+            //     }
+            // }
 
-           if(music.title.length !=8 )
+           if(music.title.length >6 )
            {
-            isInvalid = true;
+            document.querySelector("button").setAttribute("disabled",true)
+            }else{
+                document.querySelector("button").removeAttribute("disabled",true)
+            }
+            // isInvalid = true;
            }
         //    if(typeof(music.duration)!= Number){
         //     isInvalid = true;
         //    }
 
 
-            if(isInvalid === true){
-                document.querySelector("button").setAttribute("disabled",true)
-            }else{
-                document.querySelector("button").removeAttribute("disabled",true)
-            }
-        }
+        //     if(isInvalid === true){
+        //         document.querySelector("button").setAttribute("disabled",true)
+        //     }else{
+        //         document.querySelector("button").removeAttribute("disabled",true)
+        //     }
+        // }
+
     </script>
   
 
