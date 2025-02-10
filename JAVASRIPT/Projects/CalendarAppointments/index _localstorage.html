@@ -368,7 +368,7 @@
                 }             
             }
 
-            document.getElementById("crtbtn").disabled = !(isValid && isRadioValid && isCheckboxValid && indx === null);
+            document.getElementById("crtbtn").disabled = !(isValid && isRadioValid && isCheckboxValid && indx === null);//inside all variables true then output will become false and button will be enabled.
             document.getElementById("updbtn").disabled = !(isValid && isRadioValid && isCheckboxValid && indx !== null);
         
         }
