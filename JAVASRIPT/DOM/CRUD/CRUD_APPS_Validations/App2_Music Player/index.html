@@ -78,6 +78,15 @@
                 }
             }
 
+           if(music.title.length !=8 )
+           {
+            isInvalid = true;
+           }
+        //    if(typeof(music.duration)!= Number){
+        //     isInvalid = true;
+        //    }
+
+
             if(isInvalid === true){
                 document.querySelector("button").setAttribute("disabled",true)
             }else{
