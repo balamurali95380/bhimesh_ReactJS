@@ -312,6 +312,21 @@
         }
 
         function validform() {
+
+            // var user={
+            //     productName:document.getElementById("productName").value,
+            //     quantity:document.getElementById("quantity").value,
+            //     price:document.getElementById("price").value,
+            // }  
+                
+
+            // var inputvalid = false;
+            // for(a in user){
+            //     if(user[a] != ""){
+            //         inputvalid = true;
+            //     }
+            // }
+
             var fields = ["productName", "quantity", "price"]
             // var inputvalid = fields.every(field => document.getElementById(field).value.trim() !== "");                 
             var inputvalid=fields.every(function(field){
@@ -328,7 +343,7 @@
                 }
 
             }
-
+ 
             var checkbox = document.getElementsByName("category")
             for (i = 0; i < checkbox.length; i++) {
                 if (checkbox[i].checked == true) {
