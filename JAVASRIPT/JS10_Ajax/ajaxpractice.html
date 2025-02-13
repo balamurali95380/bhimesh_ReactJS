@@ -8,20 +8,28 @@
 <body>
 <button type="button" onclick="srvrdata()">serverdata</button>
     <script>
-    function srvrdata(){
+    function srvrdata(display){
 
         var serverdata=new XMLHttpRequest();
         serverdata.onreadystatechange=function(){
         if(serverdata.readyState==4 && serverdata.status==200){
             var albumdata=JSON.parse(serverdata.response)
-          var typ=  typeof(serverdata.response)
+          var typ =  typeof(serverdata.response)
           console.log(typ)
-            console.log(albumdata)
+          display();
+
         }
         }
         serverdata.open("GET","https://jsonplaceholder.typicode.com/albums")
         serverdata.send()
+
+        function display(){
+            console.log(albumdata);
+        };
+        srvrdata(display);
 }
+
+
     </script>
 </body>
 </html>
