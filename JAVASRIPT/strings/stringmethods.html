@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strings</title>
 </head>
+
 <body>
     <script>
 
-          var myname="bala murali krishna"
-           var myname1="hare"
+        var myname = " bala murali krishna"
+        var myname1 = "hare"
 
-        console.log(myname.substr("bala")) ;
+        console.log(myname.substr("bala"));
         console.log(myname.charAt(7))
         console.log(myname.concat(myname1))
         console.log(myname.includes("murali"))
-        console.log(myname.lastIndexOf(myname1))
-
-          
+        console.log(myname.lastIndexOf("krishna"))
+        console.log(myname.search("murali"))
+        console.log(myname.repeat(3))
+        console.log(myname.trim())
+        console.log(myname.toUpperCase())
+        console.log(myname.slice(3, 5))
+        console.log(myname.split(""))//each letter including spaces 
+        console.log(myname.split(" "))//each wrd with space
+        console.log(myname.split(",", 2))
+        console.log(myname.replace("bala", "kalyan"))
+        console.log(myname.length)          
     </script>
-  
+
 </body>
+
 </html>
