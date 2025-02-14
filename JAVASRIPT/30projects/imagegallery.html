@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery with Scroll Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      overflow-x: hidden;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .gallery-container {
+      display: flex;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+      scroll-behavior: smooth;
+      gap: 10px;
+      padding: 20px;
+      white-space: nowrap;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 200px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .scroll-buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      pointer-events: none; /* Allow clicks to pass through, except for buttons */
+    }
+
+    .scroll-buttons button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: auto; /* Enable clicks for buttons */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .scroll-buttons button:first-child {
+      position: absolute;
+      left: 10px;
+    }
+
+    .scroll-buttons button:last-child {
+      position: absolute;
+      right: 10px;
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-wrapper">
+    <div class="scroll-buttons">
+      <button id="scroll-left">&lt;</button>
+      <button id="scroll-right">&gt;</button>
+    </div>
+    <div class="gallery-container" id="gallery-container">
+      <!-- Images will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded Image">
+  </div>
+
+  <script>
+    const galleryContainer = document.getElementById('gallery-container');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Fetch images from the API
+    fetch('https://jsonplaceholder.typicode.com/photos?_limit=15')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(photo => {
+          const galleryItem = document.createElement('div');
+          galleryItem.classList.add('gallery-item');
+          galleryItem.innerHTML = `<img src="${photo.thumbnailUrl}" alt="${photo.title}" data-full-image="${photo.url}">`;
+          galleryContainer.appendChild(galleryItem);
+        });
+
+        // Add event listeners for the lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        galleryItems.forEach(item => {
+          item.addEventListener('click', () => {
+            lightboxImg.src = item.getAttribute('data-full-image');
+            lightbox.classList.add('active');
+          });
+        });
+      });
+
+    // Lightbox close functionality
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    // Scroll buttons functionality
+    const scrollLeft = document.getElementById('scroll-left');
+    const scrollRight = document.getElementById('scroll-right');
+
+    scrollLeft.addEventListener('click', () => {
+      galleryContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    scrollRight.addEventListener('click', () => {
+      galleryContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
