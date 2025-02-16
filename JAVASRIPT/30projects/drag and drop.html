@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Image Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #drop-area {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag and Drop Image Search</h1>
+    <div id="drop-area" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+        <p>Drag an image here or click to upload</p>
+        <input type="file" id="fileInput" accept="image/*" onchange="uploadImage(event)">
+    </div>
+    <input type="text" id="searchQuery" placeholder="Search for images...">
+    <button onclick="searchImages()">Search</button>
+    <div class="gallery" id="imageResults"></div>
+
+    <script>
+        async function searchImages() {
+            const query = document.getElementById('searchQuery').value;
+            const apiKey = 'YOUR_ACCESS_KEY'; // Replace with your Unsplash API key
+            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${apiKey}`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+
+            const results = document.getElementById('imageResults');
+            results.innerHTML = '';
+
+            data.results.forEach(photo => {
+                const imgElement = document.createElement('img');
+                imgElement.src = photo.urls.small;
+                results.appendChild(imgElement);
+            });
+        }
+
+        function dragOverHandler(event) {
+            event.preventDefault();
+        }
+
+        function dropHandler(event) {
+            event.preventDefault();
+            const file = event.dataTransfer.files[0];
+            processFile(file);
+        }
+
+        function uploadImage(event) {
+            const file = event.target.files[0];
+            processFile(file);
+        }
+
+        function processFile(file) {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = event.target.result;
+                    document.getElementById('imageResults').innerHTML = '';
+                    document.getElementById('imageResults').appendChild(imgElement);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>

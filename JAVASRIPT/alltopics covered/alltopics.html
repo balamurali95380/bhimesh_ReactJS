@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JavaScript All-in-One Project
+
+        // 1. VARIABLES AND DATA TYPES
+        let name = "John Doe"; // String
+        const age = 30; // Number
+        let isStudent = false; // Boolean
+        let hobbies = ["Reading", "Coding", "Gaming"]; // Array
+        let address = { city: "New York", zip: 10001 }; // Object
+
+        console.log(`Name: ${name}, Age: ${age}, Student: ${isStudent}`);
+
+        // 2. FUNCTIONS
+        function greet(userName) {
+            return `Hello, ${userName}!`;
+        }
+        console.log(greet(name));
+
+        // 3. CONDITIONALS
+        if (age >= 18) {
+            console.log("Adult");
+        } else {
+            console.log("Minor");
+        }
+
+        // 4. LOOPS
+        for (let hobby of hobbies) {
+            console.log(`Hobby: ${hobby}`);
+        }
+
+        // 5. DOM MANIPULATION
+        document.body.innerHTML = `
+    <h1>JavaScript Project</h1>
+    <p id="description">Learning JavaScript step by step</p>
+    <button id="action">Click Me</button>
+`;
+
+        // 6. EVENTS
+        document.getElementById("action").addEventListener("click", () => {
+            document.getElementById("description").innerText = "Button Clicked!";
+            console.log("Button was clicked!");
+        });
+        a
+
+        // 7. OBJECT METHODS
+        address.display = function () {
+            return `City: ${this.city}, Zip: ${this.zip}`;
+        };
+        console.log(address.display());
+
+        // 8. ARRAY METHODS
+        let filteredHobbies = hobbies.filter(hobby => hobby !== "Gaming");
+        console.log("Filtered Hobbies:", filteredHobbies);
+
+        // 9. PROMISES
+        const fetchData = () =>
+            new Promise((resolve, reject) => {
+                setTimeout(() => resolve("Data fetched successfully!"), 2000);
+            });
+
+        fetchData()
+            .then(response => console.log(response))
+            .catch(error => console.error(error));
+
+        // 10. ASYNC/AWAIT
+        async function loadAsyncData() {
+            try {
+                let data = await fetchData();
+                console.log("Async/Await:", data);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+        loadAsyncData();
+
+        // 11. CLASSES
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            getFullName() {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        let person = new Person("Jane", "Doe");
+        console.log("Full Name:", person.getFullName());
+
+        // 12. ERROR HANDLING
+        try {
+            throw new Error("Something went wrong!");
+        } catch (error) {
+            console.error("Caught Error:", error.message);
+        }
+
+        // 13. MODULE PATTERN
+        const Calculator = (() => {
+            let result = 0;
+
+            return {
+                add: num => (result += num),
+                subtract: num => (result -= num),
+                getResult: () => result,
+            };
+        })();
+        Calculator.add(10);
+        Calculator.subtract(5);
+        console.log("Calculator Result:", Calculator.getResult());
+
+        // 14. LOCAL STORAGE
+        localStorage.setItem("username", name);
+        console.log("Stored Username:", localStorage.getItem("username"));
+
+        // 15. ES6+ FEATURES
+        let square = num => num * num; // Arrow Function
+        console.log("Square of 5:", square(5));
+
+        let { city, zip } = address; // Object Destructuring
+        console.log(`City: ${city}, Zip: ${zip}`);
+
+        let newHobbies = [...hobbies, "Traveling"]; // Spread Operator
+        console.log("New Hobbies:", newHobbies);
+
+        // End of File
+        console.log("JavaScript project complete!");
+
+    </script>
+</body>
+
+</html>
