@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Nested Object in Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display Nested Object in Table</title>
+        <style>
+            table {
+                width: 50%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                font-size: 18px;
+                text-align: left;
+            }
+            th, td {
+                padding: 10px;
+                border: 1px solid black;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h2>Table with Nested Object Data</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted dynamically -->
+            </tbody>
+        </table>
+    
+        <script>
+            // Sample data with nested object inside an array
+            const data = [
+                { id: 1, name: "John", address: { city: "New York", country: "USA",street:"h" } },
+                { id: 2, name: "Alice", address: { city: "London", country: "UK" } },
+                { id: 3, name: "Mark", address: { city: "Sydney", country: "Australia" } }
+            ];
+    
+            // Reference to the table body
+            const tableBody = document.querySelector("#dataTable tbody");
+    
+            // Loop through the data array
+            data.forEach(item => {
+                const row = document.createElement("tr");
+    
+                let addressString = "";
+                
+                // Using for...in loop to iterate over the address object
+                for (let key in item.address) {
+                    addressString += item.address[key] + ", "; // Concatenate values
+                }
+    
+                addressString = addressString.slice(0, -2); // Remove last comma and space
+    
+                row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${addressString}</td>
+                `;
+    
+                // Append row to the table body
+                tableBody.appendChild(row);
+            });
+        </script>
+    
+    </body>
+    </html>
+    
+    </script>
+
+</body>
+</html>

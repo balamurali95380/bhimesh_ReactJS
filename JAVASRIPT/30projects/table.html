@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    </html><table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Country</th>
+        </tr>
+        <script>
+          const data = [
+            { id: 1, name: "John", address: { city: "New York", country: "USA" } },
+            { id: 2, name: "Alice", address: { city: "London", country: "UK" } },
+          ];
+          data.forEach((item) => {
+            document.write(`<tr>
+              <td>${item.id}</td>
+              <td>${item.name}</td>
+              <td>${item.address.city}</td>
+              <td>${item.address.country}</td>
+            </tr>`);
+          });
+        </script>
+      </table>
+</body>
+
+  
