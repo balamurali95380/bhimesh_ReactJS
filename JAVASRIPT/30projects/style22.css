@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(hsl(328, 90%, 58%),hsl(245, 97%, 23%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selector{
+    width: 350px;
+}
+#selectfield{
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#selectfield img{
+    width: 16px;
+    transition:transform  0.5s;
+
+}
+#list{
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+overflow: hidden;
+
+
+}
+.options{
+    width: 100%;
+    padding: 15px 0 15px 70px;
+    list-style-type: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+.options img{
+    width: 30px;
+    position: absolute;
+    top: 12px;
+    left: 25px;
+}
+.options:hover{
+    background: #418394;
+}
+.hide{
+    visibility: hidden;
+}
+.rotate{
+    transform:rotate(180deg)
+}
