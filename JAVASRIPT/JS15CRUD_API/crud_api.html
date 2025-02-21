@@ -29,11 +29,11 @@
             <div class="col">
                 <table class="table table-striped">
                     <thead>
-                        <tr> 
+                        <tr>
+                            <th>ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>ID</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -131,6 +131,7 @@
         };
         function updateUser() {
             var user = {
+                id: allUsers[indx].id,
                 fname: document.getElementById("fname").value,
                 lname: document.getElementById("lname").value,
                 email: document.getElementById("email").value,
@@ -143,21 +144,13 @@
             }
 
             postData.open("PUT", "http://localhost:3000/users/" + allUsers[indx].id);
-          
+
             postData.setRequestHeader("Content-Type", "Application/json")
             postData.send(JSON.stringify(user))
         };
 
         // the following function will run when the Application started
         getUsersFromServer()
-
-    document.getElementById("fname").value = "";
-    document.getElementById("lname").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("createbtn").style.display = "block";
-    document.getElementById("updatebtn").style.display = "none";
     </script>
-
 </body>
-
 </html>
