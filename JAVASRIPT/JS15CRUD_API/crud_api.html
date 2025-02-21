@@ -20,13 +20,16 @@
                     <input type="text" name="" id="lname"> <br>
                     <label for="">Email : </label>
                     <input type="text" name="" id="email"> <br>
-                    <button type="button" onclick="createUser()" class="btn btn-primary">Create User</button>
+                    <button type="button" id="createbtn" onclick="createUser()" class="btn btn-primary">Create
+                        User</button>
+                    <button type="button" id="updatebtn" onclick="updateUser()" class="btn btn-primary"
+                        style="display:none">update User</button>
                 </form>
             </div>
             <div class="col">
                 <table class="table table-striped">
                     <thead>
-                        <tr>
+                        <tr> 
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -86,6 +89,7 @@
                 var editTd = document.createElement("td");
                 var editBtn = document.createElement("button");
                 editBtn.innerHTML = "EDIT";
+                editBtn.setAttribute("onClick", "editUser(" + i + ")")
                 editBtn.setAttribute("class", "btn btn-warning")
                 editTd.appendChild(editBtn)
                 myTr.appendChild(editTd)
@@ -112,12 +116,46 @@
             getData.open("DELETE", "http://localhost:3000/users/" + allUsers[i].id);
             getData.send()
         };
+        var indx;
+        function editUser(i) {
+            indx = i;
+            document.getElementById("fname").value = allUsers[i].fname
+            document.getElementById("lname").value = allUsers[i].lname
+            document.getElementById("email").value = allUsers[i].email
 
-        function editUser() { };
-        function updateUser() { };
-       
+            document.getElementById("createbtn").style.display = "none";
+            document.getElementById("updatebtn").style.display = "block";
+
+
+
+        };
+        function updateUser() {
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+            }
+            var postData = new XMLHttpRequest();
+            postData.onreadystatechange = function () {
+                if (postData.readyState === 4 && postData.status === 201) {
+                    console.log("User Added Successfully !!!")
+                }
+            }
+
+            postData.open("PUT", "http://localhost:3000/users/" + allUsers[indx].id);
+          
+            postData.setRequestHeader("Content-Type", "Application/json")
+            postData.send(JSON.stringify(user))
+        };
+
         // the following function will run when the Application started
         getUsersFromServer()
+
+    document.getElementById("fname").value = "";
+    document.getElementById("lname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("createbtn").style.display = "block";
+    document.getElementById("updatebtn").style.display = "none";
     </script>
 
 </body>

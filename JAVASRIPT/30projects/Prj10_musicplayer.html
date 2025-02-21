@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .music {
+            background: #ffe0e5;
+            width: 400px;
+            padding: 25px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 70px; 
+        }
+
+        
+        .nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .circle {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background: #fff;
+            color: #f53192;
+            box-shadow: 0 5px 10px rgba(225, 26, 26, 0.22);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .song-img {
+            width: 220px;
+            border-radius: 50%;
+            border: 8px solid #ffff;
+            box-shadow: 0 10px 60px rgba(225, 26, 26, 0.22);
+            margin-bottom: 20px;
+        }
+
+        .music h1 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        #progress {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #f53192;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 40px 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .controls div {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #f53192;
+            box-shadow: 0 10px 20px rgba(225, 26, 26, 0.22);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="music">
+            <nav class="nav">
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="./images (5).jpg" alt="song-img" class="song-img"/>
+            
+            <h1>SidhSriram</h1>
+            <p>Emo Emo song from Rahu movie</p>
+            <audio id="song" >
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress" max="100">
+
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playpause()"><i class="fa-solid fa-play" id="ctrlicon"></i></div>
+                <div><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlicon = document.getElementById("ctrlicon");
+
+        song.onloadedmetadata = function() {
+            progress.max = song.duration;
+        }
+
+        function playpause() {
+            if (song.paused) {
+                song.play();
+                ctrlicon.classList.remove("fa-play");
+                ctrlicon.classList.add("fa-pause");
+            } else {
+                song.pause();
+                ctrlicon.classList.remove("fa-pause");
+                ctrlicon.classList.add("fa-play");
+            }
+        }
+
+        song.ontimeupdate = function() {
+            progress.value = song.currentTime;
+        }
+
+        progress.oninput = function() {
+            song.currentTime = progress.value;
+        }
+    </script>
+</body>
+</html>
