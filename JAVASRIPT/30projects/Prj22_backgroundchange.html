@@ -19,7 +19,7 @@
             width: 60%;
             margin: auto;
             line-height: 0;
-            background-image: url(../);
+            background-image: url(./background-2420782_1280.webp);
             overflow: hidden;
             position: relative;
         }
@@ -60,28 +60,28 @@
 <body>
     <div class="container">
         <div class="imb-box">
-            <img src="./images (7).jpg" width="100%">
+            <img src="./wp7345565-removebg-preview.png" width="100%">
             <div class="img-wrap" id="imgWrap">
-                <img src="./download (11).jpg" id="originalImg">
+                <img src="./wp7345565.jpg" id="originalImg">
             </div>
             <span id="line">
-                <img src="./download (19).jpg" class="arrow">
+                <img src="./free-double-arrow-left-and-right-icon-16805-thumb.png" class="arrow">
             </span>
         </div>
     </div>
     <script>
         var imgBox = document.querySelector(".imb-box");
-        var imgWrap = document.querySelector(".img-wrap"); 
+        var imgWrap = document.querySelector(".img-wrap"); // Corrected variable name
         var originalImg = document.getElementById("originalImg");
         var line = document.getElementById("line");
 
-        originalImg.style.width = imgBox.offsetWidth + "px"; 
+        originalImg.style.width = imgBox.offsetWidth + "px"; // Fixed property name
 
         var leftspace = imgBox.offsetLeft;
 
         imgBox.onmousemove = function (e) {
-            var boxwidth = (e.pageX - leftspace) + "px"; 
-            imgWrap.style.width = boxwidth; 
+            var boxwidth = (e.pageX - leftspace) + "px"; // Fixed event property name
+            imgWrap.style.width = boxwidth; // Corrected variable name
             line.style.left = boxwidth;
         }
     </script>
