@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +23,7 @@
         .progress-ring {
             transform: rotate(-90deg);
             transform-origin: center;
-            transition: stroke-dashoffset 0.5s ease-in-out;
+            transition: stroke-dashoffset 0.1s ease-in-out;
         }
 
         .progress-text {
@@ -44,6 +43,7 @@
             color: white;
             border-radius: 5px;
             transition: 0.3s;
+            margin: 5px;
         }
 
         button:hover {
@@ -66,30 +66,55 @@
         <text x="50" y="50" class="progress-text">0%</text>
     </svg>
 
-    <button onclick="startProgress()">Start Progress</button>
+    <div>
+        <button onclick="startProgress()">Start</button>
+        <button onclick="pauseProgress()">Pause</button>
+        <button onclick="cancelProgress()">Cancel</button>
+    </div>
 
     <script>
+        let progress = 0;
+        let interval = null;
+        let isPaused = false;
+
         function setProgress(percentage) {
             var circle = document.querySelector(".progress-ring");
-            var  text = document.querySelector(".progress-text");
+            var text = document.querySelector(".progress-text");
             var circumference = 2 * Math.PI * 40; // Circle circumference
 
             const offset = circumference - (percentage / 100) * circumference;
-
             circle.style.strokeDashoffset = offset;
             text.textContent = `${percentage}%`;
         }
 
         function startProgress() {
-            let progress = 0;
-            const interval = setInterval(() => {
+            if (interval || progress > 100) return; // Prevent multiple intervals and restart at 100%
+            isPaused = false;
+            interval = setInterval(() => {
                 if (progress > 100) {
                     clearInterval(interval);
+                    interval = null;
                 } else {
                     setProgress(progress);
                     progress++;
                 }
-            }, 1000);
+            }, 50);
+        }
+
+        function pauseProgress() {
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+                isPaused = true;
+            }
+        }
+
+        function cancelProgress() {
+            clearInterval(interval);
+            interval = null;
+            progress = 0;
+            setProgress(0);
+            isPaused = false;
         }
     </script>
 
