@@ -6,54 +6,155 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            background-color: bisque;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        select {
+            width: 95%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
 
 <body>
+    <h2>Student Enrollment System</h2>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <form action="">
-                    <label for="">First Name : </label>
-                    <input type="text" name="" id="fname"> <br>
-                    <label for="">Last Name : </label>
-                    <input type="text" name="" id="lname"> <br>
-                    <label for="">Email : </label>
-                    <input type="text" name="" id="email"> <br>
-                    <button type="button" id="createbtn" onclick="createUser()" class="btn btn-primary">Create
-                        User</button>
-                    <button type="button" id="updatebtn" onclick="updateUser()" class="btn btn-primary"
-                        style="display:none">update User</button>
-                </form>
-            </div>
-            <div class="col">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+        <div class="column">
+            <h3>Enrollment Form</h3>
+            <form id="enrollmentForm">
+                <label for="id">num:</label>
+                <input type="text" id="id" required onkeyup="validateForm()">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required onkeyup="validateForm()">
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="1" required onkeyup="validateForm()">
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required onchange="validateForm()">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="coursesEnrolled">Courses Enrolled:</label>
+                <input type="text" id="coursesEnrolled" required onkeyup="validateForm()">
+
+                <label for="enrollmentDate">Enrollment Date:</label>
+                <input type="date" id="enrollmentDate" required onchange="validateForm()">
+
+                <button type="button" disabled onclick="addStudent()" id="crtbtn">Submit</button>
+                <button type="button" onclick="updateStudent()" disabled id="updbtn" style="display:none">Update</button>
+            </form>
+        </div>
+
+        <div class="column">
+            <h3>Enrolled Students</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>num</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Courses</th>
+                        <th>Date</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                </tbody>
+            </table>
         </div>
     </div>
 
-
     <script>
         var allUsers = [];
-        function createUser() {
-            var user = {
-                fname: document.getElementById("fname").value,
-                lname: document.getElementById("lname").value,
-                email: document.getElementById("email").value,
-            }
-            postDataToServer(user)
+        var indx = null;
+        function addStudent() {
+            var user={
+                num: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                gender: document.getElementById("gender").value,
+                courses: document.getElementById("coursesEnrolled").value,
+                date: document.getElementById("enrollmentDate").value,
+            };
+           
+            postDataToServer(user)                      
+            validateForm()
         };
+
+        function validateForm() {
+            let fields = ["id", "name", "age", "gender", "coursesEnrolled", "enrollmentDate"];
+            let isValid = fields.every(field => document.getElementById(field).value.trim() !== "");
+            document.getElementById("crtbtn").disabled = !isValid && indx === null;
+            document.getElementById("updbtn").disabled = !isValid && indx !== null;
+        }
+
         function postDataToServer(user) {
             var postData = new XMLHttpRequest();
             postData.onreadystatechange = function () {
@@ -71,6 +172,7 @@
             getData.onreadystatechange = function () {
                 if (getData.status === 200 && getData.readyState === 4) {
                     allUsers = JSON.parse(getData.response);
+                    localStorage.setItem("allStudents", JSON.stringify(allUsers));
                     readUsers();
                 }
             }
@@ -109,32 +211,42 @@
             getData.onreadystatechange = function () {
                 if (getData.status === 200 && getData.readyState === 4) {
                     allUsers = JSON.parse(getData.response);
+                    localStorage.setItem("allStudents", JSON.stringify(allUsers));
                     readUsers();
                 }
             }
             getData.open("DELETE", "http://localhost:3000/users/" + allUsers[i].id);
             getData.send()
+         
         };
         var indx;
         function editUser(i) {
             indx = i;
-            document.getElementById("fname").value = allUsers[i].fname
-            document.getElementById("lname").value = allUsers[i].lname
-            document.getElementById("email").value = allUsers[i].email
+            document.getElementById("id").value = allUsers[i].num
+            document.getElementById("name").value = allUsers[i].name
+            document.getElementById("age").value = allUsers[i].age
+            document.getElementById("gender").value = allUsers[i].gender
+            document.getElementById("coursesEnrolled").value = allUsers[i].courses
+            document.getElementById("enrollmentDate").value = allUsers[i].date
 
-            document.getElementById("createbtn").style.display = "none";
-            document.getElementById("updatebtn").style.display = "block";
+            document.getElementById("crtbtn").style.display = "none";
+            document.getElementById("updbtn").style.display = "block";
 
 
 
         };
-        function updateUser() {
+        function updateStudent() {
             var user = {
                 id: allUsers[indx].id,
-                fname: document.getElementById("fname").value,
-                lname: document.getElementById("lname").value,
-                email: document.getElementById("email").value,
-            }
+                num: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                gender: document.getElementById("gender").value,
+                courses: document.getElementById("coursesEnrolled").value,
+                date: document.getElementById("enrollmentDate").value,
+            };
+
+            validateForm()
             var postData = new XMLHttpRequest();
             postData.onreadystatechange = function () {
                 if (postData.readyState === 4 && postData.status === 201) {
@@ -146,6 +258,9 @@
 
             postData.setRequestHeader("Content-Type", "Application/json")
             postData.send(JSON.stringify(user))
+            localStorage.setItem("allStudents", JSON.stringify(allUsers));
+            // document.getElementById("createbtn").style.display = "block";
+            // document.getElementById("updatebtn").style.display = "none";
         };
 
         // the following function will run when the Application started

@@ -1,16 +1,13 @@
 {
   "users": [
     {
-      "id": "fa15",
-      "fname": "dcscsc",
-      "lname": "cdscd",
-      "email": "cs"
-    },
-    {
-      "id": "e8aa",
-      "fname": "cscyam",
-      "lname": "csc",
-      "email": "cs"
+      "id": "2bc8",
+      "num": "ugdyuwd",
+      "name": "cxc ",
+      "age": "34",
+      "gender": "male",
+      "courses": "dsdcswdz",
+      "date": "2025-02-25"
     }
   ]
 }
