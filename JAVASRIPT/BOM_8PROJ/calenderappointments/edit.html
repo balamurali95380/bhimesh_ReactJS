@@ -89,6 +89,7 @@
         var radio = document.getElementsByName("category")
 
         for (j = 0; j < radio.length; j++) {
+            console.log(allUsers[i])
 
             radio[j].checked = allUsers[i].category.includes(radio[j].value);
         }
