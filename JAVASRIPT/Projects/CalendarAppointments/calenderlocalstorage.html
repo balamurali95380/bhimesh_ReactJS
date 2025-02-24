@@ -241,7 +241,9 @@
                             <th>Event Category</th>
                             <th>Participants</th>
                             <th>Delete</th>
+                            <th>img</th>
                             <th>Edit</th>
+
 
                         </tr>
                     </thead>
@@ -290,7 +292,7 @@
     </div>
     <script>
         var allUsers = []
-        var  indx = null;
+        var indx = null;
 
         function registeruser() {
 
@@ -318,8 +320,8 @@
                     user.category.push(radio[i].value)
                 }
                 radio[i].checked = false;
-        
-            }            
+
+            }
             // //checkboxes
             var checkbox = document.getElementsByName("participants")
             for (i = 0; i < checkbox.length; i++) {
@@ -327,10 +329,10 @@
                     user.participants.push(checkbox[i].value)
                 }
                 checkbox[i].checked = false
-              
+
             }
             allUsers.push(user)
-            localStorage.setItem("allusersdata",JSON.stringify(allUsers))
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers))
             validateForm();
             document.getElementById("eventName").value = ""
             document.getElementById("date").value = ""
@@ -346,31 +348,31 @@
         function validateForm() {
             let fields = ["eventName", "date", "time", "location", "description"];
             let isValid = fields.every(field => document.getElementById(field).value.trim() !== "");
-        
-          
+
+
 
             var radio = document.getElementsByName("category")
 
-            var isRadioValid=false;
-            var isCheckboxValid=false;
+            var isRadioValid = false;
+            var isCheckboxValid = false;
 
             for (i = 0; i < radio.length; i++) {
-                if (radio[i].checked == true){
-                    isRadioValid=true
+                if (radio[i].checked == true) {
+                    isRadioValid = true
                 }
-           
+
             }
 
             var checkbox = document.getElementsByName("participants")
             for (i = 0; i < checkbox.length; i++) {
                 if (checkbox[i].checked == true) {
-                    isCheckboxValid=true;
-                }             
+                    isCheckboxValid = true;
+                }
             }
 
             document.getElementById("crtbtn").disabled = !(isValid && isRadioValid && isCheckboxValid && indx === null);//inside all variables true then output will become false and button will be enabled.
             document.getElementById("updbtn").disabled = !(isValid && isRadioValid && isCheckboxValid && indx !== null);
-        
+
         }
 
         function displayUsers() {
@@ -391,6 +393,13 @@
                 deltd.appendChild(delbtn)
                 tr.appendChild(deltd)
 
+                var myimgtd = document.createElement("td")
+                var myimg = document.createElement("img")
+                myimg.setAttribute("src", "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+                myimg.setAttribute("width", "150px")
+                myimgtd.appendChild(myimg)
+                tr.appendChild(myimgtd)
+
                 var edttd = document.createElement("td")
                 var edtbtn = document.createElement("button")
                 edtbtn.innerHTML = "Edit"
@@ -405,7 +414,7 @@
 
         function del(i) {
             allUsers.splice(i, 1);
-            localStorage.setItem("allusersdata",JSON.stringify(allUsers))
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers))
             displayUsers();
         }
         var indx;
@@ -417,7 +426,7 @@
             document.getElementById("location").value = allUsers[i].location
             document.getElementById("description").value = allUsers[i].description
 
-   
+
 
             //radiobutton selection
             var radio = document.getElementsByName("category")
@@ -432,7 +441,7 @@
             for (var k = 0; k < checkbox.length; k++) {
                 checkbox[k].checked = allUsers[i].participants.includes(checkbox[k].value);
             }
-        
+
 
             document.getElementById("crtbtn").style.display = "none"
             document.getElementById("updbtn").style.display = "block"
@@ -447,7 +456,7 @@
 
             var radio = document.getElementsByName("category")
 
-           
+
             var user = {
                 eventName,
                 date,
@@ -473,7 +482,7 @@
                 checkbox[i].checked = false
             }
             allUsers[indx] = user
-            localStorage.setItem("allusersdata",JSON.stringify( allUsers))
+            localStorage.setItem("allusersdata", JSON.stringify(allUsers))
             document.getElementById("eventName").value = ""
             document.getElementById("date").value = ""
             document.getElementById("time").value = ""
@@ -482,8 +491,8 @@
             indx = null
             validateForm();
             document.getElementById("updbtn").style.display = "none"
-            document.getElementById("crtbtn").style.display = "block"         
-            displayUsers();       
+            document.getElementById("crtbtn").style.display = "block"
+            displayUsers();
         }
     </script>
 
