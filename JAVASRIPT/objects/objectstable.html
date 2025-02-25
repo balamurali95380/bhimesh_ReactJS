@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table</title>
 </head>
+
 <body>
-    <table id="table" border="1">
-      <thead>
-        <tr>
-            <th>id</th>
+  <table id="table" border="1">
+    <thead>
+      <tr>
+        <th>id</th>
         <th>name</th>
         <th>img</th>
-    </tr>
-      </thead>
-      <tbody id="tbody">
-        <!-- <tr>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      <!-- <tr>
             <td>ravi</td>
         </tr> -->
-      </tbody>
-    </table>
-    <script>
-        var img1=[
+    </tbody>
+  </table>
+  <script>
+    var img1 = [
+      {
+        id: 1,
+        name: "ramu",
+        image: "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+
+      },
+      {
+        id: 2,
+        name: "ramu1",
+        image: "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+
+      },
+    ]
+    
+    img1.forEach(function (val)
+     {
+        var mytr = document.createElement("tr")
+        for (let key in val)
         {
-            id:1,
-            name:"ramu",
-            image:"https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-
-            },
+            var td = document.createElement("td");
+            if (key === "image")
             {
-            id:2,
-            name:"ramu1",
-            image:"https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-
-            },
-         
-            ]
-              img1.forEach(function(val){
-                var mytr=document.createElement("tr")
-                // for(let key in obj){
-                //     var td = document.createElement("td");
-                //     td.textContent = obj[key]; 
-                //     mytr.appendChild(td)
-                // }
-                for(i=0;i<2;i++){
-                    var td = document.createElement("td");
-                    td.innerHTML =val.name
-                    mytr.appendChild(td)
-                }
-                var myimgtd = document.createElement("td")
-            var myimg = document.createElement("img")
-            myimg.setAttribute("src", "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-            myimg.setAttribute("width", "150px")
-            myimgtd.appendChild(myimg)
-            mytr.appendChild(myimgtd)
+              var myimgtd = document.createElement("td")
+              var myimg = document.createElement("img")
+              myimg.src = val.image;
+              // myimg.setAttribute("src", "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+              myimg.setAttribute("width", "150px")
+              myimgtd.appendChild(myimg)
+              mytr.appendChild(myimgtd)
+            }
+            else {
+              td.textContent = val[key];
+              mytr.appendChild(td)
+            }
             document.querySelector("tbody").appendChild(mytr)
-                }
-              ) 
-            
-            
+        }
+     }
+    )
 
-    </script>
+
+
+  </script>
 </body>
+
 </html>
