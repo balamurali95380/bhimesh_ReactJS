@@ -28,7 +28,7 @@
         id: 1,
         name: "ramu",
         image: "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-
+        
       },
       {
         id: 2,
@@ -36,26 +36,27 @@
         image: "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
       },
+      
     ]
-    
-    img1.forEach(function (val)
+
+    img1.forEach(function (user)
      {
         var mytr = document.createElement("tr")
-        for (let key in val)
+        for (a in user)
         {
             var td = document.createElement("td");
-            if (key === "image")
+            if (a === "image")
             {
               var myimgtd = document.createElement("td")
               var myimg = document.createElement("img")
-              myimg.src = val.image;
+              myimg.src = user.image;
               // myimg.setAttribute("src", "https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
               myimg.setAttribute("width", "150px")
               myimgtd.appendChild(myimg)
               mytr.appendChild(myimgtd)
             }
             else {
-              td.textContent = val[key];
+              td.textContent = user[a];
               mytr.appendChild(td)
             }
             document.querySelector("tbody").appendChild(mytr)
