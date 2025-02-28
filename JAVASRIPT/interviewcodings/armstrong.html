@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isArmstrong(num) {
+    let sum = 0, temp = num, digits = num.toString().length;
+    while (temp > 0) {
+        let digit = temp % 10;
+        sum += Math.pow(digit, digits);
+        temp = Math.floor(temp / 10);
+    }
+    return sum === num;
+}
+console.log(isArmstrong(153)); // true
+console.log(isArmstrong(123)); // false
+
+    </script>
+</body>
+</html>
