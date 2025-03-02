@@ -1,10 +1,13 @@
 {
   "users": [
     {
-      "id": "dc20",
-      "fname": "uduwd",
-      "lname": "wssdwd",
-      "email": "ddqadq"
+      "id": "b03a",
+      "num": "jskcbsjjcsyamuna",
+      "name": "bhim",
+      "age": "25",
+      "gender": "male",
+      "courses": "java",
+      "date": "2025-03-17"
     }
   ]
 }
