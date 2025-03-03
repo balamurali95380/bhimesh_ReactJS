@@ -1,13 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import Tail from './Tail';
 
 function App() {
-  return 
-  
-    <h>app7 creation</h>
-    
-  
-
+  return <Tail/>
 }
 
 export default App;
