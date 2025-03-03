@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import List from './List';
+import Para from './Para';
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
         <li>GOA</li>
         <li>Pune</li>
       </ul>
+      <hr/>
+      <List/>
+      <hr/>
+      <Para/>
     </div>
   );
 }
