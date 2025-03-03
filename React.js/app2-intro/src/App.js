@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import Anchor from './Anchor';
+
+
 
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
           
           <label for="">Mobilenumber: </label>
           <input type="number" />
-    </div>
+          <hr/>
+          <Anchor/>
+      </div>
   );
 }
 
