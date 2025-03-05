@@ -1,9 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Tail from './Tail';
+import Tail, { New } from './Tail';
+import Practice from './Practice';
 
 function App() {
-  return <Tail/>
+  return <div>
+    <Tail/>
+    <New/>
+    <Practice/>
+  </div>
+  
+
 }
 
 export default App;
