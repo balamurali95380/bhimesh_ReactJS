@@ -12,3 +12,7 @@ class Tail extends Component{
    
 }
 export default Tail
+export class New extends Component{
+    render(){
+        return  <h2>{ New } </h2>
+    }}
