@@ -5,7 +5,7 @@ export default class Arych extends Component{
        return <div>
             <ul>
                 { this.props.all.map(function(ar){
-                    return <li>{ar}</li>})};
+                    return <li>{ar}</li>})}
             </ul>
         </div>
     }

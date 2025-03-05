@@ -9,7 +9,7 @@ export default class Objar extends Component{
                 fname:"bhi",
                 contact:12,
             },
-            bhim:["ram",123],
+            bhim:["ram","123"]
         }
     }
     objectdets=()=>{
