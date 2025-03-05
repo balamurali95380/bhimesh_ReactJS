@@ -1,3 +1,4 @@
+import { Component } from "react";
 import Bhavya from "./Bhavya";
 import Jagadish from "./Jagadish";
 import Yamuna from "./Yamuna";
@@ -13,4 +14,12 @@ function Bhim(){
         <Jagadish/>
     </div>
 }
-export default Bhim;
+export default Bhim
+
+
+export function Newcls(){
+    return <div>
+        <h2>functional component</h2>
+    </div>
+}
+ 
