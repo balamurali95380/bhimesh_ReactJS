@@ -1,0 +1,10 @@
+li{
+    width:400px;
+    background-color: aquamarine;
+}
+ul{
+    padding:10px;
+    background: antiquewhite;
+    margin:10px;
+    float:left;
+}
