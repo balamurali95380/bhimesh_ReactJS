@@ -45,7 +45,7 @@
   - [ ] Template literals
   - [ ] Spread (`...`) and Rest (`...`) operators
   - [ ] Default parameters in functions
-  - [ ] Destructuring
+  - [ ] 
 - [ ] **Higher-Order Functions**  
   - [ ] Functions that take or return other functions
   - [ ] Understanding callbacks
