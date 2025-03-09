@@ -11,12 +11,14 @@ export default class Practice extends Component{
         return <div style={{display:'flex',flexWrap:'wrap'}}>
             {this.state.map(function(prd){
                 return <ul style={{listStyleType:"none",width:'400px'}}>
-                    <li>{prd.title}</li>
-                    <li>{prd.price}</li>
-                    <li>{prd.category}</li>
-                    <li>{prd.description}</li>
+                    <li>Title:{prd.title}</li>
+                    <li>Price:{prd.price}</li>
+                    <li>Category:{prd.category}</li>
+                    <li>Description:{prd.description}</li>
                     <li>{prd.cost}</li>
                     <li><img src={prd.image} alt="" style={{width:'100%'}} /></li>
+                    <li>rate:{prd.rating.rate}</li>
+                    <li>count:{prd.rating.count}</li>
                     
 
                 </ul>              
