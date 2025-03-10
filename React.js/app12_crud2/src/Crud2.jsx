@@ -4,7 +4,7 @@ export default class Crud2 extends Component{
     constructor(){
         super()
         this.state={
-            person:{fname:"",lname:"",email:""},
+            person:{fname:"",lname:"",email:"",gender:[],sports:[]},
             arr:[],
             indx1:null
         }
@@ -49,6 +49,12 @@ export default class Crud2 extends Component{
         <label htmlFor="">email</label>
         <input type="text" name="email" id="" value={this.state.person.email} onChange={this.handleevent}/>{""}
         <br />
+        <label htmlFor="">gender</label>
+        <input type="radio" name="radio" id="" value={this.state.person.gender}/>male
+        <input type="radio" name="radio" id=""  value={this.state.person.gender}/>female
+        <label htmlFor="">sports</label>
+        <input type="checkbox" name="checkbox" id="" value={this.state.person.sports}/>cricket
+        <input type="checkbox" name="checkbox" id="" value={this.state.person.sports} />football
         {this.state.indx1===null?<button type="button" onClick={this.adduser}>add user</button>:
         (<button type="button" onClick={this.updateUser}> update user</button>)}
         </form>
@@ -71,9 +77,7 @@ export default class Crud2 extends Component{
             <td>{val.email}</td>
             <td><button type="button" onClick={()=>this.edituser(val,i)}>edit</button></td>
             <td><button type="button" onClick={()=>this.deletetuser(i)}>delete</button></td>
-            </tr>)})}
-
-                
+            </tr>)})}                
             </tbody>
         </table>
         </div>
