@@ -180,7 +180,7 @@ export default class Crud3 extends Component {
                 <td>{val.lname}</td>
                 <td>{val.email}</td>
                 <td>{val.gender}</td>
-                <td>{val.prefr.join(", ")}</td>
+                <td>{val.prefr}</td>
                 <td>
                   <button type="button" onClick={() => this.edituser(val, i)}>
                     Edit
