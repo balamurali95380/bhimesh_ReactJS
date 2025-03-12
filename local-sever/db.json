@@ -1,3 +1,374 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 1000
+    }
+  ],
+  "Ecart": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 1000,
+      "quantity": "20",
+      "totalPrice": 2000,
+      "totalprice": 20000
+    },
+    {
+      "id": "2",
+      "name": "Phone",
+      "price": 600,
+      "quantity": "34",
+      "totalPrice": 1800,
+      "totalprice": 20400
+    },
+    {
+      "id": "3",
+      "name": "Tablet",
+      "price": 400,
+      "quantity": "50",
+      "totalPrice": 2000,
+      "totalprice": 20000
+    },
+    {
+      "id": "4",
+      "name": "Monitor",
+      "price": 200,
+      "quantity": "40",
+      "totalPrice": 800,
+      "totalprice": 8000
+    },
+    {
+      "id": "5",
+      "name": "Keyboard",
+      "price": 50,
+      "quantity": "100",
+      "totalPrice": 500,
+      "totalprice": 5000
+    },
+    {
+      "id": "6",
+      "name": "fgh",
+      "price": "56",
+      "quantity": "45",
+      "totalprice": 2520
+    }
+  ],
+  "social": [
+    {
+      "id": "1",
+      "content": "Just finished reading a great book!",
+      "likes": 120,
+      "comments": "Sounds interesting! What's the book?",
+      "author": "Alice"
+    },
+    {
+      "id": "2",
+      "content": "Beautiful sunset today at the beach.",
+      "likes": "850",
+      "comments": "Wow! Do you have a picture?",
+      "author": "Bob"
+    },
+    {
+      "id": "3",
+      "content": "Excited to start my new job next week!",
+      "likes": 200,
+      "comments": "Congrats! Wishing you all the best.",
+      "author": "Charlie"
+    },
+    {
+      "id": "4",
+      "content": "Cooked my first homemade pizza today!",
+      "likes": "1500",
+      "comments": "Yum! How did it turn out?",
+      "author": "David345"
+    }
+  ],
+  "Task": [
+    {
+      "id": "1",
+      "title": "Complete Project Reports",
+      "description": "Prepare and submit the final project report by the deadline.",
+      "status": "In-Progress",
+      "createdAt": "2025-03-12T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Schedule Team Meetings34",
+      "description": "Arrange a meeting with the team to discuss the upcoming sprint.",
+      "status": "Pending",
+      "createdAt": "2025-03-11T14:30:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Code Review",
+      "description": "Review the latest code changes and provide feedback.",
+      "status": "Completed",
+      "createdAt": "2025-03-10T09:15:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Update Documentationww",
+      "description": "Revise the API documentation with the latest changes.",
+      "status": "Pending",
+      "createdAt": "2025-03-12T08:45:00Z"
+    }
+  ],
+  "Quiz": [
+    {
+      "id": "1",
+      "question": "What is the capital of France?",
+      "options": [
+        "Berlin",
+        "Madrid",
+        "Paris",
+        "Rome"
+      ],
+      "correctAnswer": "Paris",
+      "score": "8"
+    },
+    {
+      "id": "2",
+      "question": "Which planet is known as the Red Planet?",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Venus"
+      ],
+      "correctAnswer": "Mars",
+      "score": "55"
+    },
+    {
+      "id": "3",
+      "question": "Who wrote 'Hamlet'?",
+      "options": [
+        "Charles Dickens",
+        "William Shakespeare",
+        "Mark Twain",
+        "Jane Austen"
+      ],
+      "correctAnswer": "William Shakespeare",
+      "score": "100"
+    },
+    {
+      "id": "4",
+      "question": "What is the largest ocean on Earth?",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean",
+        "Pacific Ocean"
+      ],
+      "correctAnswer": "Pacific Ocean",
+      "score": "16"
+    },
+    {
+      "id": "5",
+      "question": "fv",
+      "options": "fv",
+      "correctAnswer": "fv",
+      "score": "45"
+    }
+  ],
+  "Expense": [
+    {
+      "id": "1",
+      "amount": 50.75,
+      "category": "Food",
+      "description": "Lunch at a restaurant",
+      "date": "2025-03-10"
+    },
+    {
+      "id": "2",
+      "amount": 120,
+      "category": "Transportation",
+      "description": "Monthly metro pass",
+      "date": "2025-03-01"
+    },
+    {
+      "id": "3",
+      "amount": 30.5,
+      "category": "Entertainment",
+      "description": "Movie tickets",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "4",
+      "amount": "2000",
+      "category": "Shopping",
+      "description": "New pair of shoes",
+      "date": "2025-03-05"
+    }
+  ],
+  "invems": [
+    {
+      "id": "1",
+      "name": "Wireless Mouse",
+      "quantity": 50,
+      "price": 25.99,
+      "category": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Running Shoes",
+      "quantity": 30,
+      "price": 59.99,
+      "category": "Footwear"
+    },
+    {
+      "id": "3",
+      "name": "Coffee Maker",
+      "quantity": 20,
+      "price": "89.997",
+      "category": "Home Appliances"
+    },
+    {
+      "id": "4",
+      "name": "Bluetooth Headphones",
+      "quantity": "400",
+      "price": 45.99,
+      "category": "Electronics"
+    }
+  ],
+  "Movie": [
+    {
+      "seatNumber": "A1",
+      "isBooked": "true",
+      "category": "VIP",
+      "userID": 101,
+      "id": "4af4"
+    },
+    {
+      "seatNumber": "B5",
+      "isBooked": "false",
+      "category": "Regular",
+      "userID": "567",
+      "id": "c1ab"
+    },
+    {
+      "seatNumber": "C10",
+      "isBooked": "true",
+      "category": "Economy",
+      "userID": 203,
+      "id": "8902"
+    },
+    {
+      "seatNumber": "D7",
+      "isBooked": "true",
+      "category": "Regular",
+      "userID": "345",
+      "id": "dcf7"
+    },
+    {
+      "id": "2067",
+      "userID": "335",
+      "seatNumber": "`csxcsxcc",
+      "isBooked": "cdxc",
+      "category": "c"
+    }
+  ],
+  "Dab": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "+1-123-456-7890",
+      "address": "123 Main St, New York, NY, USA"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": "+1-987-654-3210",
+      "address": "456 Elm St, Los Angeles, CA, USA"
+    },
+    {
+      "id": "3",
+      "name": "Robert Brown",
+      "email": "robertbrown@example.com",
+      "phone": "+44-20-7946-0958",
+      "address": "789 Oak St, London, UK"
+    },
+    {
+      "id": "4",
+      "name": "Emily Davis",
+      "email": "emilydavis@example.com",
+      "phone": "+61-2-1234-56789",
+      "address": "321 Pine St, Sydney, Australia"
+    }
+  ],
+  "Lms": [
+    {
+      "id": "1",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isAvailable": "true",
+      "borrower": null
+    },
+    {
+      "id": "2",
+      "title": "1984",
+      "author": "George Orwell",
+      "isAvailable": "false",
+      "borrower": "John Doe"
+    },
+    {
+      "id": "3",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isAvailable": "true",
+      "borrower": null
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isAvailable": "true",
+      "borrower": "Emily Davis"
+    }
+  ],
+  "Upm": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "Admin",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "role": "Subscriber",
+      "preferences": {
+        "theme": "light",
+        "notifications": false
+      }
+    },
+    {
+      "id": "3",
+      "name": "Charlie Brown",
+      "email": "charlie@example.com",
+      "role": "Subscriber",
+      "preferences": {
+        "theme": "dark",
+        "notifications": true
+      }
+    },
+    {
+      "id": "4",
+      "name": "David Wilson",
+      "email": "david@example.com",
+      "role": "Admin",
+      "preferences": {
+        "theme": "light",
+        "notifications": true
+      }
+    }
+  ]
 }
