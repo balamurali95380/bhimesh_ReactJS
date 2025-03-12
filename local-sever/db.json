@@ -1,13 +1,3 @@
 {
-  "users": [
-    {
-      "id": "b03a",
-      "num": "jskcbsjjcsyamuna",
-      "name": "bhim",
-      "age": "25",
-      "gender": "male",
-      "courses": "java",
-      "date": "2025-03-17"
-    }
-  ]
+  "users": []
 }
