@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Onlinefrm from "./Onlinefrm";
+import Onlintble from "./Onlintble";
 
 export default class OnlinQuz extends Component {
     constructor() {
@@ -63,43 +65,15 @@ export default class OnlinQuz extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">question</label>
-                <input type="text" name="question" id="" value={this.state.person.question} onChange={this.event} />{""}
-                <label htmlFor="">options</label>
-                <input type="text" name="options" id="" value={this.state.person.options} onChange={this.event} />{""}
-                <label htmlFor="">correctAnswer</label>
-                <input type="text" name="correctAnswer" id="" value={this.state.person.correctAnswer} onChange={this.event} />{""}
-                <label htmlFor="">score</label>
-                <input type="text" name="score" id="" value={this.state.person.score} onChange={this.event} />{""}
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
+          <Onlinefrm  person={this.state.person}
+            add={this.add}
+            update={this.update}
+            event={this.event}
+            inx={this.state.inx}/>
             <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>question</th>
-                    <th>options</th>
-                    <th>correctAnswer</th>
-                    <th>score</th>
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Quiz.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.question}</td>
-                            <td>{val.options}</td>
-                            <td>{val.correctAnswer}</td>
-                            <td>{val.score}</td>
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
-
-                </tbody>
-            </table>
+           <Onlintble Quiz={this.state.Quiz}
+            edit={this.edit}
+            delete={this.delete}/>
         </div>
     }
     componentDidMount() {

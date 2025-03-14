@@ -24,14 +24,6 @@
       "totalprice": 20400
     },
     {
-      "id": "3",
-      "name": "Tablet",
-      "price": 400,
-      "quantity": "50",
-      "totalPrice": 2000,
-      "totalprice": 20000
-    },
-    {
       "id": "4",
       "name": "Monitor",
       "price": 200,
@@ -46,13 +38,6 @@
       "quantity": "100",
       "totalPrice": 500,
       "totalprice": 5000
-    },
-    {
-      "id": "6",
-      "name": "fgh",
-      "price": "56",
-      "quantity": "45",
-      "totalprice": 2520
     }
   ],
   "social": [
@@ -88,7 +73,7 @@
   "Task": [
     {
       "id": "1",
-      "title": "Complete Project Reports",
+      "title": "Complete Project Reports gg",
       "description": "Prepare and submit the final project report by the deadline.",
       "status": "In-Progress",
       "createdAt": "2025-03-12T10:00:00Z"
@@ -162,14 +147,14 @@
         "Pacific Ocean"
       ],
       "correctAnswer": "Pacific Ocean",
-      "score": "16"
+      "score": "169"
     },
     {
-      "id": "5",
-      "question": "fv",
-      "options": "fv",
-      "correctAnswer": "fv",
-      "score": "45"
+      "id": "hh",
+      "question": "hhu",
+      "options": "hh",
+      "correctAnswer": "jjh",
+      "score": "7"
     }
   ],
   "Expense": [
@@ -271,25 +256,12 @@
   ],
   "Dab": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "phone": "+1-123-456-7890",
-      "address": "123 Main St, New York, NY, USA"
-    },
-    {
-      "id": "2",
-      "name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "phone": "+1-987-654-3210",
-      "address": "456 Elm St, Los Angeles, CA, USA"
-    },
-    {
       "id": "3",
-      "name": "Robert Brown",
+      "name": "Robert Brownszxdcsxc",
       "email": "robertbrown@example.com",
       "phone": "+44-20-7946-0958",
-      "address": "789 Oak St, London, UK"
+      "address": "789 Oak St, London, UK",
+      "": "+44-20-7946-0958v"
     },
     {
       "id": "4",
@@ -297,6 +269,20 @@
       "email": "emilydavis@example.com",
       "phone": "+61-2-1234-56789",
       "address": "321 Pine St, Sydney, Australia"
+    },
+    {
+      "id": "xqaX",
+      "name": "ASX",
+      "email": "ASXA123",
+      "phone": "ASX123",
+      "address": "ASX1234"
+    },
+    {
+      "id": "",
+      "name": "wdxad",
+      "email": "",
+      "phone": "gc",
+      "address": "gch"
     }
   ],
   "Lms": [
@@ -334,41 +320,22 @@
       "id": "1",
       "name": "Alice Johnson",
       "email": "alice@example.com",
-      "role": "Admin",
-      "preferences": {
-        "theme": "dark",
-        "notifications": true
-      }
+      "role": "Admin345",
+      "preferences": "themedark"
     },
     {
       "id": "2",
       "name": "Bob Smith",
       "email": "bob@example.com",
       "role": "Subscriber",
-      "preferences": {
-        "theme": "light",
-        "notifications": false
-      }
+      "preferences": "themelight"
     },
     {
       "id": "3",
       "name": "Charlie Brown",
       "email": "charlie@example.com",
       "role": "Subscriber",
-      "preferences": {
-        "theme": "dark",
-        "notifications": true
-      }
-    },
-    {
-      "id": "4",
-      "name": "David Wilson",
-      "email": "david@example.com",
-      "role": "Admin",
-      "preferences": {
-        "theme": "light",
-        "notifications": true
-      }
+      "preferences": "theme dark"
     }
   ]
 }
