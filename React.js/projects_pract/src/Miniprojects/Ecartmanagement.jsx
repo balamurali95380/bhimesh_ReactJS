@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Ecartform from "./Ecartfrm";
+import Ecarttale from "./Ecarttale";
 
 export default class Ecartmanagement extends Component {
     constructor() {
@@ -63,43 +65,16 @@ export default class Ecartmanagement extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">name</label>
-                <input type="text" name="name" id="" value={this.state.person.name} onChange={this.event} />{""}
-                <label htmlFor="">price</label>
-                <input type="text" name="price" id="" value={this.state.person.price} onChange={this.event} />{""}
-                <label htmlFor="">quantity</label>
-                <input type="text" name="quantity" id="" value={this.state.person.quantity} onChange={this.event} />{""}
-                <label htmlFor="">totalprice</label>
-                <input type="text" name="totalprice" id="" value={this.state.person.totalprice=this.state.person.price*this.state.person.quantity} onChange={this.event} />{""}
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
-            <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>quantity</th>
-                    <th>totalprice</th>
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Ecart.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.name}</td>
-                            <td>{val.price}</td>
-                            <td>{val.quantity}</td>
-                            <td>{val.totalprice}</td>
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
+            <Ecartform person={this.state.person}
+                            event={this.event} 
+                            add={this.add}     
+                            inx={this.state.inx}
+                            update={this.update}/>
 
-                </tbody>
-            </table>
+      <Ecarttale Ecart={this.state.Ecart}
+                            edit={this.edit}
+                            delete={this.delete} />
+            
         </div>
     }
     componentDidMount() {
