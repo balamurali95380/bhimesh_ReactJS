@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Ecartmanagement from './Miniprojects/Ecartmanagement'
-// import Socialmedia from './Miniprojects/socialmedia'
 import Taskms from './Miniprojects/Taskms'
 import Quizms from './Miniprojects/OnlinQuz'
 import OnlinQuz from './Miniprojects/OnlinQuz'
@@ -13,6 +12,7 @@ import Lms from './Miniprojects/Lms'
 import Invms from './Miniprojects/Invms'
 import Extrckr from './Miniprojects/Extrckr'
 import Dab from './Miniprojects/Dab'
+import Socialmedia from './Miniprojects/Socialmedia'
 
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
   return (
     <>
      {/* <Ecartmanagement/> */}
-     {/* <Socialmedia/> */}
+     <Socialmedia/>
      {/* <Taskms/> */}
-     <OnlinQuz/>
+     {/* <OnlinQuz/> */}
      {/* <Mtbs/> */}
      {/* <Upm/> */}
      {/* <Lms/> */}
