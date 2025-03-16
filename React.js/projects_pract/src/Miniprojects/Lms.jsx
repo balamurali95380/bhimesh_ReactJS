@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import LMSfrm from "./LMSfrm";
+import Lmstab from "./Lmstab";
 
 export default class Lms extends Component {
     constructor() {
@@ -65,42 +67,15 @@ export default class Lms extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">title</label>
-                <input type="text" name="title" id="" value={this.state.person.title} onChange={this.event} />{""}
-                <label htmlFor="">author</label>
-                <input type="text" name="author" id="" value={this.state.person.author} onChange={this.event} />{""}
-                <label htmlFor="">isAvailable</label>
-                <input type="text" name="isAvailable" id="" value={this.state.person.isAvailable} onChange={this.event} />{""}
-                
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
-            <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>title</th>
-                    <th>author</th>
-                    <th>isAvailable</th>
-              
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Lms.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.title}</td>
-                            <td>{val.author}</td>
-                            <td>{val.isAvailable}</td>
-                          
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
-
-                </tbody>
-            </table>
+          <LMSfrm person={this.state.person}
+                        event={this.event}
+                        add={this.add}
+                        inx={this.state.inx}
+                        update={this.update} />
+        
+                    <Lmstab Lms={this.state.Lms}
+                        edit={this.edit}
+                        delete={this.delete} />
         </div>
     }
     componentDidMount() {
