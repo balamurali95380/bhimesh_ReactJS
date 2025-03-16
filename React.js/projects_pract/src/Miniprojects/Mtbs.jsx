@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Mtbsfrm from "./Mtbsfrm";
+import Mtbstbl from "./Mtbstbl";
 
 export default class Mtbs extends Component {
     constructor() {
@@ -65,42 +67,16 @@ export default class Mtbs extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">userID</label>
-                <input type="text" name="userID" id="" value={this.state.person.userID} onChange={this.event} />{""}
-                <label htmlFor="">seatNumber</label>
-                <input type="text" name="seatNumber" id="" value={this.state.person.seatNumber} onChange={this.event} />{""}
-                <label htmlFor="">isBooked</label>
-                <input type="text" name="isBooked" id="" value={this.state.person.isBooked} onChange={this.event} />{""}
-                <label htmlFor="">category</label>
-                <input type="text" name="category" id="" value={this.state.person.category} onChange={this.event} />{""}
-                
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
-            <hr />
-            <table border={1}>
-                <thead><tr><th>userID</th>
-                    <th>seatNumber</th>
-                    <th>isBooked</th>
-                    <th>category</th>
-                  
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Movie.map((val, i) => {
-                        return <tr key={val.id}><td>{val.userID}</td>
-                            <td>{val.seatNumber}</td>
-                            <td>{val.isBooked}</td>
-                            <td>{val.category}</td>
-                           
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
 
-                </tbody>
-            </table>
+            <Mtbsfrm person={this.state.person}
+                event={this.event}
+                add={this.add}
+                inx={this.state.inx}
+                update={this.update} />
+
+            <Mtbstbl Movie={this.state.Movie}
+                edit={this.edit}
+                delete={this.delete} />
         </div>
     }
     componentDidMount() {
