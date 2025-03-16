@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Taskfrm from "./Taskfrm";
+import Tasktable from "./Tasktable";
 
 export default class Taskms extends Component {
     constructor() {
@@ -63,43 +65,17 @@ export default class Taskms extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">title</label>
-                <input type="text" name="title" id="" value={this.state.person.title} onChange={this.event} />{""}
-                <label htmlFor="">description</label>
-                <input type="text" name="description" id="" value={this.state.person.description} onChange={this.event} />{""}
-                <label htmlFor="">status</label>
-                <input type="text" name="status" id="" value={this.state.person.status} onChange={this.event} />{""}
-                <label htmlFor="">createdAt</label>
-                <input type="text" name="createdAt" id="" value={this.state.person.createdAt} onChange={this.event} />{""}
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
+            <Taskfrm 
+            person={this.state.person}
+            add={this.add}
+            update={this.update}
+            event={this.event}
+            inx={this.state.inx} />
+            
             <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>title</th>
-                    <th>description</th>
-                    <th>status</th>
-                    <th>createdAt</th>
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Task.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.title}</td>
-                            <td>{val.description}</td>
-                            <td>{val.status}</td>
-                            <td>{val.createdAt}</td>
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
-
-                </tbody>
-            </table>
+            <Tasktable Task={this.state.Task}
+            edit={this.edit}
+            delete={this.delete}/>
         </div>
     }
     componentDidMount() {

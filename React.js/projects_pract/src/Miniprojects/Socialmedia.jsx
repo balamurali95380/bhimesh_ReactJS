@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Socialfrm from "./Socialfrm";
+import Socialtb from "./Socialtb";
 
 export default class Socialmedia extends Component {
     constructor() {
@@ -64,45 +66,18 @@ export default class Socialmedia extends Component {
         })
     }
     render() {
-        return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">content</label>
-                <input type="text" name="content" id="" value={this.state.person.content} onChange={this.event} />{""}
-                <label htmlFor="">likes</label>
-                <input type="text" name="likes" id="" value={this.state.person.likes} onChange={this.event} />{""}
-                <label htmlFor="">comments</label>
-                <input type="text" name="comments" id="" value={this.state.person.comments} onChange={this.event} />{""}
-                <label htmlFor="">author</label>
-                <input type="text" name="author" id="" value={this.state.person.author} onChange={this.event} />{""}
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
-            <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>content</th>
-                    <th>likes</th>
-                    <th>comments</th>
-                    <th>author</th>
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.social.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.content}</td>
-                            <td>{val.likes}</td>
-                            <td>{val.comments}</td>
-                            <td>{val.author}</td>
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
+        return <div>             <Socialfrm  person={this.state.person}
+                        add={this.add}
+                        update={this.update}
+                        event={this.event}
+                        inx={this.state.inx}/>
+                        <hr />
+                       <Socialtb social={this.state.social}
+                        edit={this.edit}
+                        delete={this.delete}/>
+                    </div>    
 
-                </tbody>
-            </table>
-        </div>
+    
     }
     componentDidMount() {
         this.serverdata();
