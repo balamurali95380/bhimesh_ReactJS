@@ -1,5 +1,7 @@
 import { Component } from "react";
 import axios from "axios"
+import Upmform from "./Upmform";
+import Upmtable from "./Upmtable";
 
 export default class Upm extends Component {
     constructor() {
@@ -65,43 +67,15 @@ export default class Upm extends Component {
     }
     render() {
         return <div>
-            <form action="">
-                <label htmlFor="">id</label>
-                <input type="text" name="id" id="" value={this.state.person.id} onChange={this.event} />{""}
-                <label htmlFor="">name</label>
-                <input type="text" name="name" id="" value={this.state.person.name} onChange={this.event} />{""}
-                <label htmlFor="">email</label>
-                <input type="text" name="email" id="" value={this.state.person.email} onChange={this.event} />{""}
-                <label htmlFor="">role</label>
-                <input type="text" name="role" id="" value={this.state.person.role} onChange={this.event} />{""}
-                <label htmlFor="">preferences</label>
-                <input type="text" name="preferences" id="" value={this.state.person.preferences} onChange={this.event} />{""}
-                {this.state.inx === null ? (<button type="button" onClick={this.add}>add</button>)
-                    : (<button type="button" onClick={this.update}>update</button>)}
-            </form>
+           <Upmform  person={this.state.person}
+            add={this.add}
+            update={this.update}
+            event={this.event}
+            inx={this.state.inx}/>
             <hr />
-            <table border={1}>
-                <thead><tr><th>id</th>
-                    <th>name</th>
-                    <th>email</th>
-                    <th>role</th>
-                    <th>preferences</th>
-                    <th>edit</th>
-                    <th>delete</th></tr></thead>
-                <tbody>
-                    {this.state.Upm.map((val, i) => {
-                        return <tr key={val.id}><td>{val.id}</td>
-                            <td>{val.name}</td>
-                            <td>{val.email}</td>
-                            <td>{val.role}</td>
-                            <td>{val.preferences}</td>
-                            <td><button type="button" onClick={() => this.edit(val, i)}>edit</button></td>
-                            <td><button type="button" onClick={() => this.delete(val, i)}>delete</button></td>
-                        </tr>
-                    })}
-
-                </tbody>
-            </table>
+           <Upmtable Upm={this.state.Upm}
+            edit={this.edit}
+            delete={this.delete}/>
         </div>
     }
     componentDidMount() {
