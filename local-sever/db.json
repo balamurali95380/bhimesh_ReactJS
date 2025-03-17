@@ -35,9 +35,9 @@
       "id": "5",
       "name": "Keyboard",
       "price": 50,
-      "quantity": "100",
+      "quantity": "1005",
       "totalPrice": 500,
-      "totalprice": 5000
+      "totalprice": 50250
     }
   ],
   "social": [
@@ -67,7 +67,7 @@
       "content": "Cooked my first homemade pizza today!",
       "likes": "1500",
       "comments": "Yum! How did it turn out?",
-      "author": "David345"
+      "author": "David3456"
     }
   ],
   "Task": [
@@ -181,7 +181,7 @@
     },
     {
       "id": "4",
-      "amount": "2000",
+      "amount": "20000",
       "category": "Shopping",
       "description": "New pair of shoes",
       "date": "2025-03-05"
@@ -191,7 +191,7 @@
     {
       "id": "1",
       "name": "Wireless Mouse",
-      "quantity": 50,
+      "quantity": "503",
       "price": 25.99,
       "category": "Electronics"
     },
@@ -240,18 +240,11 @@
       "id": "8902"
     },
     {
-      "seatNumber": "D7",
+      "seatNumber": "D78",
       "isBooked": "true",
       "category": "Regular",
       "userID": "345",
       "id": "dcf7"
-    },
-    {
-      "id": "2067",
-      "userID": "335",
-      "seatNumber": "`csxcsxcc",
-      "isBooked": "cdxc",
-      "category": "c"
     }
   ],
   "Dab": [
@@ -296,7 +289,7 @@
     {
       "id": "2",
       "title": "1984",
-      "author": "George Orwell",
+      "author": "George Orwelle",
       "isAvailable": "false",
       "borrower": "John Doe"
     },
@@ -305,13 +298,14 @@
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
       "isAvailable": "true",
-      "borrower": null
+      "borrower": "f",
+      "createdAt": "fgh"
     },
     {
       "id": "4",
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
-      "isAvailable": "true",
+      "isAvailable": "false",
       "borrower": "Emily Davis"
     }
   ],
