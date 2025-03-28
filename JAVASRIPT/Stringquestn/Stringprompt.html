@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Reverse a String
+const reverseString = () => {
+    let str = prompt("Enter a string:");
+    alert("Reversed String: " + str.split('').reverse().join(''));
+};
+reverseString();
+
+// 2. Check if a String is a Palindrome
+const isPalindrome = () => {
+    let str = prompt("Enter a string:");
+    alert(str === str.split('').reverse().join('') ? "Palindrome" : "Not a Palindrome");
+};
+isPalindrome();
+
+// 3. Remove Duplicates from a String
+const removeDuplicates = () => {
+    let str = prompt("Enter a string:");
+    alert("Without Duplicates: " + [...new Set(str)].join(''));
+};
+removeDuplicates();
+
+// 4. Find the First Non-Repeating Character
+const firstNonRepeatingChar = () => {
+    let str = prompt("Enter a string:");
+    for (let char of str) {
+        if (str.indexOf(char) === str.lastIndexOf(char)) {
+            alert("First Non-Repeating Character: " + char);
+            return;
+        }
+    }
+    alert("No Non-Repeating Character Found");
+};
+firstNonRepeatingChar();
+
+// 5. Count the Occurrences of Each Character
+const charCount = () => {
+    let str = prompt("Enter a string:");
+    let count = [...str].reduce((acc, char) => (acc[char] = (acc[char] || 0) + 1, acc), {});
+    alert("Character Counts: " + JSON.stringify(count));
+};
+charCount();
+
+// 6. Reverse Words in a Sentence
+const reverseWords = () => {
+    let sentence = prompt("Enter a sentence:");
+    alert("Reversed Words: " + sentence.split(' ').reverse().join(' '));
+};
+reverseWords();
+
+// 7. Check if Two Strings are Anagrams
+const areAnagrams = () => {
+    let str1 = prompt("Enter first string:");
+    let str2 = prompt("Enter second string:");
+    alert(str1.split('').sort().join('') === str2.split('').sort().join('') ? "Anagrams" : "Not Anagrams");
+};
+areAnagrams();
+
+// 8. Find the Longest Substring Without Repeating Characters
+const longestUniqueSubstring = () => {
+    let str = prompt("Enter a string:");
+    let max = 0, map = {}, start = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (map[str[i]] !== undefined) start = Math.max(map[str[i]] + 1, start);
+        map[str[i]] = i;
+        max = Math.max(max, i - start + 1);
+    }
+    alert("Longest Unique Substring Length: " + max);
+};
+longestUniqueSubstring();
+
+// 9. Convert a String to an Integer (atoi)
+const atoi = () => {
+    let str = prompt("Enter a string:");
+    alert("Converted Number: " + (parseInt(str, 10) || 0));
+};
+atoi();
+
+// 10. Compress a String (Run-Length Encoding)
+const runLengthEncoding = () => {
+    let str = prompt("Enter a string:");
+    alert("Compressed String: " + str.replace(/(.)\1*/g, (match, p1) => p1 + match.length));
+};
+runLengthEncoding();
+
+// 11. Find the Most Frequent Character
+const mostFrequentChar = () => {
+    let str = prompt("Enter a string:");
+    let count = [...str].reduce((acc, char) => (acc[char] = (acc[char] || 0) + 1, acc), {});
+    alert("Most Frequent Character: " + Object.entries(count).sort((a, b) => b[1] - a[1])[0][0]);
+};
+mostFrequentChar();
+
+// 12. Find All Substrings of a Given String
+const allSubstrings = () => {
+    let str = prompt("Enter a string:");
+    let substrings = [...str].flatMap((_, i) => [...str.slice(i)].map((_, j) => str.slice(i, i + j + 1)));
+    alert("Substrings: " + substrings.join(', '));
+};
+allSubstrings();
+
+// 13. Check if a String is a Rotation of Another String
+const isRotation = () => {
+    let s1 = prompt("Enter first string:");
+    let s2 = prompt("Enter second string:");
+    alert(s1.length === s2.length && (s1 + s1).includes(s2) ? "Rotation" : "Not a Rotation");
+};
+isRotation();
+
+// 14. Remove All White Spaces from a String
+const removeSpaces = () => {
+    let str = prompt("Enter a string:");
+    alert("Without Spaces: " + str.replace(/\s+/g, ''));
+};
+removeSpaces();
+
+// 15. Convert a String to Title Case
+const toTitleCase = () => {
+    let str = prompt("Enter a string:");
+    alert("Title Case: " + str.replace(/\b\w/g, char => char.toUpperCase()));
+};
+toTitleCase();
+
+// 16. Find the Longest Common Prefix
+const longestCommonPrefix = () => {
+    let arr = prompt("Enter words separated by commas:").split(',');
+    alert("Longest Common Prefix: " + arr.reduce((a, b) => a.slice(0, b.length).split('').filter((c, i) => c === b[i]).join(''), arr[0]));
+};
+longestCommonPrefix();
+
+// 17. Replace Spaces with %20 (URL Encoding)
+const urlEncode = () => {
+    let str = prompt("Enter a string:");
+    alert("URL Encoded: " + str.replace(/\s/g, "%20"));
+};
+urlEncode();
+
+// 18. Convert a Sentence into an Acronym
+const toAcronym = () => {
+    let str = prompt("Enter a sentence:");
+    alert("Acronym: " + str.split(' ').map(word => word[0].toUpperCase()).join(''));
+};
+toAcronym();
+
+// 19. Check if a String Contains Only Digits
+const isNumeric = () => {
+    let str = prompt("Enter a string:");
+    alert(/^\d+$/.test(str) ? "Contains only digits" : "Not only digits");
+};
+isNumeric();
+
+// 20. Find the Number of Words in a String
+const wordCount = () => {
+    let str = prompt("Enter a string:");
+    alert("Word Count: " + str.trim().split(/\s+/).length);
+};
+wordCount();
+
+// 21. Remove a Given Character from a String
+const removeChar = () => {
+    let str = prompt("Enter a string:");
+    let char = prompt("Enter the character to remove:");
+    alert("Result: " + str.split(char).join(''));
+};
+removeChar();
+
+// 22. Find the Shortest Word in a String
+const shortestWord = () => {
+    let str = prompt("Enter a sentence:");
+    alert("Shortest Word: " + str.split(' ').reduce((a, b) => a.length <= b.length ? a : b));
+};
+shortestWord();
+
+// 23. Find the Longest Palindromic Substring
+const longestPalindrome = () => {
+    let str = prompt("Enter a string:");
+    let res = '';
+    for (let i = 0; i < str.length; i++) {
+        for (let j = i; j < str.length; j++) {
+            let sub = str.slice(i, j + 1);
+            if (sub === sub.split('').reverse().join('') && sub.length > res.length) res = sub;
+        }
+    }
+    alert("Longest Palindromic Substring: " + res);
+};
+longestPalindrome();
+
+    </script>
+    
+</body>
+</html>
