@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+</head>
+
+<body>
+    <script>
+        // let str="hello"
+
+        var str = prompt("enter the string")
+
+        strrev = str.split('').reverse('').join('');
+
+        var polin = strrev;
+        console.log("reversed string:" + strrev)
+        if (str === polin) {
+            console.log("str is polindrome")
+        }
+        else
+            console.log("str is not a polindrome")
+
+        let strdupl = [...new Set(str)].join('')
+        console.log("removeduplicate:" + strdupl)
+        // new Set(str) – Creates a Set from the string str. Since Set only stores unique values, it automatically removes duplicates.
+
+
+
+        for (let char of str) {
+            if (str.indexOf(char) === str.lastIndexOf(char)) {
+                console.log("newchar" + char)
+            }
+        }
+        alert("no non repeatin character")
+
+        // let count = {};
+        // for (let char of str) {
+        //     count[char] = (count[char] || 0) + 1;
+        // }
+
+        
+        let count = [...str].reduce((acc, char) => (acc[char] = (acc[char] || 0) + 1, acc), {});
+        console.log(count);
+
+
+        //         [...str] → Converts the string into an array of characters.
+
+        // .reduce() → Iterates through the array and builds an object (acc) with character frequencies.
+
+        // acc[char] = (acc[char] || 0) + 1 → Updates the count for each character.
+
+        // Returns an object where keys are characters, and values are their counts.
+
+
+    </script>
+</body>
+
+</html>
