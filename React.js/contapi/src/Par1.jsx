@@ -7,7 +7,7 @@ export default class Par1 extends Component{
         super()
         this.state={
             msg1:"hi parent",
-            mag2:"from parent",
+            msg2:"from parent",
         }
     }
     render(){
@@ -15,9 +15,9 @@ export default class Par1 extends Component{
         return(
             <div>
                 <h1>FROM PARENT1</h1>
-                <Usercontextprovider value={this.state.msg2} />
+                <Usercontextprovider value={this.state.msg2} >
                 <Chi1   msg1={this.state.msg1}/>
-                 <Usercontextprovider />
+                 </Usercontextprovider >
             </div>
         )
     }
