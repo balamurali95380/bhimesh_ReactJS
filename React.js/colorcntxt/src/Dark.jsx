@@ -7,16 +7,16 @@ export default class Dark extends Component {
         super()
     }
     render() {
-        const isDark = this.props.value === 'dark';
+     
         return (
         
         <div style={{ padding: '2rem',
             margin: '2rem',
             textAlign: 'center',
-            backgroundColor: isDark ? 'white' : 'white',
-            color: isDark ? 'white' : 'white',
+            backgroundColor: (this.props.theme === 'dark' )? 'white' : 'black',
+            // color: isDark ? 'white' : 'black',
             borderRadius: '8px',
-            transition: 'all 0.3s ease',}}>
+            transition: 'all 2s ease',}}>
                 
              <h2>{this.props.value}</h2>
           
