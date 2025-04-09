@@ -8,7 +8,7 @@ class Userauth extends React.Component {
   }
 }
 
-const ProtectedUserauth= Hoc2(Userauth);
+// const ProtectedUserauth= Hoc2(Userauth);
 
 const App = () => {
   const isAuthenticated = false; // Change to true to see the component
