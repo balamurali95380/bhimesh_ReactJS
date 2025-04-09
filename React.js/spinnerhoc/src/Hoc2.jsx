@@ -53,13 +53,13 @@ import Userauth from "./Userauth";
 //                 name:"bhimesh",
 //             }}
 
-//     //   componentDidMount() {
-//     //     console.log("Props:", this.props);
-//     //   }
+    //   componentDidMount() {
+    //     console.log("Props:", this.props);
+    //   }
 
-//     //   componentDidUpdate() {
-//     //     console.log("Updated Props:", this.props);
-//     //   }
+    //   componentDidUpdate() {
+    //     console.log("Updated Props:", this.props);
+    //   }
 
 //       render() {
 
@@ -70,50 +70,50 @@ import Userauth from "./Userauth";
 
 //   export default Hoc2;
 // loading data:
-// const Hoc2 = (Dataload) => {
-//   return class Newss extends Component {
-//     constructor(props) {
-//       super(props);
+const Hoc2 = (Dataload) => {
+  return class Newss extends Component {
+    constructor(props) {
+      super(props);
 
-//       this.state = {
-//         loading: true, data: "null"
-//       }
-//     }
-
-//     load = () => {
-//       setTimeout(() => this.setState({ loading:false, data: "Sample Data" }), 2000);
-//     }
-
-
-
-//     render() {
-//       return <div>
-//         <h1>data:{this.state.data}</h1>
-//         <h1>load:{this.state.loading}</h1>
-//         <Dataload data={this.state.data} Loading={this.state.loading} load={this.load} />
-//       </div>
-//         ;
-//     }
-
-//   };
-// };
-
-// export default Hoc2;
-
-
-// export default App;
-// {/* <Autorization></Autorization> */}
-const Hoc2 = (Userauth) => {
-  return class extends React.Component {
-    render() {
-      const { isAuthenticated, ...props } = this.props;
-      if (!isAuthenticated) {
-        return <div className="text-red-500 text-lg">Access Denied! Please log in.</div>;
+      this.state = {
+        loading: true, data: "null"
       }
-      return <Userauth {...props} />;
     }
+
+    load = () => {
+      setTimeout(() => this.setState({ loading:false, data: "Sample Data" }), 2000);
+    }
+
+
+
+    render() {
+      return <div>
+        <h1>data:{this.state.data}</h1>
+        <h1>load:{this.state.loading}</h1>
+        <Dataload data={this.state.data} Loading={this.state.loading} load={this.load} />
+      </div>
+        ;
+    }
+
   };
 };
 
 export default Hoc2;
+
+
+// export default App;
+// {/* <Autorization></Autorization> */}
+// const Hoc2 = (Userauth) => {
+//   return class extends React.Component {
+//     render() {
+//       const { isAuthenticated, ...props } = this.props;
+//       if (!isAuthenticated) {
+//         return <div className="text-red-500 text-lg">Access Denied! Please log in.</div>;
+//       }
+//       return <Userauth {...props} />;
+//     }
+//   };
+// };
+
+// export default Hoc2;
 

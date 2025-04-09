@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
-      {/* <Rendr/>   */}
-      <Mouseinput/>
+      <Rendr/>  
+      {/* <Mouseinput/> */}
          
       
     </>

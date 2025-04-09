@@ -12,9 +12,9 @@ function App() {
 
   return (
     <>
-    {/* <Dataload/> */}
+    <Dataload/>
     {/* <Wrappedprops/>     */}
-    <Userauth/>
+    {/* <Userauth/> */}
 
      
     </>
