@@ -15,9 +15,9 @@ class Login extends Component {
     };
   }
 
-  // handleDashboardNavigation = () => {
-  //   this.props.navigate("/dashboard");
-  // };
+  handleDashboardNavigation = () => {
+    this.props.navigate("/dashboard");
+  };
   handleChange = (e) => {
     const newUser = { ...this.state.user };
     newUser[e.target.name] = e.target.value;
