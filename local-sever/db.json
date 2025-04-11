@@ -20,6 +20,13 @@
       "lname": "reddy",
       "email": "bhimesh.smile@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "af00",
+      "fname": "bhim",
+      "lname": "reddy",
+      "email": "bhimesh.smile@gmail.com",
+      "password": "12345"
     }
   ]
 }
