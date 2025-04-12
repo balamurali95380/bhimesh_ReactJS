@@ -1,32 +1,18 @@
 {
   "users": [
     {
-      "id": "4be7",
-      "fname": "hsxswasx",
-      "lname": "sqaszqa",
-      "email": "asqas",
-      "password": "sxawdxwa"
-    },
-    {
-      "id": "6b6e",
-      "fname": "bhim",
-      "lname": "reddy",
-      "email": "bhimesh.smile@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "a492",
-      "fname": "bhim",
-      "lname": "reddy",
-      "email": "bhimesh.smile@gmail.com",
-      "password": "12345"
-    },
-    {
       "id": "af00",
       "fname": "bhim",
       "lname": "reddy",
       "email": "bhimesh.smile@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "8a20",
+      "fname": "dff",
+      "lname": "dcs",
+      "email": "d",
+      "password": "dd"
     }
   ]
 }
