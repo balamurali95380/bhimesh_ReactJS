@@ -31,6 +31,15 @@ class Dashboard extends Component {
   handleViewDetails = (usr) => {
     this.props.navigate("/userDetails/" + usr.id)
   };
+  handleDelete = (usr) => {
+    axios.delete("http://localhost:3000/users/"+ usr.id).then(({ data }) => {
+      console.log(data);
+    
+      this.getAllUsersFromServer();
+    });
+  }
+    
+  
   render() {
     return (
       <div>
@@ -67,7 +76,8 @@ class Dashboard extends Component {
                       </button>
                     </td>
                     <td>
-                      <button className="btn btn-danger">Delete</button>
+                      <button className="btn btn-danger" onClick={() => {
+                          this.handleDelete(usr)}}>Delete</button>
                     </td>
                   </tr>
                 );
