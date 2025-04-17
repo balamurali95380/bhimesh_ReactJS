@@ -1,8 +1,8 @@
-const intialstate = [
+const userdetail = [
     "ram",
     "ravi"
 ]
-export const UserReducer = (state = intialstate, action) => {
+export const UserReducer = (state = userdetail, action) => {
 
     switch (action.type) {
         case "Create":
