@@ -65,7 +65,7 @@ class Employeecrud extends Component {
                 <input type="text" name="email" value={this.state.employees.email} onChange={this.handleevent} />{""}
                 <br /><label htmlFor="">Password:</label>
                 <input type="text" name="password" value={this.state.employees.password} onChange={this.handleevent} />{""}
-                <br />{this.state.inx === null ? <button type="button" class="btn btn-primary"style={{marginTop:"10px"}}  onClick={this.addemployee}>add employee</button> : <button type="button" onClick={this.updateemployee}>update employee</button>}
+                <br />{this.state.inx === null ? <button type="button" class="btn btn-primary"style={{marginTop:"10px"}}  onClick={this.addemployee}>add employee</button> : <button type="button" class="btn btn-success" onClick={this.updateemployee}>update employee</button>}
             </form>
             <hr />
             <table border={2} class="container text-center">
