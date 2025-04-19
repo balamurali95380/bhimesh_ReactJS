@@ -7,5 +7,14 @@
       "email": "bhimesh.smile@gmail.com",
       "password": "12345"
     }
+  ],
+  "students": [
+    {
+      "id": "fc82",
+      "fname": "dcsxcs",
+      "lname": "sc",
+      "email": "csxc",
+      "password": "scsc123"
+    }
   ]
 }
