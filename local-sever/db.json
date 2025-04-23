@@ -6,6 +6,13 @@
       "lname": "reddy",
       "email": "bhimesh.smile@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "033a",
+      "fname": "zaz",
+      "lname": "az",
+      "email": "bhimesh.smile@gmail.com",
+      "password": "12345"
     }
   ],
   "students": [
