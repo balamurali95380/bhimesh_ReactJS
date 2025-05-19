@@ -1,0 +1,17 @@
+.child-box {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dark {
+  background-color: #333;
+  color: white;
+}
+
+.light {
+  background-color: #f0f0f0;
+  color: black;
+}
