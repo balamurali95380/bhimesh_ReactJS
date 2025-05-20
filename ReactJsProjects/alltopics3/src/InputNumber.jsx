@@ -1,6 +1,7 @@
 import React from 'react';
 
 const InputNumber = ({ value, onNumberChange }) => {
+    console.log("rendering")
   return (
     <input
       type="number"
