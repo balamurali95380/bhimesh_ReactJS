@@ -18,8 +18,9 @@ class Calculator extends Component {
     return (
       <div>
         <h2>Square Calculator</h2>
-        <InputNumber value={this.state.number} onNumberChange={this.handleNumberChange} />
         <Result number={this.state.number} />
+        <InputNumber value={this.state.number} onNumberChange={this.handleNumberChange} />
+        {/* <Result number={this.state.number} /> */}
       </div>
     );
   }
