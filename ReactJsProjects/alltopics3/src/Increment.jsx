@@ -1,4 +1,5 @@
 import React from 'react';
+import { memo } from "react";
 
 const   Increment = ({ increment }) => {
 console.log('Child Rendered');
@@ -10,4 +11,4 @@ console.log('Child Rendered');
   );
 };
 
-export default Increment;
+export default memo(Increment);
