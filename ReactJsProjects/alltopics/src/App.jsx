@@ -12,13 +12,14 @@ import UserCard from './UserCard'
 import Toggle from './Toggle'
 import InputField from './InputField'
 import LoginStatus from './LoginStatus'
+import User from './User'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <User/> */}
+      <User/>
       <Welcome/>
       {/* <Counter/> */}
       <Greeting/>

@@ -7,17 +7,23 @@ import Parent from './Parent';
 import Container from './Container';
 import Calculator from './Calculator';
 import Grandparent from './Grandparent';
+import Logic from './Logic';
+import Todolist from './Todolist';
+import TodolistUse from './TodolistUse';
 
 class App extends Component {
   render() {
     const title = "Welcome to the Props!";
     return ( 
     <>
-     <TitleDisplay title={title} />
-     <Parent/>
-     <Container/>
+     {/* <TitleDisplay title={title} /> */}
+     {/* <Parent/> */}
+     {/* <Container/> */}
      <Calculator/>
-     <Grandparent/>
+     {/* <Grandparent/> */}
+     {/* <Logic/> */}
+     {/* <Todolist/> */}
+     {/* <TodolistUse/> */}
     </>
   )
 }}
