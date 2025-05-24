@@ -8,6 +8,8 @@ import { UserContext } from './UserContext'
 import Profile from './Profile'
 import Todolist1 from './Todolist1'
 import Todoapp1 from './Todoapp1'
+import SearchComponent from './Uscabk'
+import Filter from './Filterusecal'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <>
-    <Todoapp1/>
+    {/* <Todoapp1/>
     <Dashboard/>
     <TodoApp/>
      <UserContext.Provider value={user}>
@@ -27,7 +29,10 @@ function App() {
         <Profile />
       </div>
     </UserContext.Provider>
+    <SearchComponent/> */}
+    <Filter/>
     </>
+    
   )
 }
 
