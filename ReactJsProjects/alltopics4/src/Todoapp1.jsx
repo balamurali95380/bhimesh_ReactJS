@@ -19,12 +19,13 @@ const Todoapp1=()=>{
    }
 
     return <div>
+         <h1>count:{count}</h1>
+        <button type="button" onClick={increment}>increment</button>
        
         <Todofrm1 addtodo={addtodo}/>
         
        < Todolist1 todos={todos} />
-        <h1>count:{count}</h1>
-        <button type="button" onClick={increment}>increment</button>
+       
 
       
     </div>
