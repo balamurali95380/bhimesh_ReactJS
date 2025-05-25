@@ -20,8 +20,8 @@ function App() {
 
   return (
     <>
-    {/* <Todoapp1/>
-    <Dashboard/>
+     <Todoapp1/> 
+    {/* <Dashboard/>
     <TodoApp/>
      <UserContext.Provider value={user}>
       <div>
@@ -29,8 +29,8 @@ function App() {
         <Profile />
       </div>
     </UserContext.Provider>
-    <SearchComponent/> */}
-    <Filter/>
+    <SearchComponent/> 
+    <Filter/> */}
     </>
     
   )
