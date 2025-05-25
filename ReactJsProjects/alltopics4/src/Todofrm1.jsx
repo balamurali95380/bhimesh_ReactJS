@@ -10,7 +10,7 @@ const Todofrm1 = ({ addtodo }) => {
   const handleinput = (e) => {
 
       addtodo(input);
-      setInput(''); // Clear the input after adding
+      setInput(''); 
     
   };
 
