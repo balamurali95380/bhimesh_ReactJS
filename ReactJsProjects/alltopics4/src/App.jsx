@@ -10,6 +10,8 @@ import Todolist1 from './Todolist1'
 import Todoapp1 from './Todoapp1'
 import SearchComponent from './Uscabk'
 import Filter from './Filterusecal'
+import Grandpar1 from './grandpar1'
+import Child2 from './Child2'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,8 +23,8 @@ function App() {
   return (
     <>
      <Todoapp1/> 
-    {/* <Dashboard/>
-    <TodoApp/>
+    <Dashboard/>
+    {/* <TodoApp/>
      <UserContext.Provider value={user}>
       <div>
         <h1>Welcome to the App</h1>
@@ -31,6 +33,7 @@ function App() {
     </UserContext.Provider>
     <SearchComponent/> 
     <Filter/> */}
+    <Grandpar1 Child2={Child2}/>
     </>
     
   )
