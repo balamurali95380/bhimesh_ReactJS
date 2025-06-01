@@ -18,8 +18,10 @@ function App() {
 <p class="text-blue-700">This text is blue</p>
 <p class="text-gray-400">This text is gray</p>
 <p class="text-8xl">tailwind</p>
+<p class="not-only-of-type:">sxwadxwsadxa</p>
+
      
-     
+
     </>
   )
 }
