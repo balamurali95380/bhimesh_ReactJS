@@ -17,6 +17,7 @@ function App() {
 <p class="text-green-600">This text is green</p>
 <p class="text-blue-700">This text is blue</p>
 <p class="text-gray-400">This text is gray</p>
+<p class="text-8xl">tailwind</p>
      
      
     </>
